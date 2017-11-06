@@ -1,0 +1,21 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-06-30 00:55:08 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-30 05:16:56 --> 404 Page Not Found --> uploads/league/4976462535.png
+ERROR - 2017-06-30 05:23:59 --> 404 Page Not Found --> uploads/league/2032923377.jpg
+ERROR - 2017-06-30 05:31:02 --> 404 Page Not Found --> uploads/league/9990011397.png
+ERROR - 2017-06-30 05:38:47 --> 404 Page Not Found --> uploads/league/6401687241.jpg
+ERROR - 2017-06-30 05:43:49 --> 404 Page Not Found --> uploads/league/5431813825.png
+ERROR - 2017-06-30 10:28:01 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-30 10:28:01 --> 404 Page Not Found --> apple-app-site-association
+ERROR - 2017-06-30 12:36:01 --> 404 Page Not Found --> uploads/league/2818483468.png
+ERROR - 2017-06-30 12:43:52 --> 404 Page Not Found --> uploads/league/597677794.jpg
+ERROR - 2017-06-30 12:51:33 --> 404 Page Not Found --> uploads/league/2231261068.jpg
+ERROR - 2017-06-30 12:59:28 --> 404 Page Not Found --> uploads/league/8778336560.png
+ERROR - 2017-06-30 12:59:28 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-30 13:06:54 --> 404 Page Not Found --> uploads/league/1910154768.jpg
+ERROR - 2017-06-30 13:14:41 --> 404 Page Not Found --> uploads/league/1838614312.jpg
+ERROR - 2017-06-30 13:22:17 --> 404 Page Not Found --> uploads/league/2010780763.png
+ERROR - 2017-06-30 13:30:17 --> 404 Page Not Found --> uploads/league/1495499592.jpg
+ERROR - 2017-06-30 13:37:35 --> 404 Page Not Found --> uploads/league/1105783311.jpg
+ERROR - 2017-06-30 13:47:09 --> 404 Page Not Found --> uploads/league/1487299599.jpg

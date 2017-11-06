@@ -1,0 +1,20 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-07-14 01:01:48 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-07-14 08:07:56 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-07-14 08:07:56 --> 404 Page Not Found --> uploads/league/7482080459.jpg
+ERROR - 2017-07-14 08:29:01 --> 404 Page Not Found --> uploads/league/7774877673.jpg
+ERROR - 2017-07-14 09:18:16 --> 404 Page Not Found --> uploads/league/2725438540.png
+ERROR - 2017-07-14 11:44:12 --> 404 Page Not Found --> uploads/league/7932267640.gif
+ERROR - 2017-07-14 13:42:27 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
+ERROR - 2017-07-14 14:55:34 --> 404 Page Not Found --> uploads/league/6370843937.gif
+ERROR - 2017-07-14 15:00:34 --> 404 Page Not Found --> uploads/league/6778340870.gif
+ERROR - 2017-07-14 15:03:01 --> 404 Page Not Found --> uploads/league/3833273984.png
+ERROR - 2017-07-14 15:07:21 --> 404 Page Not Found --> uploads/league/3972028233.jpg
+ERROR - 2017-07-14 15:12:21 --> 404 Page Not Found --> uploads/league/406794915.jpg
+ERROR - 2017-07-14 15:55:38 --> 404 Page Not Found --> uploads/league/7932267640.gif
+ERROR - 2017-07-14 17:20:05 --> 404 Page Not Found --> uploads/league/7932267640.gif
+ERROR - 2017-07-14 20:24:53 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-07-14 23:08:52 --> 404 Page Not Found --> uploads/league/7323185522.jpg
+ERROR - 2017-07-14 23:13:52 --> 404 Page Not Found --> uploads/league/4357206695.gif
+ERROR - 2017-07-14 23:21:11 --> 404 Page Not Found --> uploads/league/7145805554.gif

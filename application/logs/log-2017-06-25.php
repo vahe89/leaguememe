@@ -1,0 +1,25 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-06-25 00:26:45 --> 404 Page Not Found --> uploads/league/4634964196.png
+ERROR - 2017-06-25 00:59:31 --> 404 Page Not Found --> uploads/league/4817053186.jpg
+ERROR - 2017-06-25 01:12:40 --> 404 Page Not Found --> uploads/league/2923483368.jpg
+ERROR - 2017-06-25 01:25:46 --> 404 Page Not Found --> uploads/league/9045433113.jpg
+ERROR - 2017-06-25 02:31:01 --> 404 Page Not Found --> uploads/league/5398796005.png
+ERROR - 2017-06-25 05:45:13 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-25 07:58:21 --> 404 Page Not Found --> uploads/league/855176108.gif
+ERROR - 2017-06-25 08:06:05 --> 404 Page Not Found --> uploads/league/9027941399.jpg
+ERROR - 2017-06-25 08:13:57 --> 404 Page Not Found --> uploads/league/1242476045.jpg
+ERROR - 2017-06-25 08:21:35 --> 404 Page Not Found --> uploads/league/5289747035.jpg
+ERROR - 2017-06-25 08:29:18 --> 404 Page Not Found --> uploads/league/8550080507.gif
+ERROR - 2017-06-25 08:37:01 --> 404 Page Not Found --> uploads/league/4700470431.jpg
+ERROR - 2017-06-25 08:44:49 --> 404 Page Not Found --> uploads/league/2871802425.png
+ERROR - 2017-06-25 10:25:05 --> 404 Page Not Found --> uploads/league/2759931879.gif
+ERROR - 2017-06-25 10:25:35 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-25 10:25:35 --> 404 Page Not Found --> .well-known/apple-app-site-association
+ERROR - 2017-06-25 10:29:44 --> 404 Page Not Found --> .well-known/assetlinks.json
+ERROR - 2017-06-25 10:40:01 --> 404 Page Not Found --> uploads/league/8534185066.jpg
+ERROR - 2017-06-25 11:42:16 --> 404 Page Not Found --> uploads/league/6336404676.jpg
+ERROR - 2017-06-25 12:13:31 --> 404 Page Not Found --> uploads/league/4783689132.png
+ERROR - 2017-06-25 12:53:24 --> 404 Page Not Found --> uploads/league/5154295209.jpg
+ERROR - 2017-06-25 23:41:20 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-06-25 23:41:45 --> 404 Page Not Found --> uploads/users/cover/cover.jpg

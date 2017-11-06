@@ -1,0 +1,14 @@
+[22-Nov-2016 08:44:36 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 235
+[22-Nov-2016 08:49:09 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 235
+[22-Nov-2016 08:51:10 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 235
+[22-Nov-2016 08:51:12 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 235
+[22-Nov-2016 08:52:32 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[22-Nov-2016 08:55:11 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[22-Nov-2016 08:55:14 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[22-Nov-2016 08:56:04 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[22-Nov-2016 08:57:23 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[22-Nov-2016 08:57:25 UTC] PHP Fatal error:  Class 'CI_Controller' not found in /home/league/public_html/dev/system/core/CodeIgniter.php on line 236
+[31-Dec-2016 06:54:38 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 10656 bytes) in /home/league/public_html/dev/application/modules/public/controllers/home.php on line 422
+[06-Apr-2017 12:08:08 UTC] CSRF state token does not match one provided.
+[20-Aug-2017 03:12:42 UTC] PHP Fatal error:  Allowed memory size of 262144 bytes exhausted (tried to allocate 6400 bytes) in /home/league/public_html/dev/system/core/CodeIgniter.php on line 242
+[20-Aug-2017 03:22:14 UTC] PHP Fatal error:  Allowed memory size of 262144 bytes exhausted (tried to allocate 6400 bytes) in /home/league/public_html/dev/system/core/CodeIgniter.php on line 242
