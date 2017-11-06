@@ -17,7 +17,7 @@ echo $this->load->view('template/sidebar_list');
         <div class="col-md-12 no-padding ">
             <div class="title-section">
                 <span>Notification</span>
-                <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $userdetail['user_name']; ?>" class="btn btn-red btn-back-review">Back</a>
+                <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $userdetail['user_name']; ?>" class="btn btn-red btn-back-review">Back</a>
             </div>
         </div>
         <div class="col-md-7 main-content">

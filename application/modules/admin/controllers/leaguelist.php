@@ -20,6 +20,7 @@ class Leaguelist extends MX_Controller {
         $this->load->model('category_model', 'category');
         $this->load->library('email');
         $this->load->library("pagination");
+        $this->load->library('image_lib');
     }
 
     function add_league() {
@@ -72,13 +73,43 @@ class Leaguelist extends MX_Controller {
                                     echo $this->upload->display_errors();
                                 } else {
                                     $imgArr = $filename . '.' . $ext;
-                                    $newimageuploadpath = "uploads/league/mp4/";
+                                    //$newimageuploadpath = "uploads/league/mp4/";
                                     $oldimageuploadpath = "uploads/league/";
                                     $imagetemppath1 = "uploads/league/temp/";
+                                    
+                                    $image_siz_info = getimagesize($image_temp);
+                                    $image_type = $image_siz_info['mime'];
+                                    switch ($image_type) {
+                                        case 'image/png':
+                                            $image_gif = imagecreatefrompng($image_temp);
+                                            break;
+                                        case 'image/gif':
+                                            $image_gif = imagecreatefromgif($image_temp);
+                                            break;
+                                        case 'image/jpeg':
+                                        case 'image/pjpeg':
+                                        case 'image/jpg':
+                                            $image_gif = imagecreatefromjpeg($image_temp);
+                                            break;
+                                        default:
+                                            $image_gif = false;
+                                    }
+
+                                    $this->image_lib->clear();
+                                    $gif_configs['image_library'] = 'gd2';
+                                    $gif_configs['source_image'] = './uploads/league/' . $imgArr;
+                                    $gif_configs['new_image'] = './uploads/giftojpg/' . $imgArr;
+                                    $gif_configs['create_thumb'] = FALSE;
+                                    $gif_configs['maintain_ratio'] = FALSE;
+                                    $gif_configs['thumb_marker'] = '';
+                                    $this->image_lib->initialize($gif_configs);
+                                    $this->image_lib->resize();
+                                    imagedestroy($image_gif); //freeup memory 
+                                    
                                     // $imagetemppath2 = "uploads/league/test/";
-                                    shell_exec('convert "' . $oldimageuploadpath . $imgArr . '" "' . $imagetemppath1 . $filename . '%d.png"');
+                                    //shell_exec('convert "' . $oldimageuploadpath . $imgArr . '" "' . $imagetemppath1 . $filename . '%d.png"');
                                 }
-                                shell_exec('avconv -f image2 -i "' . $imagetemppath1 . $filename . '%d.png" "' . $newimageuploadpath . $videoname . '"');
+                              //  shell_exec('avconv -f image2 -i "' . $imagetemppath1 . $filename . '%d.png" "' . $newimageuploadpath . $videoname . '"');
                             } else {
 
 
@@ -119,15 +150,37 @@ class Leaguelist extends MX_Controller {
                                     $image_name_only = strtolower($image_info["filename"]); //file name only, no extension
                                     //create a random name for new image (Eg: fileName_293749.jpg) ;
                                     $new_file_name = rand(0, 9999999999) . '.' . $image_extension;
+                                    
+                                    
+                                    if ($image_type == 'image/jpeg' || $image_type == 'image/pjpeg') {
+                                        $image = imagecreatefromjpeg($image_temp);
+                                        $image_path = getcwd() . "/uploads/league/$new_file_name";
+                                        imagejpeg($image, $image_path, 80);
+                                    } elseif ($image_type == 'image/png') {
+                                        $image = imagecreatefrompng($image_temp);
+                                        $image_path = getcwd() . "/uploads/league/$new_file_name";
+                                        imagepng($image, $image_path);
+                                    }
+
+                                    $config['upload_path'] = "./uploads/league_original";
+                                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                                    $config['file_name'] = $new_file_name;
+                                    $config['max_size'] = '0';
+                                    $config['overwrite'] = FALSE;
+                                    $this->load->library('upload', $config);
+                                    $this->upload->initialize($config);
+                                    $this->upload->do_upload('new_league_img');
+                                    $imgArr = $new_file_name;
+                                    
 
                                     //folder path to save resized images and thumbnails
                                     $image_save_folder = $this->destination_folder . $new_file_name;
                                     $image_width = $image_width / 2;
                                     $image_height = $image_height / 2;
                                     //call normal_resize_image() function to proportionally resize image
-                                    if ($this->normal_resize_image($image_res, $image_save_folder, $image_type, $this->max_image_size_new, $image_width, $image_height, 100)) {
-                                        $imgArr = $new_file_name;
-                                    }
+                                    //if ($this->normal_resize_image($image_res, $image_save_folder, $image_type, $this->max_image_size_new, $image_width, $image_height, 100)) {
+                                        //$imgArr = $new_file_name;
+                                    //}
 
                                     imagedestroy($image_res); //freeup memory
                                 }
@@ -437,13 +490,43 @@ class Leaguelist extends MX_Controller {
                                 echo $this->upload->display_errors();
                             } else {
                                 $imgArr = $filename . '.' . $ext;
-                                $newimageuploadpath = "uploads/league/mp4/";
+                               // $newimageuploadpath = "uploads/league/mp4/";
                                 $oldimageuploadpath = "uploads/league/";
                                 $imagetemppath1 = "uploads/league/temp/";
                                 // $imagetemppath2 = "uploads/league/test/";
-                                shell_exec('convert "' . $oldimageuploadpath . $imgArr . '" "' . $imagetemppath1 . $filename . '%d.png"');
+                                
+                                $image_siz_info = getimagesize($image_temp);
+                                    $image_type = $image_siz_info['mime'];
+                                    switch ($image_type) {
+                                        case 'image/png':
+                                            $image_gif = imagecreatefrompng($image_temp);
+                                            break;
+                                        case 'image/gif':
+                                            $image_gif = imagecreatefromgif($image_temp);
+                                            break;
+                                        case 'image/jpeg':
+                                        case 'image/pjpeg':
+                                        case 'image/jpg':
+                                            $image_gif = imagecreatefromjpeg($image_temp);
+                                            break;
+                                        default:
+                                            $image_gif = false;
+                                    }
+                                    
+                                    $this->image_lib->clear();
+                                    $gif_configs['image_library'] = 'gd2';
+                                    $gif_configs['source_image'] = './uploads/league/' . $imgArr;
+                                    $gif_configs['new_image'] = './uploads/giftojpg/' . $imgArr;
+                                    $gif_configs['create_thumb'] = FALSE;
+                                    $gif_configs['maintain_ratio'] = FALSE;
+                                    $gif_configs['thumb_marker'] = '';
+                                    $this->image_lib->initialize($gif_configs);
+                                    $this->image_lib->resize();
+                                    imagedestroy($image_gif); //freeup memory 
+                                
+                                //shell_exec('convert "' . $oldimageuploadpath . $imgArr . '" "' . $imagetemppath1 . $filename . '%d.png"');
                             }
-                            shell_exec('avconv -f image2 -i "' . $imagetemppath1 . $filename . '%d.png" "' . $newimageuploadpath . $videoname . '"');
+                            //shell_exec('avconv -f image2 -i "' . $imagetemppath1 . $filename . '%d.png" "' . $newimageuploadpath . $videoname . '"');
                             $old_imageFile_name = $this->input->post('league_img_old');
                             $old_video_file = explode(".", $old_imageFile_name);
                             @unlink('uploads/league/' . $old_imageFile_name);
@@ -493,11 +576,29 @@ class Leaguelist extends MX_Controller {
                                 $image_width = $image_width / 2;
                                 $image_height = $image_height / 2;
 
-                                if ($this->normal_resize_image($image_res, $image_save_folder, $image_type, $this->max_image_size_new, $image_width, $image_height, 100)) {
-                                    $imgArr = $new_file_name;
-                                    $old_file = $this->input->post('league_img_old');
-                                    @unlink(base_url() . 'uploads/league/' . $old_file);
+                                if ($image_type == 'image/jpeg' || $image_type == 'image/pjpeg') {
+                                    $image = imagecreatefromjpeg($image_temp);
+                                    $image_path = getcwd() . "/uploads/league/$new_file_name";
+                                    imagejpeg($image, $image_path, 80);
+                                } elseif ($image_type == 'image/png') {
+                                    $image = imagecreatefrompng($image_temp);
+                                    $image_path = getcwd() . "/uploads/league/$new_file_name";
+                                    imagepng($image, $image_path);
                                 }
+
+                                $config['upload_path'] = "./uploads/league_original";
+                                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                                $config['file_name'] = $new_file_name;
+                                $config['max_size'] = '0';
+                                $config['overwrite'] = FALSE;
+                                $this->load->library('upload', $config);
+                                $this->upload->initialize($config);
+                                $this->upload->do_upload('league_img_old');
+                                $imgArr = $new_file_name;
+                                
+                                $old_file = $this->input->post('league_img_old');
+                                @unlink(base_url() . 'uploads/league/' . $old_file);
+                                @unlink(base_url() . 'uploads/league_original/' . $old_file);
 
                                 imagedestroy($image_res); //freeup memory
                             }
@@ -651,7 +752,7 @@ class Leaguelist extends MX_Controller {
             $data['content_header'] = "Leaguememe Report";
             $data['users'] = $this->admin->getUsers();
             $data['league'] = $this->admin->getAllLeagueImages();
-                                
+
             $data['count_meme'] = $this->leaguemod->count_inactive_league();
             $data['count_new_user'] = $this->admin->count_new_user();
             $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
@@ -668,7 +769,8 @@ class Leaguelist extends MX_Controller {
         $this->leaguemod->list_anime_report($mim_limit);
 //        $this->articlemod->article_list_request();
     }
-function all_anime_report() {
+
+    function all_anime_report() {
         if ($this->session->userdata('logged_in')) {
             $data['left'] = "<a href='" . base_url() . "all_anime_report'>Report</a> &nbsp;>&nbsp; all_anime_report";
             $data['content_header'] = "Report";
@@ -686,11 +788,11 @@ function all_anime_report() {
             load_admin_template($data);
         }
     }
-    
-     function league_report_ajax() {
+
+    function league_report_ajax() {
         $this->leaguemod->league_report_request();
     }
-    
+
     function update_report_status() {
         $id = $this->input->post('id');
         $league_report_status = $this->input->post('report_status');
@@ -747,6 +849,470 @@ function all_anime_report() {
             $send = $this->email->send();
         }
         $this->session->set_flashdata('message', 'Status updated successfully');
+    }
+
+    function manage_tab() {
+
+        if ($this->session->userdata('logged_in')) {
+            $data['left'] = "<a href='" . base_url() . "all_anime_report'>Report</a> &nbsp;>&nbsp; Manage Tab";
+            $data['content_header'] = "Tab Manage";
+            $data['users'] = $this->admin->getUsers();
+            $data['league'] = $this->admin->getAllLeagueImages();
+
+            $data['count_meme'] = $this->leaguemod->count_inactive_league();
+            $data['count_new_user'] = $this->admin->count_new_user();
+            $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+            $data['tabposition'] = $this->leaguemod->getTabs();
+            $data['content'] = $this->load->view('tab_manage', $data, TRUE);
+            load_admin_template($data);
+        } else {
+            $data['content'] = $this->load->view('login', '', TRUE);
+            load_admin_template($data);
+        }
+    }
+
+    function edit_tab() {
+        $position = $this->input->post('position');
+        $i = 2;
+        foreach ($position as $item) {
+            $this->leaguemod->changePostion($item, $i);
+            $i++;
+        }
+        exit;
+    }
+
+    function edit_display_tab() {
+        $id = $this->input->post('id');
+        $display = $this->input->post('display');
+        $this->leaguemod->edit_display_tab($id, $display);
+    }
+
+    function list_author() {
+        if ($this->session->userdata('logged_in')) {
+            $data['left'] = "<a href='" . base_url() . "users'>Users</a> &nbsp;>&nbsp; Authors";
+            $data['content_header'] = "Credit Authors";
+            $data['users'] = $this->admin->getUsers();
+            $data['league'] = $this->admin->getAllLeagueImages();
+
+            $data['count_meme'] = $this->leaguemod->count_inactive_league();
+            $data['count_new_user'] = $this->admin->count_new_user();
+            $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+            $data['credit_authors'] = $this->leaguemod->get_credit_author();
+            $data['content'] = $this->load->view('list_authors', $data, TRUE);
+            load_admin_template($data);
+        } else {
+            redirect('admin/login');
+        }
+    }
+
+    function add_author() {
+        $this->form_validation->set_rules('author_name', 'Author Name', 'required');
+        $this->form_validation->set_rules('author_link', 'Author Link', 'required');
+        $validate = $this->form_validation->run();
+        if ($validate == TRUE) {
+
+            if ($_POST) {
+                if ($_FILES['auhtor_photo']['name'] != "") {
+                    if (!isset($_FILES['auhtor_photo']) || !is_uploaded_file($_FILES['auhtor_photo']['tmp_name'])) {
+                        //die('Image file is Missing!'); // output error when above checks fail.
+                    }
+
+                    //uploaded file info we need to proceed
+                    $image_name = $_FILES['auhtor_photo']['name']; //file name
+                    $image_size = $_FILES['auhtor_photo']['size']; //file size
+                    $image_temp = $_FILES['auhtor_photo']['tmp_name']; //file temp
+
+                    $ext = pathinfo($image_name, PATHINFO_EXTENSION);
+
+                    $image_size_info = getimagesize($image_temp); //get image size
+
+                    if ($image_size_info) {
+                        $image_width = $image_size_info[0]; //image width
+                        $image_height = $image_size_info[1]; //image height
+                        $image_type = $image_size_info['mime']; //image type
+                    } else {
+                        die("Make sure image file is valid!");
+                    }
+
+                    //switch statement below checks allowed image type 
+                    //as well as creates new image from given file 
+                    switch ($image_type) {
+                        case 'image/png':
+                            $image_res = imagecreatefrompng($image_temp);
+                            break;
+                        case 'image/gif':
+                            $image_res = imagecreatefromgif($image_temp);
+                            break;
+                        case 'image/jpeg': case 'image/pjpeg':
+                            $image_res = imagecreatefromjpeg($image_temp);
+                            break;
+                        default:
+                            $image_res = false;
+                    }
+
+                    if ($image_res) {
+
+                        //Get file extension and name to construct new file name 
+                        $image_info = pathinfo($image_name);
+                        $image_extension = strtolower($image_info["extension"]); //image extension
+                        $image_name_only = strtolower($image_info["filename"]); //file name only, no extension
+                        //create a random name for new image (Eg: fileName_293749.jpg) ;
+                        $new_file_name = rand(0, 9999999999) . '.' . $image_extension;
+
+                        //folder path to save resized images and thumbnails
+                        $image_save_folder = './uploads/author/' . $new_file_name;
+
+                        //call normal_resize_image() function to proportionally resize image
+
+                        if ($this->normal_resize_image($image_res, $image_save_folder, $image_type, $this->max_image_size, $image_width, $image_height, $this->jpeg_quality)) {
+                            $imgArr = $new_file_name;
+                        }
+
+                        imagedestroy($image_res); //freeup memory
+                    }
+//                }
+                }
+
+                $dataArr = array(
+                    "name" => trim($this->input->post('author_name')),
+                    "link" => trim($this->input->post('author_link')),
+                    "image" => $new_file_name,
+                );
+                $this->leaguemod->saveauthor($dataArr);
+
+
+                $this->session->set_flashdata('message', 'Authors added successfully');
+                redirect('add_author');
+            }
+
+            if ($this->session->userdata('logged_in')) {
+                $data['left'] = "<a href='" . base_url() . "admin_list'>Admin</a> &nbsp;>&nbsp; Authors";
+                $data['content_header'] = "Authors";
+                $data['users'] = $this->admin->getUsers();
+                $data['league'] = $this->admin->getAllLeagueImages();
+
+                $data['count_meme'] = $this->leaguemod->count_inactive_league();
+                $data['count_new_user'] = $this->admin->count_new_user();
+                $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+
+                $data['content'] = $this->load->view('add_author', $data, TRUE);
+                load_admin_template($data);
+            } else {
+                $data['content'] = $this->load->view('login', '', TRUE);
+                load_admin_template($data);
+            }
+        } else {
+            if ($this->session->userdata('logged_in')) {
+                $data['left'] = "<a href='" . base_url() . "admin_list'>Admin</a> &nbsp;>&nbsp; Authors";
+                $data['content_header'] = "Authors";
+                $data['users'] = $this->admin->getUsers();
+                $data['league'] = $this->admin->getAllLeagueImages();
+
+                $data['count_meme'] = $this->leaguemod->count_inactive_league();
+                $data['count_new_user'] = $this->admin->count_new_user();
+                $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+
+                $data['content'] = $this->load->view('add_author', $data, TRUE);
+                load_admin_template($data);
+            } else {
+                $data['content'] = $this->load->view('login', '', TRUE);
+                load_admin_template($data);
+            }
+        }
+    }
+
+    function edit_author($author_id) {
+        if ($this->session->userdata('logged_in')) {
+            if ($_POST) {
+                $this->form_validation->set_rules('author_name', 'Author Name', 'required');
+                $this->form_validation->set_rules('author_link', 'Author Link', 'required');
+                $validate = $this->form_validation->run();
+                if ($validate == TRUE) {
+
+                    $author_name = $this->input->post('author_name');
+                    $author_link = $this->input->post('author_link');
+
+                    $dataArr = array('name' => trim($author_name),
+                        'link' => trim($author_link));
+                    $this->leaguemod->updateauthor($dataArr, $author_id);
+                    $this->session->set_flashdata('message', 'Author updated successfully');
+                    redirect('list_author');
+                } else {
+                    $data['category_id'] = $author_id;
+
+                    $data['left'] = "<a href='" . base_url() . "list_author'>Credit Author</a> &nbsp;>&nbsp; Edit Author";
+                    $data['content_header'] = "Author";
+                    $data['users'] = $this->admin->getUsers();
+                    $data['league'] = $this->admin->getAllLeagueImages();
+                    $data['brand_details'] = $this->category->getCategoryDetail($author_id);
+
+                    $data['count_meme'] = $this->leaguemod->count_inactive_league();
+                    $data['count_new_user'] = $this->admin->count_new_user();
+                    $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+
+                    $data['content'] = $this->load->view('edit_author', $data, TRUE);
+                    load_admin_template($data);
+                }
+            } else {
+                $data['author_id'] = $author_id;
+
+                $data['left'] = "<a href='" . base_url() . "list_author'>Credit Author</a> &nbsp;>&nbsp; Edit Author";
+                $data['content_header'] = "Author";
+                $data['users'] = $this->admin->getUsers();
+                $data['league'] = $this->admin->getAllLeagueImages();
+                $data['author_details'] = $this->leaguemod->getAuthorDetail($author_id);
+
+                $data['count_meme'] = $this->leaguemod->count_inactive_league();
+                $data['count_new_user'] = $this->admin->count_new_user();
+                $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+
+                $data['content'] = $this->load->view('edit_author', $data, TRUE);
+                load_admin_template($data);
+            }
+        } else {
+            $data['content'] = $this->load->view('login', '', TRUE);
+            load_admin_template($data);
+        }
+    }
+
+     function change_author_photo() {
+        $aid = $this->input->post('authId');
+        $image_name = $_FILES['author_photo']['name'];
+        $config['upload_path'] = './uploads/author/';
+        $config['allowed_types'] = 'jpeg|jpg|png'; 
+        $ext = pathinfo($image_name, PATHINFO_EXTENSION);
+        $filename = rand(0, 9999999999);
+        $author_photo = $filename . '.' . $ext;
+        $config['file_name'] = $filename;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('author_photo')) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->session->set_flashdata('message', 'type of file is not valid');
+            redirect('list_author');
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+        }
+
+        $data = array(
+            'image' => $author_photo
+        );
+
+        $this->leaguemod->update_photo_author($aid, $data);
+        $this->session->set_flashdata('message', 'Photo Change successfully');
+        redirect('list_author');
+    }
+
+    function delete_author() {
+        $aid = $this->input->post('id');
+        $this->leaguemod->deleteAuthor($aid);
+        $this->session->set_flashdata('message', 'Author deleted successfully');
+    }
+
+    function addsection() {
+        if ($this->session->userdata('logged_in')) {
+            $data['getSection'] = $this->leaguemod->getSection();
+//               var_dump($_POST);
+            if ($_POST) {
+                $this->form_validation->set_rules('title_name', 'Title name', 'required');
+                $this->form_validation->set_rules('ttile_link', 'Title Link', 'required');
+
+                $validate = $this->form_validation->run();
+//                var_dump($validate);
+                if ($validate == TRUE) {
+                    $section_id = $this->input->post('section_name');
+                    $title_name = $this->input->post('title_name');
+                    $title_link = $this->input->post('ttile_link');
+                    $dataArr = array(
+                        'section_id' => $section_id,
+                        'title' => $title_name,
+                        'link' => $title_link,
+                        'link_status' => "1"
+                    );
+//                    var_dump($dataArr);
+                    $result = $this->leaguemod->add_section_data($dataArr);
+                    $this->session->set_flashdata('message', ' added successfully');
+                     redirect('addsection');
+                }
+            }
+            $data['left'] = "<a href='list_category'>Section</a>  &nbsp;>&nbsp; Add section";
+            $data['content_header'] = "Left Section";
+            $data['users'] = $this->admin->getUsers();
+            $data['league'] = $this->admin->getAllLeagueImages();
+
+            $data['count_meme'] = $this->leaguemod->count_inactive_league();
+            $data['count_new_user'] = $this->admin->count_new_user();
+            $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+            $data['content'] = $this->load->view('add_section', $data, TRUE);
+            load_admin_template($data);
+        } else {
+            $data['content'] = $this->load->view('login', '', TRUE);
+            load_admin_template($data);
+        }
+    }
+
+    function addnewSection() {
+        $section_name = $this->input->post('section_name');
+        if (!empty($section_name)) {
+            $data = array("section_name" => ucfirst(trim($section_name)), "status" => 1);
+            $this->leaguemod->addnewSection($data);
+            $this->session->set_flashdata('message', 'Added successfully');
+            redirect('addsection');
+        } else {
+            $this->session->set_flashdata('message', 'Section name not empty');
+            redirect('addsection');
+        }
+    }
+
+    function list_section() {
+        if ($this->session->userdata('logged_in')) {
+            $data['getSection'] = $this->leaguemod->getSection();
+            $data['left'] = "<a href='list_category'>Section</a>  &nbsp;>&nbsp; List section";
+            $data['content_header'] = "Left Section";
+            $data['users'] = $this->admin->getUsers();
+            $data['league'] = $this->admin->getAllLeagueImages();
+
+            $data['count_meme'] = $this->leaguemod->count_inactive_league();
+            $data['count_new_user'] = $this->admin->count_new_user();
+            $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+            $data['content'] = $this->load->view('list_section', $data, TRUE);
+            load_admin_template($data);
+        } else {
+            $data['content'] = $this->load->view('login', '', TRUE);
+            load_admin_template($data);
+        }
+    }
+
+    function update_status() {
+        $id = $this->input->post('id');
+        $status = $this->input->post('status');
+        if ($status == 0) {
+            $dataArr = array('status' => 1);
+        } else {
+            $dataArr = array('status' => 0);
+        }
+        $this->leaguemod->updateStatus($dataArr, $id);
+        $this->session->set_flashdata('message', 'Status updated successfully');
+    }
+
+    function update_status_link() {
+        $id = $this->input->post('id');
+        $status = $this->input->post('link_status');
+        if ($status == 0) {
+            $dataArr = array('link_status' => 1);
+        } else {
+            $dataArr = array('link_status' => 0);
+        }
+        $this->leaguemod->updateStatuslink($dataArr, $id);
+        $this->session->set_flashdata('message', 'Status updated successfully');
+    }
+
+    function list_section_in($id) {
+        if ($this->session->userdata('logged_in')) {
+            $data['getSectionlink'] = $this->leaguemod->getSectionlinklist($id);
+            $data['left'] = "<a href='list_category'>Section</a>  &nbsp;>&nbsp; List section Link list";
+            $data['content_header'] = "Left Section";
+            $data['users'] = $this->admin->getUsers();
+            $data['league'] = $this->admin->getAllLeagueImages();
+
+            $data['count_meme'] = $this->leaguemod->count_inactive_league();
+            $data['count_new_user'] = $this->admin->count_new_user();
+            $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+            $data['content'] = $this->load->view('section_linklist', $data, TRUE);
+            load_admin_template($data);
+        } else {
+            $data['content'] = $this->load->view('login', '', TRUE);
+            load_admin_template($data);
+        }
+    }
+
+    function delete_sectionlink() {
+        $cid = $this->input->post('id');
+        $this->leaguemod->deleteSectionlink($cid);
+        $this->session->set_flashdata('message', 'Section link  deleted successfully');
+    }
+function delete_section() {
+        $id = $this->input->post('id');
+        $this->leaguemod->deleteSection($id);
+        $this->session->set_flashdata('message', 'Section deleted successfully');
+    }
+
+    function edit_section($id) {
+        $data['id'] = $id;
+        if ($_POST) {
+            $title_data = $this->input->post('ins_title_data');
+            foreach ($title_data as $key => $title) {
+                $dataArr = array("title" => $title);
+                $this->leaguemod->updateStatuslink($dataArr, $key);
+            }
+            $link_data = $this->input->post('ins_link_data');
+            foreach ($link_data as $key => $link) {
+                $dataArr = array("link" => $link);
+                $this->leaguemod->updateStatuslink($dataArr, $key);
+            }
+            $section_name = $this->input->post('section_name');
+            $dataArr = array("section_name" => ucfirst($section_name));
+                $this->leaguemod->updateStatus($dataArr, $id);
+            $this->session->set_flashdata('message', 'Section Update successfully');
+             redirect('edit_section/'.$id);
+        }
+
+
+        $data['left'] = "<a href='" . base_url() . "list_section'>section</a> &nbsp;>&nbsp; Edit Section";
+        $data['content_header'] = "Left Section";
+        $data['users'] = $this->admin->getUsers();
+        $data['league'] = $this->admin->getAllLeagueImages();
+        $data['section_list'] = $this->leaguemod->getSectionlinklist($id);
+        $data['section_name'] = $this->leaguemod->getSectionname($id);
+        $data['count_meme'] = $this->leaguemod->count_inactive_league();
+        $data['count_new_user'] = $this->admin->count_new_user();
+        $data['count_pending_credit_status'] = $this->leaguemod->count_pending_credit_status();
+
+        $data['content'] = $this->load->view('edit_section', $data, TRUE);
+        load_admin_template($data);
+    }
+    
+    public function sortable_sectionlink(){
+        $data = $this->input->post('data'); 
+        foreach ($data as $key => $val){
+            $dataArr = array(
+                "position" => $val
+            );
+            $this->leaguemod->updateStatuslink($dataArr,$key);
+        }
+    }
+    
+    //    for multiple actions
+
+    function set_multiple_popular_status() {
+
+        $league_data = $this->input->post('alldata');
+        $result = $this->leaguemod->set_multiple_popular($league_data);
+        $this->session->set_flashdata('message', 'Status updated successfully');
+    }
+
+    function delete_multiple_leagueImg() {
+        $alldata = $this->input->post('alldata');
+        for ($i = 0; $i < count($alldata); $i++) {
+            $league_img_id = $alldata[$i];
+
+            $data = $this->leaguemod->getLeagueImageById($league_img_id);
+            $img_name = $data['leagueimage_filename'];
+            $img_extention = substr(strrchr($img_name, '.'), 1);
+
+            //Delete League Image
+            $url = base_url() . "uploads/league/" . $img_name;
+            @unlink($url);
+
+            if ($img_extention == "gif") {
+                $image_name_without_extention = substr($img_name, 0, strpos($img_name, "."));
+                $video_url = base_url() . "uploads/league/mp4/" . $image_name_without_extention . ".webm";
+                @unlink($video_url);
+            }
+
+            $this->leaguemod->delete_league($league_img_id);
+            $this->session->set_flashdata('message', 'League  deleted successfully');
+        }
     }
 
 }

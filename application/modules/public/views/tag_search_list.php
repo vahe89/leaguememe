@@ -20,15 +20,15 @@ if (count($league_images) > 0 && !empty($league_images)) {
                     <div class="media info-avatar">
                         <div class="media-left">
                             <a href="">
-                                <!--<img class="media-object avatar" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="...">-->
+                                <!--<img class="media-object avatar" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="...">-->
                                 <?php
                                 if (isset($anim_img->user_image)) {
                                     ?>
-                                    <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $anim_img->user_name ?>"><img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $anim_img->user_image; ?>" alt="<?php echo $anim_img->user_name; ?>"></a>
+                                    <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $anim_img->user_name ?>"><img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $anim_img->user_image; ?>" alt="<?php echo $anim_img->user_name; ?>"></a>
                                     <?php
                                 } else {
                                     ?>
-                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="profile pic">
+                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                     <?php
                                 }
                                 ?>
@@ -36,10 +36,10 @@ if (count($league_images) > 0 && !empty($league_images)) {
                             </a>
                         </div>
                         <div class="media-body w-2000">
-                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $anim_img->user_name ?>"><h5><?php echo isset($anim_img->user_name) ? $anim_img->user_name : "Admin"; ?></h5></a>
+                            <a <?= isset($anim_img->user_name) ? 'href="'.base_url().'leaguememe_profile/'.$anim_img->user_name .'"' : ''?>><h5><?php echo isset($anim_img->user_name) ? $anim_img->user_name : "Admin"; ?></h5></a>
                             <div class="col-md-12 no-padding">
                                 <span class="minute" data-livestamp="<?php echo strtotime($anim_img->leagueimage_timestamp); ?>"  style="display: inline"> </span> 
-                                <span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>
+                                <!--<span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>-->
                                 
                             </div>
                             <span style="display: none" id="creditt<?php echo $anim_img->leagueimage_id; ?>"><?php echo isset($anim_img->author) ? $anim_img->author : "NOt Assign"; ?></span>

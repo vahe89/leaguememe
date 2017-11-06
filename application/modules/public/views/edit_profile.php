@@ -32,7 +32,17 @@
                 <div class="main-title"> Avatar </div>
 
                 <div class="col-md-2 no-padding mar-t-30">
-                    <img class="avatar-middle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="<?php echo $userdetail['user_name']; ?>">
+                    <?php
+                    if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
+                        ?>
+                        <img class="avatar-middle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="<?php echo $userdetail['user_name']; ?>">
+                        <?php
+                    } else {
+                        ?>
+                        <img class="avatar-middle " src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="<?php echo $userdetail['user_name']; ?>">
+                        <?php
+                    }
+                    ?>
                     <input name="userimg_old" id="userimg_old" value="<?php echo $userdetail['user_image']; ?>" type="hidden">
                 </div>
                 <form action="<?php echo base_url(); ?>public/user/update_user" method="post"  enctype="multipart/form-data" id="profilechange">
@@ -49,7 +59,7 @@
                         <div class="title-notice pad-t-6">JPG, GIF or PNG, Max size: 2MB</div>
                     </div>
                     <script>
-                        document.getElementById("uploadBtn").onchange = function () {
+                        document.getElementById("uploadBtn").onchange = function() {
                             document.getElementById("uploadFile").value = this.value;
 
                         };
@@ -66,10 +76,10 @@
                         <div class="form-group spoiler-form">
                             <div class="sub-title">Account Type</div>
                             <div class="radio">
-                                <input type="hidden" name="account_old" value="<?php echo $userdetail['account_type']; ?>">
-                                <input id="public" type="radio" name="AccountType" value="public">
+                                <input type="hidden" name="account_old" value="<?php echo $userdetail['account_type']; ?>"> 
+                                <input id="public" type="radio" name="AccountType" value="public" <?= ($userdetail['account_type'] == "public") ? "checked='checked'" : ""?>>
                                 <label for="public">Public</label>
-                                <input id="private" type="radio" name="AccountType" value="private">
+                                <input id="private" type="radio" name="AccountType" value="private" <?= ($userdetail['account_type'] == "private") ? "checked='checked'" : ""?>>
                                 <label for="private">Private</label>
                             </div>
                         </div>
@@ -113,9 +123,9 @@
                             <div class="sub-title">Gender</div>
                             <div class="radio">
                                 <input type="hidden" name="gender_old" value="<?php echo $userdetail['gender']; ?>">
-                                <input id="male" type="radio" name="gender" value="male">
+                                <input id="male" type="radio" name="gender" value="male" <?= ($userdetail['gender'] == "male") ? "checked='checked'" : ""?> >
                                 <label for="male">Male</label>
-                                <input id="female" type="radio" name="gender" value="female">
+                                <input id="female" type="radio" name="gender" value="female" <?= ($userdetail['gender'] == "female") ? "checked='checked'" : ""?>>
                                 <label for="female">Female</label>
                             </div>
                         </div>
@@ -137,7 +147,7 @@
                                 <?php
                                 $months = array(1 => 'Jan.', 2 => 'Feb.', 3 => 'Mar.', 4 => 'Apr.', 5 => 'May', 6 => 'Jun.', 7 => 'Jul.', 8 => 'Aug.', 9 => 'Sep.', 10 => 'Oct.', 11 => 'Nov.', 12 => 'Dec.');
                                 foreach ($months as $key => $month) {
-                                    $s = $dd[1] == $i ? 'selected="selected"' : '';
+                                    $s = $dd[1] == $key ? 'selected="selected"' : '';
                                     echo "<option ' . $s . ' value=\"" . $key . "\">" . $month . "</option>";
                                 }
                                 ?>
@@ -259,9 +269,9 @@
 </div>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-        $('#onoffswitch').click(function () {
+        $('#onoffswitch').click(function() {
             if ($('#onoffswitch').val() == 0) {
                 $('#onoffswitch').val('1');
                 $('#onoffswitch').attr('checked');
@@ -270,7 +280,7 @@
                 $('#onoffswitch').removeAttr('checked')
             }
         });
-        $('#myonoffswitch').click(function () {
+        $('#myonoffswitch').click(function() {
             if ($('#myonoffswitch').val() == 0) {
                 $('#myonoffswitch').val('1');
                 $('#myonoffswitch').attr('checked');

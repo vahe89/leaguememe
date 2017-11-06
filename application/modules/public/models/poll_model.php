@@ -12,7 +12,7 @@ class Poll_model extends CI_Model {
         parent::__construct();
     }
 
-    function all_poll_question() {
+    function all_poll_question($row, $rowperpage) {
 
         $quy = 'SELECT  poll.*,
             bb.anime_cat,bb.anime_nm,
@@ -131,12 +131,19 @@ class Poll_model extends CI_Model {
             GROUP BY b.leaguememe_poll_id
             Order by b.leaguememe_poll_id
         ) as bb on poll.id = bb.leaguememe_poll_id
-        ORDER BY id DESC';
+        ORDER BY id DESC LIMIT ' . $row . ',' . $rowperpage;
 
         $query = $this->db->query($quy);
 //        echo $this->db->last_query();
 //        exit;
         return $query->result_array();
+    }
+
+    function get_total_row() {
+        $sql = 'SELECT  count(id) as count
+            FROM poll_data AS poll';
+        $query = $this->db->query($sql);
+        return $query->row();
     }
 
     function add_comment($ins_comment) {

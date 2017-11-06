@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <title>League Meme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/helper.css" rel="stylesheet">
+  <link href="assets/css/hack.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/css/pop-up.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+  <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <header class="popupHeader">
+      <span class="modal_close"><i class="fa fa-times"></i></span>
+    </header>
+
+    <section class="popupBody">
+      <!-- Upload -->
+      <div class="upload">
+        <h2 class="modal-title-upload mar-t-20" id="myModalLabel">Upload Post</h2>
+        <hr/>
+        <p class="grey-color-xs">Choose how you want to upload</p>
+
+        <div class="upload-top">
+          <a href="#" id="choose-image">
+            <div class="upload-image panel panel-default">
+              <div class="panel-body">
+                <img src="assets/img/upload-image.png">
+              </div>
+              <div class="panel-title">
+                <span>Choose or drag picture here</span>
+              </div>
+            </div>
+          </a>
+          <!--upload image-->
+
+          <a href="#" id="choose-discuss">
+            <div class="upload-image panel panel-default">
+              <div class="panel-body">
+                <img src="assets/img/upload-discussion.png">
+              </div>
+              <div class="panel-title">
+                <span>Choose or drag files discussion here</span>
+              </div>
+            </div>
+          </a>
+          <!--upload discussion-->
+        </div>
+        <!-- upload top -->
+
+        <div class="upload-bottom">
+          <a href="#" id="choose-link">
+            <div class="col-md-4 col-xs-12 panel panel-bottom">
+              <div class="panel-body">
+                <img src="assets/img/upload-url.png">
+              </div>
+              <div class="panel-title">
+                <span>Add link url</span>
+              </div>
+            </div>
+          </a>
+          <!-- upload link-->
+
+          <a href="#" id="choose-album">
+            <div class="col-md-4 col-xs-12 panel panel-bottom">
+              <div class="panel-body">
+                <img src="assets/img/add-album.png">
+              </div>
+              <div class="panel-title">
+                <span>Add Album</span>
+              </div>
+            </div>
+          </a>
+          <!-- upload link-->
+
+          <a href="#" id="choose-rating">
+            <div class="col-md-4 col-xs-12 panel panel-bottom" style="margin-right: 0px !important;">
+              <div class="panel-body">
+                <img src="assets/img/rating.png">
+              </div>
+              <div class="panel-title">
+                <span>Make a poll</span>
+              </div>
+            </div>
+          </a>
+          <!-- upload link-->
+        </div>
+      </div>
+
+      <!-- image-upload -->
+      <div class="image-upload">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload mar-t-20" id="myModalLabel">Give your post a Title</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">An accurate, discriptive title can help people discover your post</p>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <a href="">
+                  <div class="img-panel">
+                    <img src="assets/img/luffy.png">
+                  </div>
+                </a>
+                <input type="text" placeholder="Give a title here..." class="title-img-upload">
+              </div>
+              <div class="panel-content">
+                <div class="col-md-12 no-padding">
+                  <textarea placeholder="Describe your post with tags!" class="txt-area-tags"></textarea>
+                </div>
+                <div class="hastag-view-upload">
+                  <a class="btn btn-grey" href="#" role="button">#Anime <i class="fa fa-close"></i></a>
+                  <a class="btn btn-grey" href="#" role="button">#onepiece <i class="fa fa-close"></i></a>
+                </div>
+              </div>
+              <div class="pull-right count-right">
+                <span>139</span>
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+
+          <div class="wrap-filter-post">
+            This Post Not safe For Work
+            <input type="checkbox" name="option" id="check1" checked/>
+            <label for="check1">
+              <span class="fa-stack">
+                  <i class="fa fa-square-o fa-stack-1x"></i>
+                  <i class="fa fa-check fa-stack-1x"></i>
+                </span>
+            </label>
+          </div>
+          <div class="wrap-filter-post">
+            Credit the author
+            <input type="checkbox" name="option" id="check2" value="credit" checked/>
+            <label for="check2">
+              <span class="fa-stack">
+                  <i class="fa fa-square-o fa-stack-1x"></i>
+                  <i class="fa fa-check fa-stack-1x"></i>
+                </span>
+            </label>
+          </div>
+
+          <div class="credit">
+            <div class="socmed-credit">
+              <img src="assets/img/fb-credit.png">
+              <img src="assets/img/tt-credit.png">
+              <img src="assets/img/ig-credit.png">
+            </div>
+            <div class="name-author">
+              <input type="text" placeholder="Name of Creditor">
+              <input type="text" placeholder="http://">
+            </div>
+            <div class="name-author">
+              <input type="text" placeholder="Name of Creditor">
+              <input type="text" placeholder="http://">
+            </div>
+          </div>
+
+          <div class="col-md-12 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-image">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-image">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Discussion Upload -->
+      <div class="discuss-upload">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload mar-t-20" id="myModalLabel">Give your post a Title</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">An accurate, discriptive title can help people discover your post</p>
+
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Give Title Here..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <textarea placeholder="Describe your post" class="title-discuss-upload"></textarea>
+                <span class="pull-right char-length-area">239</span>
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+
+          <div class="wrap-filter-post">
+            spoiler instead
+            <input type="checkbox" name="option" id="check3" checked/>
+            <label for="check3">
+              <span class="fa-stack">
+                  <i class="fa fa-square-o fa-stack-1x"></i>
+                  <i class="fa fa-check fa-stack-1x"></i>
+                </span>
+            </label>
+          </div>
+
+          <div class="col-md-12 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-discuss">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-discuss">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link URL Upload -->
+      <div class="link-upload">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Upload from URL</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Make sure to input your URL</p>
+
+          <div class="caption-input-url">Type or paste the URL</div>
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Http://" class="title-discuss-input">
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+
+          <div class="col-md-12 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-link">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-link">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Album Upload -->
+      <div class="album-upload">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Give your post a Title</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">An accurate, discriptive title can help people discover your post</p>
+
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Give a Title Here..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <a href="">
+                  <div class="img-panel">
+                    <img src="assets/img/luffy.png">
+                  </div>
+                </a>
+                <textarea placeholder="Give a title here..." class="text-album"></textarea>
+                <span class="pull-right count-right">500</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <textarea placeholder="Describe your post" class="title-polling-upload"></textarea>
+                <span class="pull-right char-length-polling">239</span>
+              </div>
+            </div>
+          </div>
+<!--
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <a href="">
+                  <div class="img-panel">
+                    <img src="assets/img/luffy.png">
+                  </div>
+                </a>
+                <textarea placeholder="Give a title here..." class="text-album"></textarea>
+                <span class="pull-right count-right">500</span>
+              </div>
+            </div>
+          </div>
+-->
+
+<!--
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-content">
+                <div class="col-md-12 no-padding">
+                  <textarea placeholder="Describe your post with tags!" class="txt-area-tags"></textarea>
+                </div>
+                <div class="hastag-view">
+                  <a class="btn btn-grey" href="#" role="button">#Anime <i class="fa fa-close"></i></a>
+                  <a class="btn btn-grey" href="#" role="button">#onepiece <i class="fa fa-close"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+-->
+         
+          
+<!--
+          <div class="wrap-filter-post">
+            spoiler instead
+            <input type="checkbox" name="option" id="check3" checked/>
+            <label for="check3">
+              <span class="fa-stack">
+                <i class="fa fa-square-o fa-stack-1x"></i>
+                <i class="fa fa-check fa-stack-1x"></i>
+              </span>
+            </label>
+          </div>
+-->
+          <div class="col-md-12 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-album">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-album">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating upload -->
+      <div class="rating-upload">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Give your post a Title</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">An accurate, discriptive title can help people discover your post</p>
+
+          <div class="panel panel-default mar-b-10">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Type your question..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default mar-b-10">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Enter poll option..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default mar-b-20">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Give a Title Here..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default mar-b-20">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <input type="text" placeholder="Give a Title Here..." class="title-discuss-input">
+                <span class="pull-right char-length">150</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wrap-filter-post no-padding mar-b-20">
+            <a href="#"><i class="fa fa-plus-circle" style="color: #17ae97; margin-right: 10px;"></i>Add another one</a>
+          </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-body-discuss panel-body">
+              <div class="panel-content col-md-12 no-padding">
+                <textarea placeholder="Describe your post" class="title-polling-upload"></textarea>
+                <span class="pull-right char-length-polling">239</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-rating">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-rating">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- upload category1 -->
+      <div class="upload-category-image">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick A Section</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="genre">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/funny.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Picture</span>
+                      <p>e.g lol, joke, prank, fail</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="funny" type="radio" name="AccountType" value="category">
+                      <label for="funny" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/1449833420.8507_ePysAs_n.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Gif</span>
+                      <p>e.g eww, dafuq, OMG</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="wtf" type="radio" name="AccountType" value="category">
+                      <label for="wtf" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/geeky.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Art</span>
+                      <p>e.g GTAV, One Piece,</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="geek" type="radio" name="AccountType" value="category">
+                      <label for="geek" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-category-image">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-category-image">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- upload category -->
+      <div class="upload-category-discuss">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick A Section</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="genre">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/funny.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Picture</span>
+                      <p>e.g lol, joke, prank, fail</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="funny-discuss" type="radio" name="AccountType" value="category">
+                      <label for="funny-discuss" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/1449833420.8507_ePysAs_n.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Gif</span>
+                      <p>e.g eww, dafuq, OMG</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="wtf-discuss" type="radio" name="AccountType" value="category">
+                      <label for="wtf-discuss" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/geeky.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Art</span>
+                      <p>e.g GTAV, One Piece</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="geek-discuss" type="radio" name="AccountType" value="category">
+                      <label for="geek-discuss" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-category-discuss">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-category-discuss">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- upload category -->
+      <div class="upload-category-link">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick A Section</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="genre">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/funny.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Picture</span>
+                      <p>e.g lol, joke, prank, fail</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="funny-link" type="radio" name="AccountType" value="category">
+                      <label for="funny-link" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/1449833420.8507_ePysAs_n.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Gif</span>
+                      <p>e.g eww, dafuq, OMG</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="wtf-link" type="radio" name="AccountType" value="category">
+                      <label for="wtf-link" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/geeky.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Art</span>
+                      <p>e.g GTAV, One Piece</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="geek-link" type="radio" name="AccountType" value="category">
+                      <label for="geek-link" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-category-link">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-category-link">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- upload category -->
+      <div class="upload-category-album">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick A Section</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="genre">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/funny.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Picture</span>
+                      <p>e.g lol, joke, prank, fail</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="funny-album" type="radio" name="AccountType" value="category">
+                      <label for="funny-album" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/1449833420.8507_ePysAs_n.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Gif</span>
+                      <p>e.g eww, dafuq, OMG</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="wtf-album" type="radio" name="AccountType" value="category">
+                      <label for="wtf-album" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/geeky.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Art</span>
+                      <p>e.g GTAV, One Piece</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="geek-album" type="radio" name="AccountType" value="category">
+                      <label for="geek-album" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-category-album">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-category-album">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- upload category -->
+      <div class="upload-category-rating">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick A Section</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="genre">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/funny.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Picture</span>
+                      <p>e.g lol, joke, prank, fail</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="funny-rating" type="radio" name="AccountType" value="category">
+                      <label for="funny-rating" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/1449833420.8507_ePysAs_n.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Gif</span>
+                      <p>e.g eww, dafuq, OMG</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="wtf-rating" type="radio" name="AccountType" value="category">
+                      <label for="wtf-rating" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/geeky.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>Art</span>
+                      <p>e.g GTAV, One Piece</p>
+                    </div>
+                    <div class="radio radio-category">
+                      <input id="geek-rating" type="radio" name="AccountType" value="category">
+                      <label for="geek-rating" style="margin-right:0px;"></label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right" id="next-category-rating">Next</a>
+            <a href="#" class="btn btn-back pull-right" id="back-category-rating">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Category -->
+      <div class="anime-category-image">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick An Anime</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="col-md-12 search-category no-padding"> <i class="fa fa-search"></i>
+            <input type="input" class="form-control" name="find-anime" placeholder="Find your anime" />
+          </div>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="anime">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime1" checked/>
+                      <label for="anime1">
+                        <span class="fa-stack">
+                          <i class="fa fa-square-o fa-stack-1x"></i>
+                          <i class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/hxhlogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime2" />
+                      <label for="anime2">
+                        <span class="fa-stack">
+                          <i class="fa fa-square-o fa-stack-1x"></i>
+                          <i class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/SAOlogo.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime3" checked/>
+                      <label for="anime3">
+                        <span class="fa-stack">
+                          <i class="fa fa-square-o fa-stack-1x"></i>
+                          <i class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime4" />
+                      <label for="anime4">
+                        <span class="fa-stack">
+                          <i class="fa fa-square-o fa-stack-1x"></i>
+                          <i class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right modal_close">Save</a>
+            <a href="#" class="btn btn-back pull-right" id="back-anime-image">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Category -->
+      <div class="anime-category-discuss">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick An Anime</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="col-md-12 search-category no-padding"> <i class="fa fa-search"></i>
+            <input type="input" class="form-control" name="find-anime" placeholder="Find your anime" />
+          </div>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="anime">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime1-discuss" checked/>
+                      <label for="anime1-discuss">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/hxhlogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime2-discuss" />
+                      <label for="anime2-discuss">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/SAOlogo.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime3-discuss" checked/>
+                      <label for="anime3-discuss">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime4-discuss" />
+                      <label for="anime4-discuss">
+                        <span class="fa-stack">
+                          <i class="fa fa-square-o fa-stack-1x"></i>
+                          <i class="fa fa-check fa-stack-1x"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right modal_close">Save</a>
+            <a href="#" class="btn btn-back pull-right" id="back-anime-discuss">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Category -->
+      <div class="anime-category-link">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick An Anime</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="col-md-12 search-category no-padding"> <i class="fa fa-search"></i>
+            <input type="input" class="form-control" name="find-anime" placeholder="Find your anime" />
+          </div>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="anime">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime1-link" checked/>
+                      <label for="anime1-link">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/hxhlogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime2-link" />
+                      <label for="anime2-link">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/SAOlogo.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime3-link" checked/>
+                      <label for="anime3-link">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime4-link" />
+                      <label for="anime4-link">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right modal_close">Save</a>
+            <a href="#" class="btn btn-back pull-right" id="back-anime-link">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Category -->
+      <div class="anime-category-album">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick An Anime</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="col-md-12 search-category no-padding"> <i class="fa fa-search"></i>
+            <input type="input" class="form-control" name="find-anime" placeholder="Find your anime" />
+          </div>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="anime">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime1-album" checked/>
+                      <label for="anime1-album">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/hxhlogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime2-album" />
+                      <label for="anime2-album">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/SAOlogo.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime3-album" checked/>
+                      <label for="anime3-album">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime4-album" />
+                      <label for="anime4-album">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right modal_close">Save</a>
+            <a href="#" class="btn btn-back pull-right" id="back-anime-album">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anime Category -->
+      <div class="anime-category-rating">
+        <div class="modal-header bor-none">
+          <h2 class="modal-title-upload" id="myModalLabel">Pick An Anime</h2>
+          <hr/>
+          <p class="grey-color-xs img-subtitle">Submitting to the right section to make sure your post gets the right exposure it deserves!</p>
+          <div class="col-md-12 search-category no-padding"> <i class="fa fa-search"></i>
+            <input type="input" class="form-control" name="find-anime" placeholder="Find your anime" />
+          </div>
+          <div class="panel col-md-12 panel-default no-padding">
+            <div class="panel-body-discuss panel-body" style="max-height: 300px; overflow-y: scroll;">
+              <div class="panel-content col-md-12 no-padding">
+                <ul class="anime">
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime1-rating" checked/>
+                      <label for="anime1-rating">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/hxhlogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime2-rating" />
+                      <label for="anime2-rating">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/SAOlogo.jpg">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime3-rating" checked/>
+                      <label for="anime3-rating">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="img-filter">
+                      <img src="assets/img/onepiecelogo.png">
+                    </div>
+                    <div class="sec-description">
+                      <span>One Piece</span>
+                    </div>
+                    <div class="wrap-filter-post anime-check">
+                      <input type="checkbox" name="option" id="anime4-rating" />
+                      <label for="anime4-rating">
+                        <span class="fa-stack">
+                              <i class="fa fa-square-o fa-stack-1x"></i>
+                              <i class="fa fa-check fa-stack-1x"></i>
+                          </span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <!--end panel --->
+          <div class="col-md-12 mar-t-20 wrap-btn-step">
+            <a href="#" class="btn btn-green pull-right modal_close">Save</a>
+            <a href="#" class="btn btn-back pull-right" id="back-anime-rating">Back</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Static navbar -->
+  <nav class="navbar navbar-chocolate navbar-static-top navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="noti_Container_res">
+          <div id="noti_Counter_res"></div>
+          <!--SHOW NOTIFICATIONS COUNT.-->
+
+          <div id="noti_Button_res">
+            <a href="#">
+              <span class="fa fa-bell-o" aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+          <div id="notifications_res">
+            <h3 class="notif-title">Notifications</h3>
+            <div style="height:auto;">
+              <div class="notif-fill">
+                <div class="ava-notif">
+                  <img src="assets/img/luffy.png">
+                </div>
+
+                <div class="middle-section">
+                  <div class="username-notif">
+                    <span>Monkey D'luffy</span>
+                    <span>Upvote your post.</span>
+                    <div class="date-notif">
+                      23 Days ago
+                    </div>
+                  </div>
+                </div>
+
+                <div class="post-notif">
+                  <img src="assets/img/cute.jpg">
+                </div>
+              </div>
+
+              <div class="notif-fill">
+                <div class="ava-notif">
+                  <img src="assets/img/luffy.png">
+                </div>
+
+                <div class="middle-section">
+                  <div class="username-notif">
+                    <span>Monkey D'luffy</span>
+                    <span>Upvote your post.</span>
+                    <div class="date-notif">
+                      23 Days ago
+                    </div>
+                  </div>
+                </div>
+
+                <div class="post-notif">
+                  <img src="assets/img/cute.jpg">
+                </div>
+              </div>
+
+              <div class="notif-fill">
+                <div class="ava-notif">
+                  <img src="assets/img/luffy.png">
+                </div>
+
+                <div class="middle-section">
+                  <div class="username-notif">
+                    <span>Monkey D'luffy</span>
+                    <span>Upvote your post.</span>
+                    <div class="date-notif">
+                      23 Days ago
+                    </div>
+                  </div>
+                </div>
+
+                <div class="post-notif">
+                  <img src="assets/img/cute.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="btn btn-see-all seeAll"><a href="notif.html">See All</a></div>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo-simple.png" alt="logo" />
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav menu">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discussion<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="res-caption-nav" href="#">Action</a></li>
+              <li><a class="res-caption-nav" href="#">Another action</a></li>
+              <li><a class="res-caption-nav" href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header separator-nav">Nav header</li>
+              <li><a class="res-caption-nav" href="#">Separated link</a></li>
+              <li><a class="res-caption-nav" href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="third-page.html">Anime</a></li>
+          <li><a href="#contact">News</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right menu">
+          <li class="hide-search-res">
+            <a href="#" data-toggle="collapse" data-target="#search-collapse">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="search-res">
+            <input type="text" class="search-query mac-style" placeholder="Search">
+            <button type="submit" class="btn btn-search-res"><i class="glyphicon glyphicon-search"></i></button>
+          </li>
+
+          <li id="noti_Container">
+            <div id="noti_Counter"></div>
+            <!--SHOW NOTIFICATIONS COUNT.-->
+
+            <div id="noti_Button">
+              <a href="#">
+                <span class="fa fa-bell-o" aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+            <div id="notifications">
+              <a href="notif.html">Hello</a>
+              <h3 class="notif-title">Notifications</h3>
+              <div style="height:auto;">
+                <div class="notif-fill">
+                  <div class="ava-notif">
+                    <img src="assets/img/luffy.png">
+                  </div>
+
+                  <div class="middle-section">
+                    <div class="username-notif">
+                      <span>Monkey D'luffy</span>
+                      <span>Upvote your post.</span>
+                      <div class="date-notif">
+                        23 Days ago
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="post-notif">
+                    <img src="assets/img/cute.jpg">
+                  </div>
+                </div>
+
+                <div class="notif-fill">
+                  <div class="ava-notif">
+                    <img src="assets/img/luffy.png">
+                  </div>
+
+                  <div class="middle-section">
+                    <div class="username-notif">
+                      <span>Monkey D'luffy</span>
+                      <span>Upvote your post.</span>
+                      <div class="date-notif">
+                        23 Days ago
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="post-notif">
+                    <img src="assets/img/cute.jpg">
+                  </div>
+                </div>
+
+                <div class="notif-fill">
+                  <div class="ava-notif">
+                    <img src="assets/img/luffy.png">
+                  </div>
+
+                  <div class="middle-section">
+                    <div class="username-notif">
+                      <span>Monkey D'luffy</span>
+                      <span>Upvote your post.</span>
+                      <div class="date-notif">
+                        23 Days ago
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="post-notif">
+                    <img src="assets/img/cute.jpg">
+                  </div>
+                </div>
+              </div>
+              <div class="btn btn-see-all seeAll"><a href="notif.html">See All</a></div>
+            </div>
+          </li>
+
+          <li class="active">
+            <a href="profile.html" style="padding-top: 4px; padding-bottom: 2px; margin-bottom: 30px;">
+              <div class="profile-picture-nav">
+                <img src="assets/img/luffy.png"> &nbsp;
+              </div>
+              <div class="res-username">Dian Khisma Wijaya</div>
+            </a>
+          </li>
+          <li class="upload-triger">
+            <a id="modal_trigger" href="#modal" class="btn btn-green">Upload</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  
+  <!-- Search box -->
+  <div id="search-collapse" class="collapse" style="position: absolute; right: 213px;">
+    <div class="container no-padding">
+      <div class="input-group pull-right w-form-search">
+        <input type="text" class="form-control" name="test" placeholder="Search for snippets and hit enter" style="height: 40px;">
+      </div>
+    </div>
+  </div>
+  <!-- Search Box -->
+
+  <!-- Background Cover -->
+  <div class="background-cover">
+    <div class="overlay-cover overlay-other"></div>
+    <div class="bottom-cover bottom-cover-other"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">  
+          <ul class="text-center list-unstyled list-place-other row">
+            <li class="list-followers">
+              <a href="#">
+                <h5>FOLLLOWING</h5>
+                <h2>4.500</h2>
+              </a>
+            </li>
+            <li class="list-followers">
+              <a href="#">
+                <h5>FOLLOWERS</h5>
+                <h2>1.278</h2>
+              </a>
+            </li>
+            <li class="list-followers">
+              <a href="#">
+                <h5>POST COUNT</h5>
+                <h2>990</h2>
+              </a>
+            </li>
+            <li class="right-button">
+              
+              <button class="btn btn-dropdown btn-others dropdown-toggle" id="others-profile" type="button" data-toggle="dropdown">
+                <i class="fa fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu edit-cover-nores" role="menu" aria-labelledby="edit-cover">
+                <li><a href="#"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Change cover photo</a></li>
+                <li><a href="#"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Change profile picture</a></li>
+              </ul>
+            </li>
+            <li class="others-btn-res">
+              <button class="btn btn-dropdown btn-others dropdown-toggle" id="others-profile" type="button" data-toggle="dropdown">
+                <i class="fa fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu menu-others-btn" role="menu" aria-labelledby="others-profile">
+                <li><a href="#"><i class="fa fa-picture-o"></i>Change cover photo</a></li>
+                <li><a href="#"><i class="fa fa-picture-o"></i>Change profile picture</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>Message</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div>
+        <!-- end col-md-12 -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end background-cover -->
+
+  <div class="col-md-12 tab-top no-padding">
+    <div class="container">
+      <div class="row">
+        <div class="draggable-container">
+          <ul class="nav nav-tabs draggable draggable-center" role="tablist">
+            <li role="presentation" class="active"><a href="#moment" aria-controls="home" role="tab" data-toggle="tab">Anime Moment</a></li>
+            <li role="presentation"><a href="#other" aria-controls="profile" role="tab" data-toggle="tab">Other Tab</a></li>
+          </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="moment">
+            <div class="non-res">
+              <div class="left-panel-sec white-bg">
+
+                <div class="wrap-panel" style="border-top: 0px;">
+                  <div class="title">
+                    <p>NEWS</p>
+                  </div>
+                  <div class="content-panel">
+                    <ul class="list-unstyled">
+                      <li><a href="">LINK 1</a>
+                      </li>
+                      <li><a href="">LINK 2</a>
+                      </li>
+                      <li><a href="">LINK 3</a>
+                      </li>
+                      <li><a href="">LINK 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- end wrap-panel-->
+
+                <div class="wrap-panel uns-list">
+                  <div class="title">
+                    <p>RECENT DISCUSSION</p>
+                  </div>
+                  <div class="content-panel">
+                    <ul class="list-unstyled">
+                      <li><a href="">ONE PIECE</a>
+                      </li>
+                      <li><a href="">NARUTO</a>
+                      </li>
+                      <li><a href="">DORAEMON</a>
+                      </li>
+                      <li><a href="">BLEACH</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- end wrap-panel-->
+
+                <div class="wrap-panel uns-list">
+                  <div class="title">
+                    <p>LIKES</p>
+                  </div>
+                  <div class="content-panel">
+                    <ul class="list-unstyled">
+                      <li><a href="">ONE PIECE</a>
+                      </li>
+                      <li><a href="">NARUTO</a>
+                      </li>
+                      <li><a href="">DORAEMON</a>
+                      </li>
+                      <li><a href="">BLEACH</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- end wrap-panel-->
+
+                <div class="wrap-panel uns-list">
+                  <div class="title">
+                    <p>GROUP</p>
+                  </div>
+                  <div class="content-panel">
+                    <ul class="list-unstyled">
+                      <li><a href="">ONE PIECE</a>
+                      </li>
+                      <li><a href="">NARUTO</a>
+                      </li>
+                      <li><a href="">DORAEMON</a>
+                      </li>
+                      <li><a href="">BLEACH</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- end wrap-panel-->
+              </div>
+
+              <div class="right-panel-sec">
+                <div class="row">
+                  <div class="col-md-7 main-content">
+
+                    <!-- tab -->
+                    <div class="col-md-8 no-padding">
+                      <ul id="pop" class="nav pop-tabs" role="tablist" style="margin-top:10px;">
+                        <li role="presentation" class="active">
+                          <a href="#popular" role="tab" data-toggle="tab" aria-controls="popular" aria-expanded="true">Popular</a>
+                        </li>
+                        <li role="presentation" class="mar-lm-5">
+                          <a href="#news" role="tab" data-toggle="tab" aria-controls="news">News</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="trolls" style="margin-top: 20px;">
+                        <a href="#" class="btn dropdown-toggle" id="allThings" type="button" data-toggle="dropdown">
+                          <span class="linky">All The Things</span>
+                          <span>&nbsp;&nbsp;&nbsp;<img src="assets/img/icon/post/dropdown.png"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="allThings">
+                          <li><a href="#">Art</a></li>
+                          <li><a href="#">Gif</a></li>
+                          <li><a href="#">Manga</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  <div id="popContent" class="tab-content">
+                    <!-- popular-->
+                    <div role="tabpanel" class="tab-pane fade in active" id="popular">
+                      <div classs="row">
+
+                        <div class="col-md-12">
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>Dementor</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit1" onClick="javascript:changeText(1)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/fb-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit2" onClick="javascript:changeText(2)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/tt-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag tag-index">
+                                  <span id="credit3" onClick="javascript:changeText(3)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/ig-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit4" onClick="javascript:changeText(4)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/fb-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                        </div>
+                        <!--end col-md-12-->
+
+                      </div>
+                    </div>
+
+                    <!-- news -->
+                    <div role="tabpanel" class="tab-pane" id="news">
+                      <p>
+                        Hello World!
+                      </p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="col-md-5 col-sm-12 ads">
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/asasa.png" alt="ads" class="img-responsive" />
+                    </a>
+                  </div>
+                  <!--bannner-->
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/idea.png" alt="banner" class="img-responsive" />
+                      <h4>Nice Guys</h4>
+                    </a>
+                  </div>
+                  <!--bannner-->
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/banner2.png" alt="banner" class="img-responsive" />
+                      <h4>What is she</h4>
+                    </a>
+                  </div>
+
+                  <!-- social -->
+                  <div class="social-network">
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-facebook"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">50K</p>
+                      </li>
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-twitter"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">1K</p>
+                      </li>
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-instagram"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">30K</p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="link-bottom">
+                    <ul class="list-unstyled">
+                      <li><a href="#">Advertise</a>
+                      </li>
+                      <li><a href="#">Contacts</a>
+                      </li>
+                      <li><a href="#">Privacy</a>
+                      </li>
+                      <li><a href="">Terms</a>
+                      </li>
+                    </ul>
+                    <p class="text-center copyright">Copyright © All Rights Reserved</p>
+                  </div>
+
+                </div>
+                <!--end ads-->
+              </div>
+            </div>
+          </div>
+            <div class="res">
+              <div class="col-xs-12 main-content-res">
+                <a href="#" class="btn btn-more-detail" onclick="toggler('index1');"> More info </a>
+                <div id="index1" class="left-panel-sec white-bg left-panel-hide">
+                  <div class="wrap-panel" style="border-top: 0px;">
+                    <div class="title">
+                      <p>NEWS</p>
+                    </div>
+                    <div class="content-panel">
+                      <ul class="list-unstyled">
+                        <li><a href="">LINK 1</a>
+                        </li>
+                        <li><a href="">LINK 2</a>
+                        </li>
+                        <li><a href="">LINK 3</a>
+                        </li>
+                        <li><a href="">LINK 4</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end wrap-panel-->
+
+                  <div class="wrap-panel uns-list">
+                    <div class="title">
+                      <p>RECENT DISCUSSION</p>
+                    </div>
+                    <div class="content-panel">
+                      <ul class="list-unstyled">
+                        <li><a href="">ONE PIECE</a>
+                        </li>
+                        <li><a href="">NARUTO</a>
+                        </li>
+                        <li><a href="">DORAEMON</a>
+                        </li>
+                        <li><a href="">BLEACH</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end wrap-panel-->
+
+                  <div class="wrap-panel uns-list">
+                    <div class="title">
+                      <p>LIKES</p>
+                    </div>
+                    <div class="content-panel">
+                      <ul class="list-unstyled">
+                        <li><a href="">ONE PIECE</a>
+                        </li>
+                        <li><a href="">NARUTO</a>
+                        </li>
+                        <li><a href="">DORAEMON</a>
+                        </li>
+                        <li><a href="">BLEACH</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end wrap-panel-->
+
+                  <div class="wrap-panel uns-list" style="border-bottom: 1px solid #e1e1e1;">
+                    <div class="title">
+                      <p>GROUP</p>
+                    </div>
+                    <div class="content-panel">
+                      <ul class="list-unstyled">
+                        <li><a href="">ONE PIECE</a>
+                        </li>
+                        <li><a href="">NARUTO</a>
+                        </li>
+                        <li><a href="">DORAEMON</a>
+                        </li>
+                        <li><a href="">BLEACH</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end wrap-panel-->
+                </div>
+                <div class="col-sm-12 main-content">
+
+                  <div class="col-md-8 no-padding">
+                    <ul id="pop" class="nav pop-tabs" role="tablist" style="margin-top:10px;">
+                      <li role="presentation" class="active">
+                        <a href="#popular" role="tab" data-toggle="tab" aria-controls="popular" aria-expanded="true">Popular</a>
+                      </li>
+                      <li role="presentation" class="mar-lm-5">
+                        <a href="#news" role="tab" data-toggle="tab" aria-controls="news">News</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="trolls" style="margin-top: 20px;">
+                      <a href="#" class="btn dropdown-toggle" id="allThings" type="button" data-toggle="dropdown">
+                        <span class="linky">All The Things</span>
+                        <span>&nbsp;&nbsp;&nbsp;<img src="assets/img/icon/post/dropdown.png"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="allThings">
+                        <li><a href="#">Art</a></li>
+                        <li><a href="#">Gif</a></li>
+                        <li><a href="#">Manga</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div id="popContent" class="tab-content" style="display: inline-block;">
+                    <!-- popular-->
+                    <div role="tabpanel" class="tab-pane fade in active" id="popular-res">
+                      <div classs="row">
+
+                        <div class="col-md-12 wrap-main">
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>Dementor</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit5" onClick="javascript:changeText(5)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/fb-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit6" onClick="javascript:changeText(6)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/tt-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag tag-index">
+                                  <span id="credit7" onClick="javascript:changeText(7)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/ig-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                          <!--wrapper avatar-->
+                          <div class="wrapper-avatar">
+                            <div class="media info-avatar">
+                              <div class="media-left">
+                                <a href="Profile.html">
+                                  <img class="media-object avatar" src="assets/img/admin.png" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body w-2000">
+                                <a href="profile.html"><h5>ADMIN</h5></a>
+                                <span class="minute">15min ago to <a href="" class="minute">/a/onepiece</a></span>
+                                <div class="tag   tag-index">
+                                  <span id="credit8" onClick="javascript:changeText(8)" class="normal-tag">Credit</span>
+                                  <a href="" class="fb-1">
+                                    <img src="assets/img/fb-credit.png">
+                                  </a>
+                                </div>
+                              </div>
+                              <!--<div class="media-body">
+                                      <span><img src="assets/img/icon/post/click.png"></span>&nbsp;&nbsp;
+                                      <a href=""><span class="linky">One Piece</span></a>
+                                    </div>-->
+                            </div>
+                            <h3><a href="">Rest and Peace ACE !</a></h3>
+                            <a href="view-post.html"><img src="assets/img/img-1.png" alt="ace" class="img-responsive meme-big" />
+                            </a>
+
+                            <!--like-->
+                            <div class="link-comment">
+                              <a href="#">20 Likes</a> &nbsp; - &nbsp;
+                              <a href="#">1 Comments</a>
+                            </div>
+
+                            <div class="shares">
+                              <!-- update -->
+                              <div class="link-icon pull-left">
+                                <ul class="list-unstyled left-link">
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/up.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/down.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/comment.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/open.png">
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="" class="hvr-bounce-in">
+                                      <img src="assets/img/icon/post/link.png">
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- social -->
+                              <div class="pull-right social-btn">
+                                <a href="" class="fb-bg medium-btn mar-r-5">
+                                  <i class="fa fa-facebook"></i> share
+                                </a>
+                                <a href="" class="tw-bg medium-btn">
+                                  <i class="fa fa-twitter"></i> share
+                                </a>
+                              </div>
+                            </div>
+                            <!-- end shares-->
+
+                            <div class="clearfix"></div>
+                            <div class="hastag">
+                              <a class="btn btn-grey" href="#" role="button">#Anime</a>
+                              <a class="btn btn-grey" href="#" role="button">#onepiece</a>
+                            </div>
+                          </div>
+                          <!-- wrapper avatar -->
+
+                        </div>
+                        <!--end col-md-12-->
+
+                      </div>
+                    </div>
+
+                    <!-- news -->
+                    <div role="tabpanel" class="tab-pane" id="news-res">
+                      <p>
+                        Hello World!
+                      </p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="col-sm-12 ads-index">
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/asasa.png" alt="ads" class="img-responsive" />
+                    </a>
+                  </div>
+                  <!--bannner-->
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/idea.png" alt="banner" class="img-responsive" />
+                      <h4>Nice Guys</h4>
+                    </a>
+                  </div>
+                  <!--bannner-->
+                  <div class="banner">
+                    <a href="#" target="_self">
+                      <img src="assets/img/banner2.png" alt="banner" class="img-responsive" />
+                      <h4>What is she</h4>
+                    </a>
+                  </div>
+
+                  <!-- social -->
+                  <div class="social-network">
+                    <ul class="list-unstyled ul-social">
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-facebook"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">50K</p>
+                      </li>
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-twitter"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">1K</p>
+                      </li>
+                      <li>
+                        <a href="#" target="_self">
+                          <div class="link"><i class="fa fa-instagram"></i>
+                          </div>
+                        </a>
+                        <p class="text-con">30K</p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="link-bottom">
+                    <ul class="list-unstyled">
+                      <li><a href="#">Advertise</a>
+                      </li>
+                      <li><a href="#">Contacts</a>
+                      </li>
+                      <li><a href="#">Privacy</a>
+                      </li>
+                      <li><a href="">Terms</a>
+                      </li>
+                    </ul>
+                    <p class="text-center copyright">Copyright © All Rights Reserved</p>
+                  </div>
+
+                </div>
+                <!--end ads-->
+              </div>
+          </div>
+        </div>
+        <!--end tab panel -->
+
+        <div role="tabpanel" class="tab-pane" id="other">
+          <div class="h-600">testt tab</div>
+        </div>
+
+
+      </div>
+      <!-- tab content -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+  </div>
+  <!-- end col-md-12 -->
+
+
+  <!-- Bootstrap core JavaScript
+      ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="assets/js/autosize.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/trigger.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.leanModal.min.js"></script>
+  <script src="assets/js/pop-up.js"></script>
+
+  <script>
+    autosize(document.querySelectorAll('textarea'));
+    $('#myTabs a').click(function(e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+
+    $('#pop a').click(function(e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+
+    $(document).ready(function() {
+      $('input[type="checkbox"]').click(function() {
+        if ($(this).attr("value") == "credit") {
+          $(".credit").toggle();
+        }
+      });
+    });
+
+    function changeText(idElement) {
+      if ($('#credit' + idElement).text() === 'Credit') {
+        $('#credit' + idElement).parent().children().eq(1).removeClass('fb-1');
+        $('#credit' + idElement).parent().children().eq(1).addClass('show-social');
+        $('#credit' + idElement).text('Dian Khisma wijaya');
+      } else {
+        $('#credit' + idElement).parent().children().eq(1).removeClass('show-social');
+        $('#credit' + idElement).parent().children().eq(1).addClass('fb-1');
+        $('#credit' + idElement).text('Credit');
+      }
+    }
+  </script>
+
+  <script>
+    // calculate and set .draggable width
+
+    $.fn.draggable_nav_calc = function(options) {
+      return this.each(function(i) {
+        var $element = $(this);
+        if ($element.is(":visible")) {
+          // x or y
+          if (options.axis === "x") {
+            // calculate
+            var navWidth = 1;
+            $element.find("> *").each(function(i) {
+              navWidth += $(this).outerWidth(true);
+            });
+            // set width
+            var parentWidth = $element.parent().width();
+            if (navWidth > parentWidth) {
+              $element.css("width", navWidth);
+            } else {
+              $element.css("width", parentWidth);
+            }
+          } else if (options.axis === "y") {
+            // calculate
+            var navHeight = 1;
+            $element.find("> *").each(function(i) {
+              navHeight += $(this).outerHeight(true);
+            });
+            // set height
+            var parentHeight = $element.parent().width();
+            if (navHeight > parentHeight) {
+              $element.css("height", navHeight);
+            } else {
+              $element.css("height", parentHeight);
+            }
+          }
+        }
+      });
+    };
+
+    // check inside bounds
+
+    $.fn.draggable_nav_check = function() {
+      return this.each(function(i) {
+        var $element = $(this);
+        // calculate
+        var w = $element.width();
+        var pw = $element.parent().width();
+        var maxPosLeft = 0;
+        if (w > pw) {
+          maxPosLeft = -(w - pw);
+        }
+        var h = $element.height();
+        var ph = $element.parent().height();
+        var maxPosTop = 0;
+        if (h > ph) {
+          maxPosTop = h - ph;
+        }
+        // horizontal
+        var left = parseInt($element[0].style.left);
+        if (left > 0) {
+          $element.css("left", 0);
+        } else if (left < maxPosLeft) {
+          $element.css("left", maxPosLeft);
+        }
+        // vertical
+        var top = parseInt($element[0].style.top);
+        if (top > 0) {
+          $element.css("top", 0);
+        } else if (top < maxPosTop) {
+          $element.css("top", maxPosTop);
+        }
+      });
+    };
+
+    // init draggable nav
+
+    $.fn.draggable_nav = function(options) {
+      return this.each(function(i) {
+        var $element = $(this);
+        // calculate first time, after delay to fix resize bugs
+        window.setTimeout(function(e) {
+          $element.draggable_nav_calc(options);
+        }, 100);
+        // on shown tabs recalculate
+        $element.find('[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+          $element.draggable_nav_calc(options);
+        });
+        // on resize recalculate
+        function draggable_nav_resize_after() {
+          clearTimeout($element.data("draggable_nav_timeout"));
+          var timeout = window.setTimeout(function(e) {
+            $element.draggable_nav_calc(options);
+            $element.draggable_nav_check();
+          }, 0);
+          $element.data("draggable_nav_timeout", timeout);
+        }
+        $(window).on('resize', draggable_nav_resize_after);
+        $(window).on('scroll', draggable_nav_resize_after);
+        // center clicked element
+        if ($element.hasClass("draggable-center")) {
+          $element.find('li a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+            var $container = $(this).parents(".draggable-container");
+            var $li = $(this).parents("li");
+            if (options.axis === "x") {
+              var left = -$li.position().left + $container.outerWidth() / 2 - $li.outerWidth() / 2;
+              $element.css("left", left);
+            } else if (options.axis === "y") {
+              var top = -$li.position().top + $container.outerWidth() / 2 - $li.outerWidth() / 2;
+              $element.css("top", top);
+            }
+            // put inside bounds
+            $element.draggable_nav_check();
+          });
+        }
+      });
+    };
+    $(".draggable").draggable_nav({
+      axis: 'x' // only horizontally
+    });
+
+    // jquery ui draggable
+
+    $(".draggable").draggable({
+      axis: 'x', // only horizontally
+      drag: function(e, ui) {
+        var $element = ui.helper;
+        // calculate
+        var w = $element.width();
+        var pw = $element.parent().width();
+        var maxPosLeft = 0;
+        if (w > pw) {
+          maxPosLeft = -(w - pw);
+        }
+        var h = $element.height();
+        var ph = $element.parent().height();
+        var maxPosTop = 0;
+        if (h > ph) {
+          maxPosTop = h - ph;
+        }
+        // horizontal
+        if (ui.position.left > 0) {
+          ui.position.left = 0;
+        } else if (ui.position.left < maxPosLeft) {
+          ui.position.left = maxPosLeft;
+        }
+        // vertical
+        if (ui.position.top > 0) {
+          ui.position.top = 0;
+        } else if (ui.position.top < maxPosTop) {
+          ui.position.top = maxPosTop;
+        }
+      }
+    });
+
+    // jquey draggable also on touch devices
+    // http://stackoverflow.com/questions/5186441/javascript-drag-and-drop-for-touch-devices
+
+    function touchHandler(e) {
+      var touch = e.originalEvent.changedTouches[0];
+      var simulatedEvent = document.createEvent("MouseEvent");
+      simulatedEvent.initMouseEvent({
+          touchstart: "mousedown",
+          touchmove: "mousemove",
+          touchend: "mouseup"
+        }[e.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+      touch.target.dispatchEvent(simulatedEvent);
+    }
+
+    function preventPageScroll(e) {
+      e.preventDefault();
+    }
+
+    function initTouchHandler($element) {
+      $element.on("touchstart touchmove touchend touchcancel", touchHandler);
+      $element.on("touchmove", preventPageScroll);
+    }
+    initTouchHandler($(".draggable"));
+  </script>
+  
+  <script>
+    function toggler(divId) {
+      $("#" + divId).toggle();
+    }
+  </script>
+  
+  <script>
+    $(document).ready(function() {
+      $('input[type="checkbox"]').click(function() {
+        if ($(this).attr("value") == "credit") {
+          $(".credit").toggle();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

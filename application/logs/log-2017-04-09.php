@@ -1,4 +1,63 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-04-09 09:36:06 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-09 17:56:11 --> 404 Page Not Found --> uploads/league/6680964729.jpg
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:03 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 03:19:07 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:02 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 04:49:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 05:56:00 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:08:21 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:29:52 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 06:30:17 --> 404 Page Not Found --> animemoment_profile
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 16:38:48 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-09 21:55:29 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230

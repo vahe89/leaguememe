@@ -36,6 +36,7 @@
                                 <tr>
                                     <th>Sl.No</th>
                                     <th>Category Name</th>
+                                    <th>Category Text</th>
                                     <th>Category Photo</th>
                                     <th>Action</th>
                                 </tr>
@@ -62,7 +63,8 @@
             "sAjaxSource": base_url + "admin/category/category_list_ajax",
             "aoColumnDefs": [
                 {"bSortable": false, "aTargets": [2]},
-                {"bSortable": false, "aTargets": [3]}
+                {"bSortable": false, "aTargets": [3]},
+                {"bSortable": false, "aTargets": [4]}
             ],
             "createdRow": function (row, data, index)
             {

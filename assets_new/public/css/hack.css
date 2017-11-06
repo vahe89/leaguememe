@@ -1,0 +1,68 @@
+/* hack bootstrap */
+
+.navbar-custom {
+  background: #252323;
+  height: 50px;
+  color: #fff;
+  margin-bottom: 0px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.16);
+}
+#search-collapse {
+  padding-top: 50px !important;
+  left: -7px;
+  right: 0px !important;
+}
+.navbar-brand > img {
+  width: 30px;
+}
+.nav > li > a {
+  color: #fff;
+  font-size: 13px;
+  padding: 11px 10px;
+}
+.nav > li > a > .caret{
+  color: #B83C54;
+  margin-left: 10px;
+}
+.navbar-brand {
+  height: 40px;
+  padding: 8px 40px 10px 10px;
+	margin-left: 0px;
+}
+.navbar-collapse {
+  margin-top: 5px;
+}
+.w-2000 {
+  width: 2000px;
+}
+.w-100 {
+  width: 100%;
+}
+.w-70 {
+  width: 70%;
+}
+#myTabs {
+  margin-top: -49px;
+  padding-right: 3px;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #5A5555 !important;
+  border-color: #337ab7;
+  color: #fff !important;
+}
+.menu > li > a:hover,
+.menu > li > a:focus {
+  color: rgba(249, 252, 255, 0.71);
+  background: transparent;
+}
+hr {
+  margin-top: 10px !important;
+}
+.row-custom{
+  margin-left: -10px;
+  margin-right: -10px;
+}

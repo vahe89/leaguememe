@@ -47,7 +47,7 @@ $route['edit_profile'] = "admin/admin/edit_profile";
 $route['login/check_login'] = "admin/login/check_login";
 
 $route['dashboard'] = "admin/login/dashboard";
- 
+
 $route['users'] = "admin/users/user_list";
 
 $route['ban_users'] = "admin/users/ban_users";
@@ -75,17 +75,112 @@ $route['select_winner/(:any)'] = "admin/event/select_winner/$1";
 $route['sidebar_list'] = "admin/leaguelist/view_sidebar";
 
 $route['list_anime_report'] = "admin/leaguelist/anime_report";
-
 $route['all_anime_report'] = "admin/leaguelist/all_anime_report";
-$route['anime-category'] = "admin/animecategory/anime_category";
-$route['edit-animedetail/(:any)'] = "admin/animecategory/edit_anime_detail/$1";
- 
+
 $route['list_discussion'] = "admin/discussion/list_discussion";
+
+$route['add_articles'] = "admin/articles/add_article";
+$route['list_articles'] = "admin/articles/article_list";
+$route['edit_articles/(:any)'] = "admin/articles/edit_article/$1";
+
+$route['add_patch_notes'] = "admin/patch_note/add_patch_notes";
+$route['list_patch_notes'] = "admin/patch_note/list_patch_notes";
+$route['edit_patch_notes/(:any)'] = "admin/patch_note/edit_patch_notes/$1";
+
+$route['list_rules_template'] = "admin/rules_template/all_rules_template";
+$route['rules_template'] = "admin/rules_template/rules_templates";
+$route['add_rules_template'] = "admin/rules_template/add_category";
+$route['edit_rules_template/(:any)'] = "admin/rules_template/edit_rules_template/$1";
+
+$route['manage_tab'] = "admin/leaguelist/manage_tab";
+
+$route['list_author'] = "admin/leaguelist/list_author";
+$route['add_author'] = "admin/leaguelist/add_author";
+$route['edit_author/(:any)'] = "admin/leaguelist/edit_author/$1";
+$route['addsection'] = "admin/leaguelist/addsection";
+$route['list_section'] = "admin/leaguelist/list_section";
+$route['list_section_in/(:any)'] = "admin/leaguelist/list_section_in/$1";
+$route['edit_section/(:any)'] = "admin/leaguelist/edit_section/$1";
 // end admin route
 // 
 // 
 // start public route
+$route['remove_space'] = "public/home/remove_space";
+
+$route['home'] = "public/home";
+$route['bookmark'] = "public/home";
+$route['popular'] = "public/home";
+
+$route['new'] = "public/home";
+$route['new/all'] = "public/home";
+$route['new/art'] = "public/home";
+$route['new/video'] = "public/home";
+$route['new/random'] = "public/home";
+$route['new/gifs'] = "public/home";
+
+$route['popular/all'] = "public/home";
+$route['popular/art'] = "public/home";
+$route['popular/video'] = "public/home";
+$route['popular/random'] = "public/home";
+$route['popular/gifs'] = "public/home";
+
+$route['bookmark/all'] = "public/home";
+$route['bookmark/art'] = "public/home";
+$route['bookmark/video'] = "public/home";
+$route['bookmark/random'] = "public/home";
+$route['bookmark/gifs'] = "public/home";
+
+$route['new/all/(:any)'] = "public/home/index/$1";
+$route['new/art/(:any)'] = "public/home/index/$1";
+$route['new/video/(:any)'] = "public/home/index/$1";
+$route['new/random/(:any)'] = "public/home/index/$1";
+$route['new/gifs/(:any)'] = "public/home/index/$1";
+
+$route['popular/all/(:any)'] = "public/home/index/$1";
+$route['popular/art/(:any)'] = "public/home/index/$1";
+$route['popular/video/(:any)'] = "public/home/index/$1";
+$route['popular/random/(:any)'] = "public/home/index/$1";
+$route['popular/gifs/(:any)'] = "public/home/index/$1";
+
+$route['bookmark/all/(:any)'] = "public/home/index/$1";
+$route['bookmark/art/(:any)'] = "public/home/index/$1";
+$route['bookmark/video/(:any)'] = "public/home/index/$1";
+$route['bookmark/gifs/(:any)'] = "public/home/index/$1";
+
 $route['home/(:any)'] = "public/home/index/$1";
+
+$route['season-old'] = "public/leaguelist/season_index";
+
+$route['gamechat'] = "public/gamechat/index";
+$route['gamechat/popular'] = "public/gamechat/index";
+$route['gamechat/new'] = "public/gamechat/index";
+$route['gamechat/bookmark'] = "public/gamechat/index";
+
+$route['news-list'] = "public/news/index";
+$route['news-list/news'] = "public/news/index";
+$route['news-list/bookmark'] = "public/news/index";
+
+$route['news'] = "public/news/news_home";
+$route['news-detail/(:any)'] = "public/news/news_detail/$1";
+
+$route['discussion'] = "public/discussion/index";
+$route['discussion/fav'] = "public/discussion/fav";
+$route['discussion-single/(:any)'] = "public/discussion/discussion_single/$1";
+
+$route['poll'] = "public/poll/index";
+$route['public/poll/poll-listing'] = "public/poll/poll_listing";
+
+$route['poll-vote/(:any)'] = "public/poll/poll_question/$1";
+$route['result-voting/(:any)'] = "public/poll/result_voting/$1";
+
+$route['event'] = "public/event/mainevent";
+$route['event/event-info/(:any)'] = "public/event/detail/$1";
+
+$route['patch-note'] = "public/patch_note/index";
+$route['patch-note/new'] = "public/patch_note/index";
+$route['patch-note/bookmark'] = "public/patch_note/index";
+$route['patch-note-detail/(:any)'] = "public/patch_note/detail/$1";
+
 $route['league_victory'] = "public/leaguelist/league_victory";
 $route['league_defeat'] = "public/leaguelist/league_defeat";
 $route['user/login'] = "public/user/login";
@@ -93,8 +188,8 @@ $route['user/logout'] = "public/user/logout";
 $route['user/change_pswd'] = "public/user/change_pswd";
 $route['user_profile'] = "public/user/user_profile";
 $route['notification'] = "public/user/notification";
-$route['animemoment_profile/(:any)'] = "public/user/animemoment_profile/$1";
-$route['animemoment-profile/(:any)'] = "public/user/animemoment_profile/$1";
+$route['leaguememe_profile/(:any)'] = "public/user/leaguememe_profile/$1";
+$route['leaguememe-profile/(:any)'] = "public/user/leaguememe_profile/$1";
 $route['show-all-post/(:any)'] = "public/user/show_all_post/$1";
 $route['user/update_pswd'] = "public/user/update_pswd";
 
@@ -106,19 +201,15 @@ $route['user/forgot_password'] = "public/user/forgot_password";
 $route['loginfacebook'] = "public/loginfacebook";
 $route['logingoogle'] = "public/logingoogle";
 $route['tag/(:any)'] = "public/leaguelist/league_image_tag/$1";
-$route['discussion-single/(:any)'] = "public/animelist/discussion_single/$1";
-$route['poll-vote/(:any)'] = "public/poll/poll_question/$1";
-$route['result-voting/(:any)'] = "public/poll/result_voting/$1";
+
+
 $route['review-list/(:any)'] = "public/user/user_review_list/$1";
-$route['poll-listing'] = "public/poll/poll_listing";
 $route['user/Acccount_activation/(:any)'] = "public/user/Acccount_activation/$1";
 
 $route['anime-album'] = "public/animelist/anime_album";
 //$route['anime-list-album/(:any)/(:any)'] = "public/animelist/anime_album_episode_list/$1/$1";
 $route['anime-list-album/(:any)'] = "public/animelist/anime_album_episode_list/$1";
- $route['news'] = "public/news/news_home";
-//$route[''] = "public/leaguelist/single_image_list/$1
-$route['event/event-info/(:any)'] = "public/event/detail/$1";
+
 session_start();
 require_once( BASEPATH . 'database/DB' . EXT );
 $db = & DB();

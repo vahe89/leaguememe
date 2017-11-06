@@ -40,7 +40,8 @@ class Home_model extends CI_Model {
         return $query->result_array();
     }
 
-    function get_all_sidelinksnoside($start = 0, $maintabval = "new") {
+    function get_all_sidelinksnoside($start = 0, $maintabval = "popular") {
+
         if (empty($maintabval)) {
             $maintabval = 'Y';
         } else if ($maintabval == "new") {
@@ -48,17 +49,16 @@ class Home_model extends CI_Model {
         } else {
             $maintabval = 'Y';
         }
-
-        $sql = "SELECT * 
+        $sql = "SELECT *, SUBSTRING_INDEX( leagueimage_filename, '.', -1 ) AS `extleft` 
                FROM le_leagueimages
-               WHERE `leagueimage_setpopular` = '" . $maintabval . "' AND is_sidebar = 0
-               ORDER BY is_sidebar ASC, RAND() ASC LIMIT " . $start . ",100";
+               WHERE `leagueimage_setpopular` = '" . $maintabval . "' AND is_sidebar = 0 AND  category_id != '6' AND SUBSTRING_INDEX( leagueimage_filename, '.', -1 ) != '" . "gif" . "'
+               ORDER BY is_sidebar ASC, RAND() ASC LIMIT " . $start . ",10";
 
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    function get_all_sidelinksside($maintabval = "new") {
+    function get_all_sidelinksside($maintabval = "popular") {
         if (empty($maintabval)) {
             $maintabval = 'Y';
         } else if ($maintabval == "new") {
@@ -70,73 +70,42 @@ class Home_model extends CI_Model {
         $sql = "SELECT * 
                 FROM le_leagueimages
                 WHERE `leagueimage_setpopular` = '" . $maintabval . "'
-                AND is_sidebar = 1";
+                AND is_sidebar = 1 AND  category_id != '6'";
 
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     function get_new_post() {
-        $sql = "SELECT *
-                FROM le_leagueimages
-                WHERE leagueimage_setpopular = 'N'
-                AND parent_id = '0'
-                ORDER BY leagueimage_id DESC
-                LIMIT 0, 4";
+        $sql = "SELECT ls.section_name as section_name,GROUP_CONCAT( '^^%%^^', section_id) as section_id, GROUP_CONCAT( '^^%%^^', title ) as title,GROUP_CONCAT( '^^%%^^', link ) as link, GROUP_CONCAT( '^^%%^^', position) as position
+                FROM sidebar_section AS ss
+                LEFT JOIN left_section AS ls ON ss.section_id  = ls.id
+                WHERE ls.status =1 AND ss.link_status = 1 GROUP BY ss.section_id " ; 
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
+//    function get_new_post() {
+//        $this->db->select('*');
+//        $this->db->from('sidebar_section');
+//        $this->db->where('section_id', 'News');
+//        $query = $this->db->get();
+//        return $query->result_array();
+//    }
+
     function get_newlike() {
-
-
-        $sql = "SELECT ad. *, lv. *, la . *, a.anime_name
-                FROM le_victory AS lv
-                RIGHT JOIN (
-
-                SELECT *
-                FROM `le_animecategory`
-                GROUP BY leaguememe_id
-                ORDER BY leaguememe_id DESC
-                ) AS la ON la.leaguememe_id = lv.leagueimages_id
-                LEFT JOIN (
-
-                SELECT *
-                FROM anime
-                ) AS a ON a.anime_id = la.anime_categoryid
-                LEFT JOIN (
-
-                SELECT *
-                FROM `le_leagueimages`
-                ) AS ad ON ad.leagueimage_id = lv.leagueimages_id
-                WHERE victory_defeat = 'V'
-                ORDER BY lv.victory_timestamp DESC
-                LIMIT 0, 4";
-        $query = $this->db->query($sql);
+        $this->db->select('*');
+        $this->db->from('sidebar_section');
+        $this->db->where('section_id', 'Likes');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
     function get_let_discussion() {
-
-
-        $sql = "SELECT ad.*, adc.*, a.anime_name
-                FROM `anime_discussion` as ad
-                RIGHT JOIN
-                (
-                SELECT *
-                FROM `anime_discussion_category`
-                GROUP BY anime_category_id
-                ORDER BY anime_discussionid desc
-                ) as adc ON adc.anime_discussionid = ad.anime_discussionid
-                LEFT JOIN
-                (
-                SELECT *
-                FROM anime
-                ) as a ON a.anime_id = adc.anime_category_id
-                WHERE ad.`header_type` = 1
-                ORDER BY ad.anime_discussionid desc
-                LIMIT 0, 4";
-        $query = $this->db->query($sql);
+        $this->db->select('*');
+        $this->db->from('sidebar_section');
+        $this->db->where('section_id', 'Recent Discussion');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -155,8 +124,7 @@ class Home_model extends CI_Model {
         return $query->result();
     }
 
-    public function getLegaueCmtfData(
-    $legid) {
+    public function getLegaueCmtfData($legid) {
 
         $sql = 'SELECT cp.*, cp.user_id as cmnt_user_id, cp.comment_id as cmnt_comment_id,le_ct. * , u.user_name,u.user_region,u.user_image
                 FROM `le_comments` AS le_ct
@@ -235,6 +203,12 @@ class Home_model extends CI_Model {
         return $query->result_array();
     }
 
+    function removeCover($user_id) {
+        $this->db->set('cover_image', '');
+        $this->db->where('user_id', $user_id);
+        $this->db->update('le_users');
+    }
+
     public function getLegaueCmtData_subComment($pid) {
         $sql = 'SELECT cp.*, cp.user_id as cmnt_user_id, cp.comment_id as cmnt_comment_id,le_ct.*, u.user_name,u.user_region, CASE WHEN (u.user_image IS NULL OR u.user_image = "")
    THEN "0"
@@ -247,6 +221,20 @@ class Home_model extends CI_Model {
                 ORDER BY `comment_date` desc';
         $query = $this->db->query($sql);
         return $query->result();
+    }
+
+    function getChamp() {
+        $this->db->select('*');
+        $this->db->from('champ');
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    function test() {
+        $sql = "";
+        $query = $this->db->query($sql);
+        return $query;
     }
 
 }

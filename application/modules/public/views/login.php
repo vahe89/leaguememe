@@ -4,7 +4,7 @@
         <div class="modal-header bor-none">
             <h2 class="modal-title mar-t-40" id="myModalLabel" style="text-align: center;">Login to Your Account</h2>
             <p class="grey-color-xs" style="text-align: center;">You can connect with a social network</p>
-            <div class="connect-social social-hide-res">
+            <div class="connect-social ">
                 <div class="wrap-socmed" style="width: 100%">
                     <div class="facebook-conect">
                         <img src="<?=  base_url()?>assets/public/img/fb-connect.png">
@@ -23,39 +23,7 @@
                  
             </div><!-- connect social -->
 
-            <div class="connect-social social-show-res">
-                <div class="col-xs-12 no-padding bottom-connect">
-                    <a href="<?= base_url() . 'public/loginfacebook' ?>">
-                        <div class="wrap-fb">
-                            <div class="connect-l-fb">
-                                <i class="fa fa-facebook"></i>
-                            </div>
-                            <div class="connect-r-fb">
-                                Facebook
-                            </div>
-                        </div>
-                    </a>
-                </div><!-- end col-md-6 -->
-
-                <div class="col-xs-12 no-padding bottom-connect">
-                    <a href="<?= base_url() . 'public/logingoogle' ?>">
-                        <div class="wrap-gp">
-                            <div class="connect-l-gp">
-                                <img src="<?php echo base_url(); ?>assets/public/img/gplus.png" alt="">
-                            </div>
-                            <div class="connect-r-gp">
-                                Google
-                            </div>
-                        </div>
-                    </a>
-                </div><!-- end col-xs-12 -->
-
-                <div class="col-xs-12">
-                    <div class="center-block">
-                        <span class="circles cricles-page-signup">OR</span>
-                    </div>
-                </div>
-            </div><!-- connect social -->
+             
         </div><!-- end modal header-->
 
         <div class="modal-footer">
@@ -63,7 +31,7 @@
             <form action="<?php echo base_url(); ?>public/user/login" method="post" id="user_llogin">
                 <div class="form-group text-left">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="text"  name="username" <?php if (isset($_COOKIE['username'])) { ?>value="<?= $_COOKIE['username']; ?>"<?php } ?> class="form-control" id="exampleInputEmail1" placeholder="Email" >
+                    <input type="text"  name="username" <?php if (isset($_COOKIE['username'])) { ?>value="<?= $_COOKIE['username']; ?>"<?php } ?> class="form-control" id="exampleInputEmail1" placeholder="Username" >
                     <label class="error" for="username" generated="true"><?php echo form_error('username'); ?></label>
                 </div>
                 <div class="form-group text-left">
@@ -75,11 +43,11 @@
                         echo "<h5 style='color:red'>$msg</h5>";
                     }
                     ?>
-                    <p class="text-right link-log">Forgot the password?</p>
+                    <p class="text-right link-log"  data-toggle="modal" data-target="#forgetmodel">Forgot the password?</p>
                 </div>
                 <button type="submit" class="btn btn-login-green pull-left" >Login</button>
                 <div class="clearfix"></div>
-                <p class="link-log text-left">Didn’t have an account? <a href="#">Sign up</a></p> 
+                <p class="link-log text-left">Didn’t have an account? <a href="<?= base_url()?>public/user/sign_up">Sign up</a></p> 
             </form>
         </div>
     </div>

@@ -8,7 +8,7 @@ echo $this->load->view('template/sidebar_list');
         <div class="media info-avatar avatar-review">
 
             <div class="media-left">
-                <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>">
+                <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>">
                     <img src="<?php echo base_url(); ?>uploads/users/<?php echo $value['user_image']; ?>" alt="" class="media-object avatar">
                 </a>
             </div>
@@ -17,7 +17,7 @@ echo $this->load->view('template/sidebar_list');
                 <input type="hidden" class="readmore_<?php echo $value['reid']; ?>" value="<?php echo $value['userid']; ?>"
 
                        <h5 class="username-review">
-                    <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name']; ?>"><?php
+                    <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name']; ?>"><?php
                         if (empty($value['name'])) {
                             echo $value['user_name'];
                         } else {

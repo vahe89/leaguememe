@@ -1,247 +1,81 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-02-16 08:27:40 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/1244745841.gif
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/1487299599.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/159121453.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/660993037.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/9930049902.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/39790151.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/3386328420.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/2759931879.gif
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/6104771783.gif
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/707012165.gif
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/2626639031.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/3740844181.gif
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/4725307072.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/5083717969.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/2923483368.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/9045433113.jpg
-ERROR - 2017-02-16 10:40:59 --> 404 Page Not Found --> uploads/league/112048429.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/1910154768.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/9188593751.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/61852885.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/6651092981.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/7644735095.gif
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/league/5398796005.png
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:00 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/league/5556011516.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-02-16 10:41:01 --> 404 Page Not Found --> uploads/league/1347195975.gif
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/759556950.jpg
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/5379854501.gif
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/4111692737.gif
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/8707345272.jpg
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/8546147942.jpg
-ERROR - 2017-02-16 10:41:04 --> 404 Page Not Found --> uploads/league/5555445691.gif
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/league/4479799983.gif
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/league/8464199416.png
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/league/923069776.png
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:08 --> 404 Page Not Found --> uploads/league/647952416.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/5158327645.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/2657862808.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/4299175646.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/8150653080.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/4688706533.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/2545085223.png
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/8464199416.png
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/4357206695.gif
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/6936450558.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/1795806461.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/league/362296691.gif
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:09 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/7768260338.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/9354669502.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/3820900334.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/5403858711.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/4574418426.png
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/1851273216.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/7526455484.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/7343444703.jpeg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/9377401731.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/5339878499.jpg
-ERROR - 2017-02-16 10:41:13 --> 404 Page Not Found --> uploads/league/6071951179.jpg
-ERROR - 2017-02-16 10:41:14 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:14 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:15 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:15 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:15 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/2133413562.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/7482080459.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/3531422326.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/2391060222.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/7225047759.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/2920331726.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/1450665052.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/5555445691.gif
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/league/2936469945.png
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:18 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:19 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:19 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:19 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:22 --> 404 Page Not Found --> uploads/league/img_57246c0a79533Video.jpg
-ERROR - 2017-02-16 10:41:22 --> 404 Page Not Found --> uploads/league/4239362822.jpg
-ERROR - 2017-02-16 10:41:22 --> 404 Page Not Found --> uploads/league/9184178966.jpg
-ERROR - 2017-02-16 10:41:22 --> 404 Page Not Found --> uploads/league/1426694765.gif
-ERROR - 2017-02-16 10:41:22 --> 404 Page Not Found --> uploads/league/1047721877.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/league/1347195975.gif
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/league/4941290463.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/league/2544219163.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/league/4329138291.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/league/9955413974.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:23 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/league/6300419131.png
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/league/51164787gif.gif
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/league/1470623081.jpg
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/league/6639923378.jpg
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:24 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/5865550735.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/8933126544.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/714723300.jpeg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/6244135373.gif
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/6665466511.png
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/7676891745.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/6344323754.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/3777946135.png
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/6489142482.png
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/league/7983863861.jpg
-ERROR - 2017-02-16 10:41:27 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:28 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:28 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:28 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:28 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:30 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/9143797927.png
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/3584535899.jpg
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/3033967385.jpg
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/6529644769.jpg
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/4080960219.jpg
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/1795806461.jpg
-ERROR - 2017-02-16 10:41:31 --> 404 Page Not Found --> uploads/league/3587483582.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/3506307974.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/2133413562.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/895551098.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/3992988229.png
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/8393284003.png
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/league/1328439610.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:32 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:35 --> 404 Page Not Found --> uploads/league/4437844250.jpg
-ERROR - 2017-02-16 10:41:35 --> 404 Page Not Found --> uploads/league/7565555125.gif
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/6078180503.gif
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/9377401731.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/3298417138.png
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/8247901177.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/1264091869.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/7293254914.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/7528721583.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/4941290463.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/3814709954.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/4139635567.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/8393284003.png
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/league/3696567630.png
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:36 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:41 --> 404 Page Not Found --> uploads/users/336268115.jpg
-ERROR - 2017-02-16 10:41:41 --> 404 Page Not Found --> uploads/league/7528721583.jpg
-ERROR - 2017-02-16 10:41:41 --> 404 Page Not Found --> uploads/league/491418098.jpg
-ERROR - 2017-02-16 10:41:41 --> 404 Page Not Found --> uploads/league/5141509370.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/5512762442.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/7499130303.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/2311524697.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/5363463289.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/1851273216.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/6078180503.gif
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/3862138171.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/1925988490.png
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/2839542706.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/5280110547.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/league/7133421995.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:42 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:45 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-02-16 10:41:45 --> 404 Page Not Found --> uploads/league/7293254914.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/6066775806.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/1406611702.png
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/7526455484.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/122781293.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/5952708013.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/6198043860.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/3689474929.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/2595184436.jpg
-ERROR - 2017-02-16 10:41:46 --> 404 Page Not Found --> uploads/league/3782346150.jpg
-ERROR - 2017-02-16 10:41:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:50 --> 404 Page Not Found --> uploads/league/7604340962.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/8308766898.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/7582987495.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/3696567630.png
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/2674485305.png
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/8019854589.gif
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/6066775806.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/5482979230.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:51 --> 404 Page Not Found --> uploads/league/4941290463.jpg
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/league/6695398450.jpg
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/league/3349802237.gif
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/league/5363463289.jpg
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:52 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:54 --> 404 Page Not Found --> uploads/league/1264091869.jpg
-ERROR - 2017-02-16 10:41:54 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/6513721910.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/1755832764.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/8081083162.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/2191840568.png
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/8464199416.png
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/125534990.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/362296691.gif
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/3033967385.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/2231261068.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/3572228122.png
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/2711897096.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/6720613581.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/7754562268.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/8778418474.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/league/2540057548.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 10:41:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 16:56:02 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-16 20:39:35 --> 404 Page Not Found --> robots.txt
+ERROR - 2017-02-16 05:40:50 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:40:50 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:40:50 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:40:50 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:41:01 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:41:01 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:41:01 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:41:01 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:41:21 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:41:21 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:41:21 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:41:21 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:42:23 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:42:23 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:42:23 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:42:23 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:44:30 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:44:30 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:44:30 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:44:30 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:44:51 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:44:51 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:44:51 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:44:51 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:44:55 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:44:55 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:44:55 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:44:55 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:45:05 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:45:05 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:45:05 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:45:05 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:45:13 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:45:13 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:45:13 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:45:13 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:45:19 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:45:19 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:45:19 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:45:19 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:45:37 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:45:37 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:45:37 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:45:37 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:45:52 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:45:52 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:45:52 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:45:52 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:46:02 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:46:02 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:46:02 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:46:02 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:46:18 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:46:18 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:46:18 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:46:18 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:46:25 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:46:25 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:46:25 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:46:25 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:46:38 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:46:38 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:46:38 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:46:38 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:47:01 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-02-16 05:47:01 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-02-16 05:47:01 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-02-16 05:47:01 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-02-16 05:47:17 --> 404 Page Not Found --> assets/public/img/favicon.ico
+ERROR - 2017-02-16 05:47:46 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 05:49:12 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 05:49:31 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 05:52:14 --> 404 Page Not Found --> assets/public/img/favicon.ico
+ERROR - 2017-02-16 06:04:37 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 06:04:48 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 06:05:29 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 06:07:12 --> Query error: Table 'league_memedbbeta.le_report' doesn't exist
+ERROR - 2017-02-16 06:18:25 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-02-16 06:18:25 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71

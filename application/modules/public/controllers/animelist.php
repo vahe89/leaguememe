@@ -252,7 +252,7 @@ class Animelist extends MX_Controller {
         echo $this->load->view('anime_readmore_tab', $data, TRUE);
     }
 
-     function postcommentreview() {
+    function postcommentreview() {
 
         $dataReview = $this->input->post('rewTypeUnique');
         $cmtdate = date('Y-m-d H:i:s');
@@ -876,7 +876,11 @@ class Animelist extends MX_Controller {
     }
 
     function discussion_list() {
-
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
         $main = $this->input->post('main');
         $headerType = $this->input->post('headerType');
 
@@ -889,7 +893,7 @@ class Animelist extends MX_Controller {
         }
 
 
-        $data['discussion_detail'] = $this->animemod->discussion_list($main, $anime, $headerType);
+        $data['discussion_detail'] = $this->animemod->discussion_list($main, $anime, $headerType, $user_id);
 
 //        echo "<pre>";
 //        print_r($data['discussion_detail']);
@@ -907,7 +911,13 @@ class Animelist extends MX_Controller {
                 $defact[$league->anime_discussionid] = explode(",", $league->def_users);
             }
         }
-
+        $fav_userid = array();
+        foreach ($data['discussion_detail'] as $league) {
+            if (isset($league->fvtuserid) && !empty($league->fvtuserid)) {
+                $fav_userid[$league->anime_discussionid] = explode(",", $league->fvtuserid);
+            }
+        }
+        $data['favuserid'] = $fav_userid;
 //        echo "<pre>";
 //        print_r($data);
 //        exit;
@@ -1020,6 +1030,43 @@ class Animelist extends MX_Controller {
                     echo json_encode(array('status' => 'insert'));
                     exit;
                 }
+            }
+        } else {
+            echo json_encode(array('status' => 'false'));
+        }
+    }
+
+    function anime_favourites() {
+        $user_id = $this->session->userdata('user_id');
+        if ($user_id != '') {
+            $discussion_id = $this->input->post("favourites");
+            $result = $this->animemod->sel_favourites($user_id, $discussion_id);
+
+            if ($result) {
+                $favourites_status = $result['favourites_status'];
+                $favourites_id = $result['favourites_id'];
+
+                if ($favourites_status == NULL) {
+                    $favouritesArray = array(
+                        'leagueimage_id' => $league_image_id,
+                        'user_id' => $this->session->userdata('user_id'),
+                        'favourites_status' => 'A');
+                    $this->animemod->add_favourites($favouritesArray);
+                    echo json_encode(array('status' => 'insert'));
+                    exit;
+                } else if ($favourites_status == "A") {
+                    $this->animemod->removefavourites($user_id, $favourites_id);
+                    echo json_encode(array('status' => 'delete'));
+                    exit;
+                }
+            } else {
+                $favouritesArray = array(
+                    'anime_discussionid' => $discussion_id,
+                    'user_id' => $this->session->userdata('user_id'),
+                    'favourites_status' => 'A');
+                $this->animemod->add_favourites($favouritesArray);
+                echo json_encode(array('status' => 'insert'));
+                exit;
             }
         } else {
             echo json_encode(array('status' => 'false'));
@@ -1300,7 +1347,7 @@ class Animelist extends MX_Controller {
             );
         } else {
             $allComment = $this->input->post('cmtData');
-            
+
             $ins_comment = array(
                 'user_id' => $allComment['user_id'],
                 'anime_discussionid' => $allComment['discuusion_id'],
@@ -1551,7 +1598,7 @@ class Animelist extends MX_Controller {
                                     <div id="childrplycmtbox-' . $value->comment_id . '" style="display:none" class="childrplycmtbox-' . $parent_id . '"  >
                                         <div  id="' . $parent_id . '">
                                             <textarea class="comment-box form-control form-comment childinnercomboBox" placeholder="Comment reply" id="childaddrplCommentBox-' . $value->comment_id . '" ></textarea>
-                                            <div  id="' . $parent_id . '">
+                                            <div  id="' . $parent_id . '" class="childcommentrplPostBtn' . $value->comment_id . '">
                                                 <button class="pull-right small-btn green-bg btn childcommentrplPostBtn" id="' . $value->comment_id . '"  >Reply</button>
                                             </div>
                                         </div>
@@ -1696,13 +1743,16 @@ class Animelist extends MX_Controller {
         }
         echo $html;
     }
-    function update_disc_desc(){
+
+    function update_disc_desc() {
         $data = array(
             "description" => $_POST['desc']
         );
-        echo $this->animemod->updateDiscussion($data,$_POST['id']);
+        echo $this->animemod->updateDiscussion($data, $_POST['id']);
     }
-    function deletedescussion(){
+
+    function deletedescussion() {
         echo $this->animemod->deleteDiscussion($_POST['id']);
     }
+
 }

@@ -1,21 +1,52 @@
  
+<style >
+    .affix{
+        top:70px;
+    }
+</style>
+<!--<div class="col-md-5 col-sm-12 ads">--> 
+<?php
+//function compress($source, $destination, $quality) {
+//
+//    $info = getimagesize($source);
+//
+//    if ($info['mime'] == 'image/jpeg')
+//        $image = imagecreatefromjpeg($source);
+//
+//    elseif ($info['mime'] == 'image/gif')
+//        $image = imagecreatefromgif($source);
+//
+//    elseif ($info['mime'] == 'image/png')
+//        $image = imagecreatefrompng($source);
+//
+//    imagejpeg($image, $destination, $quality);
+//
+//    return $destination;
+//}
+?>
+<div class="box-center" >
 
-<!--<div class="col-md-5 col-sm-12 ads">-->
-
-<div class="box-center">
-    <div class="banner banner_first"   style="display: none">
+    <div class="banner banner_first" style="display:none;">
         <div class="title-recent-discuss">
-            Rules and Guideline
+            <strong>Rules and Guideline</strong>
         </div>
-        <div class="panel panel-default">
-            <ul class="rules-list">
-                <li>Picture Category</li>
-                <li>Spoiler Tags</li>
-                <li>Submit pictures to right category</li>
-                <li>No hentai</li>
-                <li>This sub should only be related to one piece</li>
-                <li>High quality pictures</li>
-            </ul>
+        <div class="panel panel-default right_bar_rules">
+            <?php
+            if (isset($rules) && !empty($rules)) {
+                echo $rules;
+            } else {
+                ?>
+                <ul class="rules-list">
+                    <li>Picture Category</li>
+                    <li>Spoiler Tags</li>
+                    <li>Submit pictures to right category</li>
+                    <li>No hentai</li>
+                    <li>This sub should only be related to one piece</li>
+                    <li>High quality pictures</li>
+                </ul>
+                <?php
+            }
+            ?>
         </div>
 
     </div>
@@ -44,7 +75,17 @@
                     <div class="media info-avatar info-avatar-discuss">
                         <div class="media-left media-left-discuss">
                             <a href="<?= base_url("discussion-single/" . $recent->anime_discussionid) ?>">
-                                <img class="media-object avatar avatar-discuss" src="<?= base_url() ?>uploads/users/<?= $recent->user_image ?>" alt="<?= $recent->name ?>">
+                                <?php if (isset($recent->user_image) && !empty($recent->user_image)) {
+                                    ?>
+
+                                    <img class="media-object avatar img-circle avatar-discuss" src="<?= base_url() ?>uploads/users/<?= $recent->user_image ?>" alt="<?= $recent->name ?>">
+                                    <?php
+                                } else {
+                                    ?>
+                                    <img class="media-object avatar img-circle avatar-discuss " src="<?= base_url() ?>assets/public/img/luffy.png" alt="<?= $recent->name ?>">
+                                    <?php
+                                }
+                                ?>
                             </a>
                         </div>
                         <div class="media-body w-2000">
@@ -58,48 +99,29 @@
         </div>
         <?php
     }
-    if (count($side_links) > 0) {
-        if (count($side_links) <= 28) {
-            $tot_count = count($side_links);
-        } else {
-            $tot_count = 28;
-        }
-        for ($i = 0; $i < $tot_count; $i++) {
-            ?>
-            <?php
-            if ($i % 7 == 0) {
-                ?>
-                <div class="banner">
-                    <a href="#" target="_self">
-                        <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style="width: 300px"class="img-responsive" />
-                    </a>
-                </div>
-            <?php } ?>
-            <div class="banner" style="display: block; overflow: hidden; width: 300px;  margin-bottom: 3px; background-color: rgb(244, 244, 244);height: 97px;">
-                <a href="<?php echo base_url() . $side_links[$i]['leagueimage_id']; ?>" target="_self">
-                    <img src="<?php echo base_url(); ?>uploads/league/<?php echo $side_links[$i]['leagueimage_filename']; ?>" alt="banner" class="img-responsive" style="height:157px; display: block; border: 0px none; width: 300px; margin-top: -37px;"/>
-
-                </a>
-            </div>
-            <div class="banner" style=" width: 300px;">
-                <a href="<?php echo base_url() . $side_links[$i]['leagueimage_id']; ?>" target="_self"> 
-                    <h4><?php echo $side_links[$i]['leagueimage_name']; ?></h4>
-                </a>
-
-            </div>
-
-            <?php
-        }
-    }
     ?>
+    <div class="right_banner_side">
+
+        <?php echo $right_bar['content'];?>
+    </div>
 
 
-    <div id="sidebar">
+    <div class="sidebar">
 
         <div class="banner">
-            <a href="#" target="_self">
-                <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style="width: 300px" class="img-responsive" />
-            </a>
+            <!--            <a href="#" target="_self">
+                            <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style="" class="img-responsive" />
+                        </a> 3ec62145353f52d42571cafac9807e9c-->
+
+            <!-- Leaguememe Right Side -->
+
+           <ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="8840712489"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
         <div class="social-network">
             <ul class="list-unstyled">
@@ -220,41 +242,5 @@
         </div>
     </div>
 </div>
+
 <!--</div> -->
-<script>
-//    $(document).ready(function() {
-//        $('#sidebar').scrollToFixed({
-//            marginTop: function() {
-//                var marginTop = $(window).height() - $('#sidebar').outerHeight(true) - 70;
-//                if (marginTop >= 0)
-//                    return 70;
-//                
-//                return marginTop;
-//            }
-//        });
-//    });
-//    $(document).ready(function() { 
-//        var token = '1990944904.1677ed0.5bc564c91d5d4eb6ac950b6aa23300cc';
-//
-//
-//        $.ajax({
-//            url: 'https://api.instagram.com/v1/users/self',
-//            dataType: 'jsonp',
-//            type: 'GET',
-//            data: {access_token: token},
-//            success: function(data) {
-//
-//                var followed_by = data['data']['counts']['followed_by'];
-//
-//                $(".instagram").text(followed_by);
-//
-//            },
-//            error: function(data) {
-//
-//                console.log(data);
-//
-//            }
-//
-//        });
-//    });
-</script>

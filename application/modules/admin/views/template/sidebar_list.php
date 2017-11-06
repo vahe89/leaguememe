@@ -119,6 +119,50 @@
                 </ul>
             </li>
             <?php
+            if (isset($content_header) && $content_header == "Articles") {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                <a href="#">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span>Articles</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    
+                    <li><a href="<?php echo base_url(); ?>list_articles"><i class="fa fa-circle-o"></i> List Articles</a></li>
+                    <li><a href="<?php echo base_url(); ?>add_articles"><i class="fa fa-circle-o"></i> Add Articles</a></li>
+                </ul>
+            </li>
+            <?php
+            if (isset($content_header) && $content_header == "Patch Notes") {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                <a href="#">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span> Patch Notes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    
+                    <li><a href="<?php echo base_url(); ?>list_patch_notes"><i class="fa fa-circle-o"></i> List Patch Notes</a></li>
+                    <li><a href="<?php echo base_url(); ?>add_patch_notes"><i class="fa fa-circle-o"></i> Add  Patch Notes</a></li>
+                </ul>
+            </li>
+            <?php
             if (isset($content_header) && $content_header == "Event") {
                 ?>
                 <li class="active treeview">
@@ -200,6 +244,89 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url(); ?>list_anime_report"><i class="fa fa-circle-o"></i> List Most Report </a></li>
                     <li><a href="<?php echo base_url(); ?>all_anime_report"><i class="fa fa-circle-o"></i> League Report </a></li>
+                </ul>
+            </li>
+            <?php
+            if (isset($content_header) && ($content_header == "Rules Template" || $content_header == "List Templates")) {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                <a href="#">
+                    <i class="fa fa-book"></i>
+                    <span>Rules</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url(); ?>list_rules_template"><i class="fa fa-circle-o"></i> List Rules Template </a></li>
+                    <li><a href="<?php echo base_url(); ?>rules_template"><i class="fa fa-circle-o"></i> Rules Template </a></li>
+                </ul>
+            </li>
+            <?php
+            if (isset($content_header) && ($content_header == "Tab Manage")) {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                    <a href="<?= base_url()?>manage_tab">
+                    <i class="fa fa-book"></i>
+                    <span>Manage Tab</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                 
+            </li>
+            <?php
+            if (isset($content_header) && $content_header == "Credit Authors") {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                <a href="#">
+                    <i class="fa fa-book"></i>
+                    <span>Credit Authors</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url(); ?>list_author"><i class="fa fa-circle-o"></i> Author Lists</a></li>
+                    <li><a href="<?php echo base_url(); ?>add_author"><i class="fa fa-circle-o"></i> Add Author </a></li>
+                </ul>
+            </li>
+            <!--   Left Section--> 
+             <?php
+            if (isset($content_header) && $content_header == "Left_section") {
+                ?>
+                <li class="active treeview">
+                    <?php
+                } else {
+                    ?>
+                <li class="treeview">
+                    <?php
+                }
+                ?>
+                <a href="#">
+                    <i class="fa fa-book"></i>
+                    <span>Left Section</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url(); ?>addsection"><i class="fa fa-circle-o"></i> Add section </a></li>
+                    <li><a href="<?php echo base_url(); ?>list_section"><i class="fa fa-circle-o"></i> List Section</a></li>
+                    
                 </ul>
             </li>
         </ul>

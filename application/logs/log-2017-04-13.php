@@ -1,227 +1,249 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/9188593751.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/5746016572.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/9305851357.png
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/8974034469.gif
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/7219669260.png
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/8959078183.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/8845006274.gif
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/468983221.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/707012165.gif
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/9045433113.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/2725438540.png
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/5908365123.gif
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/0
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/8534185066.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/8168368851.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-04-13 13:53:31 --> 404 Page Not Found --> uploads/league/1562672103.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/5106361364.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/9035142520.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/4976462535.png
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/7096855170.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/2626639031.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/9015363976.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/2871802425.png
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/406794915.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/6687962473.jpg
-ERROR - 2017-04-13 13:53:32 --> 404 Page Not Found --> uploads/league/595713644.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/league/5556011516.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-04-13 13:53:33 --> 404 Page Not Found --> uploads/league/1347195975.gif
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/4361927076.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/9955413974.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/5158327645.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/5892332755.gif
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/7544319466.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/4315112181.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/7012110478.gif
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/6010035015.gif
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/1328439610.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/2251477008.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/5363463289.jpg
-ERROR - 2017-04-13 13:53:36 --> 404 Page Not Found --> uploads/league/5339878499.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/league/7499130303.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:37 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:40 --> 404 Page Not Found --> uploads/league/4562673228.jpg
-ERROR - 2017-04-13 13:53:40 --> 404 Page Not Found --> uploads/league/2544219163.jpg
-ERROR - 2017-04-13 13:53:40 --> 404 Page Not Found --> uploads/league/2683008676.png
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/3267668727.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/2351367860.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/4582022628.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/7287243707.png
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/1780764427.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/6573946070.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/123070894.png
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/4773981035.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/https:/www.youtube.com/watch
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/9143797927.png
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/league/6861766129.jpg
-ERROR - 2017-04-13 13:53:41 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:42 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:42 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:42 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:45 --> 404 Page Not Found --> uploads/league/6695398450.jpg
-ERROR - 2017-04-13 13:53:45 --> 404 Page Not Found --> uploads/league/8150653080.jpg
-ERROR - 2017-04-13 13:53:45 --> 404 Page Not Found --> uploads/league/2231261068.jpg
-ERROR - 2017-04-13 13:53:45 --> 404 Page Not Found --> uploads/league/2341711721.gif
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/858629280.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/2843160741.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/8896146863.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/3267668727.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/5494744582.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/6639923378.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/8778336560.png
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/league/6941299401.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:47 --> 404 Page Not Found --> uploads/league/6126337181.jpg
-ERROR - 2017-04-13 13:53:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:47 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/3820900334.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/2595184436.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/759556950.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/5351899834.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/4117033863.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/8918117424.png
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/2042321562.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/452745086.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/3348261700.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/6529644769.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/8778418474.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/9809252629.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/league/6082007102.png
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:50 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/533870542.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/1052649156.png
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/5951365949.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/2099202265.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/7324259700.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/6206179177.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/2949989172.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/582177629.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/league/3156699747.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/league/7544319466.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/league/3275855588.gif
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/league/2595184436.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/league/8979658721.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/V12OUjeaJwfvzKXICLB9uNHxMi4S7mWn5TEs6tp3.png
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/8306622360.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/1713061993.png
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/1831454853.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/1869617770.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/3909246739.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/533870542.jpg
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/1052649156.png
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/5555445691.gif
-ERROR - 2017-04-13 13:53:59 --> 404 Page Not Found --> uploads/league/8327353931.png
-ERROR - 2017-04-13 13:54:00 --> 404 Page Not Found --> uploads/league/3298417138.png
-ERROR - 2017-04-13 13:54:00 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:00 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:01 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/9377401731.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/7324259700.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/8522161855.png
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/209858682.gif
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/448087700.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/378916068.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/2229187167.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/8393284003.png
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/1481985556.png
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/2981508332.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/4493125644.gif
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/3253160449.jpg
-ERROR - 2017-04-13 13:54:04 --> 404 Page Not Found --> uploads/league/7293482152.gif
-ERROR - 2017-04-13 13:54:05 --> 404 Page Not Found --> uploads/league/5480189230.png
-ERROR - 2017-04-13 13:54:05 --> 404 Page Not Found --> uploads/league/3862138171.jpg
-ERROR - 2017-04-13 13:54:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:05 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:06 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:06 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:06 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/5141509370.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/2325040884.png
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/4941290463.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/6781266108.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/4329138291.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/3909246739.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/4139635567.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/2948932847.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/7324259700.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/5965803368.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/5406689755.png
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/6066775806.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/2251477008.jpg
-ERROR - 2017-04-13 13:54:09 --> 404 Page Not Found --> uploads/league/848262235.jpg
-ERROR - 2017-04-13 13:54:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:10 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> uploads/league/2251477008.jpg
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> uploads/league/4080960219.jpg
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> uploads/league/4329666886.jpg
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> uploads/league/5865550735.jpg
-ERROR - 2017-04-13 13:54:15 --> 404 Page Not Found --> uploads/league/8230582433.gif
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/3572228122.png
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/4347207043.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/8672309219.gif
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/https:/www.youtube.com/watch
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/533870542.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/6513721910.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/2490855832.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/3267668727.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/2391060222.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/league/6639923378.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:16 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:19 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-04-13 13:54:19 --> 404 Page Not Found --> uploads/league/5965803368.jpg
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/2325040884.png
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/5771924164.jpg
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/8150653080.jpg
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/5092628765.jpg
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/1988766156.gif
-ERROR - 2017-04-13 13:54:20 --> 404 Page Not Found --> uploads/league/7528721583.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/league/9221245031.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/league/3997517535.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/league/9143797927.png
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/league/img_57246c0a79533Video.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/league/8943029013.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:21 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:22 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:22 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 13:54:22 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-13 17:07:36 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-13 21:30:25 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:20:41 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 01:21:04 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10155917443745408/picture
+ERROR - 2017-04-13 01:21:09 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 01:21:11 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 01:21:12 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 01:21:13 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 04:16:58 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 04:17:03 --> 404 Page Not Found --> leaguememe_profile
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 1 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 141
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:18:10 --> Severity: Notice  --> Undefined offset: 2 /home/league/public_html/beta/application/modules/public/views/edit_profile.php 149
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:31:39 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:19 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 05:53:24 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 05:53:24 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 05:53:24 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 05:53:24 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 05:53:27 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 05:53:27 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 05:53:27 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 05:53:27 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 05:53:28 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 05:53:28 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 05:53:28 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 05:53:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 05:53:28 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 05:53:28 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 05:53:28 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 05:53:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 05:54:11 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 05:54:11 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 05:54:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 05:54:11 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 09:29:36 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 09:29:36 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 09:29:36 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 09:29:36 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 09:29:42 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 09:29:42 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 09:29:42 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 09:29:42 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 09:30:27 --> Severity: Warning  --> Missing argument 6 for League_model::list_league(), called in /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php on line 530 and defined /home/league/public_html/beta/application/modules/public/models/league_model.php 14
+ERROR - 2017-04-13 09:30:27 --> Severity: Notice  --> Undefined variable: user_id /home/league/public_html/beta/application/modules/public/models/league_model.php 195
+ERROR - 2017-04-13 09:30:27 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY fvt.leagueimage_id
+            ORDER BY fvt.leagueimage_id
+         ) A' at line 142
+ERROR - 2017-04-13 09:30:27 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/system/core/Exceptions.php:185) /home/league/public_html/beta/system/core/Common.php 438
+ERROR - 2017-04-13 09:42:57 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10155917443745408/picture
+ERROR - 2017-04-13 09:45:01 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10155917443745408/picture
+ERROR - 2017-04-13 09:46:24 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 09:46:24 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 09:47:54 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 09:47:54 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 09:55:20 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 09:55:20 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 09:55:31 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 09:55:31 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 09:56:10 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 09:56:10 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 10:05:58 --> Query error: Undeclared variable: public
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:34 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:49:54 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 10:50:01 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 10:50:01 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 10:50:09 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 10:50:10 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 10:50:11 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10155917443745408/picture
+ERROR - 2017-04-13 10:50:12 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10155917443745408/picture
+ERROR - 2017-04-13 10:53:28 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 10:53:28 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 10:54:27 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 10:54:27 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:06:37 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 11:16:08 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:16:10 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:16:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 11:16:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 11:16:45 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:16:46 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:17:00 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:17:00 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:21:43 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:21:45 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:22:24 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:22:24 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:25:21 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:25:22 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:25:54 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 11:25:54 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 11:25:58 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:25:59 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:26:08 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 11:26:09 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:33:34 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 11:33:34 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:09:23 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:09:23 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:09:42 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:09:43 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:16:12 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:16:13 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:41:18 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:41:19 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:41:33 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 12:41:33 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 12:41:34 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:41:35 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:41:37 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:41:37 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:44:31 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:44:31 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:48:08 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:48:08 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:52:48 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:52:49 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:54:01 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 12:54:01 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:55:46 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 12:56:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 13:28:44 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 13:28:44 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 13:28:47 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 13:28:48 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 13:28:53 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 13:28:53 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 13:31:05 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 13:31:05 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 13:47:35 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 13:47:35 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:08:44 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:08:45 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:10:02 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:10:02 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:10:42 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:10:43 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:10:55 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:10:55 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:11:00 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:11:01 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:11:22 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:11:22 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:12:31 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-13 14:12:32 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-13 14:13:06 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 14:13:06 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 14:13:19 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-13 14:13:19 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-13 16:45:04 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230

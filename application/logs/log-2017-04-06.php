@@ -1,132 +1,80 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-04-06 03:38:46 --> 404 Page Not Found --> uploads/league/702829048.jpg
-ERROR - 2017-04-06 03:38:46 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-06 08:56:32 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 08:56:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 08:56:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 08:56:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 09:09:30 --> 404 Page Not Found --> uploads/league/2032923377.jpg
-ERROR - 2017-04-06 09:09:30 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-04-06 09:09:30 --> 404 Page Not Found --> uploads/league/3092190190.gif
-ERROR - 2017-04-06 09:09:30 --> 404 Page Not Found --> uploads/league/2461810265.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/9227055078.gif
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/7096855170.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/5134378387.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/6064568608.png
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/1430061319.gif
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/8478388604.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/3260039822.png
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/1657633916.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/6433465350.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/2626639031.jpg
-ERROR - 2017-04-06 09:09:31 --> 404 Page Not Found --> uploads/league/5106361364.jpg
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/3009880483.jpg
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/2759931879.gif
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/7219669260.png
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/742141325.gif
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/4165081516.jpg
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/2871802425.png
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/4969890550.png
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/1739604305.gif
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/5398796005.png
-ERROR - 2017-04-06 09:09:32 --> 404 Page Not Found --> uploads/league/1320927431.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/1151270084.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/5990056837.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/7984321350.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/9930049902.jpg
-ERROR - 2017-04-06 09:09:39 --> 404 Page Not Found --> uploads/league/8534185066.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/1151270084.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/9930049902.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/8534185066.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/5990056837.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/7984321350.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/443227346.gif
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/2759931879.gif
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/208087288.jpg
-ERROR - 2017-04-06 09:09:42 --> 404 Page Not Found --> uploads/league/7632530899.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/league/8644583998.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/league/4725307072.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/league/8352211788.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/league/9035142520.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/league/1962457685.gif
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 09:09:43 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 09:09:46 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-04-06 09:09:47 --> 404 Page Not Found --> uploads/league/5556011516.jpg
-ERROR - 2017-04-06 09:09:47 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-04-06 09:09:47 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/1347195975.gif
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/6187702245.png
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/1838614312.jpg
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/3723901505.jpeg
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/5398796005.png
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/5452024391.png
-ERROR - 2017-04-06 09:09:48 --> 404 Page Not Found --> uploads/league/5642208033.gif
-ERROR - 2017-04-06 09:09:49 --> 404 Page Not Found --> uploads/league/8408515579.jpg
-ERROR - 2017-04-06 09:09:49 --> 404 Page Not Found --> uploads/league/5746016572.jpg
-ERROR - 2017-04-06 09:09:49 --> 404 Page Not Found --> uploads/league/1296633632.gif
-ERROR - 2017-04-06 09:09:49 --> 404 Page Not Found --> uploads/league/9926706454.png
-ERROR - 2017-04-06 09:09:49 --> 404 Page Not Found --> uploads/league/5289747035.jpg
-ERROR - 2017-04-06 09:49:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/6426060036.jpg
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/3630703566.gif
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/4783689132.png
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/5976206664.png
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/3548271306.jpg
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/855176108.gif
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/5642208033.gif
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/5106361364.jpg
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/5730219078.jpg
-ERROR - 2017-04-06 12:07:46 --> 404 Page Not Found --> uploads/league/2626639031.jpg
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/0
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/5779154640.png
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/8845006274.gif
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/9188593751.jpg
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/8959078183.jpg
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/3299403488.jpg
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/406794915.jpg
-ERROR - 2017-04-06 12:07:47 --> 404 Page Not Found --> uploads/league/8168368851.jpg
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/9930049902.jpg
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/2057342412.png
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/5431813825.png
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/820596101.jpg
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/6893952284.gif
-ERROR - 2017-04-06 12:07:48 --> 404 Page Not Found --> uploads/league/1910154768.jpg
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/4783689132.png
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/5976206664.png
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/6426060036.jpg
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/3548271306.jpg
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/855176108.gif
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/5642208033.gif
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/2626639031.jpg
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/3630703566.gif
-ERROR - 2017-04-06 12:08:02 --> 404 Page Not Found --> uploads/league/5106361364.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/5730219078.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/0
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/5779154640.png
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/8845006274.gif
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/8959078183.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/9188593751.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/3299403488.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/406794915.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/8168368851.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/2057342412.png
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/9930049902.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/820596101.jpg
-ERROR - 2017-04-06 12:08:03 --> 404 Page Not Found --> uploads/league/5431813825.png
-ERROR - 2017-04-06 12:08:04 --> 404 Page Not Found --> uploads/league/6893952284.gif
-ERROR - 2017-04-06 12:08:04 --> 404 Page Not Found --> uploads/league/1910154768.jpg
-ERROR - 2017-04-06 12:08:04 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 12:08:04 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 12:08:04 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 12:08:07 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-06 12:08:08 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/dev/application/modules/public/controllers/loginfacebook.php 46
-ERROR - 2017-04-06 12:08:09 --> 404 Page Not Found --> favicon.ico
-ERROR - 2017-04-06 12:08:09 --> 404 Page Not Found --> favicon.ico
-ERROR - 2017-04-06 18:32:25 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-06 18:32:25 --> 404 Page Not Found --> uploads/league/2010780763.png
+ERROR - 2017-04-06 00:06:28 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: Connection timed out /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:06:28 --> Query error: MySQL server has gone away
+ERROR - 2017-04-06 00:07:02 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: Connection timed out /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:07:02 --> Query error: MySQL server has gone away
+ERROR - 2017-04-06 00:09:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:10:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:11:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:12:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:14:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:15:30 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:16:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:17:30 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:20:30 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:21:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:22:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:23:30 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:25:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:26:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:27:30 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 00:28:29 --> Severity: Warning  --> file_get_contents(https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=mayur8189): failed to open stream: HTTP request failed! HTTP/1.1 503 Connection timed out
+ /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 265
+ERROR - 2017-04-06 05:50:20 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:52:59 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:53:35 --> 404 Page Not Found --> uploads/users/https:/lh3.googleusercontent.com/-XdUIqdMkCW
+ERROR - 2017-04-06 08:54:02 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:25 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:25 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:26 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:26 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:28 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:28 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:30 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:30 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:30 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:30 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:31 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:31 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:55:32 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBDyGCmvj2fQHgfbEXjnLRyvnwAqiJBkZfc8swkI8k32gKO1fc4kuRfE2ltlgXO4NZnRn36Lkzl91LZ88zy61deCd4UEtGER0DKVrmC-GdB6CSRe5JvPjxo7gihtZG75Nyt-7jtmcQpnPN24S9SQQ6q826wfRE7rB2DfKMGj8uzC7hicw1CDJQl0vS_1YEa03QkdQJSfecLss0KkNcqRsydN6ItEw2Gi8dBpgCuYuI-MGRHemU2lcDweldQNW6dYlaOMTAWULp3SnxTrQlgroo2nYWU070ZjgkalV2kFXZ73CmMltQgoN9si9DclyiPzFH9FnqFEPAV3ZEjFxMhvEU3): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 08:55:32 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 08:59:36 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 09:01:24 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/oauth/access_token?client_id=1727081077607945&amp;redirect_uri=http%3A%2F%2Fleaguememe.com%2Fbeta%2Fpublic%2Floginfacebook%2Freturnfb&amp;client_secret=e6c9a2afffc0219efbe7de97a913a0dd&amp;code=AQBuUkR4u9CUVJ1yJp2NetbpiKjQ9Nz9yP0xhTuB_WM16o-kvHDtJwh6yDlX3gtDb9ttP2qbFC4T74d8q58ybfnf3Miv-CUX4cgnQL_DP9-l0nbqJQnUnHw-EbJIwX-zygNu5oS4eFILwYOYk6wVUVQOS-UnbIhDY5xjfjXuTZfHgY8cRtLEsxTNPImIA8doMvGwwZ6szJKojlbUI6UXA3to2wBLCIvRVSWzTW6Vavyl6HClnVbwkp-_TnTmEIbBBgSIl-0DJ7JuCaHOMgjZeGfc24jjb5YLYgTSV_FX8oPI4c70j3lqm9WFDrk71ZZAEddgJ8ndfZ6JF7bl6MtoNkjy): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 42
+ERROR - 2017-04-06 09:01:24 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 10:45:41 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 10:49:14 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 10:55:39 --> Severity: Notice  --> Undefined index: access_token /home/league/public_html/beta/application/modules/public/controllers/loginfacebook.php 46
+ERROR - 2017-04-06 11:08:05 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-06 11:08:06 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-06 11:08:52 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-06 11:08:53 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-06 11:12:46 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-06 11:12:46 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-06 11:14:09 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map
+ERROR - 2017-04-06 11:14:10 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-04-06 21:11:29 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: Connection timed out /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 222
+ERROR - 2017-04-06 21:11:29 --> Query error: MySQL server has gone away

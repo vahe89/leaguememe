@@ -31,11 +31,11 @@
                                 unset($words[$key]);
                                 $new = implode(" ", $words);
                                 ?>
-                                <span><a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
+                                <span><a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
                                 <span><?php echo "mentioned you in comment:"; ?></span>
-                                <div class="date-notif" style="font-size: 13px;"><a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $user_name; ?>"><?php echo $username; ?></a>&nbsp;<?php echo $new; ?></div>
+                                <div class="date-notif" style="font-size: 13px;"><a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $user_name; ?>"><?php echo $username; ?></a>&nbsp;<?php echo $new; ?></div>
                             <?php } else { ?>
-                                <span><a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
+                                <span><a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
                                 <span><?php echo $value['pre_value']; ?></span>
                                 <div class="date-notif" style="font-size: 13px;"><?php echo $value['comment']; ?></div>
                             <?php } ?>
@@ -46,7 +46,7 @@
                     <div class="post-notif">
                         <?php if ($value['leagueimage_id'] == 1) {
                             ?>
-                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="btn btn-red" style="width: auto; margin-left: -19px;"> <i class="fa fa-user-plus"></i> </a>
+                            <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="btn btn-red" style="width: auto; margin-left: -19px;"> <i class="fa fa-user-plus"></i> </a>
                             <?php
                         } else {
                             ?>
@@ -72,13 +72,13 @@
                                 $new = implode(" ", $words);
 
                                 ?>
-                                <span><a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
+                                <span><a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
                                 <span><?php echo "mentioned you in comment:"; ?></span>
                                 <div class="date-notif" style="font-size: 13px;">
-                                    <?php echo highlight_phrase($new, $words[$key], '<a href = "animemoment_profile/'.$user_name.'"><span class="linkin-user">', '</span></a>'); ?>
+                                    <?php echo highlight_phrase($new, $words[$key], '<a href = "leaguememe_profile/'.$user_name.'"><span class="linkin-user">', '</span></a>'); ?>
                                 </div>  
                             <?php } else { ?>
-                                <span><a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
+                                <span><a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="linkin-user"> <?php echo empty($value['name']) ? $value['user_name'] : $value['name']; ?></a></span>
                                 <span><?php echo $value['pre_value']; ?></span>
                                 <div class="date-notif" style="font-size: 13px;"><?php echo $value['comment']; ?></div>
                             <?php } ?>
@@ -89,7 +89,7 @@
                     <div class="post-notif">
                         <?php if ($value['leagueimage_id'] == 1) {
                             ?>
-                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" class="btn btn-red" style="width: auto; margin-left: -19px;"> <i class="fa fa-user-plus"></i> </a>
+                            <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" class="btn btn-red" style="width: auto; margin-left: -19px;"> <i class="fa fa-user-plus"></i> </a>
                             <?php
                         } else {
                             ?>

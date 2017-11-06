@@ -1,5 +1,4 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-03-04 06:06:38 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-03-04 08:31:46 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-03-04 23:10:40 --> 404 Page Not Found --> favicon.ico
+ERROR - 2017-03-04 06:20:08 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-03-04 06:20:08 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71

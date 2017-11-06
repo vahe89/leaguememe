@@ -112,7 +112,6 @@ echo $this->load->view('template/sidebar_list');
         });
     });
 </script>
-<script src="<?php echo base_url(); ?>assets/public/js/league.js" type="text/javascript"></script>
 
 
 

@@ -14,7 +14,7 @@ foreach ($comments as $key => $value) {
                         <?php if (!empty($value['main_comment']->user_image) && $value['main_comment']->user_image != "") { ?>
                             <img src="<?php echo base_url() ?>uploads/users/<?php echo $value['main_comment']->user_image; ?>" alt="<?php echo $value['main_comment']->user_image; ?>" class="media-object avatar img-circle"  >
                         <?php } else { ?>
-                            <img src="<?php echo base_url() ?>assets/public/img/admin.png" alt="Leaguememe" class="media-object avatar img-circle">
+                            <img src="<?php echo base_url() ?>assets/public/img/logo-simple.png" alt="Leaguememe" class="media-object avatar img-circle">
                         <?php } ?>
                     </a>
                 </div>
@@ -28,15 +28,15 @@ foreach ($comments as $key => $value) {
                     </div>
                 </div>
             </div>
-<!--            <div class="report-comment">
-                <div class="disable-comment">
-                    <i class="fa fa-minus-square-o"></i>
-                </div>
-                <div class="separator-report"></div>
-                <div class="report-flag-comment">
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </div>-->
+            <!--            <div class="report-comment">
+                            <div class="disable-comment">
+                                <i class="fa fa-minus-square-o"></i>
+                            </div>
+                            <div class="separator-report"></div>
+                            <div class="report-flag-comment">
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </div>-->
             <div class="wrap-comment-field">
                 <?php
                 $check = $value['main_comment']->comment;
@@ -95,6 +95,9 @@ foreach ($comments as $key => $value) {
                     } else if (!empty($value['main_comment']->discussion_image)) {
                         ?>
                         <img class="media-object comment-picture" style="margin-left: 0px; margin-bottom: 10px;" src="<?php echo base_url(); ?>uploads/comment_picture/<?php echo $value['main_comment']->discussion_image; ?>" width="120px;" height="120px;" alt="">
+                    <?php } else if (!empty($value['main_comment']->comment_image)) {
+                        ?>
+                        <img class="media-object comment-picture" style="margin-left: 0px; margin-bottom: 10px;" src="<?php echo base_url(); ?>uploads/comment_picture/<?php echo $value['main_comment']->comment_image; ?>" width="120px;" height="120px;" alt="">
                     <?php } else { ?>
 
                     <?php } ?>
@@ -193,7 +196,7 @@ foreach ($comments as $key => $value) {
                                         <?php if (!empty($value[$i]->user_image) && $value[$i]->user_image != "") { ?>
                                             <img src="<?php echo base_url() ?>uploads/users/<?php echo $value[$i]->user_image; ?>" alt="<?php echo $value[$i]->user_image; ?>" class="media-object avatar img-circle"  >
                                         <?php } else { ?>
-                                            <img src="<?php echo base_url() ?>assets/public/img/admin.png" alt="Leaguememe" class="media-object avatar img-circle">
+                                            <img src="<?php echo base_url() ?>assets/public/img/logo-simple.png" alt="Leaguememe" class="media-object avatar img-circle">
                                         <?php } ?>
                                     </a>
                                 </div>
@@ -316,7 +319,7 @@ foreach ($comments as $key => $value) {
                                         <div id="childrplycmtbox-<?php echo $value[$i]->comment_id; ?>" style="display:none" class="childrplycmtbox-<?php echo $key; ?>"  >
                                             <div  id="<?php echo $key; ?>">
                                                 <textarea class="form-control form-comment textarea-box  childinnercomboBox" placeholder="Comment reply" id="childaddrplCommentBox-<?php echo $value[$i]->comment_id; ?>" ></textarea>
-                                                <div  id="<?php echo $key; ?>">
+                                                <div  id="<?php echo $key; ?>" class="childcommentrplPostBtn<?php echo $value[$i]->comment_id; ?>">
                                                     <button class="pull-right small-btn green-bg btn childcommentrplPostBtn" id="<?php echo $value[$i]->comment_id; ?>"  >Reply</button>
                                                 </div>
                                             </div>
@@ -347,7 +350,7 @@ foreach ($comments as $key => $value) {
                                         <?php if (!empty($value[$i]->user_image) && $value[$i]->user_image != "") { ?>
                                             <img src="<?php echo base_url() ?>uploads/users/<?php echo $value[$i]->user_image; ?>" alt="<?php echo $value[$i]->user_image; ?>" class="media-object avatar img-circle"  >
                                         <?php } else { ?>
-                                            <img src="<?php echo base_url() ?>assets/public/img/admin.png" alt="Leaguememe" class="media-object avatar img-circle">
+                                            <img src="<?php echo base_url() ?>assets/public/img/logo-simple.png" alt="Leaguememe" class="media-object avatar img-circle">
                                         <?php } ?>
                                     </a>
                                 </div>
@@ -440,14 +443,14 @@ foreach ($comments as $key => $value) {
                                         <div id="childrplycmtbox-<?php echo $value[$i]->comment_id; ?>" style="display:none" class="childrplycmtbox-<?php echo $key; ?>"  >
                                             <div  id="<?php echo $key; ?>">
                                                 <textarea class="form-control form-comment textarea-box  childinnercomboBox" placeholder="Comment reply" id="childaddrplCommentBox-<?php echo $value[$i]->comment_id; ?>" ></textarea>
-                                                <div  id="<?php echo $key; ?>">
+                                                <div  id="<?php echo $key; ?>" class="childcommentrplPostBtn<?php echo $value[$i]->comment_id; ?>">
                                                     <button class="pull-right small-btn green-bg btn comment-bt childcommentrplPostBtn" id="<?php echo $value[$i]->comment_id; ?>"  >Reply</button>
                                                 </div>
                                             </div>
                                             <div class="col-lg-2  pull-right comment-count value-box" style="bottom: 24px;right: -54px" id="childinerwordcountdiv<?php echo $value[$i]->comment_id; ?>">
                                                 <p>1000</p>
                                             </div>
-                                        </div>
+                                        </div>l
                                     </div>
 
                                 </div>
@@ -474,7 +477,7 @@ foreach ($comments as $key => $value) {
 ?>
 
 <script>
-    $(function () {
+    $(function() {
         $('.comment-container').hide();
     });
 
