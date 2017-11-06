@@ -115,7 +115,7 @@ class Home extends MX_Controller {
         //get data for content
 
         $data['sub_items'] = $this->get_sub_items($type,$subtype);
-        $data['content_content'] = $this->getSubContent($maintabval, $subtabval, $orderid);
+       // $data['content_content'] = $this->getSubContent($maintabval, $subtabval, $orderid);
 
         $data["right_bar"] = $rightbar;
 

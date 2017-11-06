@@ -47,7 +47,9 @@ class Discussion extends MX_Controller {
 
         $data["right_bar"] = $rightbar;
         $data["new_like"] = $this->hm->get_newlike();
-         $data['getTabposition'] = $this->leaguemod->getTabs(); 
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+
+        $data['content_content'] = $this->discussion_list_new('new',10,0);
         $data['content'] = $this->load->view('discussion/index', $data, TRUE);
         load_public_template($data);
     }
@@ -79,21 +81,27 @@ class Discussion extends MX_Controller {
         $data["right_bar"] = $rightbar;
          $data['getTabposition'] = $this->leaguemod->getTabs(); 
         $data['content'] = $this->load->view('discussion/index', $data, TRUE);
+        $data['content_content'] = $this->discussion_list_new('fav',10,0);
         load_public_template($data);
     }
 
     function discussion_list() {
+
         if ($this->session->userdata('user_id')) {
             $user_id = $this->session->userdata('user_id');
         } else {
             $user_id = 0;
         }
-        $main = $this->input->post('main');
+//        $main = $this->input->post('main');
+//
+//        $rowperpage = $this->input->post('rowperpage');
+//        $row = $this->input->post('row');
+        $main = $this->uri->segment(5);
 
-        $rowperpage = $this->input->post('rowperpage');
-        $row = $this->input->post('row');
+        $rowperpage = $this->uri->segment(4)+10;
+        $row = $this->uri->segment(4);
+
         $allcount_fetch = $this->discmod->get_total_row($main, $user_id);
-
         $data['allcount'] = $allcount_fetch->count;
 
         $data['discussion_detail'] = $this->discmod->discussion_list($main, $user_id, $row, $rowperpage);
@@ -121,7 +129,7 @@ class Discussion extends MX_Controller {
         $data['victory'] = $victory;
         $data['defact'] = $defact;
         $data['total'] = count($data['discussion_detail']);
-        echo $this->load->view('discussion/discussion_list', $data, true);
+        return $this->load->view('discussion/discussion_list', $data, true);
     }
 
     function discussion_single($anime_discussionid = ' ') {
@@ -147,6 +155,51 @@ class Discussion extends MX_Controller {
         $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
         $data['content'] = $this->load->view('discussion_single', $data, TRUE);
         load_public_template($data);
+    }
+
+    function discussion_list_new($main,$rowperpage, $row) {
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
+        //$main = $this->input->post('main');
+
+      //  $rowperpage = $this->input->post('rowperpage');
+      //  $row = $this->input->post('row');
+        $allcount_fetch = $this->discmod->get_total_row($main, $user_id);
+
+        $data['allcount'] = $allcount_fetch->count;
+        $data['row'] = $row;
+
+        $data['discussion_detail'] = $this->discmod->discussion_list($main, $user_id, $row, $rowperpage);
+
+        if ($this->session->userdata('user_id')) {
+            $data['userid'] = $this->session->userdata('user_id');
+        }
+
+        $victory = array();
+        $defact = array();
+        foreach ($data['discussion_detail'] as $league) {
+            if (isset($league->vic_users) && !empty($league->vic_users)) {
+                $victory[$league->anime_discussionid] = explode(",", $league->vic_users);
+            }
+            if (isset($league->def_users) && !empty($league->def_users)) {
+                $defact[$league->anime_discussionid] = explode(",", $league->def_users);
+            }
+        }
+        $fav_userid = array();
+        foreach ($data['discussion_detail'] as $league) {
+            if (isset($league->fvtuserid) && !empty($league->fvtuserid)) {
+                $fav_userid[$league->anime_discussionid] = explode(",", $league->fvtuserid);
+            }
+        }
+
+        $data['favuserid'] = $fav_userid;
+        $data['victory'] = $victory;
+        $data['defact'] = $defact;
+        $data['total'] = count($data['discussion_detail']);
+        return $this->load->view('discussion/discussion_list', $data, true);
     }
 
 }
