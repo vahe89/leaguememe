@@ -88,6 +88,7 @@ i.fa.fa-circle{font-size:10px;vertical-align:middle;color:#c9c6c6;}
 .ads{padding-left:35px;padding-right:0px;display:inline-block;}
 .ads-view{padding-left:45px;padding-right:0px;border-top:none !important;}
 .banner{margin-top:0px;margin-bottom:20px;display:block;}
+.affix .banner:first-child{margin-bottom: 0;}
 .banner h4{font-size:13px;line-height:24px;margin:0px;}
 .overlay-other{height:350px;text-align:center;}
 .bottom-cover-other{bottom:0px;margin-top:0px;position:absolute;bottom:-60px;transition:bottom 0.8s ease;}

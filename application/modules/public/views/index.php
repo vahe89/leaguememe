@@ -972,6 +972,27 @@ if ($message != '') { ?>
                 }
             }
         });
+
+        function hideBanners() {
+            var contentheight = window.innerHeight - 220;
+            var bannerHeight = 0;
+
+            $(".right_banner_side .banner_cont").each(function () {
+                bannerHeight += $(this).outerHeight();
+                if (bannerHeight >= contentheight) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        }
+
+        hideBanners();
+        $(window).resize(function () {
+            hideBanners();
+        });
+
     });
     if ('<?= $class ?>' == "home") {
         $(".back-image").click(function() {

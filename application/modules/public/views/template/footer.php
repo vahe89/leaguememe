@@ -87,8 +87,9 @@ $('body').on('click','.close_ad_btn',function(){
 <script src="<?php echo $new_url; ?>assets_new/public/js/chosen.jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
 <script src="<?php echo $new_url; ?>assets_new/public/js/components.js" async></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
-    var new_url = "http://static.leaguememe.com/";
+    var new_url = "<?php echo $new_url; ?>";
 
     $.getScript(new_url+'assets_new/public/js/footer_scripts.js');
     $.getScript('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
@@ -107,39 +108,39 @@ $('body').on('click','.close_ad_btn',function(){
 
         var subTabValue = $('#subTabval').val();
         var getPage = $('#getPage').val();
-        $.ajax({
-            type: "POST",
-            url: base_url + 'public/home/get_sub_tab_data',
-            data: {
-                mainTabs: mainTabs, subTabValue: subTabValue
-            },
-            success: function (msg) {
-                $('#subTabData').html(msg);
-            }
-        });
-        $.ajax({
-            url: base_url + "public/home/right_sidebar",
-            type: 'POST',
-            data: {
-                mainTabval: mainTabs,
-                getPage: getPage,
-            },
-            beforeSend: function (xhr) {
-
-                $('.right_banner_side').html("<img src='" + new_base_url + "assets_new/public/img/ajax-loader.gif' >");
-                $('.right_banner_side').addClass("text-center");
-            },
-            success: function (data, textStatus, jqXHR) {
-                $('.right_banner_side').removeClass("text-center");
-                $('.right_banner_side').html(data);
-                var right_side = $(".right_banner_side").outerHeight(true);
-                // if (left_side >= right_side) {
-                $(".sidebar").affix({offset: {top: right_side}});
-                //}
-            }, error: function (jqXHR, textStatus, errorThrown) {
-
-            }
-        });
+//        $.ajax({
+//            type: "POST",
+//            url: base_url + 'public/home/get_sub_tab_data',
+//            data: {
+//                mainTabs: mainTabs, subTabValue: subTabValue
+//            },
+//            success: function (msg) {
+//                $('#subTabData').html(msg);
+//            }
+//        });
+//        $.ajax({
+//            url: base_url + "public/home/right_sidebar",
+//            type: 'POST',
+//            data: {
+//                mainTabval: mainTabs,
+//                getPage: getPage,
+//            },
+//            beforeSend: function (xhr) {
+//
+//                $('.right_banner_side').html("<img src='" + new_base_url + "assets_new/public/img/ajax-loader.gif' >");
+//                $('.right_banner_side').addClass("text-center");
+//            },
+//            success: function (data, textStatus, jqXHR) {
+//                $('.right_banner_side').removeClass("text-center");
+//                $('.right_banner_side').html(data);
+//                var right_side = $(".right_banner_side").outerHeight(true);
+//                // if (left_side >= right_side) {
+//                $(".sidebar").affix({offset: {top: right_side}});
+//                //}
+//            }, error: function (jqXHR, textStatus, errorThrown) {
+//
+//            }
+//        });
 
         $(document).on("click", "span.disc-credit-show", function (e) {
             if ($(this).text() == "Credit") {
