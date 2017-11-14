@@ -115,7 +115,7 @@ class Home extends MX_Controller {
         //get data for content
 
         $data['sub_items'] = $this->get_sub_items($type,$subtype);
-       // $data['content_content'] = $this->getSubContent($maintabval, $subtabval, $orderid);
+        $data['content_content'] = $this->getSubContent($maintabval, $subtabval, $orderid);
 
         $data["right_bar"] = $rightbar;
 
@@ -165,7 +165,7 @@ class Home extends MX_Controller {
 
         for ($i = 0; $i < $total; $i++) {
             $active = "";
-                        
+
 
             if ($data['subTabData'][$i]['category_name'] == "All") {
                 if ($subtabval == "All") {
@@ -175,19 +175,19 @@ class Home extends MX_Controller {
 //$html .= "<li class='subTab active' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' class='active' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
             } else {
                 $cate_name =  $data['subTabData'][$i]['category_name'];
-                        
+
                 if ($data['subTabData'][$i]['category_name'] == "Art/Cosplay") {
                     $category = "art";
                 } else {
                     $category = $data['subTabData'][$i]['category_name'];
                 }
-                $html .= '<li class="' . $type ; 
+                $html .= '<li class="' . $type ;
                 if($subtabval == "Art"){
                     $cate_new_name = "Art/Cosplay";
                 }else{
                     $cate_new_name = ucfirst($subtabval) ;
                 }
-                if($cate_new_name == $cate_name) { $html .= 'active' ; } 
+                if($cate_new_name == $cate_name) { $html .= 'active' ; }
                 $html .='  subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $cate_name . '" href="' . base_url() . "new/" . strtolower($category) . '">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
 //$html .= "<li class='subTab' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
             }
@@ -519,7 +519,7 @@ class Home extends MX_Controller {
             $cfile_name = rand(0, 9999999999) . '.' . $image_extension;
 
             if ($image_type == 'image/jpeg' || $image_type == 'image/pjpeg') {
-                
+
                 $config_ori['upload_path'] = "./uploads/dump_original";
                 $config_ori['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config_ori['file_name'] = $cfile_name;
@@ -531,12 +531,12 @@ class Home extends MX_Controller {
                     echo json_encode($data);
                     die;
                 }
-                
+
                 $image = imagecreatefromjpeg($image_temp);
                 $image_path = getcwd() . "/uploads/dump/$cfile_name";
                 imagejpeg($image, $image_path, 80);
             } elseif ($image_type == 'image/png') {
-                
+
                 $config_ori['upload_path'] = "./uploads/dump_original";
                 $config_ori['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config_ori['file_name'] = $cfile_name;
@@ -548,7 +548,7 @@ class Home extends MX_Controller {
                     echo json_encode($data);
                     die;
                 }
-                
+
                 $image = imagecreatefrompng($image_temp);
                 $image_path = getcwd() . "/uploads/dump/$cfile_name";
                 imagepng($image, $image_path);
@@ -592,7 +592,7 @@ class Home extends MX_Controller {
                         $gif_configs['thumb_marker'] = '';
                         $this->image_lib->initialize($gif_configs);
                         $this->image_lib->resize();
-                        imagedestroy($image_gif); //freeup memory 
+                        imagedestroy($image_gif); //freeup memory
                     }
                 }
             }
@@ -607,7 +607,7 @@ class Home extends MX_Controller {
             $configs['height'] = 157;
             $this->image_lib->initialize($configs);
             $this->image_lib->resize();
-//            imagedestroy($image); //freeup memory 
+//            imagedestroy($image); //freeup memory
 
             $this->session->set_userdata('image_name', $cfile_name);
             $data = array('result' => 'success', 'name' => $cfile_name, 'videoname' => $videoname);
@@ -881,7 +881,7 @@ class Home extends MX_Controller {
                 if (!empty($category)) {
                     if ($category_N == $category) {
                         $checked_html = '<input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '" checked="checked">';
-                        
+
                          $html .= '<li id="' . $data["subTabData"][$i]["category_name"] . '">
             <div class = "img-filter">
             <img src="' . base_url() . 'uploads/category/' . $data["subTabData"][$i]["category_logo"] . '"  alt="">
@@ -901,7 +901,7 @@ class Home extends MX_Controller {
                     }
                 } else {
                     $checked_html = '<input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '" >';
-                    
+
                      $html .= '<li id="' . $data["subTabData"][$i]["category_name"] . '">
             <div class = "img-filter">
             <img src="' . base_url() . 'uploads/category/' . $data["subTabData"][$i]["category_logo"] . '"  alt="">
@@ -916,7 +916,7 @@ class Home extends MX_Controller {
             </div>
             </li>';
                 }
-               
+
             }
         } else {
             for ($i = 0; $i < $total; $i++) {
@@ -1042,7 +1042,7 @@ class Home extends MX_Controller {
     }
 
     function save_image($source, $destination, $image_type, $quality) {
-        switch (strtolower($image_type)) {//determine mime type  
+        switch (strtolower($image_type)) {//determine mime type
             case 'image/png':
                 imagepng($source, $destination);
                 return true; //save png file
@@ -1382,16 +1382,16 @@ class Home extends MX_Controller {
                         $_FILES['userfile']['tmp_name'] = $files['userfile']['tmp_name'][$i];
                         $_FILES['userfile']['error'] = $files['userfile']['error'][$i];
                         $_FILES['userfile']['size'] = $files['userfile']['size'][$i];
-                        
+
                         $this->upload->initialize($this->set_ori_upload_options());
                         $this->upload->do_upload();
-                        
+
                         $this->set_resize_upload_options($_FILES['userfile']['tmp_name'], $_FILES['userfile']['name']);
 
                         $this->upload->initialize($this->set_upload_options_resize());
                         $this->upload->do_upload();
                         $this->image_lib->clear();
-                        
+
                         $configs['image_library'] = 'gd2';
                         $configs['source_image'] = './uploads/league/' . $_FILES['userfile']['name'];
                         $configs['new_image'] = './uploads/league_resize/' . $_FILES['userfile']['name'];
@@ -1439,7 +1439,7 @@ class Home extends MX_Controller {
         $config['overwrite'] = FALSE;
         return $config;
     }
-    
+
     private function set_resize_upload_options($tmp_name, $file_name) {
 
         $imageInfo = getimagesize($tmp_name); //get image size
@@ -1971,7 +1971,7 @@ class Home extends MX_Controller {
                     'leagueimage_description' => $description,
                     'upload_type' => 2,
 //                    'image_spoiler' => $spolier_val,
-//                    'image_nsfw' => $notsafe, 
+//                    'image_nsfw' => $notsafe,
                 );
 //                print_r($dataArray);
 //                exit;
@@ -2109,11 +2109,11 @@ class Home extends MX_Controller {
 
         // Add text background
         // imagefilledrectangle($image_p, 0, 0, $text_width, $text_height, $bg_color);
-        // Add text 
+        // Add text
         // imagettfborder($image_p, $font_size,  0, $offset_x, $offset_y, $grey, $font, $text, 2);
         $this->imagettfborder($image_p, $font_size, 0, $offset_x, $offset_y, $black, $font, $text, 1);
         imagettftext($image_p, $font_size, 0, $offset_x, $offset_y, $white, $font, $text);
-        // imagettftext($image_p, $font_size, 0, $offset_x, $offset_y, $text_color, $font, $text); 
+        // imagettftext($image_p, $font_size, 0, $offset_x, $offset_y, $text_color, $font, $text);
 //        $this->imagettfborder($image_p, 20, 0, $position_center, $position_middle, $black, $font, "leaguememe.com", 1);
 //        imagettftext($image_p, 20, 0,200,-1, $white, $font, "leaguememe.com");
         // Save the picture
@@ -2367,7 +2367,7 @@ class Home extends MX_Controller {
 
         $maintabval = $this->input->post('mainTabval');
         $add = $this->input->post('getPage');
-        
+
         $side_link = $this->hm->get_all_sidelinksside($maintabval);
         $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval);
         $data["side_links"] = array_merge($side_link, $side_linkss);
@@ -2495,12 +2495,12 @@ class Home extends MX_Controller {
  function imageToDBs($type) {
         $dir = getcwd() . '/uploads/' . $type;
         $allow = array('gif','GIF');
-        $open = opendir($dir); 
+        $open = opendir($dir);
         while (($file = readdir($open)) !== false) {
-            $ext = str_replace('.', '', strrchr($file, '.')); 
+            $ext = str_replace('.', '', strrchr($file, '.'));
             if (in_array($ext, $allow)) {
                 $title = explode(".", $file);
-            
+
                 $this->image_lib->clear();
                 $configs['image_library'] = 'gd2';
                 $configs['source_image'] = './uploads/' . $type . '/' . $file;
@@ -2522,13 +2522,13 @@ class Home extends MX_Controller {
                     $gif_configs['thumb_marker'] = '';
                     $this->image_lib->initialize($gif_configs);
                     $this->image_lib->resize();
-                } 
+                }
             }
-        } 
+        }
     }
     function test() {
-//                $test = file_get_contents(base_url().'ChampionList.txt'); 
-//                $new = explode("\n", $test); 
+//                $test = file_get_contents(base_url().'ChampionList.txt');
+//                $new = explode("\n", $test);
 //                foreach ($new as $champ_name){
 //                    $data = array("champ_name"=>trim($champ_name," "),"created_date"=>date('Y-m-d h:i:s'));
 //                    $this->leaguemod->add_champ($data);
@@ -2543,7 +2543,7 @@ class Home extends MX_Controller {
             echo "Error: ";
         }
     }
-    
+
     /*function remove_space() {
         $dir = getcwd() . '/uploads/league_resize';
         $file_display = array(
@@ -2552,7 +2552,7 @@ class Home extends MX_Controller {
             'png',
             'gif'
         );
-        
+
         $old_dir = getcwd() . '/uploads/league_resize/';
 
         if (file_exists($dir) == false) {
@@ -2566,7 +2566,7 @@ class Home extends MX_Controller {
                 if ($file !== '.' && $file !== '..' && in_array($file_type, $file_display) == true) {
                     $newFile = str_replace(" ", "_", $file);
                     rename($old_dir . $file, $old_dir . $newFile);
-                    
+
                     $i++;
                 } else {
                     echo "error -- " . $file . "<br/>";
@@ -2583,13 +2583,13 @@ class Home extends MX_Controller {
             'jpeg',
             'png'
         );
-        
+
 
         if (file_exists($dir) == false) {
             echo 'Directory \'' . $dir . '\' not found!';
         } else {
             $dir_contents = scandir($dir);
-          
+
             foreach ($dir_contents as $file) {
                 $file_type = strtolower(end(explode('.', $file)));
 
@@ -2605,13 +2605,13 @@ class Home extends MX_Controller {
 
     function compress_image($file, $source_url, $destination_url, $quality) {
         $info = getimagesize($source_url);
-      
+
         if ($info['mime'] == 'image/jpeg') {
             $image = imagecreatefromjpeg($source_url);
             imagejpeg($image, $destination_url, $quality);
         } elseif ($info['mime'] == 'image/png') {
             $image = imagecreatefrompng($source_url);
-//            $q = 9 / 100; 
+//            $q = 9 / 100;
 //            $quality*=$q;
 //            echo $quality;exit;
             imagepng($image, $destination_url, 9);
@@ -2622,7 +2622,7 @@ class Home extends MX_Controller {
 
         return $destination_url;
     }
-    
+
     function move_image() {
 
         $dir = getcwd() . '/uploads/league_folder_8';
@@ -2633,16 +2633,16 @@ class Home extends MX_Controller {
             $dir_contents = scandir($dir);
             $i = 0;
             foreach ($dir_contents as $file) {
-             
+
               //  shell_exec('mv uploads/league_folder_8/' . $file . ' uploads/league_original/');
-                
+
                 $i++;
             }
-           
+
         }
         exit;
     }
-    
+
     function getphpinfo(){
         echo phpinfo();
     }
@@ -2809,4 +2809,3 @@ if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
 
 /* End of file welcome.php */
     /* Location: ./application/controllers/welcome.php */
-    

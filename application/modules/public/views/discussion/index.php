@@ -24,7 +24,9 @@ echo $this->load->view('template/sidebar_list');
                 </div>
             </div>
             <div class="text-center">
-                <a href="<?php echo base_url() ?>public/discussion/discussion_list/<?php echo $row. '/new' ?>" class="load-more-discussion  btn btn-red"  <?php if ($allcount <= 10){?>style="display:none; width: 50%"<?php }else{ ?>style="width:50%; display: inline;" id="load-more-discussion"<?php } ?>>Load More Discussion</a>
+                <?php if($existing_count > 10){?>
+                <span class="load-more-discussion btn btn-red" style="width:50%;" id="load-more-discussion">Load More Discussion</span>
+<?php } ?>
             </div>
             <input type="hidden" id="discussion_row" value="<?php echo $row ?>">
         </div>
@@ -134,7 +136,7 @@ echo $this->load->view('template/sidebar_list');
 //   loadDisc(lastActivedisctab);
     })
     function loadDisc($tab) {
-        alert($tab);
+
         $.ajax({
             url: base_url + "public/discussion/discussion_list",
             data: {
@@ -164,60 +166,61 @@ echo $this->load->view('template/sidebar_list');
             }
         })
     }
-    <!--$('#load-more-discussion').click(function() {-->
+    $('#load-more-discussion').click(function() {
 
-        <!--var lastActivedisctab = "<?= $method ?>";-->
-        <!--if (lastActivedisctab == "index") {-->
-            <!--lastActivedisctab = "new";-->
-        <!--} else {-->
-            <!--lastActivedisctab = lastActivedisctab;-->
-        <!--}-->
-        <!--var row = Number($('#discussion_row').val());-->
-        <!--var allcount = Number($('#discussion_total_groups').val());-->
-        <!--var discussion_tab = lastActivedisctab;-->
-        <!--var rowperpage = 10;-->
-        <!--row = row + rowperpage;-->
-        <!--if (row <= allcount) {-->
-            <!--$("#discussion_row").val(row);-->
+        var lastActivedisctab = "<?= $method ?>";
+        if (lastActivedisctab == "index") {
+            lastActivedisctab = "new";
+        } else {
+            lastActivedisctab = lastActivedisctab;
+        }
+        var row = Number($('#discussion_row').val());
+        var allcount = Number($('#discussion_total_groups').val());
+        var discussion_tab = lastActivedisctab;
+        var rowperpage = 10;
+        row = row + rowperpage;
 
-            <!--$.ajax({-->
-                <!--url: base_url + "public/discussion/discussion_list",-->
-                <!--type: 'post',-->
-                <!--data: {row: row, rowperpage: rowperpage, main: discussion_tab},-->
-                <!--beforeSend: function() {-->
-                    <!--$(".load-more-discussion").text("Loading...");-->
-                <!--},-->
-                <!--success: function(response) {-->
+        if (row <= allcount) {
+            $("#discussion_row").val(row);
 
-                    <!--$(".popular-discussion:last").after(response).show().fadeIn("slow");-->
-                    <!--var rowno = row + rowperpage;-->
-                    <!--if (rowno > allcount) {-->
+            $.ajax({
+                url: base_url + "public/discussion/discussion_list",
+                type: 'post',
+                data: {row: row, rowperpage: rowperpage, main: discussion_tab},
+                beforeSend: function() {
+                    $(".load-more-discussion").text("Loading...");
+                },
+                success: function(response) {
 
-                        <!--$('.load-more-discussion').hide();-->
-                        <!--$('.load-more-discussion').removeAttr("id");-->
-                    <!--} else {-->
-                        <!--$('.load-more-discussion').show();-->
-                        <!--$(".load-more-discussion").text("Load More Discussion");-->
-                        <!--$('.load-more-discussion').attr("id", "load-more-discussion");-->
+                    $(".popular-discussion:last").after(response).show().fadeIn("slow");
+                    var rowno = row + rowperpage;
+                    if (rowno > allcount) {
 
-                    <!--}-->
+                        $('.load-more-discussion').hide();
+                        $('.load-more-discussion').removeAttr("id");
+                    } else {
+                        $('.load-more-discussion').show();
+                        $(".load-more-discussion").text("Load More Discussion");
+                        $('.load-more-discussion').attr("id", "load-more-discussion");
 
-                <!--}-->
-            <!--});-->
-        <!--} else {-->
-            <!--$('.load-more-discussion').show();-->
-            <!--$('.load-more-discussion').text("Loading...");-->
-            <!--$('.load-more-discussion').attr("id", "load-more-discussion");-->
+                    }
 
-            <!--$("#discussion_row").val(0);-->
+                }
+            });
+        } else {
+            $('.load-more-discussion').show();
+            $('.load-more-discussion').text("Loading...");
+            $('.load-more-discussion').attr("id", "load-more-discussion");
 
-            <!--$('.load-more-discussion').text("Load More Discussion");-->
+            $("#discussion_row").val(0);
+
+            $('.load-more-discussion').text("Load More Discussion");
 
 
 
-        <!--}-->
+        }
 
-    <!--});-->
+    });
     $(".choose-discuss").click(function() {
         $(".create-disc-cont").hide();
         $(".inline-discuss-upload").show();

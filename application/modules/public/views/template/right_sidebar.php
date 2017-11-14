@@ -100,7 +100,7 @@
         <?php
     }
     ?>
-    <div class="right_banner_side">
+    <div class="right_banner_side text-center">
 
         <?php echo $right_bar['content'];?>
     </div>

@@ -757,6 +757,7 @@ if ($message != '') { ?>
             var page_track = $('#pagetrackid').val();
             var loading = false; //to prevents multipal ajax loads
             var total_groups; //total record group(s)
+            total_groups = $('.total_groups').val();
          //   list_league(mainTab, subTabValue);
         } else if ('<?= $method ?>' == "season_index") {
             season_old();
@@ -856,7 +857,9 @@ if ($message != '') { ?>
  
     var arr1 = [];
             if ($(window).scrollTop() + $(window).height() + Math.floor('71') >= $(document).height()) //user scrolled to bottom of the page?
-            { 
+            {
+
+                console.log(track_load+' - '+ total_groups)
                 if (track_load < total_groups && loading == false && '<?= $method ?>' == "index" && '<?= $class ?>' == "home") //there's more data to load
                 {
                      <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {

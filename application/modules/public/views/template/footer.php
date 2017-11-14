@@ -1,4 +1,4 @@
-<?php $new_url = "http://league.local/"; ?>
+<?php $new_url = "http://static.leaguememe.com/"; ?>
 <div class="footer-msg" id="copy_user_msg" style="display: none">
     Copy to clipboards
 </div>
@@ -88,81 +88,103 @@ $('body').on('click','.close_ad_btn',function(){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
 <script src="<?php echo $new_url; ?>assets_new/public/js/components.js" async></script>
 <script>
-    var new_url = "http://league.local/";
-    window.onload = function () {
+    var new_url = "http://static.leaguememe.com/";
 
-        $.getScript(new_url+'assets_new/public/js/footer_scripts.js');
-        $.getScript('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
+    $.getScript(new_url+'assets_new/public/js/footer_scripts.js');
+    $.getScript('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
 
-        function change_on_hover(id, type) {
-            if (type == "1") {
-                $('.league_side_id_' + id).css('color', '#b83c54');
-            } else {
-                $('.league_side_id_' + id).css('color', 'black');
-            }
-
+    function change_on_hover(id, type) {
+        if (type == "1") {
+            $('.league_side_id_' + id).css('color', '#b83c54');
+        } else {
+            $('.league_side_id_' + id).css('color', 'black');
         }
 
+    }
+    $(document).ready(function () {
 
-        $(document).ready(function () {
+        var mainTabs = $('#mainTabval').val();
 
-            var mainTabs = $('#mainTabval').val();
+        var subTabValue = $('#subTabval').val();
+        var getPage = $('#getPage').val();
+        $.ajax({
+            type: "POST",
+            url: base_url + 'public/home/get_sub_tab_data',
+            data: {
+                mainTabs: mainTabs, subTabValue: subTabValue
+            },
+            success: function (msg) {
+                $('#subTabData').html(msg);
+            }
+        });
+        $.ajax({
+            url: base_url + "public/home/right_sidebar",
+            type: 'POST',
+            data: {
+                mainTabval: mainTabs,
+                getPage: getPage,
+            },
+            beforeSend: function (xhr) {
 
-            var subTabValue = $('#subTabval').val();
-            var getPage = $('#getPage').val();
-//            $.ajax({
-//                type: "POST",
-//                url: base_url + 'public/home/get_sub_tab_data',
-//                data: {
-//                    mainTabs: mainTabs, subTabValue: subTabValue
-//                },
-//                success: function (msg) {
-//                    $('#subTabData').html(msg);
-//                }
-//            });
-//            $.ajax({
-//                url: base_url + "public/home/right_sidebar",
-//                type: 'POST',
-//                data: {
-//                    mainTabval: mainTabs,
-//                    getPage: getPage,
-//                },
-//                beforeSend: function (xhr) {
-//
-//                    $('.right_banner_side').html("<img src='" + new_base_url + "assets_new/public/img/ajax-loader.gif' >");
-//                    $('.right_banner_side').addClass("text-center");
-//                },
-//                success: function (data, textStatus, jqXHR) {
-//                    $('.right_banner_side').removeClass("text-center");
-//                    $('.right_banner_side').html(data);
-//                    var right_side = $(".right_banner_side").outerHeight(true);
-//                    // if (left_side >= right_side) {
-//                    $(".sidebar").affix({offset: {top: right_side}});
-//                    //}
-//                }, error: function (jqXHR, textStatus, errorThrown) {
-//
-//                }
-//            });
+                $('.right_banner_side').html("<img src='" + new_base_url + "assets_new/public/img/ajax-loader.gif' >");
+                $('.right_banner_side').addClass("text-center");
+            },
+            success: function (data, textStatus, jqXHR) {
+                $('.right_banner_side').removeClass("text-center");
+                $('.right_banner_side').html(data);
+                var right_side = $(".right_banner_side").outerHeight(true);
+                // if (left_side >= right_side) {
+                $(".sidebar").affix({offset: {top: right_side}});
+                //}
+            }, error: function (jqXHR, textStatus, errorThrown) {
 
-            $(document).on("click", "span.disc-credit-show", function (e) {
-                if ($(this).text() == "Credit") {
-                    $(this).text($(this).data("credit"));
-                    $(this).next("a").show();
-                }
-                else {
-                    $(this).text("Credit");
-                    $(this).next("a").hide();
-                }
-            })
-            $(document).keyup(function (e) {
-
-                if (e.which === 27) { // escape key maps to keycode `27`
-                    $(".cpylink").hide();
-                }
-            });
+            }
         });
 
-    }
+        $(document).on("click", "span.disc-credit-show", function (e) {
+            if ($(this).text() == "Credit") {
+                $(this).text($(this).data("credit"));
+                $(this).next("a").show();
+            }
+            else {
+                $(this).text("Credit");
+                $(this).next("a").hide();
+            }
+        })
+        $(document).keyup(function (e) {
+
+            if (e.which === 27) { // escape key maps to keycode `27`
+                $(".cpylink").hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+
+
+        $('.right_banner_side').removeClass("text-center");
+        var right_side = $(".right_banner_side").outerHeight(true);
+        // if (left_side >= right_side) {
+        $(".sidebar").affix({offset: {top: right_side}});
+
+
+        $(document).on("click", "span.disc-credit-show", function (e) {
+            if ($(this).text() == "Credit") {
+                $(this).text($(this).data("credit"));
+                $(this).next("a").show();
+            }
+            else {
+                $(this).text("Credit");
+                $(this).next("a").hide();
+            }
+        })
+        $(document).keyup(function (e) {
+
+            if (e.which === 27) { // escape key maps to keycode `27`
+                $(".cpylink").hide();
+            }
+        });
+    });
+
 </script>
 </body>
 

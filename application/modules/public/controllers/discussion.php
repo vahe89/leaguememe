@@ -45,11 +45,15 @@ class Discussion extends MX_Controller {
             );
         }
 
+        $data['sub_items'] = $this->get_sub_items('new',"");
         $data["right_bar"] = $rightbar;
         $data["new_like"] = $this->hm->get_newlike();
         $data['getTabposition'] = $this->leaguemod->getTabs();
 
-        $data['content_content'] = $this->discussion_list_new('new',10,0);
+        $new_info = $this->discussion_list_new('new',10,0);
+        $data['content_content'] = $new_info['content'];
+        $data['existing_count'] = $new_info['existing_count'];
+
         $data['content'] = $this->load->view('discussion/index', $data, TRUE);
         load_public_template($data);
     }
@@ -79,9 +83,13 @@ class Discussion extends MX_Controller {
         }
 
         $data["right_bar"] = $rightbar;
-         $data['getTabposition'] = $this->leaguemod->getTabs(); 
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        $new_info = $this->discussion_list_new('fav',10,0);
+        $data['content_content'] = $new_info['content'];
+        $data['existing_count'] = $new_info['existing_count'];
+
         $data['content'] = $this->load->view('discussion/index', $data, TRUE);
-        $data['content_content'] = $this->discussion_list_new('fav',10,0);
+
         load_public_template($data);
     }
 
@@ -199,7 +207,78 @@ class Discussion extends MX_Controller {
         $data['victory'] = $victory;
         $data['defact'] = $defact;
         $data['total'] = count($data['discussion_detail']);
-        return $this->load->view('discussion/discussion_list', $data, true);
+
+
+        $result['content'] = $this->load->view('discussion/discussion_list', $data, true);
+        $result['existing_count'] = $data['allcount'];
+        return $result;
     }
+
+    function get_sub_items($types='new',$subtype = 'all') {
+
+        if (!empty($types)) {
+            if ($types == "popular") {
+                $maintabval = "popular";
+            } else if ($types == "new") {
+                $maintabval = "new";
+            } else if ($types == "bookmark") {
+                $maintabval = "bookmark";
+            } else {
+                $maintabval = "popular";
+            }
+        } else {
+            $maintabval = "popular";
+        }
+
+        if (!empty($subtype)) {
+
+            $subtabval = $subtype;
+        } else {
+            $subtabval = "";
+        }
+        $data['subTabData'] = $this->hm->get_sub_tabs();
+        $total = count($data['subTabData']);
+        $html = '';
+        $type = $this->input->post('type');
+
+
+        for ($i = 0; $i < $total; $i++) {
+            $active = "";
+
+
+            if ($data['subTabData'][$i]['category_name'] == "All") {
+                if ($subtabval == "All") {
+                    $active = "active";
+                }
+                $html .= '<li class="' . $type . $active . ' subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $data["subTabData"][$i]["category_id"] . '" href="' . base_url()  . "new/" . 'all" class="active">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab active' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' class='active' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            } else {
+                $cate_name =  $data['subTabData'][$i]['category_name'];
+
+                if ($data['subTabData'][$i]['category_name'] == "Art/Cosplay") {
+                    $category = "art";
+                } else {
+                    $category = $data['subTabData'][$i]['category_name'];
+                }
+                $html .= '<li class="' . $type ;
+                if($subtabval == "Art"){
+                    $cate_new_name = "Art/Cosplay";
+                }else{
+                    $cate_new_name = ucfirst($subtabval) ;
+                }
+                if($cate_new_name == $cate_name) { $html .= 'active' ; }
+                $html .='  subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $cate_name . '" href="' . base_url() . "new/" . strtolower($category) . '">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            }
+        }
+        $actives = "";
+        if ($subtabval == "random") {
+            $actives = "active";
+        }
+
+        $html .= "<li class='" . $type . $actives . " subTab' id='" . $type . "random'><a id='" . $type . "sub0' href='" . base_url() . 'new/' . "random'>Random</a></li>";
+        return $html;
+    }
+
 
 }
