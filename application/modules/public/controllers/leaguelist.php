@@ -269,6 +269,7 @@ $limit  =  $this->input->post('perpage');
         $main = $this->input->post('main');
         $sub_name = $this->input->post('sub');
         $upload_type = $this->input->post('upload_type');
+        $offset = $this->input->post('offset') + $this->input->post('perpage');
         if (empty($upload_type)) {
             $up_type = 1;
         } else {
@@ -298,7 +299,7 @@ $limit  =  $this->input->post('perpage');
 
         $position = ($group_number * $items_per_group);
 
-        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id);
+        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id, $offset);
 //        echo "<pre>";
 //        print_r($data['league_details']);
 //        exit;

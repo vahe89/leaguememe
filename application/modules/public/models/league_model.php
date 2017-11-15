@@ -310,7 +310,7 @@ class League_model extends CI_Model {
         return $query->result_array();
     }
 
-    function list_scroll_league($main, $sub, $anime, $start, $limit, $upload_type = 0, $user_id = 0) {
+    function list_scroll_league($main, $sub, $anime, $start, $limit, $upload_type = 0, $user_id = 0, $offset = 0) {
         if ($main == "new") {
             $popular = "AND le_leimg.leagueimage_setpopular = 'N'";
         } else if ($main == "popular") {
@@ -325,10 +325,10 @@ class League_model extends CI_Model {
         }
         if ($sub == 0) {
             $sub = '';
-            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $start . ',' . $limit . '';
+            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $offset . ',1';
         } else {
             $sub = "AND ctg.category_id = " . $sub;
-            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $start . ',' . $limit . '';
+            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $offset . ',1';
 //            $orderBy = 'ORDER BY total_comment desc ,total_victory desc LIMIT ' . $start . ',' . $limit . '';
         }
 //        echo "Second:::" . $orderBy;

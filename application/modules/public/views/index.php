@@ -669,10 +669,12 @@ if ($message != '') { ?>
      var season_page = 10;
             <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                 ?>
-               var perpage = 4;  
+               var perpage = 4;
                var season_page = 4;
             <?php
             } ?>
+    var offset = 1;
+    var scroll_top = 1000;
     $(document).ready(function() {
         //alert("test");
         if ('<?= $class ?>' == "home" && '<?= $category != "video" ?>') {
@@ -854,32 +856,37 @@ if ($message != '') { ?>
 
                 });
             });
- 
-    var arr1 = [];
-            if ($(window).scrollTop() + $(window).height() + Math.floor('71') >= $(document).height()) //user scrolled to bottom of the page?
-            {
 
-                console.log(track_load+' - '+ total_groups)
+    var arr1 = [];
+            loading = false;
+            if ($(window).scrollTop() >= scroll_top) //user scrolled to bottom of the page?
+            {
                 if (track_load < total_groups && loading == false && '<?= $method ?>' == "index" && '<?= $class ?>' == "home") //there's more data to load
                 {
                      <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                 ?> 
-                          perpage = "8";                
+                          perpage = "8";
                       <?php } ?>
-                    loading = true; //prevent further ajax loading
                     $('.animation_image').show(); //show loading image
                     $.ajax({type: "POST",
                         url: base_url + 'public/leaguelist/list_scroll_data',
-                        data: {group_no: page_track, main: mainTab, sub: subTabValue,perpage:perpage},
-                        success: function(msg) { 
+                        data: {
+                            group_no: page_track,
+                            main: mainTab,
+                            sub: subTabValue,
+                            perpage: perpage,
+                            offset: offset
+                        },
+                        success: function(msg) {
+                            loading = true;
                             $('#league_list_home').append(msg);
                             $('.animation_image').hide(); //hide loading image once data is received
-                            track_load++; //loaded group increment  
+                            track_load++; //loaded group increment
                             page_track++;
 
                            <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
-                                 ?> 
-                                      loading = false;                       
+                                 ?>
+                                      loading = false;
                              <?php } else {
                                  ?>
                                     if (page_track == total_groups) {
@@ -894,7 +901,7 @@ if ($message != '') { ?>
                                         var league = page_track * perpage;
                                         $("#morefun1").attr("action", base_url + mainTab + '/' + subTabValue.toLowerCase() + '/' + league);
                                         $("#morefun").show();
-                                    } 
+                                    }
                                     else {
                                         loading = false;
                                     }
@@ -902,6 +909,8 @@ if ($message != '') { ?>
                              ?>
                         }
                     });
+                    offset += 1;
+                    scroll_top += 620;
                 }
                 if (season_track_load <= $('.season_total_groups').val() && loading == false && '<?= $method ?>' == "season_index") //there's more data to load
                 {
