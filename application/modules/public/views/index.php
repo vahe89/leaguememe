@@ -891,7 +891,6 @@ if ($message != '') { ?>
                                  ?>
                                     if (page_track == total_groups) {
                                         loading = true;
-                                        $("#morefun").hide();
                                     } else if (track_load == 2) {
                                         loading = true;
 
@@ -900,7 +899,6 @@ if ($message != '') { ?>
                                         $("#subTabval").attr("value", subTabValue);
                                         var league = page_track * perpage;
                                         $("#morefun1").attr("action", base_url + mainTab + '/' + subTabValue.toLowerCase() + '/' + league);
-                                        $("#morefun").show();
                                     }
                                     else {
                                         loading = false;
