@@ -28,11 +28,11 @@ if (empty($username)) {
                                         <?php echo $sub_items; ?>
                                     </ul>
                                 </li>
-                                <li class="<?= (isset($method) && !empty($method) && $method == "season_index") ? 'active' : '' ?>"> 
+                                <li class="<?= (isset($method) && !empty($method) && $method == "season_index") ? 'active' : '' ?>">
                                     <a href="<?= base_url() ?>season-old">Season 6-1</a>
                                 </li>
                             </ul>
-                        </li> 
+                        </li>
                         <?php
                         $sorting = array();
                         $sorting['discussion'] = '<li role="presentation" class="' . ((isset($active_menu) && !empty($active_menu) && $active_menu == 'discussion') ? 'active' : '') . '" id="tab-disc">
