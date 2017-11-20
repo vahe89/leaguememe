@@ -19,6 +19,8 @@ if (!defined('BASEPATH'))
 
 class Template_public extends MX_Controller {
 
+    private $new_url = 'http://league.local/';
+
     public function __construct() {
         parent::__construct();
     }
@@ -55,6 +57,7 @@ class Template_public extends MX_Controller {
     public function header($data) {
 
         $Session = $data['userdetail']['user_id'];
+        $data['new_url'] = $this->new_url;
 
         return $this->load->view('template/header', $data, true);
     }
@@ -80,6 +83,7 @@ class Template_public extends MX_Controller {
 //        exit;
         $data['following_list'] = $this->usermod->following_list($Session);
         $data['follower'] = $this->usermod->follower_count($Session);
+        $data['new_url'] = $this->new_url;
 
 //        echo '<pre>';
 //        print_r($data['follower_list']);

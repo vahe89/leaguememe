@@ -1188,7 +1188,7 @@ if ($this->session->userdata('modal_show')) {
 </div>
 
 
-<script src="<?php echo base_url(); ?>assets_new/public/js/cropper.js"></script>
+<script src="<?php echo $new_url; ?>assets_new/public/js/cropper.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {

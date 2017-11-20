@@ -100,7 +100,6 @@
             <?php
         }
         ?>
-        <?php $new_url = "http://league.local/"; ?>
         <script>
             var base_url = '<?php echo base_url(); ?>';
             var new_base_url = '<?php echo $new_url; ?>';
