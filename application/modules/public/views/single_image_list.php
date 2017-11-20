@@ -1,10 +1,22 @@
+
 <style>
     div.background-cover {
         display: none;
     }
+    .wraper-view > h3.title-single{
+        padding-left: 0px;
+    }
 </style>
 <?php
 foreach ($league_details as $anim_img) {
+    $up_type = $anim_img->upload_type;
+    if ($up_type == 1) {
+        $img_path = "league";
+        $err_msg = "League";
+    } else {
+        $img_path = "gamechat";
+        $err_msg = "Gamechat";
+    }
     ?>
     <section style="background-color:#eee;" id="single_post">
         <div class="container no-padding">
@@ -17,23 +29,23 @@ foreach ($league_details as $anim_img) {
                             <div class="media info-avatar avatar-view">
                                 <div class="media-left">
                                     <?php
-                                    if (isset($anim_img->user_image)) {
+                                    if (isset($anim_img->user_image) && !empty($anim_img->user_image)) {
                                         ?>
                                         <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $anim_img->user_image; ?>" alt="<?php echo $anim_img->user_name; ?>">
                                         <?php
                                     } else {
                                         ?>
-                                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/pro-pic.png" alt="profile pic">
+                                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                         <?php
                                     }
                                     ?>
                                 </div>
                                 <div class="media-body">
-                                    <a>
+                                    <a <?= isset($anim_img->user_name) ? 'href="' . base_url() . 'leaguememe_profile/' . $anim_img->user_name . '"' : '' ?>>
                                         <h5 class="text-uppercase"><?php echo isset($anim_img->user_name) ? $anim_img->user_name : "Admin"; ?></h5>
                                     </a>
                                     <span class="minute" style="display: inline;" data-livestamp="<?php echo strtotime($anim_img->leagueimage_timestamp); ?>"></span>
-                                    <span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>
+                                    <!--<span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>-->
                                 </div>
                             </div>
                         </div>
@@ -58,13 +70,14 @@ foreach ($league_details as $anim_img) {
                                     $al_desc = explode("^^%%^^", $anim_img->le_description);
                                     ?>
                                     <!--                                    <div class="wrapper-view-posting">-->
-                                    <h3><a href="javascript:void(0);"><?php echo $anim_img->leagueimage_name; ?></a></h3>
+                                    <h3><?= !empty($anim_img->leagueimage_maintitle) ? $anim_img->leagueimage_maintitle : '' ?></h3><br>
+                                    <h3 class="title-single" ><a href="javascript:void(0);" ><?php echo $anim_img->leagueimage_name; ?></a></h3>
 
                                     <a href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" >
-                                        <img class="img-responsive meme-view" alt="ace" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>"   >
+                                        <img class="img-responsive meme-view" alt="ace" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>"   >
                                     </a>
                                     <p class="description-view-posting" style="margin-left:66px"> 
-                                        <?php echo $anim_img->leagueimage_description; ?>
+                                        <?= (isset($anim_img->leagueimage_description) && !empty($anim_img->leagueimage_description)) ? $anim_img->leagueimage_description : ''; ?>
                                     </p>
                                     <!--</div>-->
                                     <?php
@@ -77,9 +90,9 @@ foreach ($league_details as $anim_img) {
                                         if (isset($img_id) && !empty($img_id)) {
                                             ?>
                                             <!--<div class="wrapper-view-posting">-->
-                                            <h3><a href="javascript:void(0);"><?php echo $name; ?></a></h3>
+                                            <h3 class="title-single"><a href="javascript:void(0);" ><?php echo $name; ?></a></h3>
                                             <a href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
-                                                <img class="img-responsive meme-view" src="<?php echo base_url(); ?>uploads/league/<?php echo $img; ?>">
+                                                <img class="img-responsive meme-view" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $img; ?>">
                                             </a>
                                             <p class="description-view-posting" style="margin-left:66px">
                                                 <?php echo $desc; ?>
@@ -94,7 +107,7 @@ foreach ($league_details as $anim_img) {
                                 } else if ($category == 'Video') {
                                     ?>
                                     <!--<div class="wrapper-view-posting">-->
-                                    <h3><a href="javascript:void(0);"><?php echo $anim_img->leagueimage_name; ?></a></h3>
+                                    <h3 class="title-single"><a href="javascript:void(0);" ><?php echo $anim_img->leagueimage_name; ?></a></h3>
                                     <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
                                         <div class="meme-img col-sm-12" ><?php echo $anim_img->leagueimage_filename; ?></div>
                                     </a>
@@ -111,17 +124,24 @@ foreach ($league_details as $anim_img) {
                                     if ($ext[1] == "gif") {
                                         ?>
                                         <div class="clear"></div>
-                                        <div id="video_<?php echo $anim_img->leagueimage_id; ?>" class="video">
+                                        <div id="video_<?php echo $anim_img->leagueimage_id; ?>" class="video" >
                                             <!--<video width="100%" controls=""id="v<?php /* echo $anim_img->leagueimage_id; */ ?>"  loop="">
-                                                <source src="<?php /* echo base_url(); */ ?>uploads/league/mp4/<?php /* echo $anim_img->videoname; */ ?>" type="video/webm">
+                                                <source src="<?php /* echo base_url(); */ ?>uploads/<?= $img_path ?>/mp4/<?php /* echo $anim_img->videoname; */ ?>" type="video/webm">
                                             </video>-->
-                                            <!--<img src="<?php /* echo base_url(); */ ?>uploads/league/<?php /* echo $anim_img->leagueimage_filename; */ ?>" />
+                                            <!--<img src="<?php /* echo base_url(); */ ?>uploads/<?= $img_path ?>/<?php /* echo $anim_img->leagueimage_filename; */ ?>" />
                                             <span class="play">Gif</span>-->
                                             <!--<div class="wrapper-view-posting">-->
-                                            <h3><a href="javascript:void(0);"><?php echo $anim_img->leagueimage_name; ?></a></h3>
-                                            <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
-                                                <img  class="img-responsive meme-view" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>"  >
+                                            <h3 class="title-single"><a href="javascript:void(0);" ><?php echo $anim_img->leagueimage_name; ?></a></h3>
+                                            <!--                                            <a class="image1" href="javascript:void(0)">
+                                                                                            <img class="gif img-responsive meme-view" data-gif="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" src="<?php echo base_url(); ?>assets/public/img/luffy.png">
+                                                                                            <img  class="img-responsive meme-view" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>"  >
+                                                                                        </a>-->
+                                        <div style="margin-left: 60px;">
+                                            <a class="image1" href="javascript:void(0)">
+                                                <img class="gif img-responsive meme-view" data-gif="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" src="<?php echo base_url(); ?>uploads/giftojpg/<?php echo $anim_img->leagueimage_filename; ?>">
+                                                <!--<img  class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/giftojpg/<?php // echo $anim_img->leagueimage_filename;  ?>" alt="<?php // echo $anim_img->leagueimage_name;  ?>">-->
                                             </a>
+                                        </div>
                                             <!--</div>-->
                                         </div>
 
@@ -130,19 +150,27 @@ foreach ($league_details as $anim_img) {
                                     } else {
                                         ?>
                                         <!--<div class="wrapper-view-posting">-->
-                                        <h3><a href="javascript:void(0);"><?php echo $anim_img->leagueimage_name; ?></a></h3>
+                                        <h3 class="title-single"><a href="javascript:void(0);" ><?php echo $anim_img->leagueimage_name; ?></a></h3>
                                         <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>"> 
-                                            <img class="img-responsive meme-view"  src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>"  >
+                                            <img class="img-responsive meme-view"  src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>"  >
                                         </a>
                                         <!--</div>-->
                                         <?php
                                     }
                                 } else if ($category == 'Video') {
+                                    $link = $anim_img->videoname;
+                                    $video_id = explode("?v=", $link);
+                                    if(isset($video_id[1])){
+                                        $video_id = $video_id[1];
+                                    }else{
+                                        $video_id = "";
+                                    }
+                                    
                                     ?>
                                     <!--<div class="wrapper-view-posting">-->
-                                    <h3><a href="javascript:void(0);"><?php echo $anim_img->leagueimage_name; ?></a></h3>
+                                    <h3 class="title-single"><a href="javascript:void(0);" ><?php echo $anim_img->leagueimage_name; ?></a></h3>
                                     <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
-                                        <div class="meme-img col-sm-12" ><?php echo $anim_img->leagueimage_filename; ?></div>
+                                        <iframe width="560" height="370" src="https://www.youtube.com/embed/<?= $video_id ?>" frameborder="0" allowfullscreen></iframe> 
                                     </a>
                                     <!--</div>-->
                                     <?php
@@ -189,14 +217,14 @@ foreach ($league_details as $anim_img) {
                                             ?>
                                             <a onClick = "onvictory(this.id);" id = "<?php echo $anim_img->leagueimage_id; ?>" style = "cursor: pointer" rel = "<?php echo $anim_img->leagueimage_id; ?>">
                                                 <i id="victory_img_<?php echo $anim_img->leagueimage_id; ?>" class = "fa fa-arrow-up fa-lg victory_single_active"></i>
-                                                <span>SUGOI</span>
+                                                <span>VICTORY</span>
                                             </a>                                                                                                                               
                                             <?php
                                         } else {
                                             ?>
                                             <a onClick = "onvictory(this.id);" id = "<?php echo $anim_img->leagueimage_id; ?>" style = "cursor: pointer" rel = "<?php echo $anim_img->leagueimage_id; ?>">
                                                 <i id="victory_img_<?php echo $anim_img->leagueimage_id; ?>" class = "fa fa-arrow-up fa-lg victory_single_active"></i>
-                                                <span>SUGOI</span>
+                                                <span>VICTORY</span>
                                             </a> 
                                             <?php
                                         }
@@ -204,7 +232,7 @@ foreach ($league_details as $anim_img) {
                                         ?>
                                         <a onClick = "onvictory(this.id);" id = "<?php echo $anim_img->leagueimage_id; ?>" style = "cursor: pointer" rel = "<?php echo $anim_img->leagueimage_id; ?>">
                                             <i id="victory_img_<?php echo $anim_img->leagueimage_id; ?>" class = "fa fa-arrow-up fa-lg "></i>
-                                            <span>SUGOI</span>
+                                            <span>VICTORY</span>
                                         </a> 
                                         <?php
                                     }
@@ -239,26 +267,28 @@ foreach ($league_details as $anim_img) {
                                 <img src="<?php echo base_url(); ?>assets/public/img/others-btn.png">
                             </div>
                             <!--social share -->
-                            <!--<div class="social-share">
-                                <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank" class="btn-fb-share">
-                                    <span>Share</span>
-                                </a>
-                                <a data-count="vertical" data-via="your_screen_name" data-hashtags="mayur8189" href="https://twitter.com/share"  class="btn-tt-share">
-                                    <span>Share</span>
-                                </a>
-                            </div>-->
-                            
-                            <div class="social-share social-btn" style="padding: 5px; padding-left: 10px;">
-                                <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank" class="fb-bg medium-btn mar-r-5">
+                            <!-- <div class="social-share">
+                                 <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank" class="btn-fb-share">
+                                     <span>Share</span>
+                                 </a>
+                                 <a data-count="vertical" data-via="your_screen_name" data-hashtags="mayur8189" href="https://twitter.com/share"  class="btn-tt-share">
+                                     <span>Share</span>
+                                 </a>
+                             </div>-->
+                            <div class="social-share social-btn" style="padding: 0px; padding-left: 10px;">
+                                <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank" class="fb-bg medium-btn mar-r-5" style="padding: 7.7px 11px;">
                                     <i class="fa fa-facebook"></i> share
                                 </a>
 
-                                <a  data-count="vertical" data-via="your_screen_name" data-hashtags="mayur8189" href="https://twitter.com/share" class="tw-bg medium-btn">
+                                <a  data-count="vertical" data-via="your_screen_name" data-hashtags="mayur8189" href="https://twitter.com/share" class="tw-bg medium-btn" style="padding: 7.7px 11px;">
                                     <i class="fa fa-twitter"></i> share
                                 </a>
                             </div>
                         </div>
-
+<div class="col-md-12"><ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="1317445683"></ins></div>
                         <div class="hastag-view">
                             <?php
                             $tags = isset($anim_img->tags) ? $anim_img->tags : '';
@@ -286,9 +316,7 @@ foreach ($league_details as $anim_img) {
                             <li role="presentation" class="mar-lm-5">
                                 <a href="#news" role="tab" data-toggle="tab" aria-controls="news" id="fresh1">News</a>
                             </li>
-                            <li role="presentation" class="mar-lm-5">
-                                <a href="#old" role="tab" data-toggle="tab" aria-controls="old">Old</a>
-                            </li>
+
                             <li style="float:right;">
                                 <div class="comment-status" id="toggler-<?php echo $anim_img->leagueimage_id . "y"; ?>">
 
@@ -314,7 +342,7 @@ foreach ($league_details as $anim_img) {
                         <div class="text-comment" id="cmtclick">
                             <div class="wrap-avatar-comment">
                                 <?php
-                                if (isset($userdetail['user_image'])) {
+                                if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
                                     ?>
                                     <a href="#">
                                         <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="">
@@ -322,7 +350,7 @@ foreach ($league_details as $anim_img) {
                                     <?php
                                 } else {
                                     ?>
-                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="profile pic">
+                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                     <?php
                                 }
                                 ?>
@@ -349,7 +377,7 @@ foreach ($league_details as $anim_img) {
 
                                     <div class="post-comment">
 
-                                        
+
 
                                         <div class="another-post">
                                             <a href="#" class="photo"> 
@@ -372,7 +400,7 @@ foreach ($league_details as $anim_img) {
                                 <div class="input-text-comment" id="enterfield<?php echo $anim_img->leagueimage_id; ?>">
                                     <form action="">
                                         <textarea class="form-control form-comment textarea-box" readonly="" rows="3"name="commentss" required="" id="cmtbox" placeholder="What's on your mind"></textarea>
-                                         
+
                                         <div class="post-comment">
 
                                             <div class="added-image"></div>
@@ -405,7 +433,7 @@ foreach ($league_details as $anim_img) {
                         <!-- tab panel -->
 
                         <div role="tabpanel" class="tab-pane" id="news" style="width: 100%;">
-                            <h1>news</h1>
+
                             <div id="scroll_wrap_<?php echo $anim_img->leagueimage_id; ?>">
                                 <div   id="ct_<?php echo $anim_img->leagueimage_id ?>">
                                 </div>
@@ -416,6 +444,7 @@ foreach ($league_details as $anim_img) {
                 </div>
 
                 <div class="col-md-4 col-sm-12 ads-view">
+                    <input type="hidden" value="dtlPage" id="getPage">
                     <?php
                     echo $this->load->view('template/right_sidebar');
                     ?>
@@ -444,27 +473,27 @@ foreach ($league_details as $anim_img) {
 
 <script>
 
-    $(document).ready(function () {
-
-        $('#login_close').click(function () {
+    $(document).ready(function() {
+        $('.gif').gifplayer();
+        $('#login_close').click(function() {
             $('#login').removeClass('in');
             $('#login').hide();
             $('#modal_backdrop').remove();
         });
-        $('#cmtbox').focus(function () {
+        $('#cmtbox').focus(function() {
 
             var html = '<div id="modal_backdrop" class="modal-backdrop fade in"></div>';
             $('#body_id').append(html);
             $('#login').addClass('in');
             $('#login').show();
         });
-        $('#search').on('keypress', function (event) {
+        $('#search').on('keypress', function(event) {
             if (event.which == 13) {
                 $('#search_form_name').submit();
             }
         });
         var current_id = "<?php echo $anim_img->leagueimage_id; ?>";
-        $('#single_next_btn').click(function () {
+        $('#single_next_btn').click(function() {
             window.location.href = '<?php echo base_url() . $next_image; ?>#single_post';
             console.log(current_id);
         });
@@ -472,7 +501,7 @@ foreach ($league_details as $anim_img) {
 </script>
 <script src="<?php echo base_url(); ?>assets/public/js/single_image.js"></script>
 <script>
-    !function (d, s, id) {
+    !function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
         if (!d.getElementById(id)) {
             js = d.createElement(s);
@@ -534,7 +563,7 @@ foreach ($league_details as $anim_img) {
                 poll_id: poll_id,
                 link: link
             },
-            success: function (data) {
+            success: function(data) {
                 if (data.success == true) {
                     $('#report').modal('hide');
                 } else if (data.modal == true) {
@@ -549,12 +578,13 @@ foreach ($league_details as $anim_img) {
     }
 </script>
 <script>
-    $(document).ready(function () {
-        $(".image_upload").click(function (e) {
+    $(document).ready(function() {
+        $(".image_upload").click(function(e) {
             e.preventDefault();
             $('#make_click').click();
 
         });
+//        $('.gif').gifplayer();
     });
 
 </script>
@@ -572,7 +602,7 @@ foreach ($league_details as $anim_img) {
 
             reader.onload = imageIsLoaded;
             reader.readAsDataURL(input.files[0]);
-            $("#abcd" + abc).append($('<i class="fa fa-remove remove" style="margin-top: -75px; margin-right: 0px; margin-left: -2px; color: red; cursor: pointer; cursor: hand;"></i>').click(function () {
+            $("#abcd" + abc).append($('<i class="fa fa-remove remove" style="margin-top: -75px; margin-right: 0px; margin-left: -2px; color: red; cursor: pointer; cursor: hand;"></i>').click(function() {
                 $("#abcd" + abc).remove();
                 $("#previewimg" + abc).val("");
                 $('#make_click').val("");
@@ -584,7 +614,6 @@ foreach ($league_details as $anim_img) {
     function imageIsLoaded(e) {
         $('#previewimg' + abc).attr('src', e.target.result);
     }
-    ;
 
 </script>
 

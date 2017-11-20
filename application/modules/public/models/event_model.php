@@ -75,6 +75,19 @@ class Event_model extends CI_Model {
                                 ")->result();
         
     }
+    public function getAllEventWithMembersCount($includePrivate, $limit, $start) {
+        $where = "WHERE e.end_date > " . time();
+        if ($includePrivate == false) {
+            $where = " AND e.private = 0";
+        }
+
+        return $this->db->query("SELECT *,GROUP_CONCAT(j.user_id) as users FROM $this->table as e 
+                                JOIN $this->tbl_event_join as j ON j.event_id = e.id
+                                $where
+                                GROUP BY e.id LIMIT " . $start . "," . $limit . "
+                                ")->result();
+    }
+    
     /**
      * Get list of users that have joined event 
      * @param type $id

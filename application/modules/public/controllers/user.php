@@ -84,8 +84,6 @@ class User extends MX_Controller {
                             } else {
                                 header("Location: " . $_SERVER['HTTP_REFERER']);
                             }
-//echo '1' ;
-//return $err ;
                         } else {
                             $data['msg'] = "You Are Banned !";
                             $data['content'] = $this->load->view('login', $data, TRUE);
@@ -110,7 +108,7 @@ class User extends MX_Controller {
         if ($this->session->userdata('user_id')) {
             redirect(base_url());
         } else {
-            $this->form_validation->set_rules('username', 'Username', 'required');
+            $this->form_validation->set_rules('username', 'Username', 'required|min_length[4]');
             $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|is.unique[le_users.user_email]');
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
             $this->form_validation->set_rules('passconf', 'Re-enter Password', 'required|matches[password]');
@@ -177,7 +175,7 @@ class User extends MX_Controller {
 
     function Acccount_activation($id = '') {
         $uid = base64_decode($id);
-
+        
         $data_array = array(
             'user_id' => mysql_real_escape_string($uid)
         );
@@ -185,9 +183,10 @@ class User extends MX_Controller {
         $user_count = $querys->num_rows();
 
         if ($user_count == 1) {
-            $dataArr = array('user_status' => '1');
+            $dataArr = array('user_status' => 'A');
 
             $res = $this->usermod->updateUserById($uid, $dataArr);
+           
             if ($res == true) {
                 $user_details = $this->usermod->getUserById($uid);
                 if ($user_details) {
@@ -201,8 +200,8 @@ class User extends MX_Controller {
                     $this->usermod->updateUserById($user_details->user_id, $dataArr);
                 }
 
-                $this->session->set_flashdata('message', 'Account Activated successfully');
-
+                $this->session->set_flashdata('message', 'Acountactive');
+               
                 redirect(base_url());
             }
         } else {
@@ -229,11 +228,31 @@ class User extends MX_Controller {
         if (count($result) == 0) {
             $str = " ";
         } else {
-            $str = "Username alresy Taken!!";
+            $str = "Username already Taken!!";
+        }
+        echo $str;
+    }
+ function email_checkmodal() {
+        $email = $this->input->post("email");
+        $result = $this->usermod->email_check($email);
+        if (count($result) == 0) {
+            $str = "true";
+        } else {
+            $str = "false";
         }
         echo $str;
     }
 
+    function user_checkmodal() {
+        $u_name = $this->input->post("username");
+        $result = $this->usermod->user_check($u_name);
+        if (count($result) == 0) {
+            $str = "true";
+        } else {
+            $str = "false";
+        }
+        echo $str;
+    }
     function email_check() {
         $email = $this->input->post("email_id");
         $result = $this->usermod->email_check($email);
@@ -261,11 +280,11 @@ class User extends MX_Controller {
         return $profile = $this->usermod->userProfile_detail($session);
     }
 
-    function animemoment_profile($user_id = '') {
+    function leaguememe_profile($user_id = '') {
         if ($this->session->userdata('user_id')) {
             $data['userdetail'] = $this->usermod->userOtherProfile_detail($user_id);
 
-            $user_id = $this->session->userdata('user_id'); 
+            $user_id = $this->session->userdata('user_id');
 
             $follow = $data['userdetail']['user_id'];
             $data['follow'] = $this->usermod->follow_check($user_id, $follow);
@@ -279,7 +298,7 @@ class User extends MX_Controller {
             $config['per_page'] = 5;
             $config["uri_segment"] = 3;
             $choice = $config['total_rows'] / $config["per_page"];
-            $page_url = $config['base_url'] = base_url() . 'animemoment_profile/' . $data['userdetail']['user_name'];
+            $page_url = $config['base_url'] = base_url() . 'leaguememe_profile/' . $data['userdetail']['user_name'];
             $config["num_links"] = floor($choice);
             $config['full_tag_open'] = '<ul class="pagination pagination-green">';
             $config['full_tag_close'] = '</ul>';
@@ -308,6 +327,7 @@ class User extends MX_Controller {
             $data["side_link"] = $this->hm->get_all_sidelinksside();
             $data["side_linkss"] = $this->hm->get_all_sidelinksnoside();
             $data['summoner'] = $this->usermod->getSummoner($data['userdetail']['user_id']);
+            $data['champs'] = $this->hm->getChamp();  
             $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
             $data['content'] = $this->load->view('profile', $data, TRUE);
             load_public_template($data);
@@ -378,7 +398,7 @@ class User extends MX_Controller {
                 $image_type = $image_size_info['mime']; //image type
             } else {
                 $this->session->set_flashdata('request', 'error');
-                redirect('animemoment_profile/' . $this->session->userdata('user_name'));
+                redirect('leaguememe_profile/' . $this->session->userdata('user_name'));
             }
 
 //switch statement below checks allowed image type 
@@ -450,7 +470,7 @@ class User extends MX_Controller {
         $user_id = $this->session->userdata('user_id');
         $this->usermod->update_UserProfile($user_id, $dataArr);
         $this->session->set_flashdata('request', 'Successfully Edited.');
-        redirect('animemoment_profile/' . $this->session->userdata('user_name'));
+        redirect('leaguememe_profile/' . $this->session->userdata('user_name'));
     }
 
     function update_pswd() {
@@ -685,9 +705,9 @@ class User extends MX_Controller {
                 $follow_id = $result['follow_id'];
                 if ($follow_status == '1') {
                     $this->usermod->removeFollow($user_id, $follow_id);
-                
+
                     $comment_id = '0';
-                    $league_image_id = 1 ;
+                    $league_image_id = 1;
                     $this->usermod->delete_notification($league_image_id, $user_id, $follow, $comment_id);
                     echo json_encode(array('status' => 'unfollow'));
                     exit;
@@ -715,7 +735,7 @@ class User extends MX_Controller {
                             'pre_value' => 'Followed you',
                             'noti_date' => date("Y-m-d"),
                         );
-                        
+
                         $this->usermod->add_notification($notificationArray);
                         echo json_encode(array('status' => 'follow'));
                         exit;
@@ -792,7 +812,7 @@ class User extends MX_Controller {
         );
 
         $this->usermod->add_comment_Attimeline($dataArray);
-        redirect('animemoment_profile/' . $other_name);
+        redirect('leaguememe_profile/' . $other_name);
     }
 
     public function notification() {
@@ -814,7 +834,7 @@ class User extends MX_Controller {
                 } else {
                     $check_user = 0;
                 }
-                $result = $this->usermod->follow_check($check_user, $Session); 
+                $result = $this->usermod->follow_check($check_user, $Session);
                 for ($j = 0; $j < count($data['noti_details']); $j++) {
                     if ($j == 0) {
                         $html .= ' 
@@ -834,7 +854,7 @@ class User extends MX_Controller {
                         }
                         $html .= '</span>
                                 <div class="username-notif-page">
-                                        <span> <a href="' . base_url() . 'animemoment_profile/' . $data['noti_details'][$j]['user_name'] . '">';
+                                        <span> <a href="' . base_url() . 'leaguememe_profile/' . $data['noti_details'][$j]['user_name'] . '">';
                         if (!empty($data["noti_details"][$j]["name"])) {
                             $html .= $data["noti_details"][$j]["name"];
                         } else {
@@ -855,9 +875,9 @@ class User extends MX_Controller {
                                 if ($data["noti_details"][$j]["pre_value"] === "Followed you" || $data["noti_details"][$j]["pre_value"] === "Accept Request") {
                                     
                                 } else if (empty($data["noti_details"][$j]["leagueimage_maintitle"])) {
-                                    $html .= '<a href="'. base_url().$data["noti_details"][$j]["leagueimage_id"]  .'">' . $data["noti_details"][$j]["leagueimage_name"] . '</a>';
+                                    $html .= '<a href="' . base_url() . $data["noti_details"][$j]["leagueimage_id"] . '">' . $data["noti_details"][$j]["leagueimage_name"] . '</a>';
                                 } else {
-                                    $html .= '<a href="'. base_url().$data["noti_details"][$j]["leagueimage_id"]  .'">' . $data["noti_details"][$j]["leagueimage_maintitle"] . '</a>';
+                                    $html .= '<a href="' . base_url() . $data["noti_details"][$j]["leagueimage_id"] . '">' . $data["noti_details"][$j]["leagueimage_maintitle"] . '</a>';
                                 }
                             }
                         } else {
@@ -897,7 +917,7 @@ class User extends MX_Controller {
                         }
                         $html .= '</span>
                                 <div class="username-notif-page">
-                                        <span> <a href="' . base_url() . 'animemoment_profile/' . $data['noti_details'][$j]['user_name'] . '">';
+                                        <span> <a href="' . base_url() . 'leaguememe_profile/' . $data['noti_details'][$j]['user_name'] . '">';
                         if (!empty($data["noti_details"][$j]["name"])) {
                             $html .= $data["noti_details"][$j]["name"];
                         } else {
@@ -1168,7 +1188,7 @@ class User extends MX_Controller {
             $from = 'admin@gmail.com';
             $name = 'Admin';
             $to = $this->input->post('Email');
-            $subject = 'Password Request to animemoment.com';
+            $subject = 'Password Request to leaguememe.com';
 
             $message = '<table style="width:50%; font-family:Verdana, Geneva, sans-serif;border:1px solid #cc0000; margin:0 auto;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:20px" cellspacing="0">
                 <tr><td style="text-align:center"><img src="' . base_url() . 'img/yannikulogo.jpg" alt=""></td></tr>
@@ -1273,12 +1293,13 @@ class User extends MX_Controller {
         $user_id = $this->session->userdata('user_id');
         echo $this->usermod->update_bio($user_id, $dataArr);
     }
-    
-    public function save_summoner(){
-        $champ = isset($_POST['fav_champ'])?implode(",", $_POST['fav_champ']):"";
-        $role = isset($_POST['fav_role'])?implode(",", $_POST['fav_role']):"";
+
+    public function save_summoner() {
+        $champ = isset($_POST['fav_champ']) ? implode(",", $_POST['fav_champ']) : "";
+//        $champ = $_POST['fav_champ'];
+        $role = isset($_POST['fav_role']) ? implode(",", $_POST['fav_role']) : "";
         $userId = $this->session->userdata('user_id');
-        
+
         $data = array(
             "name" => $this->input->post('name'),
             "server" => $this->input->post('server'),
@@ -1287,18 +1308,59 @@ class User extends MX_Controller {
             "div" => $this->input->post('division'),
             "fav_champ" => $champ,
             "role" => $role,
-            "sum_img" =>  $this->input->post('summoner-image'),
+            "sum_img" => $this->input->post('summoner-image'),
             "created" => time()
         );
-        
-        if($this->usermod->summonerExist($userId)){
-            
-            echo $this->usermod->updateSummoner($userId,$data);
-        }
-        else{
-            
+
+        if ($this->usermod->summonerExist($userId)) {
+
+            echo $this->usermod->updateSummoner($userId, $data);
+        } else {
+
             $data['user_id'] = $userId;
             echo $this->usermod->saveSummoner($data);
         }
     }
+
+    function uploadBioImg() {
+        $accepted_origins = array("http://localhost", "http://leaguememe.com");
+
+        $imageFolder = "uploads/user-bio-img/";
+
+        reset($_FILES);
+        $temp = current($_FILES);
+        if (is_uploaded_file($temp['tmp_name'])) {
+            if (isset($_SERVER['HTTP_ORIGIN'])) {
+                // same-origin requests won't set an origin. If the origin is set, it must be valid.
+                if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
+                    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+                } else {
+                    header("HTTP/1.0 403 Origin Denied");
+                    return;
+                }
+            }
+
+            // Sanitize input
+            if (preg_match("/([^\w\s\d\-_~,;:\[\]\(\).])|([\.]{2,})/", $temp['name'])) {
+                header("HTTP/1.0 500 Invalid file name.");
+                return;
+            }
+
+            // Verify extension
+            if (!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("gif", "jpg", "png"))) {
+                header("HTTP/1.0 500 Invalid extension.");
+                return;
+            }
+
+            // Accept upload if there was no origin, or if it is an accepted origin
+            $filetowrite = $imageFolder . $temp['name'];
+            move_uploaded_file($temp['tmp_name'], $filetowrite);
+
+            echo json_encode(array('location' => base_url() . $filetowrite));
+        } else {
+            // Notify editor that the upload failed
+            header("HTTP/1.0 500 Server Error");
+        }
+    }
+
 }

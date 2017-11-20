@@ -14,6 +14,7 @@ class Home extends MX_Controller {
     var $htmldata = array();
     var $max_image_size_upload = 1024;
     var $destination_folder_dump = 'uploads/dump/';
+    var $destination_folder_dump_resize = 'uploads/dump_resize/';
 
     function __construct() {
 
@@ -26,6 +27,7 @@ class Home extends MX_Controller {
         $this->load->model('home_model', 'hm');
         $this->load->helper('template');
         $this->load->library('upload');
+        $this->load->library('image_lib');
     }
 
     function userdetail() {
@@ -33,47 +35,169 @@ class Home extends MX_Controller {
         return $profile = $this->usermod->userProfile_detail($session);
     }
 
-    public function index($anime = 0) {
+    public function index($maintabval = "new", $subtabval = "All", $orderid = 0) {
 //        $orderid = $this->input->post('orderid');
+//        echo $subtabval;
+
+        $type = $this->uri->segment(1);
+        $subtype = $this->uri->segment(2);
+        $start = $this->uri->segment(3);
+        if (!empty($subtype)) {
+            if ($subtype == "all") {
+                $subtabval = "All";
+            } else if ($subtype == "art") {
+                $subtabval = "Art";
+            } else if ($subtype == "video") {
+                $subtabval = "Video";
+            } else if ($subtype == "random") {
+                $subtabval = "random";
+            } else if ($subtype == "gifs") {
+                $subtabval = "gifs";
+            } else {
+                $subtabval = "All";
+            }
+        } else {
+            $subtabval = "All";
+        }
+        if (!empty($type)) {
+            if ($type == "popular") {
+                $maintabval = "popular";
+            } else if ($type == "new") {
+                $maintabval = "new";
+            } else if ($type == "bookmark") {
+                $maintabval = "fav";
+            } else {
+                $maintabval = "new";
+            }
+        } else {
+            $maintabval = "new";
+        }
+        if (!empty($start)) {
+            $orderid = $start;
+        } else {
+            $orderid = 0;
+        }
+
         $pagetrackid = $this->input->post('pagetrackid');
-        $maintabval = $this->input->post('mainTabval');
-        $subtabval = $this->input->post('subTabval');
-        $animename1 = $this->input->post('anime_name');
 
         $Session = $this->session->userdata('user_id');
-        $data['orderid'] = $anime;
+        $data['orderid'] = $orderid;
         $data['pagetrackid'] = $pagetrackid;
         $data['maintabval'] = $maintabval;
         $data['subtabval'] = $subtabval;
-        $data['animename1'] = $animename1;
+
         $data['userdetail'] = $this->userdetail();
         $data['username'] = $this->session->userdata('uname');
         $data['userid'] = $this->session->userdata('user_id');
-        $data["side_link"] = $this->hm->get_all_sidelinksside($anime, $maintabval);
-        $data["side_linkss"] = $this->hm->get_all_sidelinksnoside($anime, $maintabval);
+        $data["side_link"] = $this->hm->get_all_sidelinksside($orderid, $maintabval);
+        $data["side_linkss"] = $this->hm->get_all_sidelinksnoside($orderid, $maintabval);
         $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
+
         $data["new_post"] = $this->hm->get_new_post();
         $data["new_discussion"] = $this->hm->get_let_discussion();
         $data["new_like"] = $this->hm->get_newlike();
+        $data['active_menu'] = "leaguememe";
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent($maintabval,'');
+
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
+            );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
+        //get data for content
+
+        $data['sub_items'] = $this->get_sub_items($type,$subtype);
+        $data['content_content'] = $this->getSubContent($maintabval, $subtabval, $orderid);
+
+        $data["right_bar"] = $rightbar;
+
         $data['content'] = $this->load->view('index', $data, TRUE);
+
+       // $this->load->view('index', $data);
+
+        // get credit author
+
         load_public_template($data);
     }
 
+
+
+
     function get_sub_tab_data() {
+        $types = $this->input->post('mainTabs');
+        if (!empty($types)) {
+            if ($types == "popular") {
+                $maintabval = "popular";
+            } else if ($types == "new") {
+                $maintabval = "new";
+            } else if ($types == "bookmark") {
+                $maintabval = "bookmark";
+            } else {
+                $maintabval = "popular";
+            }
+        } else {
+            $maintabval = "popular";
+        }
+        $subtype = $this->input->post('subTabValue');
+        if (!empty($subtype)) {
+
+            $subtabval = $subtype;
+        } else {
+            $subtabval = "";
+        }
         $data['subTabData'] = $this->hm->get_sub_tabs();
         $total = count($data['subTabData']);
         $html = '';
-        for ($i = 0; $i < $total; $i++) {
-            if ($data['subTabData'][$i]['category_name'] == "All the Things") {
+        $type = $this->input->post('type');
+        if ($type == "gamechat") {
+            $type = "game_";
+        } else {
+            $type = '';
+        }
 
-                $html .= '<li class="subTab active" id="' . $data["subTabData"][$i]["category_name"] . '"><a id="sub' . $data["subTabData"][$i]["category_id"] . '" href="javascript:void(0);" class="active">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+        for ($i = 0; $i < $total; $i++) {
+            $active = "";
+
+
+            if ($data['subTabData'][$i]['category_name'] == "All") {
+                if ($subtabval == "All") {
+                    $active = "active";
+                }
+                $html .= '<li class="' . $type . $active . ' subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $data["subTabData"][$i]["category_id"] . '" href="' . base_url()  . "new/" . 'all" class="active">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
 //$html .= "<li class='subTab active' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' class='active' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
             } else {
-                $html .= '<li class="subTab" id="' . $data["subTabData"][$i]["category_name"] . '"><a id="sub' . $data["subTabData"][$i]["category_id"] . '" href="javascript:void(0);">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+                $cate_name =  $data['subTabData'][$i]['category_name'];
+
+                if ($data['subTabData'][$i]['category_name'] == "Art/Cosplay") {
+                    $category = "art";
+                } else {
+                    $category = $data['subTabData'][$i]['category_name'];
+                }
+                $html .= '<li class="' . $type ;
+                if($subtabval == "Art"){
+                    $cate_new_name = "Art/Cosplay";
+                }else{
+                    $cate_new_name = ucfirst($subtabval) ;
+                }
+                if($cate_new_name == $cate_name) { $html .= 'active' ; }
+                $html .='  subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $cate_name . '" href="' . base_url() . "new/" . strtolower($category) . '">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
 //$html .= "<li class='subTab' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
             }
         }
-        $html .= "<li class='subTab' id='random'><a id='sub0' href='javascript:void(0)'>Random</a></li>";
+        $actives = "";
+        if ($subtabval == "random") {
+            $actives = "active";
+        }
+
+        $html .= "<li class='" . $type . $actives . " subTab' id='" . $type . "random'><a id='" . $type . "sub0' href='" . base_url() . 'new/' . "random'>Random</a></li>";
         echo $html;
     }
 
@@ -344,7 +468,7 @@ class Home extends MX_Controller {
         echo $this->load->view('commets', $data, true);
     }
 
-    public function upload() {
+   public function upload() {
 
         if (!empty($_FILES)) {
 
@@ -364,90 +488,129 @@ class Home extends MX_Controller {
             $_FILES['new_league_img']['size'] = $_FILES['file']['size'];
 
             $ext = pathinfo($image_name, PATHINFO_EXTENSION);
-            if ($ext == "gif") {
-                $config['upload_path'] = "./uploads/dump";
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $filename = rand(0, 9999999999);
-                $videoname = $filename . '.webm';
-                $config['file_name'] = $filename;
-// $config['max_size'] = '10240';
-//exec("/usr/bin/ffmpeg -i " . $image_temp . " -c:v libvpx -crf 12 -b:v 500K " . getcwd() . "\uploads\league\mp4\\" . $videoname);
-//exec("avconv -i $image_temp -c:v libvpx -crf 12 -b:v 500K $videoname");
-                $this->load->library('upload', $config);
-
-
-                if (!$this->upload->do_upload('new_league_img')) {
-                    echo $this->upload->display_errors();
-                } else {
-                    $imgArr = $filename . '.' . $ext;
-                    $newimageuploadpath = "uploads/league/mp4/";
-                    $oldimageuploadpath = "uploads/dump/";
-                    $imagetemppath1 = "uploads/league/temp/";
-// $imagetemppath2 = "uploads/league/test/";
-
-                    shell_exec('convert -verbose -coalesce "' . $oldimageuploadpath . $imgArr . '" -quality 100 "' . $imagetemppath1 . $filename . '%d.png"');
+            $category = $this->input->post('category');
+            if ($category == "gifs") {
+                if ($ext !== "gif") {
+                    $data = array('result' => 'error', 'msg' => 'Make sure image file is only gif!');
+                    echo json_encode($data);
+                    die;
                 }
-                shell_exec('avconv -f image2 -i "' . $imagetemppath1 . $filename . '%d.png" "' . $newimageuploadpath . $videoname . '"');
+            }
+            $videoname = '';
+            $image_size_info = getimagesize($image_temp); //get image size
+
+            if ($image_size_info) {
+                $image_width = $image_size_info[0]; //image width
+                $image_height = $image_size_info[1]; //image height
+                $image_type = $image_size_info['mime']; //image type
             } else {
 
-//start  image resize
-                $videoname = '';
-                $image_size_info = getimagesize($image_temp); //get image size
-//                                print_r($image_size_info);
-//                                exit;
+                $data = array('result' => 'error', 'msg' => 'Make sure image file is valid!');
+                echo json_encode($data);
+                die;
+            }
 
-                if ($image_size_info) {
-                    $image_width = $image_size_info[0]; //image width
-                    $image_height = $image_size_info[1]; //image height
-                    $image_type = $image_size_info['mime']; //image type
-                } else {
+            //Get file extension and name to construct new file name
+            $image_info = pathinfo($image_name);
+            $image_extension = strtolower($image_info["extension"]); //image extension
+            $image_name_only = strtolower($image_info["filename"]); //file name only, no extension
+//            for comress
 
-                    $data = array('result' => 'error', 'msg' => 'Make sure image file is valid!');
+            $cfile_name = rand(0, 9999999999) . '.' . $image_extension;
+
+            if ($image_type == 'image/jpeg' || $image_type == 'image/pjpeg') {
+
+                $config_ori['upload_path'] = "./uploads/dump_original";
+                $config_ori['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config_ori['file_name'] = $cfile_name;
+                $this->load->library('upload', $config_ori);
+                $this->upload->initialize($config_ori);
+                if (!$this->upload->do_upload('new_league_img')) {
+                    $msg = $this->upload->display_errors();
+                    $data = array('result' => 'error', 'msg' => $msg);
                     echo json_encode($data);
                     die;
                 }
 
-//switch statement below checks allowed image type
-//as well as creates new image from given file
-                switch ($image_type) {
-                    case 'image/png':
-                        $image_res = imagecreatefrompng($image_temp);
-                        break;
-                    case 'image/gif':
-                        $image_res = imagecreatefromgif($image_temp);
-                        break;
-                    case 'image/jpeg':
-                    case 'image/pjpeg':
-                    case 'image/jpg':
-                        $image_res = imagecreatefromjpeg($image_temp);
-                        break;
-                    default:
-                        $image_res = false;
+                $image = imagecreatefromjpeg($image_temp);
+                $image_path = getcwd() . "/uploads/dump/$cfile_name";
+                imagejpeg($image, $image_path, 80);
+            } elseif ($image_type == 'image/png') {
+
+                $config_ori['upload_path'] = "./uploads/dump_original";
+                $config_ori['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config_ori['file_name'] = $cfile_name;
+                $this->load->library('upload', $config_ori);
+                $this->upload->initialize($config_ori);
+                if (!$this->upload->do_upload('new_league_img')) {
+                    $msg = $this->upload->display_errors();
+                    $data = array('result' => 'error', 'msg' => $msg);
+                    echo json_encode($data);
+                    die;
                 }
 
-                if ($image_res) {
+                $image = imagecreatefrompng($image_temp);
+                $image_path = getcwd() . "/uploads/dump/$cfile_name";
+                imagepng($image, $image_path);
+            } else {
+                $image_save_folder = $this->destination_folder_dump . $cfile_name;
+                $image_save_folder_resize = $this->destination_folder_dump_resize . $cfile_name;
+                $config['upload_path'] = "./uploads/dump";
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['file_name'] = $cfile_name;
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+                if (!$this->upload->do_upload('new_league_img')) {
+                    $msg = $this->upload->display_errors();
+                    $data = array('result' => 'error', 'msg' => $msg);
+                    echo json_encode($data);
+                    die;
+                } else {
 
-//Get file extension and name to construct new file name
-                    $image_info = pathinfo($image_name);
-                    $image_extension = strtolower($image_info["extension"]); //image extension
-                    $image_name_only = strtolower($image_info["filename"]); //file name only, no extension
-//create a random name for new image (Eg: fileName_293749.jpg) ;
-                    $new_file_name = rand(0, 9999999999) . '.' . $image_extension;
-
-//folder path to save resized images and thumbnails
-                    $image_save_folder = $this->destination_folder_dump . $new_file_name;
-// $image_width = $image_width / 2;
-// $image_height = $image_height / 2;
-//call normal_resize_image() function to proportionally resize image
-                    if ($this->normal_resize_image($image_res, $image_save_folder, $image_type, $this->max_image_size_upload, $image_width, $image_height, 100)) {
-                        $imgArr = $new_file_name;
+                    if ($ext == "gif") {
+                        switch ($image_type) {
+                            case 'image/png':
+                                $image_gif = imagecreatefrompng($image_temp);
+                                break;
+                            case 'image/gif':
+                                $image_gif = imagecreatefromgif($image_temp);
+                                break;
+                            case 'image/jpeg':
+                            case 'image/pjpeg':
+                            case 'image/jpg':
+                                $image_gif = imagecreatefromjpeg($image_temp);
+                                break;
+                            default:
+                                $image_gif = false;
+                        }
+                        $this->image_lib->clear();
+                        $gif_configs['image_library'] = 'gd2';
+                        $gif_configs['source_image'] = './uploads/dump/' . $cfile_name;
+                        $gif_configs['new_image'] = './uploads/giftojpg/' . $cfile_name;
+                        $gif_configs['create_thumb'] = FALSE;
+                        $gif_configs['maintain_ratio'] = FALSE;
+                        $gif_configs['thumb_marker'] = '';
+                        $this->image_lib->initialize($gif_configs);
+                        $this->image_lib->resize();
+                        imagedestroy($image_gif); //freeup memory
                     }
-
-                    imagedestroy($image_res); //freeup memory
                 }
             }
-            $this->session->set_userdata('image_name', $imgArr);
-            $data = array('result' => 'success', 'name' => $imgArr, 'videoname' => $videoname);
+            $this->image_lib->clear();
+            $configs['image_library'] = 'gd2';
+            $configs['source_image'] = './uploads/dump/' . $cfile_name;
+            $configs['new_image'] = './uploads/dump_resize/' . $cfile_name;
+            $configs['create_thumb'] = FALSE;
+            $configs['maintain_ratio'] = FALSE;
+            $configs['thumb_marker'] = '';
+            $configs['width'] = 300;
+            $configs['height'] = 157;
+            $this->image_lib->initialize($configs);
+            $this->image_lib->resize();
+//            imagedestroy($image); //freeup memory
+
+            $this->session->set_userdata('image_name', $cfile_name);
+            $data = array('result' => 'success', 'name' => $cfile_name, 'videoname' => $videoname);
 
             echo json_encode($data);
             die;
@@ -501,7 +664,7 @@ class Home extends MX_Controller {
         $disc_credit = $this->input->post('disc_credit');
         $disc_author = $this->input->post('disc_author');
         $desc_count = $this->input->post('desc_count');
-        $category = $this->input->post('category');
+//        $category = $this->input->post('category');
         $title_count = $this->input->post('title_count');
 
         if (isset($title) && empty($title)) {
@@ -543,11 +706,11 @@ class Home extends MX_Controller {
                 die;
             }
         }
-        if (isset($category) && empty($category)) {
-            $data = array('result' => 'error', 'msg' => 'Please select category');
-            echo json_encode($data);
-            die;
-        }
+//        if (isset($category) && empty($category)) {
+//            $data = array('result' => 'error', 'msg' => 'Please select category');
+//            echo json_encode($data);
+//            die;
+//        }
         $data = array('result' => 'success');
         echo json_encode($data);
         die;
@@ -563,12 +726,28 @@ class Home extends MX_Controller {
             $credit = $this->input->post('credit');
             $tag = $this->input->post('tag');
             $word = $this->input->post('wordd');
-
             $image_data['image_data']['image_name'] = $this->session->userdata('image_name');
 
             $image_name = $this->session->userdata('image_name');
             $category = $this->input->post('category');
+            if ($category == "Video") {
+                $url = $this->input->post('video_name');
+                if (empty($url)) {
 
+                    $data = array('result' => 'error', 'msg' => 'Please enter youtube url');
+                    echo json_encode($data);
+                    die;
+                }
+                $regex_pattern = "/(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?/";
+                $match;
+
+                if (!preg_match($regex_pattern, $url, $match)) {
+                    $msg = "Sorry, not a youtube URL";
+                    $data = array('result' => 'error', 'msg' => $msg);
+                    echo json_encode($data);
+                    die;
+                }
+            }
             if (isset($title) && empty($title)) {
                 $data = array('result' => 'error', 'msg' => 'Please describe title');
                 echo json_encode($data);
@@ -617,7 +796,7 @@ class Home extends MX_Controller {
     public function last_save_discussion() {
         if ($this->input->post()) {
             $title = $this->input->post('title');
-            $category = $this->input->post('category');
+//            $category = $this->input->post('category');
             $discussion_file = $this->input->post('discussion_file');
             $spoiler = $this->input->post('spoiler');
             $description = $this->input->post('description');
@@ -628,17 +807,17 @@ class Home extends MX_Controller {
 
 
 
-            $category_id = $this->leaguemod->get_subTab_id($category);
+//            $category_id = $this->leaguemod->get_subTab_id($category);
 
             if (empty($category_id)) {
                 $category_id = 0;
             }
 
-            $category_id = $category_id[0]['category_id'];
+//            $category_id = $category_id[0]['category_id'];
 
             $dataArr = array(
                 'title' => $title,
-                'category_id' => $category_id,
+                'category_id' => 9,
                 'description' => $description,
                 'animediscussion_popular' => 'N',
                 'discussion_userid' => $this->session->userdata('user_id'),
@@ -683,23 +862,84 @@ class Home extends MX_Controller {
     function get_image_upload_category() {
         $data['subTabData'] = $this->hm->get_sub_tabs();
         $type = $this->input->post('type');
+        $category = $this->input->post('category');
         $total = count($data['subTabData']);
         $html = '';
-        for ($i = 0; $i < $total; $i++) {
+        if ($type == "in_image" || $type = "in_album") {
 
-            $html .= ' <li id="' . $data["subTabData"][$i]["category_name"] . '">
+            for ($i = 0; $i < $total; $i++) {
+                if ($data["subTabData"][$i]["category_name"] == "Art/Cosplay") {
+                    $category_N = "art";
+                } else {
+                    $category_N = strtolower($data["subTabData"][$i]["category_name"]);
+                }
+                 if ($data["subTabData"][$i]["text"] == '') {
+                    $exmapleText = "e.g lol, joke, prank, fail";
+                } else {
+                    $exmapleText = $data["subTabData"][$i]["text"];
+                }
+                if (!empty($category)) {
+                    if ($category_N == $category) {
+                        $checked_html = '<input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '" checked="checked">';
+
+                         $html .= '<li id="' . $data["subTabData"][$i]["category_name"] . '">
+            <div class = "img-filter">
+            <img src="' . base_url() . 'uploads/category/' . $data["subTabData"][$i]["category_logo"] . '"  alt="">
+            </div>
+            <div class = "sec-description">
+            <span>' . $data["subTabData"][$i]["category_name"] . '</span>
+            <p style="color: #b2bcbb;">' . $exmapleText . '</p>
+            </div>
+            <div class = "radio radio-category">' . $checked_html . '
+            
+            <label for = "' . $data["subTabData"][$i]["category_name"] . $type . '1" style = "margin-right:0px;"></label>
+            </div>
+            </li>';
+                    } else {
+                         $html .= "";
+                        $checked_html = '<input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '" disabled title="Disabled">';
+                    }
+                } else {
+                    $checked_html = '<input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '" >';
+
+                     $html .= '<li id="' . $data["subTabData"][$i]["category_name"] . '">
+            <div class = "img-filter">
+            <img src="' . base_url() . 'uploads/category/' . $data["subTabData"][$i]["category_logo"] . '"  alt="">
+            </div>
+            <div class = "sec-description">
+            <span>' . $data["subTabData"][$i]["category_name"] . '</span>
+            <p style="color: #b2bcbb;">' . $exmapleText . '</p>
+            </div>
+            <div class = "radio radio-category">' . $checked_html . '
+            
+            <label for = "' . $data["subTabData"][$i]["category_name"] . $type . '1" style = "margin-right:0px;"></label>
+            </div>
+            </li>';
+                }
+
+            }
+        } else {
+            for ($i = 0; $i < $total; $i++) {
+                 if ($data["subTabData"][$i]["text"] == '') {
+                    $exmapleText = "e.g lol, joke, prank, fail";
+                } else {
+                    $exmapleText = $data["subTabData"][$i]["text"];
+                }
+
+                $html .= ' <li id="' . $data["subTabData"][$i]["category_name"] . '">
         <div class = "img-filter">
         <img src="' . base_url() . 'uploads/category/' . $data["subTabData"][$i]["category_logo"] . '"  alt="">
         </div>
         <div class = "sec-description">
         <span>' . $data["subTabData"][$i]["category_name"] . '</span>
-        <p>e.g lol, joke, prank, fail</p>
+        <p style="color: #b2bcbb;">' . $exmapleText . '</p>
         </div>
         <div class = "radio radio-category">
         <input class = "pic_category" id = "' . $data["subTabData"][$i]["category_name"] . $type . '1" type = "radio" name = "AccountType" value="' . $data["subTabData"][$i]["category_name"] . '">
         <label for = "' . $data["subTabData"][$i]["category_name"] . $type . '1" style = "margin-right:0px;"></label>
         </div>
         </li>';
+            }
         }
 
         echo $html;
@@ -769,7 +1009,7 @@ class Home extends MX_Controller {
         echo $html;
     }
 
-    function normal_resize_image($source, $destination, $image_type, $max_size, $image_width, $image_height, $quality) {
+    function normal_resize_image($source, $destination, $image_type, $max_size, $image_width, $image_height, $quality, $resize) {
 
         if ($image_width <= 0 || $image_height <= 0) {
             return false;
@@ -782,9 +1022,15 @@ class Home extends MX_Controller {
         }
 
 //Construct a proportional size of new image
-        $image_scale = min($max_size / $image_width, $max_size / $image_height);
-        $new_width = ceil($image_scale * $image_width);
-        $new_height = ceil($image_scale * $image_height);
+
+        if ($resize == 0) {
+            $image_scale = min($max_size / $image_width, $max_size / $image_height);
+            $new_width = ceil($image_scale * $image_width);
+            $new_height = ceil($image_scale * $image_height);
+        } else {
+            $new_width = 300;
+            $new_height = 157;
+        }
 
         $new_canvas = imagecreatetruecolor($new_width, $new_height); //Create a new true color image
 //Copy and resize part of an image with resampling
@@ -796,7 +1042,7 @@ class Home extends MX_Controller {
     }
 
     function save_image($source, $destination, $image_type, $quality) {
-        switch (strtolower($image_type)) {//determine mime type  
+        switch (strtolower($image_type)) {//determine mime type
             case 'image/png':
                 imagepng($source, $destination);
                 return true; //save png file
@@ -1136,8 +1382,26 @@ class Home extends MX_Controller {
                         $_FILES['userfile']['tmp_name'] = $files['userfile']['tmp_name'][$i];
                         $_FILES['userfile']['error'] = $files['userfile']['error'][$i];
                         $_FILES['userfile']['size'] = $files['userfile']['size'][$i];
-                        $this->upload->initialize($this->set_upload_options());
+
+                        $this->upload->initialize($this->set_ori_upload_options());
                         $this->upload->do_upload();
+
+                        $this->set_resize_upload_options($_FILES['userfile']['tmp_name'], $_FILES['userfile']['name']);
+
+                        $this->upload->initialize($this->set_upload_options_resize());
+                        $this->upload->do_upload();
+                        $this->image_lib->clear();
+
+                        $configs['image_library'] = 'gd2';
+                        $configs['source_image'] = './uploads/league/' . $_FILES['userfile']['name'];
+                        $configs['new_image'] = './uploads/league_resize/' . $_FILES['userfile']['name'];
+                        $configs['create_thumb'] = FALSE;
+                        $configs['maintain_ratio'] = FALSE;
+                        $configs['thumb_marker'] = '';
+                        $configs['width'] = 300;
+                        $configs['height'] = 157;
+                        $this->image_lib->initialize($configs);
+                        $this->image_lib->resize();
                     }
                     $fileName = $_FILES['userfile']['name'];
                     $images[] = urlencode($fileName);
@@ -1158,6 +1422,67 @@ class Home extends MX_Controller {
 // upload an image options
         $config = array();
         $config['upload_path'] = './uploads/league'; //give the path to upload the image in folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = '0';
+        $config['overwrite'] = FALSE;
+        return $config;
+    }
+
+    private function set_upload_options_resize() {
+// upload an image options
+        $config = array();
+        $config['upload_path'] = './uploads/league_resize'; //give the path to upload the image in folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['width'] = 300;
+        $config['height'] = 157;
+        $config['max_size'] = '0';
+        $config['overwrite'] = FALSE;
+        return $config;
+    }
+
+    private function set_resize_upload_options($tmp_name, $file_name) {
+
+        $imageInfo = getimagesize($tmp_name); //get image size
+
+        if ($imageInfo) {
+            $imageType = $imageInfo['mime']; //image type
+        } else {
+
+            $data = array('result' => 'error', 'msg' => 'Make sure image file is valid!');
+            echo json_encode($data);
+            die;
+        }
+
+        //Get file extension and name to construct new file name
+        $image_info = pathinfo($file_name);
+        $image_extension = strtolower($image_info["extension"]); //image extension
+        $image_name_only = strtolower($image_info["filename"]);
+
+        if ($imageType == 'image/jpeg' || $imageType == 'image/pjpeg') {
+            $image = imagecreatefromjpeg($tmp_name);
+            $image_path = getcwd() . "/uploads/league/$file_name";
+            imagejpeg($image, $image_path, 80);
+        } elseif ($imageType == 'image/png') {
+            $image = imagecreatefrompng($tmp_name);
+            $image_path = getcwd() . "/uploads/league/$file_name";
+            imagepng($image, $image_path);
+        } else {
+            $config['upload_path'] = "./uploads/league";
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['file_name'] = $file_name;
+            $config['max_size'] = '0';
+            $config['overwrite'] = FALSE;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            $this->upload->do_upload();
+
+        }
+    }
+
+    private function set_ori_upload_options() {
+// upload an image options
+        $config = array();
+        $config['upload_path'] = './uploads/league_original'; //give the path to upload the image in folder
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_size'] = '0';
         $config['overwrite'] = FALSE;
@@ -1229,7 +1554,7 @@ class Home extends MX_Controller {
         $author = $this->input->post('author');
         $credit = $this->input->post('credit');
         $credit_author = $this->input->post('credit_author');
-        $spolier_val = $this->input->post('spolier_val');
+        $spolier_val = $this->input->post('spolier');
         $notsafe = $this->input->post('notsafe');
 
         $category_id = $this->leaguemod->get_subTab_id($category);
@@ -1326,8 +1651,8 @@ class Home extends MX_Controller {
                         'leagueimage_id' => $result,
                         'user_id' => '0',
                         'credit_status' => 'A',
-                        'author' => $author,
-                        'credit' => $credit,
+                        'author' => $credit,
+                        'credit' => $author,
                     );
 
                     $this->leaguemod->add_league_credits($creditArray);
@@ -1371,7 +1696,7 @@ class Home extends MX_Controller {
     public function last_anime_save() {
         if ($this->input->post()) {
             $question = $this->input->post('question');
-            $category = $this->input->post('category');
+//            $category = $this->input->post('category');
             $answers = $this->input->post('answers');
             $answer = implode(',', $answers);
             $discription = $this->input->post('discription');
@@ -1380,18 +1705,17 @@ class Home extends MX_Controller {
             $author = $this->input->post('author');
             $spoiler = $this->input->post('spoiler');
 
-            $category_id = $this->leaguemod->get_subTab_id($category);
-
-            if (empty($category_id)) {
-                $category_id = 0;
-            }
-
-            $category_id = $category_id[0]['category_id'];
+//            $category_id = $this->leaguemod->get_subTab_id($category);
+//
+//            if (empty($category_id)) {
+//                $category_id = 0;
+//            }
+//            $category_id = $category_id[0]['category_id'];
 
             $dataArr = array(
                 'questions' => $question,
                 'discription' => $discription,
-                'category_id' => $category_id,
+                'category_id' => 9,
                 'title' => $title,
                 'answers' => $answer,
                 'league_userid' => $this->session->userdata('user_id'),
@@ -1418,7 +1742,7 @@ class Home extends MX_Controller {
     public function poll_next_upload() {
 
         $answers = $this->input->post('answers');
-        $category = $this->input->post('category');
+//        $category = $this->input->post('category');
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('question', 'Question', 'required');
@@ -1443,11 +1767,11 @@ class Home extends MX_Controller {
                     }
                 }
             }
-            if (empty($category)) {
-                $data = array('result' => 'error', 'msg' => 'Please select category');
-                echo json_encode($data);
-                die;
-            }
+//            if (empty($category)) {
+//                $data = array('result' => 'error', 'msg' => 'Please select category');
+//                echo json_encode($data);
+//                die;
+//            }
             if (empty($data['title']) && empty($data['question']) && empty($data['discription']) && empty($data['option'])) {
                 $data['success'] = TRUE;
                 echo json_encode($data);
@@ -1521,6 +1845,8 @@ class Home extends MX_Controller {
             }
 
             shell_exec('mv uploads/dump/' . $image_name . ' uploads/league/');
+            shell_exec('mv uploads/dump_original/' . $image_name . ' uploads/league_original/');
+            shell_exec('mv uploads/dump_resize/' . $image_name . ' uploads/league_resize/');
 
             $data = array('result' => 'success');
             echo json_encode($data);
@@ -1530,6 +1856,276 @@ class Home extends MX_Controller {
             echo json_encode($data);
             die;
         }
+    }
+
+    public function add_gamechatdata() {
+        $test = $this->input->post('data');
+        $dev = explode("&", $test);
+        $splashart_model = $this->input->post('splashart_model');
+//        $category = $this->input->post('category');
+////        $tag = $this->input->post('tag');
+        $main_title = $this->input->post('main_title');
+//        $author = $this->input->post('author');
+//        $credit = $this->input->post('credit');
+//        $credit_author = $this->input->post('credit_author');
+//        $spolier_val = $this->input->post('spolier_val');
+//        $notsafe = $this->input->post('notsafe');
+//        $category_id = $this->leaguemod->get_subTab_id($category);
+//        if (empty($category_id)) {
+//            $category_id = 9;
+//        }
+//        $category_id = $category_id[0]['category_id'];
+        if (empty($splashart_model)) {
+            $data = array('result' => 'error', 'msg' => 'Please select splashart');
+            echo json_encode($data);
+            die;
+        }
+        if (isset($main_title) && empty($main_title)) {
+            $data = array('result' => 'error', 'msg' => 'Please enter gamechat title');
+            echo json_encode($data);
+            die;
+        }
+//        if (empty($category)) {
+//            $data = array('result' => 'error', 'msg' => 'Please select category');
+//            echo json_encode($data);
+//            die;
+//        }
+        $hi = array();
+
+        $i = 0;
+        $valu = '';
+        $total = count($dev);
+
+
+        foreach ($dev as $k => $value) {
+            $m = $k + 1;
+            if ($m % 3 == 0) {
+                $valu .= "**" . $value;
+                array_push($hi, $valu);
+                $i++;
+                $valu = '';
+            } else {
+                $valu .= "**" . $value;
+            }
+        }
+
+        $sds = count($hi);
+
+        $parent_id = 0;
+        for ($i = 0; $i < $sds; $i++) {
+            $test = explode("**", $hi[$i]);
+
+
+            for ($j = 1; $j <= 3; $j++) {
+                $n = str_replace("+", " ", explode("=", $test[$j]));
+
+
+                if ($j == 1) {
+                    $league_name = str_replace("%252B", "+", $n[1]);
+                } else if ($j == 2) {
+                    $title = $n[1];
+                } else if ($j == 3) {
+                    $description = urldecode($n[1]);
+                }
+            }
+            preg_match('(.jpg|.png|.gif|.bmp|.jpeg)', $league_name, $matches);
+
+            foreach ($matches as $value) {
+                $val = $value;
+            }
+
+            if (empty($description)) {
+                $data = array('result' => 'error', 'msg' => 'Please Enter Description');
+                echo json_encode($data);
+                die;
+            } else {
+                $image_filepath = base_url() . 'assets/public/img/' . $league_name;
+//            $text_array = array("Test game chat","$title: users comment. no limit. problem users comment. no limit. problemusers comment. no limit. problemusers comment. no limit. problemusers comment. no limit. problem", "user [16:60]: users comment. no limit. problem users comment. no limit.", "user [16:60]: users comment. no limit. problem users comment. no limit.", "user [16:60]: users comment. no limit. problem users comment. no limit.");
+                $text_array = array("$main_title", "$title:$description");
+
+                $text = "";
+                foreach ($text_array as $text_val) {
+                    $text .= $text_val . "\n\n";
+                }
+                $newtext = $this->smart_wordwrap($text, 50) . "\n";
+
+                $ext = pathinfo($image_filepath, PATHINFO_EXTENSION);
+
+                if ($ext == "jpg" || $ext == "jpg" || $ext == "png") {
+                    $gamefilename = $this->saveImageWithText($newtext, $image_filepath, $ext);
+                } else {
+                    echo "Make sure valid url";
+                }
+            }
+            $gamefilename = $gamefilename . '.jpg';
+            if ($i === 0) {
+                $dataArray = array(
+                    'category_id' => 9,
+                    'leagueimage_userid' => $this->session->userdata('user_id'),
+                    'leagueimage_status' => 'A',
+                    'leagueimage_setpopular' => 'N',
+                    'leagueimage_filename' => $gamefilename,
+                    'league_img_access' => 1,
+                    'leagueimage_name' => $title,
+                    'leagueimage_maintitle' => $main_title,
+                    'leagueimage_description' => $description,
+                    'upload_type' => 2,
+//                    'image_spoiler' => $spolier_val,
+//                    'image_nsfw' => $notsafe,
+                );
+//                print_r($dataArray);
+//                exit;
+                $result = $this->leaguemod->add_league_img($dataArray);
+
+                $i = 0;
+
+
+
+                $allpag = $this->leaguemod->select_league($result);
+                $per_page = $allpag[0];
+                $parent_id = $per_page['leagueimage_id'];
+            } else {
+                $dataArray = array(
+                    'category_id' => 9,
+                    'leagueimage_userid' => $this->session->userdata('user_id'),
+                    'leagueimage_status' => 'A',
+                    'leagueimage_setpopular' => 'N',
+                    'leagueimage_filename' => $gamefilename,
+                    'league_img_access' => 1,
+                    'leagueimage_name' => $title,
+                    'leagueimage_description' => $description,
+                    'upload_type' => 2,
+//                    'videoname' => $video_name,
+                    'parent_id' => $parent_id,
+//                    'image_spoiler' => $spolier_val,
+                );
+//                print_r($dataArray);
+//                exit;
+                $result = $this->leaguemod->add_league_img($dataArray);
+            }
+        }
+
+        $data = array('result' => 'success');
+        echo json_encode($data);
+        die;
+    }
+
+    function smart_wordwrap($string, $width = 75, $break = "\n") {
+        // split on problem words over the line length
+        $pattern = sprintf('/([^ ]{%d,})/', $width);
+        $output = '';
+        $words = preg_split($pattern, $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+
+        foreach ($words as $word) {
+            if (false !== strpos($word, ' ')) {
+                // normal behaviour, rebuild the string
+                $output .= $word;
+            } else {
+                // work out how many characters would be on the current line
+                $wrapped = explode($break, wordwrap($output, $width, $break));
+                $count = $width - (strlen(end($wrapped)) % $width);
+
+                // fill the current line and add a break
+                $output .= substr($word, 0, $count) . $break;
+
+                // wrap any remaining characters from the problem word
+                $output .= wordwrap(substr($word, $count), $width, $break, true);
+            }
+        }
+
+        // wrap the final output
+        return wordwrap($output, $width, $break);
+    }
+
+// set border for text
+    function imagettfborder($im, $size, $angle, $x, $y, $color, $font, $text, $width) {
+        // top
+        imagettftext($im, $size, $angle, $x - $width, $y - $width, $color, $font, $text);
+        imagettftext($im, $size, $angle, $x, $y - $width, $color, $font, $text);
+        imagettftext($im, $size, $angle, $x + $width, $y - $width, $color, $font, $text);
+        // bottom
+        imagettftext($im, $size, $angle, $x - $width, $y + $width, $color, $font, $text);
+        imagettftext($im, $size, $angle, $x, $y + $width, $color, $font, $text);
+        imagettftext($im, $size, $angle, $x - $width, $y + $width, $color, $font, $text);
+        // left
+        imagettftext($im, $size, $angle, $x - $width, $y, $color, $font, $text);
+        // right
+        imagettftext($im, $size, $angle, $x + $width, $y, $color, $font, $text);
+        for ($i = 1; $i < $width; $i++) {
+            // top line
+            imagettftext($im, $size, $angle, $x - $i, $y - $width, $color, $font, $text);
+            imagettftext($im, $size, $angle, $x + $i, $y - $width, $color, $font, $text);
+            // bottom line
+            imagettftext($im, $size, $angle, $x - $i, $y + $width, $color, $font, $text);
+            imagettftext($im, $size, $angle, $x + $i, $y + $width, $color, $font, $text);
+            // left line
+            imagettftext($im, $size, $angle, $x - $width, $y - $i, $color, $font, $text);
+            imagettftext($im, $size, $angle, $x - $width, $y + $i, $color, $font, $text);
+            // right line
+            imagettftext($im, $size, $angle, $x + $width, $y - $i, $color, $font, $text);
+            imagettftext($im, $size, $angle, $x + $width, $y + $i, $color, $font, $text);
+        }
+    }
+
+    function saveImageWithText($text, $source_file, $ext) {
+
+        // Copy and resample the imag
+        list($width, $height) = getimagesize($source_file);
+        $image_p = imagecreatetruecolor(600, 600);
+
+        if ($ext == "jpg" || $ext == "jpg") {
+            $image = imagecreatefromjpeg($source_file);
+        } else if ($ext == "png") {
+            $image = imagecreatefrompng($source_file);
+        }
+        imagecopyresampled($image_p, $image, 0, 0, 0, 0, 600, 600, $width, $height);
+
+        // Prepare font size and colors
+        $text_color = imagecolorallocate($image_p, 255, 255, 255);
+        $cwd = getcwd();
+        $font = $cwd . '/assets/public/fonts/Roboto-Bold.ttf';
+        $font_size = 14;
+
+        // Set the offset x and y for the text position
+        $offset_x = 25;
+        $offset_y = 20;
+
+        // Get the size of the text area
+        $dims = imagettfbbox($font_size, 0, $font, $text);
+        $text_width = $dims[4] - $dims[6] + $offset_x;
+        $text_height = $dims[3] - $dims[5] + $offset_y;
+
+        $white = imagecolorallocate($image_p, 255, 255, 255);
+        $black = imagecolorallocate($image_p, 0, 0, 0);
+        $red = imagecolorallocate($image_p, 255, 0, 0);
+        $grey = imagecolorallocate($image_p, 175, 175, 175);
+        $blue = imagecolorallocate($image_p, 0, 0, 255);
+
+        // calculate center position from left
+        $position_center = ceil(( $text_width) / 2);
+
+        // calculate center position from top
+        $position_middle = ceil(( $text_height) / 2);
+
+        // Add text background
+        // imagefilledrectangle($image_p, 0, 0, $text_width, $text_height, $bg_color);
+        // Add text
+        // imagettfborder($image_p, $font_size,  0, $offset_x, $offset_y, $grey, $font, $text, 2);
+        $this->imagettfborder($image_p, $font_size, 0, $offset_x, $offset_y, $black, $font, $text, 1);
+        imagettftext($image_p, $font_size, 0, $offset_x, $offset_y, $white, $font, $text);
+        // imagettftext($image_p, $font_size, 0, $offset_x, $offset_y, $text_color, $font, $text);
+//        $this->imagettfborder($image_p, 20, 0, $position_center, $position_middle, $black, $font, "leaguememe.com", 1);
+//        imagettftext($image_p, 20, 0,200,-1, $white, $font, "leaguememe.com");
+        // Save the picture
+//    header('Content-type: image/png');
+//    imagepng($image_p);
+        $uniqe_name = uniqid();
+        imagejpeg($image_p, $cwd . '/uploads/gamechat/' . $uniqe_name . '.jpg', 100);
+        chmod($cwd . '/uploads/gamechat/' . $uniqe_name . '.jpg', 0777);
+        // Clear
+        imagedestroy($image);
+        imagedestroy($image_p);
+        return $uniqe_name;
     }
 
     public function anime_report() {
@@ -1667,7 +2263,7 @@ class Home extends MX_Controller {
             if (!empty($value->user_image) && $value->user_image != "") {
                 $html .= ' <img src="' . base_url() . 'uploads/users/' . $value->user_image . '" alt="' . $value->user_image . '" class="media-object avatar img-circle"  >';
             } else {
-                $html .= '<img src="' . base_url() . 'assets/public/img/admin.png" alt="Leaguememe" class="media-object avatar img-circle"> ';
+                $html .= '<img src="' . base_url() . 'assets/public/img/luffy.png" alt="Leaguememe" class="media-object avatar img-circle"> ';
             }
             $html .='   </a>
                                 </div>
@@ -1751,7 +2347,7 @@ class Home extends MX_Controller {
                                     <div id="childrplycmtbox-' . $value->comment_id . '" style="display:none" class="childrplycmtbox-' . $parent_id . '"  >
                                         <div  id="' . $parent_id . '">
                                             <textarea class="comment-box form-control form-comment childinnercomboBox" placeholder="Comment reply" id="childaddrplCommentBox-' . $value->comment_id . '" ></textarea>
-                                            <div  id="' . $parent_id . '">
+                                            <div  id="' . $parent_id . '" class="childcommentrplPostBtn' . $value->comment_id . '">
                                                 <button class="pull-right small-btn green-bg btn childcommentrplPostBtn" id="' . $value->comment_id . '"  >Reply</button>
                                             </div>
                                         </div>
@@ -1767,8 +2363,449 @@ class Home extends MX_Controller {
         echo $html;
     }
 
+    function right_sidebar() {
+
+        $maintabval = $this->input->post('mainTabval');
+        $add = $this->input->post('getPage');
+
+        $side_link = $this->hm->get_all_sidelinksside($maintabval);
+        $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval);
+        $data["side_links"] = array_merge($side_link, $side_linkss);
+        $data["sideadd"] = $add;
+        echo $this->load->view('ajax_right_sidebar', $data, TRUE);
+        exit;
+    }
+
+    function getRightContent($maintabval,$add) {
+
+        $side_link = $this->hm->get_all_sidelinksside($maintabval);
+        $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval);
+        $data["side_links"] = array_merge($side_link, $side_linkss);
+        $data["sideadd"] = $add;
+        return $this->load->view('ajax_right_sidebar', $data, TRUE);
+
+    }
+
+    function sidebar_image_resize() {
+        $dir = getcwd() . '/uploads/league';
+        $file_display = array(
+            'jpg',
+            'jpeg',
+            'png',
+            'gif'
+        );
+
+        if (file_exists($dir) == false) {
+            echo 'Directory \'' . $dir . '\' not found!';
+        } else {
+            $dir_contents = scandir($dir);
+            foreach ($dir_contents as $file) {
+                $file_type = strtolower(end(explode('.', $file)));
+
+                if ($file !== '.' && $file !== '..' && in_array($file_type, $file_display) == true) {
+                    $this->image_lib->clear();
+                    $configs['image_library'] = 'gd2';
+                    $configs['source_image'] = './uploads/league/' . $file;
+                    $configs['new_image'] = './uploads/league_resize/' . $file;
+                    $configs['create_thumb'] = FALSE;
+                    $configs['maintain_ratio'] = FALSE;
+                    $configs['thumb_marker'] = '';
+                    $configs['width'] = 300;
+                    $configs['height'] = 157;
+                    $this->image_lib->initialize($configs);
+                    $this->image_lib->resize();
+                }
+            }
+            echo "Resized all image";
+        }
+        exit;
+    }
+
+    function removecover() {
+        $cover_image = $this->input->post('cover_image');
+        $user_id = $this->session->userdata('user_id');
+        $result = $this->hm->removeCover($user_id);
+
+        if ($cover_image != '') {
+            @unlink(base_url() . 'uploads/users/cover/' . $cover_image);
+        }
+
+        if ($result) {
+            $data['result'] = "success";
+        } else {
+            $data['result'] = "error";
+        }
+
+        echo json_encode($data);
+    }
+
+    function imageToDB($type, $cid) {
+         $dir = getcwd() . '/uploads/LMSeason7' . $type;
+        $allow = array('jpg', 'jpeg', 'JPEG', 'JPG', 'gif', 'png', 'PNG', 'GIF');
+        $open = opendir($dir);
+        while (($file = readdir($open)) !== false) {
+            $ext = str_replace('.', '', strrchr($file, '.'));
+            $newFile = str_replace(" ", "_", $file);
+            if (in_array($ext, $allow)) {
+                $title = explode(".", $file);
+                $dataArray = array('category_id' => $cid,
+                    'leagueimage_userid' => "0",
+                    'leagueimage_status' => 'A',
+                    'leagueimage_setpopular' => 'N',
+                    'leagueimage_filename' => $newFile,
+                    'league_img_access' => $cid,
+                    'leagueimage_name' => str_replace("_", " ", $title[0]), 'leagueimage_description' => "", 'upload_type' => 1, 'parent_id' => 0,);
+                $this->image_lib->clear();
+                $configs['image_library'] = 'gd2';
+                $configs['source_image'] = './uploads/LMSeason7' . $type . '/' . $file;
+                $configs['new_image'] = './uploads/league_resize/' . $newFile;
+                $configs['create_thumb'] = FALSE;
+                $configs['maintain_ratio'] = FALSE;
+                $configs['thumb_marker'] = '';
+                $configs['width'] = 300;
+                $configs['height'] = 157;
+                $this->image_lib->initialize($configs);
+                $this->image_lib->resize();
+
+                $this->image_lib->clear();
+                $l_configs['image_library'] = 'gd2';
+                $l_configs['source_image'] = './uploads/LMSeason7' . $type . '/' . $file;
+                $l_configs['new_image'] = './uploads/league/' . $newFile;
+                $l_configs['create_thumb'] = FALSE;
+                $l_configs['maintain_ratio'] = FALSE;
+                $l_configs['thumb_marker'] = '';
+                $this->image_lib->initialize($l_configs);
+                $this->image_lib->resize();
+
+                if ($ext == "gif") {
+                    $this->image_lib->clear();
+                    $gif_configs['image_library'] = 'gd2';
+                    $gif_configs['source_image'] = './uploads/LMSeason7' . $type . '/' . $file;
+                    $gif_configs['new_image'] = './uploads/giftojpg/' . $newFile;
+                    $gif_configs['create_thumb'] = FALSE;
+                    $gif_configs['maintain_ratio'] = FALSE;
+                    $gif_configs['thumb_marker'] = '';
+                    $this->image_lib->initialize($gif_configs);
+                    $this->image_lib->resize();
+                }
+                $this->leaguemod->add_league_img($dataArray);
+            }
+        }
+    }
+ function imageToDBs($type) {
+        $dir = getcwd() . '/uploads/' . $type;
+        $allow = array('gif','GIF');
+        $open = opendir($dir);
+        while (($file = readdir($open)) !== false) {
+            $ext = str_replace('.', '', strrchr($file, '.'));
+            if (in_array($ext, $allow)) {
+                $title = explode(".", $file);
+
+                $this->image_lib->clear();
+                $configs['image_library'] = 'gd2';
+                $configs['source_image'] = './uploads/' . $type . '/' . $file;
+                $configs['new_image'] = './uploads/league_resize/' . $file;
+                $configs['create_thumb'] = FALSE;
+                $configs['maintain_ratio'] = FALSE;
+                $configs['thumb_marker'] = '';
+                $configs['width'] = 300;
+                $configs['height'] = 157;
+                $this->image_lib->initialize($configs);
+                $this->image_lib->resize();
+                if ($ext == "gif") {
+                    $this->image_lib->clear();
+                    $gif_configs['image_library'] = 'gd2';
+                    $gif_configs['source_image'] = './uploads/' . $type . '/' . $file;
+                    $gif_configs['new_image'] = './uploads/giftojpg/' . $file;
+                    $gif_configs['create_thumb'] = FALSE;
+                    $gif_configs['maintain_ratio'] = FALSE;
+                    $gif_configs['thumb_marker'] = '';
+                    $this->image_lib->initialize($gif_configs);
+                    $this->image_lib->resize();
+                }
+            }
+        }
+    }
+    function test() {
+//                $test = file_get_contents(base_url().'ChampionList.txt');
+//                $new = explode("\n", $test);
+//                foreach ($new as $champ_name){
+//                    $data = array("champ_name"=>trim($champ_name," "),"created_date"=>date('Y-m-d h:i:s'));
+//                    $this->leaguemod->add_champ($data);
+//                }
+////                print_r($new);
+//        exit;
+        $test = $this->hm->test();
+        exit;
+        if ($test === TRUE) {
+            echo "Success";
+        } else {
+            echo "Error: ";
+        }
+    }
+
+    /*function remove_space() {
+        $dir = getcwd() . '/uploads/league_resize';
+        $file_display = array(
+            'jpg',
+            'jpeg',
+            'png',
+            'gif'
+        );
+
+        $old_dir = getcwd() . '/uploads/league_resize/';
+
+        if (file_exists($dir) == false) {
+            echo 'Directory \'' . $dir . '\' not found!';
+        } else {
+            $dir_contents = scandir($dir);
+            $i = 0;
+            foreach ($dir_contents as $file) {
+                $file_type = strtolower(end(explode('.', $file)));
+
+                if ($file !== '.' && $file !== '..' && in_array($file_type, $file_display) == true) {
+                    $newFile = str_replace(" ", "_", $file);
+                    rename($old_dir . $file, $old_dir . $newFile);
+
+                    $i++;
+                } else {
+                    echo "error -- " . $file . "<br/>";
+                }
+            }
+            echo "Resized all image";
+        }
+        exit;
+    }*/
+ function qltopt() {
+        $dir = getcwd() . '/uploads/league_folder_8';
+        $file_display = array(
+            'jpg',
+            'jpeg',
+            'png'
+        );
+
+
+        if (file_exists($dir) == false) {
+            echo 'Directory \'' . $dir . '\' not found!';
+        } else {
+            $dir_contents = scandir($dir);
+
+            foreach ($dir_contents as $file) {
+                $file_type = strtolower(end(explode('.', $file)));
+
+                if ($file !== '.' && $file !== '..' && in_array($file_type, $file_display) == true) {
+                    $compressed = $this->compress_image($file, base_url() . 'uploads/league_folder_8/' . $file, getcwd() . '/uploads/league/' . $file, 80);
+                    chmod($compressed, 0777); // CHMOD file
+                }
+            }
+            echo "Resized all image";
+        }
+        exit;
+    }
+
+    function compress_image($file, $source_url, $destination_url, $quality) {
+        $info = getimagesize($source_url);
+
+        if ($info['mime'] == 'image/jpeg') {
+            $image = imagecreatefromjpeg($source_url);
+            imagejpeg($image, $destination_url, $quality);
+        } elseif ($info['mime'] == 'image/png') {
+            $image = imagecreatefrompng($source_url);
+//            $q = 9 / 100;
+//            $quality*=$q;
+//            echo $quality;exit;
+            imagepng($image, $destination_url, 9);
+        }else{
+            echo $info['mime']." -- ".$source_url;
+        }
+        imagedestroy($image);
+
+        return $destination_url;
+    }
+
+    function move_image() {
+
+        $dir = getcwd() . '/uploads/league_folder_8';
+
+        if (file_exists($dir) == false) {
+            echo 'Directory \'' . $dir . '\' not found!';
+        } else {
+            $dir_contents = scandir($dir);
+            $i = 0;
+            foreach ($dir_contents as $file) {
+
+              //  shell_exec('mv uploads/league_folder_8/' . $file . ' uploads/league_original/');
+
+                $i++;
+            }
+
+        }
+        exit;
+    }
+
+    function getphpinfo(){
+        echo phpinfo();
+    }
+
+    private function getSubContent($main, $sub_name, $orderid){
+
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
+
+        if (empty($upload_type)) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
+        if (isset($anime)) {
+            $start = $anime;
+        } else {
+            $start = 0;
+        }
+
+$limit  = 10 ;
+
+if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+
+    $limit = 4;
+}
+        if ($sub_name != "random") {
+            if ($sub_name == "Art") {
+                $data['sub_tab_data'] = $this->leaguemod->get_subTab_id("Art/Cosplay");
+            } else {
+                $data['sub_tab_data'] = $this->leaguemod->get_subTab_id($sub_name);
+
+            }
+            if (empty($data['sub_tab_data'])) {
+                $sub = 0;
+            } else {
+                $sub = $data['sub_tab_data'][0]['category_id'];
+            }
+        } else {
+            $sub = 0;
+        }
+        $anime_name =' ';
+
+        if ($anime_name == " ") {
+            $anime = 0;
+        } else {
+            $anime = $anime_name;
+        }
+        $get_total_rows = 0;
+        $items_per_group = $limit;
+
+        $data['row_result'] = $this->leaguemod->get_total_row($main, $sub,$up_type);
+        $data['total_row'] = $data['row_result'][0]['totalRecord'];
+        $data['total_groups'] = ceil($data['total_row'] / $items_per_group);
+        $data['main_category'] = $main;
+        $data['sub_category_name'] = $sub_name;
+        $data['sub_category'] = $sub;
+
+        $data['league_details'] = $this->leaguemod->list_league($main, $sub, $anime, $start,$limit, $up_type, $user_id);
+
+        if ($this->session->userdata('user_id')) {
+            $data['userid'] = $this->session->userdata('user_id');
+        }
+        $victory = array();
+        $defact = array();
+        foreach ($data['league_details'] as $league) {
+            if (isset($league->vic_users) && !empty($league->vic_users)) {
+                $victory[$league->leagueimage_id] = explode(",", $league->vic_users);
+            }
+            if (isset($league->def_users) && !empty($league->def_users)) {
+                $defact[$league->leagueimage_id] = explode(",", $league->def_users);
+            }
+        }
+        $fav_userid = array();
+        foreach ($data['league_details'] as $league) {
+            if (isset($league->fvtuserid) && !empty($league->fvtuserid)) {
+                $fav_userid[$league->leagueimage_id] = explode(",", $league->fvtuserid);
+            }
+        }
+        $data['favuserid'] = $fav_userid;
+//        echo "<pre>";
+//        print_r($data['favuserid']);
+//        exit;
+        $data['scroll'] = "0";
+        $data['victory'] = $victory;
+        $data['defact'] = $defact;
+        $data['up_type'] = $up_type;
+        $data['total'] = count($data['league_details']);
+        $result = $this->load->view('list_league_home', $data, true);
+        return $result;
+    }
+
+
+    function get_sub_items($types='new',$subtype = 'all') {
+
+        if (!empty($types)) {
+            if ($types == "popular") {
+                $maintabval = "popular";
+            } else if ($types == "new") {
+                $maintabval = "new";
+            } else if ($types == "bookmark") {
+                $maintabval = "bookmark";
+            } else {
+                $maintabval = "popular";
+            }
+        } else {
+            $maintabval = "popular";
+        }
+
+        if (!empty($subtype)) {
+
+            $subtabval = $subtype;
+        } else {
+            $subtabval = "";
+        }
+        $data['subTabData'] = $this->hm->get_sub_tabs();
+        $total = count($data['subTabData']);
+        $html = '';
+        $type = $this->input->post('type');
+
+
+        for ($i = 0; $i < $total; $i++) {
+            $active = "";
+
+
+            if ($data['subTabData'][$i]['category_name'] == "All") {
+                if ($subtabval == "All") {
+                    $active = "active";
+                }
+                $html .= '<li class="' . $type . $active . ' subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $data["subTabData"][$i]["category_id"] . '" href="' . base_url()  . "new/" . 'all" class="active">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab active' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' class='active' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            } else {
+                $cate_name =  $data['subTabData'][$i]['category_name'];
+
+                if ($data['subTabData'][$i]['category_name'] == "Art/Cosplay") {
+                    $category = "art";
+                } else {
+                    $category = $data['subTabData'][$i]['category_name'];
+                }
+                $html .= '<li class="' . $type ;
+                if($subtabval == "Art"){
+                    $cate_new_name = "Art/Cosplay";
+                }else{
+                    $cate_new_name = ucfirst($subtabval) ;
+                }
+                if($cate_new_name == $cate_name) { $html .= 'active' ; }
+                $html .='  subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $cate_name . '" href="' . base_url() . "new/" . strtolower($category) . '">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            }
+        }
+        $actives = "";
+        if ($subtabval == "random") {
+            $actives = "active";
+        }
+
+        $html .= "<li class='" . $type . $actives . " subTab' id='" . $type . "random'><a id='" . $type . "sub0' href='" . base_url() . 'new/' . "random'>Random</a></li>";
+        return $html;
+    }
+
 }
 
 /* End of file welcome.php */
     /* Location: ./application/controllers/welcome.php */
-    

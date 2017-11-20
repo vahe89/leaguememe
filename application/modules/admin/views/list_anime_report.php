@@ -27,11 +27,7 @@
         <?php } ?> 
 
         <!-- Small boxes (Stat box) -->
-        <!--        <div class="row pull-right">
-                    <div class="col-lg-12">
-                        <button class="btn btn-block btn-primary" onclick="javascript:window.open('add_article', '_self')">Add New</button>
-                    </div>
-                </div> /.row   -->
+                 
         <div class="row">
             <div class="col-lg-12"> 
                 <div class="box">

@@ -53,17 +53,46 @@ class Event extends MX_Controller {
             $response = json_encode(array("status" => false, "msg" => validation_errors()));
         } else {
             if ($_POST['type'] == 0) {
-                $config['upload_path'] = 'uploads/event/';
+                $config['upload_path'] = 'uploads/event_original/';
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size'] = 1024;
-                $config['max_width'] = 1024;
-                $config['max_height'] = 768;
+//                $config['max_size'] = 1024;
+                $config['max_width'] = 600;
+                $config['max_height'] = 400;
                 $config['file_name'] = time() . $this->input->post("title");
 
                 $this->load->library('upload', $config);
                 if (!$this->upload->do_upload('event_file')) {
                     $response = json_encode(array("status" => false, 'msg' => $this->upload->display_errors()));
                 } else {
+                    
+                    $name = $_FILES["event_file"]["name"];
+                    $ext = pathinfo($name, PATHINFO_EXTENSION);
+
+                    $image_temp = $_FILES['event_file']['tmp_name'];
+                    $image_size_info = getimagesize($image_temp);
+                    $image_type = $image_size_info['mime'];
+
+                    $new_file_name = time() . $this->input->post("title") . "." . $ext;
+
+                    if ($image_type == 'image/jpeg' || $image_type == 'image/pjpeg') {
+                        $image = imagecreatefromjpeg($image_temp);
+                        $image_path = getcwd() . "/uploads/event/$new_file_name";
+                        imagejpeg($image, $image_path, 80);
+                    } elseif ($image_type == 'image/png') {
+                        $image = imagecreatefrompng($image_temp);
+                        $image_path = getcwd() . "/uploads/event/$new_file_name";
+                        imagepng($image, $image_path);
+                    } else {
+                        $config_oth['upload_path'] = "./uploads/event";
+                        $config_oth['allowed_types'] = 'gif|jpg|png|jpeg';
+                        $config_oth['file_name'] = $new_file_name;
+                        $config_oth['max_size'] = '0';
+                        $config_oth['overwrite'] = FALSE;
+                        $this->load->library('upload', $config_oth);
+                        $this->upload->initialize($config_oth);
+                        $this->upload->do_upload('event_file');
+                    }
+                    
                     $imageData = array('upload_data' => $this->upload->data());
                     $private = isset($_POST['private']) ? 1 : 0;
 

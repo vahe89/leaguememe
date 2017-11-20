@@ -295,8 +295,9 @@ class Users_model extends CI_Model {
     }
 
     function updateUserById($userId, $data) {
-        $this->db->where('user_id', $userId)
+       return $this->db->where('user_id', $userId)
                 ->update('le_users', $data);
+               
     }
 
     function getUserById($userID) {

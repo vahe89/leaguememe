@@ -1,0 +1,83 @@
+.padding1 {
+    padding: 1%
+}
+
+.newgrid-5 {
+    width: 17.75%;
+}
+
+.newgrid-55 {
+    width: 18.75%;
+}
+
+.newgrid-4 {
+    width: 13.6%;
+}
+
+.newgrid-6 {
+    width: 21.9%;
+}
+
+.grid-1 {
+    width: 1.15%;
+}
+
+.grid-2 {
+    width: 5.3%;
+}
+
+.grid-3 {
+    width: 9.45%;
+}
+
+.grid-4 {
+    width: 13.6%;
+}
+
+.grid-5 {
+    width: 17.75%;
+}
+
+.grid-6 {
+    width: 21.9%;
+}
+
+.grid-7 {
+    width: 26.05%;
+}
+
+.grid-8 {
+    width: 30.2%;
+}
+
+.grid-9 {
+    width: 34.35%;
+}
+
+.grid-24 {
+    width: 96.6%;
+}
+
+[class^="grid-"] {
+    display: inline;
+    float: left;
+    margin-bottom: 2em;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+[class^="newgrid-"] {
+    display: inline;
+    float: left;
+    margin-bottom: 1em;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.ml-3 {
+    margin-left: 3%;
+}
+.error
+ {
+     color: red
+ }

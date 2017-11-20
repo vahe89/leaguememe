@@ -1,4 +1,8 @@
- 
+<style>
+    div.background-cover {
+        display: none;
+    }
+</style> 
 <?php
 foreach ($discussion_detail as $discussion) {
     //$allid = $main_category."-".$discussion->leagueimage_id;
@@ -8,7 +12,7 @@ foreach ($discussion_detail as $discussion) {
     ?>
     <section style="background-color:#eee;">
         <div class="container no-padding">
-            <div class="single-panel" style="margin-top: 35px;">
+            <div class="single-panel single-panel-view" style="margin-top: 90px;" >
                 <div class="col-md-8 no-padding">
 
                     <div class="col-md-12 wrap-res-avatar no-padding">
@@ -67,20 +71,20 @@ foreach ($discussion_detail as $discussion) {
                                 </div>
 
                                 <div class="media-body">
-                                    <a style="float: left" href="<?php echo base_url(); ?>animemoment-profile/<?php echo $discussion->user_name ?>">
+                                    <a style="float: left" href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $discussion->user_name ?>">
                                         <?php
-                                        if (isset($discussion->user_image)) {
+                                        if (isset($discussion->user_image) && !empty($discussion->user_image)) {
                                             ?>
                                             <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $discussion->user_image; ?>" alt="<?php echo $discussion->user_name; ?>"> 
                                             <?php
                                         } else {
                                             ?>
-                                            <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="profile pic">
+                                            <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/logo-simple.png" alt="profile pic">
                                             <?php
                                         }
                                         ?>
                                     </a>
-                                    <a href="<?php echo base_url(); ?>animemoment-profile/<?php echo $discussion->user_name ?>">
+                                    <a href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $discussion->user_name ?>">
                                         <h5 class="pad-l-65"><?php echo empty($discussion->name) ? $discussion->user_name : $discussion->name; ?></h5>
                                     </a>
 
@@ -101,42 +105,41 @@ foreach ($discussion_detail as $discussion) {
                                                 ?> </a><a>Comments</a>
                                         </div>
                                         <div class = "tag tag-minute">
-                                            <span class = "normal-tag">theory</span>
+
                                             <?php if ($discussion->spoiler == 1) {
                                                 ?>
                                                 <span class="normal-tag red-tag">spoiler</span>
-                                            <?php }
-                                            if(!empty($discussion->creditor_author) AND !empty($discussion->creditor_site)){
-                                            ?>
-                                            <span  class="normal-tag disc-credit-show" data-credit="<?=$discussion->creditor_author?>">Credit</span>
-                                                    <?php 
+                                                <?php
+                                            }
+                                            if (!empty($discussion->creditor_author) AND ! empty($discussion->creditor_site)) {
+                                                ?>
+                                                <span  class="normal-tag disc-credit-show" data-credit="<?= $discussion->creditor_author ?>">Credit</span>
+                                                <?php
+                                                $img = "fb-credit.png";
+                                                $lnk = "https://www.facebook.com/";
+
+                                                if (strpos($discussion->creditor_site, "facebook")) {
                                                     $img = "fb-credit.png";
                                                     $lnk = "https://www.facebook.com/";
-                                                    
-                                                    if(strpos($discussion->creditor_site, "facebook")){
-                                                        $img = "fb-credit.png";
-                                                        $lnk = "https://www.facebook.com/";
-                                                    }
-                                                    elseif(strpos($discussion->creditor_site, "twitter")){
-                                                        $img = "tt-credit.png";
-                                                        $lnk = "https://twitter.com/";
-                                                    }
-                                                    elseif(strpos($discussion->creditor_site, "insta")){
-                                                        $img = "ig-credit.png";
-                                                        $lnk = "https://www.instagram.com";
-                                                    }
-                                                    ?>
-                                                <a href="<?=$lnk?>"  target="_BLANK"  class="fb-1" style="display: none">
-                                                     <img src="<?=  base_url()?>assets/public/img/<?=$img?>" style="width: 22px;"> 
+                                                } elseif (strpos($discussion->creditor_site, "twitter")) {
+                                                    $img = "tt-credit.png";
+                                                    $lnk = "https://twitter.com/";
+                                                } elseif (strpos($discussion->creditor_site, "insta")) {
+                                                    $img = "ig-credit.png";
+                                                    $lnk = "https://www.instagram.com";
+                                                }
+                                                ?>
+                                                <a href="<?= isset($discussion->creditor_author) ? $lnk . '/' . $discussion->creditor_author : $lnk ?>" target="_BLANK"  class="fb-1" style="display: none">
+                                                    <img src="<?= base_url() ?>assets/public/img/<?= $img ?>" style="width: 22px;"> 
                                                 </a>
                                             <?php } ?>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
 
                                 <div class="wrap-bottom-avatar">
-                                    <div class="media-left up-triangle-res">
+<!--                                    <div class="media-left up-triangle-res">
                                         <?php
                                         if (isset($userid) && !empty($userid) && isset($victory[$discussion->anime_discussionid]) && !empty($victory[$discussion->anime_discussionid])) {
                                             if (in_array($userid, $victory[$discussion->anime_discussionid])) {
@@ -185,30 +188,30 @@ foreach ($discussion_detail as $discussion) {
                                             <?php
                                         }
                                         ?>
-                                    </div>
+                                    </div>-->
                                     <div class="tag tag-minute">
-                                        <span class = "normal-tag">theory</span>
+
                                         <?php if ($discussion->spoiler == 1) {
                                             ?>
                                             <span class="normal-tag red-tag">spoiler</span>
-                                        <?php }
-                                        if(!empty($discussion->creditor_author) AND !empty($discussion->creditor_site)){
-                                        ?>
-                                        <span  class="normal-tag disc-credit-show" data-credit="<?=$discussion->creditor_author?>">Credit</span>
-                                            <a href="javascript:void(0)" class="fb-1" style="display: none">
-                                                <?php 
+                                            <?php
+                                        }
+                                        if (!empty($discussion->creditor_author) AND ! empty($discussion->creditor_site)) {
+                                            ?>
+                                            <span  class="normal-tag disc-credit-show" data-credit="<?= $discussion->creditor_author ?>">Credit</span>
+                                            <?php
+                                            $img = "fb-credit.png";
+                                            if (strpos($discussion->creditor_site, "facebook")) {
                                                 $img = "fb-credit.png";
-                                                if(strpos($discussion->creditor_site, "facebook")){
-                                                    $img = "fb-credit.png";
-                                                }
-                                                elseif(strpos($discussion->creditor_site, "twitter")){
-                                                    $img = "tt-credit.png";
-                                                }
-                                                elseif(strpos($discussion->creditor_site, "insta")){
-                                                    $img = "ig-credit.png";
-                                                }
-                                                ?>
-                                                <img src="<?=  base_url()?>assets/public/img/<?=$img?>" style="width: 22px;">
+                                            } elseif (strpos($discussion->creditor_site, "twitter")) {
+                                                $img = "tt-credit.png";
+                                            } elseif (strpos($discussion->creditor_site, "insta")) {
+                                                $img = "ig-credit.png";
+                                            }
+                                            ?>
+                                            <a  href="<?= isset($discussion->creditor_author) ? $lnk . '/' . $discussion->creditor_author : $lnk ?>"  target="_BLANK" class="fb-1" style="display: none">
+
+                                                <img src="<?= base_url() ?>assets/public/img/<?= $img ?>" style="width: 22px;">
                                             </a>
                                         <?php } ?>
                                     </div>
@@ -227,19 +230,18 @@ foreach ($discussion_detail as $discussion) {
                         </div>
                         <div class="field-discuss">
                             <div id="desc-original" class="discuss-desc">
-                                <?= $discussion->description?>
+                                <?= $discussion->description ?>
                             </div>
                             <div class="edit-disc-desc" id="edit-desc" style="display: none">
                                 <form action="#" method="POST" id="form-edit-discussion">
                                     <textarea name="descussion_description" class="form-control" id="desc-textarea"><?php echo $discussion->description; ?></textarea>
                                 </form>
                             </div>
-                            
-                                <?php
+
+                            <?php
 //                                $myfile = getcwd() . '/uploads/discussion/' . $discussion->discussion_file;
 //                                echo "<p>".file_get_contents($myfile)."</p>";
-                                
-                                ?>
+                            ?>
                             </p>
                         </div>
 
@@ -256,6 +258,10 @@ foreach ($discussion_detail as $discussion) {
                         </div>
 
                     </div>
+<div class="col-md-12"><ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="1317445683"></ins></div>
                     <!-- wraper-view -->
                     <script>function fbs_click() {
                             u = location.href;
@@ -289,7 +295,7 @@ foreach ($discussion_detail as $discussion) {
                             <!-- popular--><div class="text-comment">
                                 <div class="wrap-avatar-comment">
                                     <?php
-                                    if (isset($userdetail['user_image'])) {
+                                    if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
                                         ?>
                                         <a href="#">
                                             <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="">
@@ -297,7 +303,7 @@ foreach ($discussion_detail as $discussion) {
                                         <?php
                                     } else {
                                         ?>
-                                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="profile pic">
+                                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/logo-simple.png" alt="profile pic">
                                         <?php
                                     }
                                     ?>
@@ -363,7 +369,7 @@ foreach ($discussion_detail as $discussion) {
                                             </div>
                                         </div>
                                         <p class="value-box">1000</p>
-                                    
+
 
                                     </div>
 
@@ -389,9 +395,12 @@ foreach ($discussion_detail as $discussion) {
 
                 <div class="col-md-4 col-sm-12 ads-view">
                     <div class="box-center">
-                        <?php echo $this->load->view('template/right_sidebar',array("discussion_detail_page" => true,
+                        <input type="hidden" value="dtlPage" id="getPage">
+                        <?php
+                        echo $this->load->view('template/right_sidebar', array("discussion_detail_page" => true,
                             "recent_disc" => $recent_disc,
-                            "discussion" => $discussion )); ?>
+                            "discussion" => $discussion));
+                        ?>
                     </div>
                 </div>
 
@@ -403,8 +412,8 @@ foreach ($discussion_detail as $discussion) {
     </section>
 <?php } ?>
 <script>
-    $(document).ready(function () {
-        $(".image_upload").click(function (e) {
+    $(document).ready(function() {
+        $(".image_upload").click(function(e) {
             e.preventDefault();
             $('#discussion_click').click();
 
@@ -426,7 +435,7 @@ foreach ($discussion_detail as $discussion) {
 
             reader.onload = imageIsLoaded;
             reader.readAsDataURL(input.files[0]);
-            $("#abcd" + abc).append($('<i class="fa fa-remove remove" style="margin-top: -75px; margin-right: 0px; margin-left: -2px; color: red; cursor: pointer; cursor: hand;"></i>').click(function () {
+            $("#abcd" + abc).append($('<i class="fa fa-remove remove" style="margin-top: -75px; margin-right: 0px; margin-left: -2px; color: red; cursor: pointer; cursor: hand;"></i>').click(function() {
                 $("#abcd" + abc).remove();
                 $("#previewimg" + abc).val("");
                 $('#discussion_click').val("");

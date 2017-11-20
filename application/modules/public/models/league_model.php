@@ -7,11 +7,13 @@
  */
 class League_model extends CI_Model {
 
+    var $rules_tbl = "rules_templates";
+
     public function __construct() {
         parent::__construct();
     }
 
-    function list_league($main, $sub, $anime = 0, $start) {
+    function list_league($main, $sub, $anime = 0, $start,$limit, $upload_type = 0, $user_id = 0) {
         if ($main == "new") {
             $popular = "AND le_leimg.leagueimage_setpopular = 'N'";
         } else if ($main == "popular") {
@@ -19,15 +21,19 @@ class League_model extends CI_Model {
         } else {
             $popular = 'AND favourites_status = "A"';
         }
-
+        if ($upload_type == 0) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
         if ($sub == 0) {
             $sub = '';
-            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $start . ',10';
+            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $start .','.$limit;
         } else {
             $sub = "AND ctg.category_id = " . $sub;
-            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $start . ',10';
+            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $start .','.$limit;
 //            $orderBy = 'ORDER BY total_comment desc ,total_victory desc LIMIT 0,8';
-        }
+        } 
 //        echo "FIrst:::" . $orderBy;
         if ($anime == 0) {
             $anim_where = '';
@@ -188,7 +194,7 @@ class League_model extends CI_Model {
                    GROUP_CONCAT(fvt.user_id) AS fvtuserid,
                    fvt.*
             FROM  le_favourites as fvt 
-            WHERE fvt.favourites_status = "A"
+            WHERE fvt.favourites_status = "A" AND fvt.user_id= ' . $user_id . '
             GROUP BY fvt.leagueimage_id
             ORDER BY fvt.leagueimage_id
          ) AS faver ON faver.`leagueimage_id` = le_leimg.`leagueimage_id`
@@ -229,7 +235,7 @@ class League_model extends CI_Model {
          ) AS tg ON tg.`leagueimage_id` = le_leimg.`leagueimage_id`
         
           ' . $anim_query .
-                'WHERE le_leimg.`leagueimage_status` = "A" ' . $anim_where . ' ' . $popular . ' AND le_leimg.`parent_id` = 0
+                'WHERE le_leimg.`leagueimage_status` = "A" ' . $anim_where . ' ' . $popular . ' AND le_leimg.`parent_id` = 0 AND le_leimg.`upload_type`= ' . $up_type . '
                 ' . $orderBy;
 
         $query = $this->db->query($quy);
@@ -276,7 +282,7 @@ class League_model extends CI_Model {
                 ->delete('le_favourites');
     }
 
-    function get_total_row($main, $sub) {
+    function get_total_row($main, $sub, $upload_type = 0) {
         if ($main == "new") {
             $sub2 = "WHERE leagueimage_setpopular = 'N'";
         } else if ($main == "popular") {
@@ -289,17 +295,22 @@ class League_model extends CI_Model {
         } else {
             $sub1 = "AND category_id = " . $sub;
         }
+        if ($upload_type == 0 || $upload_type == 1) {
+            $up_type = ' AND upload_type = 1 ';
+        } else {
+            $up_type = ' AND upload_type = 2 ';
+        }
 
         $sql = "SELECT COUNT(*) as totalRecord
                   FROM le_leagueimages
                           $sub2  
-                          $sub1";
+                          $sub1 $up_type";
 
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    function list_scroll_league($main, $sub, $anime, $start, $limit) {
+    function list_scroll_league($main, $sub, $anime, $start, $limit, $upload_type = 0, $user_id = 0, $offset = 0) {
         if ($main == "new") {
             $popular = "AND le_leimg.leagueimage_setpopular = 'N'";
         } else if ($main == "popular") {
@@ -307,13 +318,17 @@ class League_model extends CI_Model {
         } else {
             $popular = 'AND favourites_status = "A"';
         }
-
+        if ($upload_type == 0) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
         if ($sub == 0) {
             $sub = '';
-            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $start . ',' . $limit . '';
+            $orderBy = 'ORDER BY RAND() desc LIMIT ' . $offset . ',1';
         } else {
             $sub = "AND ctg.category_id = " . $sub;
-            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $start . ',' . $limit . '';
+            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT ' . $offset . ',1';
 //            $orderBy = 'ORDER BY total_comment desc ,total_victory desc LIMIT ' . $start . ',' . $limit . '';
         }
 //        echo "Second:::" . $orderBy;
@@ -473,7 +488,7 @@ class League_model extends CI_Model {
                    GROUP_CONCAT(fvt.user_id) AS fvtuserid,
                    fvt.*
             FROM  le_favourites as fvt 
-            WHERE fvt.favourites_status = "A"
+            WHERE fvt.favourites_status = "A" AND fvt.user_id= ' . $user_id . '
             GROUP BY fvt.leagueimage_id
             ORDER BY fvt.leagueimage_id
          ) AS faver ON faver.`leagueimage_id` = le_leimg.`leagueimage_id`
@@ -512,7 +527,7 @@ class League_model extends CI_Model {
            ORDER BY t.leagueimage_id
          ) AS tg ON tg.`leagueimage_id` = le_leimg.`leagueimage_id`
        ' . $anim_query .
-                'WHERE le_leimg.`leagueimage_status` = "A" ' . $anim_where . ' ' . $popular . ' AND le_leimg.`parent_id` = 0
+                'WHERE le_leimg.`leagueimage_status` = "A" ' . $anim_where . ' ' . $popular . ' AND le_leimg.`parent_id` = 0  AND le_leimg.`upload_type`= ' . $up_type . '
         ' . $orderBy;
         $query = $this->db->query($quy);
         return $query->result();
@@ -711,7 +726,7 @@ class League_model extends CI_Model {
     function league_search($ids) {
         if (empty($ids)) {
             $ids = '0';
-        } 
+        }
         $quy = "SELECT *, `le_leagueimages`.`leagueimage_id` as leagueimage_id, `le_users`.`user_name`, GROUP_CONCAT(tag) as tags,
                   (SELECT count(victory_id) FROM le_victory WHERE le_victory.leagueimages_id = le_leagueimages.leagueimage_id AND le_victory.victory_defeat = 'V' GROUP BY le_victory.leagueimages_id ORDER BY le_victory.leagueimages_id) as total_victory, 
                   (SELECT GROUP_CONCAT(user_id) AS vic_users FROM le_victory WHERE le_victory.leagueimages_id = le_leagueimages.leagueimage_id AND le_victory.victory_defeat = 'V' GROUP BY le_victory.leagueimages_id ORDER BY le_victory.leagueimages_id) as vic_user, 
@@ -730,10 +745,10 @@ class League_model extends CI_Model {
                             ORDER BY an.leaguememe_id
                         ) AS anictgry ON anictgry.`leaguememe_id` = le_leagueimages.`leagueimage_id` 
                     LEFT JOIN `le_favourites` ON `le_favourites`.`leagueimage_id` = `le_leagueimages`.`leagueimage_id` AND le_favourites.favourites_status = 'A' 
-                    WHERE `leagueimage_status` = 'A' AND `le_leagueimages`.`leagueimage_id` IN (" . $ids . ")
+                    WHERE `leagueimage_status` = 'A' AND `upload_type`= 1 AND  `le_leagueimages`.`leagueimage_id` IN (" . $ids . ")
                     GROUP BY `le_tags`.`leagueimage_id` 
-                    ORDER BY `le_leagueimages`.`leagueimage_id` desc LIMIT 8"; 
-        $query = $this->db->query($quy); 
+                    ORDER BY `le_leagueimages`.`leagueimage_id` desc LIMIT 8";
+        $query = $this->db->query($quy);
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -922,6 +937,33 @@ class League_model extends CI_Model {
         }
         return array();
     }
+
+    function get_rules($page_name) {
+        $this->db->select('template');
+        $this->db->from($this->rules_tbl);
+        $this->db->where('status', 1);
+        $this->db->where('page_name', $page_name);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function getTabs() {
+        $this->db->select('*');
+        $this->db->from('front_page_manage');
+        $this->db->where('id !=',1);
+        $this->db->order_by('position', 'asc');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    function getAuthore(){
+         $this->db->select('*');
+        $this->db->from('credit_authors'); 
+        $query = $this->db->get();
+        return $query->result();
+    }
+//    function add_champ($data){
+//        $this->db->insert('champ',$data);
+//    }
 
 }
 

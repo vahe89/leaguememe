@@ -78,20 +78,20 @@
                                 </div>
 
                                 <div class="media-body media-body-vote">
-                                    <a style="float: left" href="<?php echo base_url(); ?>animemoment-profile/<?php echo $poll_result['user_name'] ?>">
+                                    <a style="float: left" href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $poll_result['user_name'] ?>">
                                         <?php
-                                        if (isset($poll_result['user_image'])) {
+                                        if (isset($poll_result['user_image']) && !empty($poll_result['user_image'])) {
                                             ?>
                                             <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $poll_result['user_image']; ?>" alt="<?php echo $poll_result['user_name']; ?>"> 
                                             <?php
                                         } else {
                                             ?>
-                                            <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="profile pic">
+                                            <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                             <?php
                                         }
                                         ?>
                                     </a>
-                                    <a href="<?php echo base_url(); ?>animemoment-profile/<?php echo $poll_result['user_name']; ?>">
+                                    <a href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $poll_result['user_name']; ?>">
                                         <h5 class="pad-l-65"><?php echo empty($poll_result['name']) ? $poll_result['user_name'] : $poll_result['name']; ?></h5>
                                     </a>
                                     <span class="minute pad-l-65" style="display: block" data-livestamp="<?php echo strtotime($poll_result['created_date']); ?>"><?php echo strtotime($poll_result['created_date']); ?></span>
@@ -196,6 +196,10 @@
 
 
                     </div> 
+ <div class="col-md-12"><ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="1317445683"></ins></div>
                     <div class="tab-comment">
                         <ul id="pop" class="nav pop-tabs pop-view" role="tablist">
                             <li role="presentation" class="active">
@@ -229,7 +233,7 @@
                         <div class="text-comment" id="cmtclick">
                             <div class="wrap-avatar-comment">
                                 <?php
-                                if (isset($userdetail['user_image'])) {
+                                if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
                                     ?>
                                     <a href="#">
                                         <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="">
@@ -237,7 +241,7 @@
                                     <?php
                                 } else {
                                     ?>
-                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="profile pic">
+                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                     <?php
                                 }
                                 ?>
@@ -298,6 +302,7 @@
                 </div>
             <?php } ?>
             <div class="col-md-4 col-sm-12 ads-view"> 
+            <input type="hidden" value="dtlPage" id="getPage">
                 <?php
                 echo $this->load->view('template/right_sidebar');
                 ?>

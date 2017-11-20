@@ -1,26 +1,38 @@
  
+ 
 <div classs="row">
     <div class="col-md-12 wrap-main">
 
         <?php
+        if ($up_type == 1) {
+            $img_path = "league";
+            $err_msg = "post";
+        } else {
+            $img_path = "gamechat";
+            $err_msg = "Gamechat";
+        } 
         if (count($league_details) > 0 && !empty($league_details)) {
+            
             foreach ($league_details as $anim_img) {
                 ?>
+                
+                 
+                
                 <!--wrapper avatar-->
                 <div class="wrapper-avatar ">
                     <input type="hidden" name="total_groups" class="total_groups" value="<?php echo isset($total_groups) ? $total_groups : 0; ?>"/>
                     <input type="hidden" name="pageload" id="pageload" />
                     <div class="media info-avatar">
                         <div class="media-left">
-                            <a href="<?php echo base_url(); ?>animemoment-profile/<?php echo $anim_img->user_name ?>">
+                            <a href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $anim_img->user_name ?>">
                                 <?php
-                                if (isset($anim_img->user_image)) {
+                                if (isset($anim_img->user_image) && !empty($anim_img->user_image)) {
                                     ?>
                                     <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $anim_img->user_image; ?>" alt="<?php echo $anim_img->user_name; ?>"> 
                                     <?php
                                 } else {
                                     ?>
-                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="profile pic">
+                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                     <?php
                                 }
                                 ?>
@@ -28,17 +40,25 @@
                             </a>
                         </div>
                         <div class="media-body w-2000">
-                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $anim_img->user_name ?>"><h5><?php echo isset($anim_img->user_name) ? $anim_img->user_name : "Admin"; ?></h5></a>
+                            <a <?= isset($anim_img->user_name) ? 'href="' . base_url() . 'leaguememe_profile/' . $anim_img->user_name . '"' : '' ?> ><h5><?php echo isset($anim_img->user_name) ? $anim_img->user_name : "Admin"; ?></h5></a>
 
                             <div class="col-md-12 no-padding">
                                 <span class="minute" style="display: inline" data-livestamp="<?php echo strtotime($anim_img->leagueimage_timestamp); ?>"></span>
-                                <span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>
+                                <!--<span class="minute" style="display: inline;">to <a href="javascript:void(0)" class="minute">  /a/onepiece</a></span>-->
 
                             </div>
                             <span style="display: none" id="creditt<?php echo $anim_img->leagueimage_id; ?>"><?php echo isset($anim_img->author) ? $anim_img->author : "Not Assign"; ?></span>
                             <div class="tag tag-index">
                                 <?php
                                 if (isset($anim_img->total_images_parent)) {
+                                    
+                                     if ($anim_img->image_spoiler == 1) {
+//                                    if ($anim_img->spoiler == 1) {
+                                    ?>
+                                    <span class="red-tag">spoiler</span>
+                                    <?php
+//                                    }
+                                }
 
                                     if ($anim_img->total_images_parent > 0) {
                                         ?>
@@ -51,34 +71,27 @@
                                             <span  class="normal-tag disc-credit-show" data-credit="<?= $anim_img->credit ?>">Credit</span>
                                             <?php
                                             $img = "fb-credit.png";
-                                            $lnk = "https://www.facebook.com/";
+                                            $lnk = "https://www.facebook.com";
 
                                             if (strpos($anim_img->author, "facebook")) {
                                                 $img = "fb-credit.png";
-                                                $lnk = "https://www.facebook.com/";
+                                                $lnk = "https://www.facebook.com";
                                             } elseif (strpos($anim_img->author, "twitter")) {
                                                 $img = "tt-credit.png";
-                                                $lnk = "https://twitter.com/";
+                                                $lnk = "https://twitter.com";
                                             } elseif (strpos($anim_img->author, "insta")) {
                                                 $img = "ig-credit.png";
                                                 $lnk = "https://www.instagram.com";
-                                            }
+                                            } 
                                             ?>
-                                            <a href="<?= $lnk ?>"  target="_BLANK"  class="fb-1" style="display: none">
+                                            <a href="<?= isset($anim_img->credit) ? $lnk . '/' . $anim_img->credit : $lnk ?>"  target="_BLANK"  class="fb-1" style="display: none">
                                                 <img src="<?= base_url() ?>assets/public/img/<?= $img ?>" style="width: 22px;"> 
                                             </a>
                                             <?php
                                         }
                                     }
                                 }
-
-                                if ($anim_img->image_spoiler == 1) {
-//                                    if ($anim_img->spoiler == 1) {
-                                    ?>
-                                    <span class="red-tag">spoiler</span>
-                                    <?php
-//                                    }
-                                }
+                               
                                 ?>
 
 
@@ -114,7 +127,7 @@
                                 $al_img = explode(",", $anim_img->le_parentimg);
                                 ?>
                                 <div href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" class="wrap-avatar-img">
-                                    <img src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="ace" class="img-responsive meme-big" />
+                                    <img src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="ace" class="img-responsive meme-big" />
                                     <a class="album-more" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" target="_blank">View Album (<?php echo count($al); ?>)<span class="shadow"></span></a>
                                 </div>
 
@@ -141,8 +154,9 @@
                                 <div class="clear"></div>
                                 <div id="video_<?php echo $anim_img->leagueimage_id; ?>" class="video">
 
-                                    <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
-                                        <img  class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
+                                    <a class="image1" href="javascript:void(0)">
+                                        <img class="gif" data-id="<?php echo $anim_img->leagueimage_id; ?>" id="gif_<?php echo $anim_img->leagueimage_id; ?>" data-gif="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" src="<?php echo base_url(); ?>uploads/giftojpg/<?php echo $anim_img->leagueimage_filename; ?>">
+                                        <!--<img  class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/giftojpg/<?php // echo $anim_img->leagueimage_filename; ?>" alt="<?php // echo $anim_img->leagueimage_name; ?>">-->
                                     </a>
 
                                 </div>
@@ -169,7 +183,7 @@
                                         <a data-toggle="modal" href="javascript:void(0);" data-target="#login" id="login_click" style="float: right; display:none">Login</a>
                                     <?php } else { ?> 
                                         <a id="get_image" class="get_image" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>"> 
-                                            <img class = "img-responsive meme-big" id="not_safe" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
+                                            <img class = "img-responsive meme-big" id="not_safe" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
                                         </a>
                                         <?php
                                     }
@@ -177,7 +191,7 @@
                                     if ($anim_img->image_nsfw == 0 && $anim_img->image_spoiler == 0) {
                                         ?>
                                         <a id="spoiler_image" class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>"> 
-                                            <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
+                                            <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
                                         </a> 
                                         <?php
                                     } else if ($anim_img->image_nsfw == 1 && $anim_img->image_spoiler == 0) {
@@ -189,7 +203,7 @@
 
                                         <?php } else { ?>
                                             <a id="spoiler_image" class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>"> 
-                                                <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
+                                                <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
                                             </a> 
                                             <?php
                                         }
@@ -202,7 +216,7 @@
 
                                         <?php } else { ?>
                                             <a id="spoiler_image" class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>"> 
-                                                <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/league/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
+                                                <img  id="image1" class = "img-responsive meme-big" src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="<?php echo $anim_img->leagueimage_name; ?>">
                                             </a> 
                                             <?php
                                         }
@@ -210,10 +224,21 @@
                                 }
                             }
                         } else if ($category == 'Video') {
-                            ?>
+                            $link = $anim_img->videoname;
+                            
+                            $video_id = explode("?v=", $link);
+                            if(isset($video_id[1])){
+                                $video_id = $video_id[1]; 
+                            }else{
+                                 $video_id = "";
+                            }
+                            
+                        ?>
 
                             <a class="image1" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>">
-                                <div class="meme-img col-sm-12" ><?php echo $anim_img->leagueimage_filename; ?></div>
+                                <div class="meme-img col-sm-12" > 
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $video_id ?>" frameborder="0" allowfullscreen></iframe> 
+                                </div>
                             </a>
                             <?php
                         }
@@ -349,20 +374,12 @@
 
                         <!-- social -->
                         <div class="pull-right social-btn">
-                            <script>
-                                function fbs_click() {
-                                    u = location.href;
-                                    t = document.title;
-                                    window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436');
-                                    return false;
-                                }
-                            </script>
-                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script> 
-                            <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank" class="fb-bg medium-btn mar-r-5">
-                                <i class="fa fa-facebook"></i> share
-                            </a>
 
-                            <a  data-count="vertical" data-via="your_screen_name" data-hashtags="mayur8189" href="https://twitter.com/share" class="tw-bg medium-btn">
+
+                            <a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click(<?= $anim_img->leagueimage_id ?>)" target="_blank" class="fb-bg medium-btn mar-r-5">
+                                <i class="fa fa-facebook"></i> share
+                            </a> 
+                            <a  href="http://twitter.com/home/?status=<?= base_url() . $anim_img->leagueimage_id ?> (via @leaguememecom)" class="popup twitter tw-bg medium-btn">
                                 <i class="fa fa-twitter"></i> share
                             </a>
                         </div>
@@ -398,14 +415,30 @@
 
 
 
-                <?php
+                <?php 
             }
+            if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) { // if mobile browser 
+                        ?>
+                        <div align="center" class="Ad_google">
+                       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Responsive LM Boxes -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="5203425452"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+                        <?php 
+                }
         } else {
             if ($scroll == 0) {
                 ?>
                 <div> 
                     <div class="alert alert-danger">
-                        <strong>Oops!</strong> No League found  
+                        <strong>Oops!</strong> No <?= $err_msg ?> found  
                     </div>
                 </div>
                 <?php
@@ -417,8 +450,47 @@
 
     <!--end col-md-12-->
 
-</div>     
+</div> 
+<script>
+    $(".gif").each(function () {
+        var id = $(this).data('id');
 
+        if ($("#video_" + id).find('div.gifplayer-wrapper').find('img.gp-gif-element').length !== 0) {
+//            alert("yes");
+        } else {
+            $("#gif_" + id).gifplayer();
+        }
+
+
+    });
+    
+    //$('.gif').gifplayer();
+    $('.popup').click(function(event) {
+        var width = 575,
+                height = 400,
+                left = ($(window).width() - width) / 2,
+                top = ($(window).height() - height) / 2,
+                url = this.href,
+                opts = 'status=1' +
+                ',width=' + width +
+                ',height=' + height +
+                ',top=' + top +
+                ',left=' + left;
+
+        window.open(url, 'twitter', opts);
+
+        return false;
+    });
+</script>
+<script>
+    function fbs_click(id) {
+        u = base_url + id; 
+        t = document.title;
+        window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436');
+        return false;
+    }
+</script>
+<!--<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>--> 
 <script type="text/javascript">
     function spoilerImage() {
         $('#login').modal('show');

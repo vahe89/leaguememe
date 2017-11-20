@@ -337,292 +337,9 @@ class Anime_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    function discussion_list($main, $anime = 0, $header) {
-        if ($main == "new") {
-            $popular = 'animediscussion_popular = "N"';
-        } else if ($main == "popular") {
-            $popular = 'animediscussion_popular = "Y" ';
-        } else if ($main == "fav") {
-            $popular = 'bookmark = "1"';
-        }else {
-            $popular = 'animediscussion_popular = "Y" ';
-        }
+    
 
-        if ($anime == 0) {
-            $anim_where = ' ';
-            $anim_query = ' ';
-            $anime_data = ' ';
-//            $orderBy = 'ORDER BY le_leimg.`leagueimage_id` desc LIMIT 0,8';
-        } else {
-            $anim_query = ' LEFT JOIN
-            (
-              SELECT an.*
-              FROM anime_discussion_category AS an
-              WHERE an.anime_category_id = ' . $anime . ' 
-                GROUP BY an.anime_discussionid
-                ORDER BY an.anime_discussionid
-            ) AS anictgry ON anictgry.`anime_discussionid` = ani_dis.`anime_discussionid`';
-            $anim_where = ' AND anictgry.anime_category_id = ' . $anime;
-            $anime_data = 'anictgry.`anime_category_id`,';
-        }
-
-        $quy = 'SELECT  ani_dis.*,
-            bb.anime_cat,bb.anime_nm,
-
-                ' . $anime_data . '
-                 
-                /* user data */
-                user.user_name,
-                user.name,
-                user.user_email,
-                user.user_region,
-                user.user_image,
-                user.online_status,
-              /*  victory victory.total_victory,victoryd.`total_defeat` */
-                victory.vic_users,
-                victoryd.def_users,
-                CASE WHEN (victory.`total_victory` IS NULL OR victory.`total_victory` = "")
-                         THEN "0"
-                         ELSE victory.`total_victory`
-                END AS total_victory,
-                CASE WHEN (victoryd.`total_defeat` IS NULL OR victoryd.`total_defeat` = "")
-                         THEN "0"
-                         ELSE victoryd.`total_defeat`
-                END AS total_defeat,   
-              /*  Total Comment comment.total_comment,*/
-               CASE WHEN (comment.`total_comment` IS NULL OR comment.`total_comment` = "")
-                         THEN "0"
-                         ELSE comment.`total_comment`
-                END AS total_comment,
-                cmtData.commentid,
-                cmtData.prcmt,
-                cmtData.userid,
-                cmtData.childcmtid,
-                cmtData.childcmt,  
-                cmtData.childcmtuserid,
-                cmtData.childcmtdate
-                
-                
-        FROM anime_discussion AS ani_dis
-          LEFT JOIN 
-         (
-           SELECT GROUP_CONCAT(c.comment_id) AS commentid,
-                  GROUP_CONCAT(c.comment,"%%**%%") AS prcmt,
-                  GROUP_CONCAT(c.user_id) AS userid,
-                  GROUP_CONCAT(chdg.chdcomment,"%%") AS childcmt,
-                  GROUP_CONCAT(chdg.chdcomment_id,"%%") AS childcmtid,
-                  GROUP_CONCAT(chdg.chdcomment_userid,"%%") AS childcmtuserid,
-                  GROUP_CONCAT(chdg.chdcomment_date,"%%") AS childcmtdate,
-                  GROUP_CONCAT(chdg.luser_name,"%%") AS childusername,
-                  c.*
-           FROM discussion_comment AS c
-           LEFT JOIN
-           (
-              SELECT i.*,
-                     GROUP_CONCAT(i.comment,"**^^**") AS chdcomment,
-                     GROUP_CONCAT(i.comment_id,"**^^**") AS chdcomment_id,
-                     GROUP_CONCAT(i.user_id,"**^^**") AS chdcomment_userid,
-                     GROUP_CONCAT(i.comment_date,"**^^**") AS chdcomment_date,
-                     GROUP_CONCAT(l_user.user_name,"**^^**") AS luser_name 
-              FROM `discussion_comment` AS i
-              LEFT JOIN `le_users` AS l_user ON l_user.`user_id` = i.`user_id`	      
-              GROUP BY i.parent_id 
-           ) AS chdg ON chdg.parent_id = c.comment_id
-           WHERE c.`parent_id` = 0
-           GROUP BY c.anime_discussionid
-           ORDER BY c.anime_discussionid 
-         ) AS cmtData ON cmtData.`anime_discussionid` = ani_dis.`anime_discussionid` 
-        LEFT JOIN
-          (
-            SELECT u.*
-            FROM le_users AS u
-            WHERE u.user_status = "A"    
-          ) AS user ON  ani_dis.discussion_userid = user.user_id
-           LEFT JOIN
-         (
-            SELECT count(vic.point_id) AS total_victory,
-                   GROUP_CONCAT(vic.user_id) AS vic_users,
-                   vic.*
-            FROM discussion_point as vic 
-            WHERE vic.points = "L"
-            GROUP BY vic.anime_discussionid
-            ORDER BY vic.anime_discussionid
-         ) AS victory ON victory.anime_discussionid = ani_dis.`anime_discussionid`
-         LEFT JOIN
-         (
-            SELECT count(vicd.point_id) AS total_defeat,
-                   GROUP_CONCAT(vicd.user_id) AS def_users,
-                   vicd.*
-            FROM discussion_point as vicd 
-            WHERE vicd.points = "D"
-            GROUP BY vicd.anime_discussionid
-            ORDER BY vicd.anime_discussionid
-         ) AS victoryd ON victoryd.anime_discussionid = ani_dis.`anime_discussionid`
-          LEFT JOIN
-         (
-            SELECT count(cmt.comment) AS total_comment,
-                   cmt.*
-            FROM  discussion_comment as cmt
-            WHERE cmt.`parent_id` = 0 
-            GROUP BY cmt.anime_discussionid
-            ORDER BY cmt.anime_discussionid
-         ) AS comment ON comment.`anime_discussionid` = ani_dis.`anime_discussionid`
-         LEFT JOIN
-        (
-          SELECT b.*,
-                  GROUP_CONCAT(b.anime_category_id) as anime_cat,
-               GROUP_CONCAT(cc.anime_nm) as anime_nm      
-            FROM `anime_discussion_category` as b
-            LEFT JOIN
-            (
-             SELECT c.*,
-                 GROUP_CONCAT(c.anime_name) as anime_nm
-                FROM anime as c
-                GROUP BY c.anime_id
-                ORDER BY c.anime_id
-            ) as cc on cc.anime_id = b.anime_category_id
-            GROUP BY b.anime_discussionid
-            Order by b.anime_discussionid
-        ) as bb on ani_dis.anime_discussionid = bb.anime_discussionid
-          ' . $anim_query .
-                'WHERE  ani_dis.' . $popular . ' AND ani_dis.header_type = ' . $header . $anim_where . " ORDER BY ani_dis.anime_discussionid DESC";
-
-//        'WHERE ' . $anim_where . ' AND  ani_dis.`animediscussion_popular` = "' . $popular . '" ';
-        $query = $this->db->query($quy);
-//        echo $this->db->last_query();
-//        exit;
-        return $query->result();
-    }
-
-    function single_image_list($anime_discussionid) {
-
-        $quy = 'SELECT  ani_dis.*,
-            bb.anime_cat,bb.anime_nm,
-
-                 
-                 
-                /* user data */
-                user.user_name,
-                user.name,
-                user.user_email,
-                user.user_region,
-                user.user_image,
-                user.online_status,
-              /*  victory victory.total_victory,victoryd.`total_defeat` */
-                victory.vic_users,
-                victoryd.def_users,
-                CASE WHEN (victory.`total_victory` IS NULL OR victory.`total_victory` = "")
-                         THEN "0"
-                         ELSE victory.`total_victory`
-                END AS total_victory,
-                CASE WHEN (victoryd.`total_defeat` IS NULL OR victoryd.`total_defeat` = "")
-                         THEN "0"
-                         ELSE victoryd.`total_defeat`
-                END AS total_defeat,   
-              /*  Total Comment comment.total_comment,*/
-               CASE WHEN (comment.`total_comment` IS NULL OR comment.`total_comment` = "")
-                         THEN "0"
-                         ELSE comment.`total_comment`
-                END AS total_comment,
-                cmtData.commentid,
-                cmtData.prcmt,
-                cmtData.userid,
-                cmtData.childcmtid,
-                cmtData.childcmt,  
-                cmtData.childcmtuserid,
-                cmtData.childcmtdate
-                
-                
-        FROM anime_discussion AS ani_dis
-          LEFT JOIN 
-         (
-           SELECT GROUP_CONCAT(c.comment_id) AS commentid,
-                  GROUP_CONCAT(c.comment,"%%**%%") AS prcmt,
-                  GROUP_CONCAT(c.user_id) AS userid,
-                  GROUP_CONCAT(chdg.chdcomment,"%%") AS childcmt,
-                  GROUP_CONCAT(chdg.chdcomment_id,"%%") AS childcmtid,
-                  GROUP_CONCAT(chdg.chdcomment_userid,"%%") AS childcmtuserid,
-                  GROUP_CONCAT(chdg.chdcomment_date,"%%") AS childcmtdate,
-                  GROUP_CONCAT(chdg.luser_name,"%%") AS childusername,
-                  c.*
-           FROM discussion_comment AS c
-           LEFT JOIN
-           (
-              SELECT i.*,
-                     GROUP_CONCAT(i.comment,"**^^**") AS chdcomment,
-                     GROUP_CONCAT(i.comment_id,"**^^**") AS chdcomment_id,
-                     GROUP_CONCAT(i.user_id,"**^^**") AS chdcomment_userid,
-                     GROUP_CONCAT(i.comment_date,"**^^**") AS chdcomment_date,
-                     GROUP_CONCAT(l_user.user_name,"**^^**") AS luser_name 
-              FROM `discussion_comment` AS i
-              LEFT JOIN `le_users` AS l_user ON l_user.`user_id` = i.`user_id`	      
-              GROUP BY i.parent_id 
-           ) AS chdg ON chdg.parent_id = c.comment_id
-           WHERE c.`parent_id` = 0
-           GROUP BY c.anime_discussionid
-           ORDER BY c.anime_discussionid 
-         ) AS cmtData ON cmtData.`anime_discussionid` = ani_dis.`anime_discussionid` 
-        LEFT JOIN
-          (
-            SELECT u.*
-            FROM le_users AS u
-            WHERE u.user_status = "A"    
-          ) AS user ON  ani_dis.discussion_userid = user.user_id
-           LEFT JOIN
-         (
-            SELECT count(vic.point_id) AS total_victory,
-                   GROUP_CONCAT(vic.user_id) AS vic_users,
-                   vic.*
-            FROM discussion_point as vic 
-            WHERE vic.points = "L"
-            GROUP BY vic.anime_discussionid
-            ORDER BY vic.anime_discussionid
-         ) AS victory ON victory.anime_discussionid = ani_dis.`anime_discussionid`
-         LEFT JOIN
-         (
-            SELECT count(vicd.point_id) AS total_defeat,
-                   GROUP_CONCAT(vicd.user_id) AS def_users,
-                   vicd.*
-            FROM discussion_point as vicd 
-            WHERE vicd.points = "D"
-            GROUP BY vicd.anime_discussionid
-            ORDER BY vicd.anime_discussionid
-         ) AS victoryd ON victoryd.anime_discussionid = ani_dis.`anime_discussionid`
-          LEFT JOIN
-         (
-            SELECT count(cmt.comment) AS total_comment,
-                   cmt.*
-            FROM  discussion_comment as cmt
-            WHERE cmt.`parent_id` = 0 
-            GROUP BY cmt.anime_discussionid
-            ORDER BY cmt.anime_discussionid
-         ) AS comment ON comment.`anime_discussionid` = ani_dis.`anime_discussionid`
-         LEFT JOIN
-        (
-          SELECT b.*,
-                  GROUP_CONCAT(b.anime_category_id) as anime_cat,
-               GROUP_CONCAT(cc.anime_nm) as anime_nm      
-            FROM `anime_discussion_category` as b
-            LEFT JOIN
-            (
-             SELECT c.*,
-                 GROUP_CONCAT(c.anime_name) as anime_nm
-                FROM anime as c
-                GROUP BY c.anime_id
-                ORDER BY c.anime_id
-            ) as cc on cc.anime_id = b.anime_category_id
-            GROUP BY b.anime_discussionid
-            Order by b.anime_discussionid
-        ) as bb on ani_dis.anime_discussionid = bb.anime_discussionid
- 
-         
-                WHERE ani_dis.anime_discussionid = "' . $anime_discussionid . '"
-                ';
-        $query = $this->db->query($quy);
-//        echo $this->db->last_query();
-//        exit;
-        return $query->result();
-    }
+    
 
     function point_anime($user_id, $discussion_id) {
         $this->db->select('*');
@@ -721,6 +438,27 @@ class Anime_model extends CI_Model {
         $this->db->where('comment_id', $comment_id);
         $this->db->delete('discussion_comment_points');
         return TRUE;
+    }
+
+    function sel_favourites($user_id, $league_image_id) {
+        $this->db->select('*');
+        $this->db->from('dis_favourites');
+        $this->db->where('user_id', $user_id);
+        $this->db->where('anime_discussionid', $league_image_id);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    function add_favourites($dataArr) {
+        $this->db->insert('dis_favourites', $dataArr);
+        return $this->db->insert_id();
+    }
+
+    function removefavourites($user_id, $favourites_id) {
+        $result = $this->db->where('favourites_id', $favourites_id)
+                ->where('user_id', $user_id)
+                ->where('favourites_status', "A")
+                ->delete('dis_favourites');
     }
 
     function delete_disccusion_comment($league_comment, $userid) {

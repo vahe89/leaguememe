@@ -1,4 +1,52 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-03-17 11:12:43 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-03-17 15:24:33 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
+ERROR - 2017-03-17 04:13:27 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 04:13:27 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 04:13:27 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 04:13:27 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 04:13:32 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 04:13:32 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 04:13:32 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 04:13:32 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:33:08 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:33:08 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:33:08 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:33:08 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:33:15 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:33:15 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:33:15 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:33:15 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:34:12 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:34:12 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:34:12 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:34:12 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:34:28 --> 404 Page Not Found --> assets/public/img/favicon.ico
+ERROR - 2017-03-17 16:35:17 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:35:17 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:35:17 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:35:17 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:35:23 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:35:23 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:35:23 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:35:23 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:35:50 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:36:32 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:36:32 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:36:32 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:36:32 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:36:41 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:36:41 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:36:41 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:36:41 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:45:18 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-03-17 16:45:18 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-03-17 16:45:18 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-03-17 16:45:18 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 159
+ERROR - 2017-03-17 16:45:23 --> 404 Page Not Found --> assets/public/img/favicon.ico

@@ -25,23 +25,37 @@ class Leaguelist extends MX_Controller {
     }
 
     function list_league($anime) {
-
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
         $main = $this->input->post('main');
         $sub_name = $this->input->post('sub');
-
+        $upload_type = $this->input->post('upload_type');
+        if (empty($upload_type)) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
         if (isset($anime)) {
             $start = $anime;
         } else {
             $start = 0;
         }
-
+$limit  =  $this->input->post('perpage');
         if ($sub_name != "random") {
-            $data['sub_tab_data'] = $this->leaguemod->get_subTab_id($sub_name);
-            if (empty($data['sub_tab_data'])) {
-                $sub = 0;
+            if ($sub_name == "Art") {
+                 $data['sub_tab_data'] = $this->leaguemod->get_subTab_id("Art/Cosplay");
             } else {
-                $sub = $data['sub_tab_data'][0]['category_id'];
+            $data['sub_tab_data'] = $this->leaguemod->get_subTab_id($sub_name);
+            
             }
+                if (empty($data['sub_tab_data'])) {
+                    $sub = 0;
+                } else {
+                    $sub = $data['sub_tab_data'][0]['category_id'];
+                } 
         } else {
             $sub = 0;
         }
@@ -53,16 +67,16 @@ class Leaguelist extends MX_Controller {
             $anime = $anime_name;
         }
         $get_total_rows = 0;
-        $items_per_group = 10;
+        $items_per_group = $limit;
 
-        $data['row_result'] = $this->leaguemod->get_total_row($main, $sub);
+        $data['row_result'] = $this->leaguemod->get_total_row($main, $sub,$up_type);
         $data['total_row'] = $data['row_result'][0]['totalRecord'];
         $data['total_groups'] = ceil($data['total_row'] / $items_per_group);
         $data['main_category'] = $main;
         $data['sub_category_name'] = $sub_name;
         $data['sub_category'] = $sub;
 
-        $data['league_details'] = $this->leaguemod->list_league($main, $sub, $anime, $start);
+        $data['league_details'] = $this->leaguemod->list_league($main, $sub, $anime, $start,$limit, $up_type, $user_id);
 
         if ($this->session->userdata('user_id')) {
             $data['userid'] = $this->session->userdata('user_id');
@@ -87,9 +101,10 @@ class Leaguelist extends MX_Controller {
 //        echo "<pre>";
 //        print_r($data['favuserid']);
 //        exit;
-          $data['scroll'] = "0";
+        $data['scroll'] = "0";
         $data['victory'] = $victory;
         $data['defact'] = $defact;
+        $data['up_type'] = $up_type;
         $data['total'] = count($data['league_details']);
         echo $this->load->view('list_league_home', $data, true);
     }
@@ -246,10 +261,27 @@ class Leaguelist extends MX_Controller {
     }
 
     function list_scroll_data() {
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
         $main = $this->input->post('main');
         $sub_name = $this->input->post('sub');
+        $upload_type = $this->input->post('upload_type');
+        $offset = $this->input->post('offset') + $this->input->post('perpage');
+        if (empty($upload_type)) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
         if ($sub_name != "random") {
+             if ($sub_name == "Art") {
+                 $data['sub_tab_data'] = $this->leaguemod->get_subTab_id("Art/Cosplay");
+            } else {
             $data['sub_tab_data'] = $this->leaguemod->get_subTab_id($sub_name);
+            
+            } 
             $sub = $data['sub_tab_data'][0]['category_id'];
         } else {
             $sub = 0;
@@ -262,12 +294,12 @@ class Leaguelist extends MX_Controller {
             $anime = $anime_name;
         }
         $get_total_rows = 0;
-        $items_per_group = 10;
+        $items_per_group = $this->input->post('perpage');
         $group_number = $this->input->post('group_no');
 
         $position = ($group_number * $items_per_group);
 
-        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group);
+        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id, $offset);
 //        echo "<pre>";
 //        print_r($data['league_details']);
 //        exit;
@@ -284,14 +316,20 @@ class Leaguelist extends MX_Controller {
                 $defact[$league->leagueimage_id] = explode(",", $league->def_users);
             }
         }
-          $data['scroll'] = "1";
+        $data['scroll'] = "1";
         $data['victory'] = $victory;
         $data['defact'] = $defact;
+        $data['up_type'] = $up_type;
         $data['total'] = count($data['league_details']);
         echo $this->load->view('list_league_home', $data, true);
     }
 
     function more_fun_data() {
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
         $main = $this->input->post('main');
         $sub_name = $this->input->post('sub');
         if ($sub_name != "random") {
@@ -308,13 +346,13 @@ class Leaguelist extends MX_Controller {
             $anime = $anime_name;
         }
         $get_total_rows = 0;
-        $items_per_group = 8;
+        $items_per_group = $this->input->post('perpage');
         $group_number = $this->input->post('group_no');
 
 //        $position = ($group_number * $items_per_group);
         $position = $group_number;
 
-        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group);
+        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $user_id);
 //        echo "<pre>";
 //        print_r($data['league_details']);
 //        exit;
@@ -331,7 +369,7 @@ class Leaguelist extends MX_Controller {
                 $defact[$league->leagueimage_id] = explode(",", $league->def_users);
             }
         }
-          $data['scroll'] = "0";
+        $data['scroll'] = "0";
         $data['victory'] = $victory;
         $data['defact'] = $defact;
         $data['total'] = count($data['league_details']);
@@ -500,7 +538,7 @@ class Leaguelist extends MX_Controller {
         }
 
 
-        $all_images = $this->leaguemod->list_league($image_type, $category_id[0]['category_id'], 0, '0');
+        $all_images = $this->leaguemod->list_league($image_type, $category_id[0]['category_id'], 0, '0','1', 0);
 
 
         $next_image = 0;
@@ -545,5 +583,100 @@ class Leaguelist extends MX_Controller {
         load_public_template($data);
     }
 
+    public function season_index() { 
+        $Session = $this->session->userdata('user_id');
+        $data['userdetail'] = $this->userdetail();
+        $data['username'] = $this->session->userdata('uname');
+        $data['userid'] = $this->session->userdata('user_id');
+        $data["side_link"] = $this->hm->get_all_sidelinksside();
+        $data["side_linkss"] = $this->hm->get_all_sidelinksnoside();
+        $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
+        $data["new_post"] = $this->hm->get_new_post();
+        $data["new_discussion"] = $this->hm->get_let_discussion();
+        $data["new_like"] = $this->hm->get_newlike();
+        $data['active_menu'] = "leaguememe";
+        $rightbar = array(
+                'rules' => ''
+            );
+        $data["right_bar"] = $rightbar;
+          $data['getTabposition'] = $this->leaguemod->getTabs();
+        $data['content'] = $this->load->view('index', $data, TRUE);
+        load_public_template($data);
+    }
+
+    function season_old() { 
+        $dir = getcwd() . '/uploads/backup/images';
+        $allow = array('jpg', 'jpeg', 'JPEG', 'JPG', 'gif', 'png', 'PNG', 'GIF');
+        $i = 0;
+        $open = opendir($dir);
+        $league = "";
+        $league_details[] = array();
+        while (($file = readdir($open)) !== false) {
+            $ext = str_replace('.', '', strrchr($file, '.'));
+            if (in_array($ext, $allow))
+                $list[$i++] = $file;
+        }
+          
+            $page_to = $this->input->post('season_page'); 
+            $perPage = $page_to;  
+        $total = count($list);
+        $pages = ceil($total / $perPage);
+
+        $thisPage = isset($_POST['group_no']) ? $_POST['group_no'] : 0;
+        $start = $thisPage * $perPage;
+        $imgCnt = 0;
+        for ($i = $start; $i < $start + $perPage; $i++) {
+
+            if (isset($list[$i]))
+                $league_details[$i]['leagueimage_filename'] = $list[$i];
+            else
+                $imgCnt+=1;
+        }
+        closedir($open);
+        $data['league_details'] = $league_details;
+         $data['perPage'] = $perPage;
+        $data['total_groups'] = $pages;
+        echo $this->load->view('season_old_list', $data, true);
+        exit;
+//        $dir = getcwd() . '/uploads/backup/images';
+//        $file_display = array(
+//            'jpg',
+//            'jpeg',
+//            'png',
+//            'gif'
+//        );
+//
+//        $league = "";
+//        $league_details[] = array(); 
+//        if (file_exists($dir) == false) {
+//            echo 'Directory \'' . $dir . '\' not found!';
+//        } else {
+//            $dir_contents = scandir($dir);
+//            $i = 0;
+//            foreach ($dir_contents as $file) {
+//                $file_type = strtolower(end(explode('.', $file)));
+//                $file_detail = (explode('.', $file));
+//
+//                if ($file !== '.' && $file !== '..' && in_array($file_type, $file_display) == true) {
+//                    $league_details[$i]['leagueimage_filename'] = $file;
+//                    $league_details[$i]['leagueimage_name'] = $file_detail[0];
+//                    array_push($league_details, $league);
+//                    $i++;
+//                }
+//            }
+//            $data['league_details'] = $league_details;
+//            echo $this->load->view('season_old_list', $data, true);
+//        }
+    }
+    function getCredit_author(){
+        $getData = $this->leaguemod->getAuthore();
+        $creditHtml = '';
+        foreach ($getData as $val){
+            $creditHtml .= '<img class="image_filter" style="cursor: pointer" src="'. base_url() .'uploads/author/'.$val->image.'"  data-name="'. $val->name.'" data-link="'. $val->link.'" style="width:32px;height:32px">' ;
+        }
+        echo $creditHtml;
+        exit;
+    }
 }
+
 ?>

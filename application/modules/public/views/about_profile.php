@@ -6,7 +6,7 @@
             <div class="col-md-12 no-padding">
                 <div class="title-section">
                     <span>About <?php echo $userdetail['user_name']; ?> Profile</span>
-                    <a  href="<?php echo base_url(); ?>animemoment_profile/<?php echo $userdetail['user_name']; ?>" class="btn btn-red btn-back-review">Back</a>
+                    <a  href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $userdetail['user_name']; ?>" class="btn btn-red btn-back-review">Back</a>
                 </div>
             </div>
             <div class="col-md-7 main-content"> 
@@ -14,7 +14,18 @@
                     Avatar
                 </div>
                 <div class="col-md-2 no-padding mar-t-30">
-                    <img class="avatar-middle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="<?php echo $userdetail['user_name']; ?>">
+                    <?php
+                    if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
+                        ?>
+                        <img class="avatar-middle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="<?php echo $userdetail['user_name']; ?>">
+                        <?php
+                    } else {
+                        ?>
+                        <img class="avatar-middle " src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="<?php echo $userdetail['user_name']; ?>">
+                        <?php
+                    }
+                    ?>
+
                     <input name="userimg_old" id="userimg_old" value="<?php echo $userdetail['user_image']; ?>" type="hidden">
                 </div>
 
@@ -79,7 +90,7 @@
                         <div class = "form-group">
                             <div class = "sub-title">Tell people who you are </div>
                             <div><?php echo $userdetail['bio']; ?> </div>
-                            
+
                         </div>
                     <?php } ?>
 

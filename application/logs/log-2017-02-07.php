@@ -1,38 +1,4 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-02-07 00:30:18 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-07 05:13:02 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-02-07 13:19:30 --> 404 Page Not Found --> wp-login.php
-ERROR - 2017-02-07 17:17:26 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/5106361364.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/406794915.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/4625681894.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/7904767119.gif
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/5137377958.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/8471588511.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/8352211788.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/6104771783.gif
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/5246323365.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/8431246397.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/league/9116342891.jpg
-ERROR - 2017-02-07 19:13:18 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/2461810265.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/4443546757.png
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/3663005409.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/6433465350.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/1320927431.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/39790151.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/5556011516.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/1933645601.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/146659677.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/67952116.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/8478388604.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/9015363976.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/671597952.jpg
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/league/6289882324.png
-ERROR - 2017-02-07 19:13:19 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-02-07 19:13:20 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-02-07 19:13:20 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-02-07 19:13:20 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-02-07 19:13:20 --> 404 Page Not Found --> uploads/league/1347195975.gif
+ERROR - 2017-02-07 05:18:35 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-02-07 05:18:35 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71

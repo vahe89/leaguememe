@@ -23,7 +23,7 @@ foreach ($useralldata as $key => $value) {
                         <?php
                     } else {
                         ?>
-                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="profile pic">
+                        <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                         <?php
                     }
                     ?>

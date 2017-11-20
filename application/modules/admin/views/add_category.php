@@ -27,6 +27,10 @@
                                 <input type="text" name="category_name" id="category_name" placeholder="Category Name" class="form-control"/>	
                                 <span class="error"><?php echo form_error('category_name'); ?></span>
                             </div>
+                             <div class="form-group">
+                                <label>Category text:</label>
+                                <input type="text" name="exp_text" id="exp_text" placeholder="e.g lol, joke, prank, fail" class="form-control"/>	
+                            </div>
                             <div class="form-group">
                                 <label for="required">Category Photo:</label>
                                 <input type="file" name="category_photo" id="category_photo"/>	

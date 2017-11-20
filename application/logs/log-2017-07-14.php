@@ -1,20 +1,96 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-07-14 01:01:48 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-07-14 08:07:56 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-07-14 08:07:56 --> 404 Page Not Found --> uploads/league/7482080459.jpg
-ERROR - 2017-07-14 08:29:01 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-07-14 09:18:16 --> 404 Page Not Found --> uploads/league/2725438540.png
-ERROR - 2017-07-14 11:44:12 --> 404 Page Not Found --> uploads/league/7932267640.gif
-ERROR - 2017-07-14 13:42:27 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-07-14 14:55:34 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-07-14 15:00:34 --> 404 Page Not Found --> uploads/league/6778340870.gif
-ERROR - 2017-07-14 15:03:01 --> 404 Page Not Found --> uploads/league/3833273984.png
-ERROR - 2017-07-14 15:07:21 --> 404 Page Not Found --> uploads/league/3972028233.jpg
-ERROR - 2017-07-14 15:12:21 --> 404 Page Not Found --> uploads/league/406794915.jpg
-ERROR - 2017-07-14 15:55:38 --> 404 Page Not Found --> uploads/league/7932267640.gif
-ERROR - 2017-07-14 17:20:05 --> 404 Page Not Found --> uploads/league/7932267640.gif
-ERROR - 2017-07-14 20:24:53 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-07-14 23:08:52 --> 404 Page Not Found --> uploads/league/7323185522.jpg
-ERROR - 2017-07-14 23:13:52 --> 404 Page Not Found --> uploads/league/4357206695.gif
-ERROR - 2017-07-14 23:21:11 --> 404 Page Not Found --> uploads/league/7145805554.gif
+ERROR - 2017-07-14 04:37:05 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-07-14 04:37:05 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-07-14 04:37:05 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1004
+ERROR - 2017-07-14 04:37:05 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1044
+ERROR - 2017-07-14 04:37:20 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-07-14 04:37:20 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-07-14 04:37:20 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1004
+ERROR - 2017-07-14 04:37:20 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1044
+ERROR - 2017-07-14 06:33:19 --> 404 Page Not Found --> assets/public/img/list_league_home.png
+ERROR - 2017-07-14 07:13:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-07-14 07:13:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-07-14 07:13:42 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1004
+ERROR - 2017-07-14 07:13:42 --> Severity: Notice  --> Undefined variable: userdetail /home/league/public_html/beta/application/modules/public/views/template/top_nav.php 1044
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:21:34 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 122
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 122
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 124
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 125
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 145
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 145
+ERROR - 2017-07-14 07:21:46 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 162
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:21:53 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:22:03 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 122
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 122
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 124
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 125
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 145
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 145
+ERROR - 2017-07-14 07:22:30 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 162
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:22:41 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:22:44 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 22
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 24
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 26
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 41
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 50
+ERROR - 2017-07-14 07:22:47 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/commets.php 81
+ERROR - 2017-07-14 08:28:16 --> 404 Page Not Found --> leaguememe-profile
+ERROR - 2017-07-14 09:16:41 --> 404 Page Not Found --> uploads/users/graph.facebook.com/10153243059447749/picture
+ERROR - 2017-07-14 11:01:45 --> 404 Page Not Found --> assets/public/img/list_league_home.png

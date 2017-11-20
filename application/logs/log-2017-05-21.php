@@ -1,8 +1,18 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-05-21 01:21:24 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-21 17:34:29 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-21 17:34:29 --> 404 Page Not Found --> uploads/league/590482102.jpg
-ERROR - 2017-05-21 17:52:59 --> 404 Page Not Found --> uploads/league/5813857568.png
-ERROR - 2017-05-21 18:16:06 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-21 20:32:07 --> 404 Page Not Found --> google061d8482775530ef.html
+ERROR - 2017-05-21 08:37:20 --> 404 Page Not Found --> event/event-info
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Undefined offset: 0 /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 513
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 513
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Undefined offset: 0 /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 519
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 519
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Undefined offset: 0 /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 520
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 520
+ERROR - 2017-05-21 11:06:11 --> Severity: Notice  --> Undefined offset: 0 /home/league/public_html/beta/application/modules/public/controllers/leaguelist.php 530
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Undefined variable: anim_img /home/league/public_html/beta/application/modules/public/views/single_image_list.php 439
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/single_image_list.php 439
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Undefined variable: anim_img /home/league/public_html/beta/application/modules/public/views/single_image_list.php 474
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/single_image_list.php 474
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Undefined variable: anim_img /home/league/public_html/beta/application/modules/public/views/single_image_list.php 520
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/single_image_list.php 520
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Undefined variable: anim_img /home/league/public_html/beta/application/modules/public/views/single_image_list.php 533
+ERROR - 2017-05-21 11:06:17 --> Severity: Notice  --> Trying to get property of non-object /home/league/public_html/beta/application/modules/public/views/single_image_list.php 533

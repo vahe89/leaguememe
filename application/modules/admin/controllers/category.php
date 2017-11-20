@@ -48,10 +48,12 @@ class Category extends MX_Controller {
                         $data = array('upload_data' => $this->upload->data());
                     }
                     $category_name = $this->input->post('category_name');
+                    $exp_text = $this->input->post('exp_text');
                     $dataArr = array(
                         'category_name' => $category_name,
                         'category_logo' => $category_photo,
-                        'category_status' => 'A'
+                        'category_status' => 'A',
+                        'text' => $exp_text
                     );
                     $result = $this->category->add_category_data($dataArr);
                     $this->session->set_flashdata('message', 'Category added successfully');
@@ -86,8 +88,7 @@ function change_category_photo() {
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('category_photo')) {
             $error = array('error' => $this->upload->display_errors());
-            print_r($error);
-            exit;
+           
             $this->session->set_flashdata('message', 'type of file is not valid');
            redirect('list_category');
         } else {
@@ -152,9 +153,10 @@ function change_category_photo() {
 
                     $category_name = $this->input->post('category_name');
                     $category_status = $this->input->post('category_status');
+                    $category_exmp = $this->input->post('category_exmp');
 
                     $dataArr = array('category_name' => $category_name,
-                        'category_status' => $category_status);
+                        'category_status' => $category_status, 'text' => $category_exmp);
                     $this->category->updateCategory($dataArr, $category_id);
                     $this->session->set_flashdata('message', 'Category updated successfully');
                     redirect('list_category');

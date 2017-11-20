@@ -94,7 +94,8 @@ class Logingoogle extends MX_Controller {
             'user_password' => md5(random_string('alnum', 8)),
             'user_region' => 'NA',
             'user_status' => 'A',
-            'user_image' => $user['picture']
+            'user_image' => ''
+//            'user_image' => $user['picture']
         );
         $result = $this->um->addUser($dataArr);
         if (isset($result)) {

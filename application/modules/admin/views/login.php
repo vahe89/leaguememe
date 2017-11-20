@@ -49,7 +49,7 @@
 
             <div class="login-logo">
                 <a href="<?php echo base_url(); ?>admin">
-                    <img src="<?php echo base_url(); ?>assets/public/img/logo-simple.png" height="54" alt="Admin" /> Animemonent
+                    <img src="<?php echo base_url(); ?>assets/public/img/logo-simple.png" height="54" alt="Admin" /> Leaguememe
                 </a>
 
             </div><!-- /.login-logo -->

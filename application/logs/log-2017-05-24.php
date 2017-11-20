@@ -1,53 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-05-24 01:23:18 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-24 01:23:22 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 02:44:45 --> 404 Page Not Found --> uploads/league/5344354901.png
-ERROR - 2017-05-24 07:09:28 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:29 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:32 --> 404 Page Not Found --> uploads/league/9021347165.jpg
-ERROR - 2017-05-24 07:09:38 --> 404 Page Not Found --> uploads/league/8265448221.jpg
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/5555445691.gif
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/6066775806.jpg
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/5344354901.png
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/6941299401.jpg
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/2657862808.jpg
-ERROR - 2017-05-24 07:09:39 --> 404 Page Not Found --> uploads/league/4347207043.jpg
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/4562673228.jpg
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/799089875.jpg
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/6071951179.jpg
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/4809203110.png
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/707024568.jpg
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/league/7932267640.gif
-ERROR - 2017-05-24 07:09:40 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/league/7687274552.jpg
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/league/4347207043.jpg
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/league/378316529.gif
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/league/7343021864.jpg
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/league/2191840568.png
-ERROR - 2017-05-24 07:09:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/5575095913.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/7923067556.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/2351367860.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/https:/www.youtube.com/watch
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/3862138171.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/472476645.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/773809044.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-24 07:09:56 --> 404 Page Not Found --> uploads/league/8979658721.jpg
-ERROR - 2017-05-24 10:07:10 --> 404 Page Not Found --> uploads/league/3475760747.jpg
-ERROR - 2017-05-24 10:12:06 --> 404 Page Not Found --> uploads/league/5965803368.jpg
-ERROR - 2017-05-24 10:16:45 --> 404 Page Not Found --> uploads/league/1925988490.png
-ERROR - 2017-05-24 10:21:26 --> 404 Page Not Found --> uploads/league/9096280350.jpg
-ERROR - 2017-05-24 10:25:33 --> 404 Page Not Found --> uploads/league/8222071425.jpg
-ERROR - 2017-05-24 10:30:33 --> 404 Page Not Found --> uploads/league/6126337181.jpg
-ERROR - 2017-05-24 10:35:34 --> 404 Page Not Found --> uploads/league/1128256926.jpg
-ERROR - 2017-05-24 10:37:03 --> 404 Page Not Found --> uploads/league/123070894.png
-ERROR - 2017-05-24 10:39:18 --> 404 Page Not Found --> uploads/league/2461810265.jpg
-ERROR - 2017-05-24 10:46:59 --> 404 Page Not Found --> uploads/league/249061314.png
-ERROR - 2017-05-24 18:16:08 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-24 18:16:08 --> 404 Page Not Found --> uploads/league/7895199162.png
-ERROR - 2017-05-24 18:23:31 --> 404 Page Not Found --> uploads/league/663392939.jpg
-ERROR - 2017-05-24 18:25:38 --> 404 Page Not Found --> uploads/league/490906560.gif
-ERROR - 2017-05-24 18:29:08 --> 404 Page Not Found --> uploads/league/6798949278.jpg
+ERROR - 2017-05-24 20:31:28 --> Severity: Warning  --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 20:31:28 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:10:28 --> Severity: Warning  --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:10:28 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:19:28 --> Severity: Warning  --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:19:28 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:39:29 --> Severity: Warning  --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:39:29 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:42:28 --> Severity: Warning  --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127
+ERROR - 2017-05-24 21:42:28 --> Severity: Warning  --> file_get_contents(https://graph.facebook.com/v2.7/LeagueMemes?fields=fan_count&amp;access_token=1727081077607945|e6c9a2afffc0219efbe7de97a913a0dd): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known /home/league/public_html/beta/application/modules/public/views/template/right_sidebar.php 127

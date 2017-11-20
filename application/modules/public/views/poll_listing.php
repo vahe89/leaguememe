@@ -13,20 +13,20 @@
 
                 <div class="media-body media-body-vote">
                     <?php
-                    if (isset($all_poll_data['user_image'])) {
+                    if (isset($all_poll_data['user_image']) && !empty($all_poll_data['user_image'])) {
                         ?>
                         <a href="#" style="float: left;">
-                            <img src="<?php echo base_url(); ?>uploads/users/<?php echo $all_poll_data['user_image']; ?>" alt="" class="media-object avatar">
+                            <img src="<?php echo base_url(); ?>uploads/users/<?php echo $all_poll_data['user_image']; ?>" alt="" class="media-object avatar img-circle">
                         </a>
                         <?php
                     } else {
                         ?>                 
                         <a href="#" style="float: left;">
-                            <img src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="profile pic" class="media-object avatar">
+                            <img src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic" class="media-object avatar img-circle">
                         </a>
                     <?php } ?>  
 
-                    <a href="<?php echo base_url(); ?>animemoment-profile/<?php echo $all_poll_data['user_name']; ?>">
+                    <a href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $all_poll_data['user_name']; ?>">
                         <h5 class="pad-l-65"><?php echo empty($all_poll_data['name']) ? $all_poll_data['user_name'] : $all_poll_data['name']; ?></h5>
                     </a>
 
@@ -54,22 +54,22 @@
                             }
                             if (!empty($all_poll_data['author']) AND ! empty($all_poll_data['credit'])) {
                                 ?>
-                                <span  class="normal-tag disc-credit-shows" data-credit="<?= $all_poll_data['author'] ?>">Credit</span>
+                                <span  class="normal-tag disc-credit-show" data-credit="<?= $all_poll_data['author'] ?>">Credit</span>
                                 <?php
                                 $img = "fb-credit.png";
-                                $lnk = "https://www.facebook.com/";
+                                $lnk = "https://www.facebook.com";
                                 if (strpos($all_poll_data['credit'], "facebook")) {
                                     $img = "fb-credit.png";
                                     $lnk = "https://www.facebook.com/";
                                 } elseif (strpos($all_poll_data['credit'], "twitter")) {
                                     $img = "tt-credit.png";
-                                    $lnk = "https://twitter.com/";
+                                    $lnk = "https://twitter.com";
                                 } elseif (strpos($all_poll_data['credit'], "insta")) {
                                     $img = "ig-credit.png";
                                     $lnk = "https://www.instagram.com";
                                 }
                                 ?>
-                                <a href="<?= $lnk ?>" target="_BLANK" class="fb-1" style="display: none">
+                                <a href="<?= isset($all_poll_data['author']) ? $lnk . '/' . $all_poll_data['author'] : $lnk ?>" target="_BLANK" class="fb-1" style="display: none">
                                     <img src="assets/public/img/<?= $img ?>">
                                 </a>
                             <?php } ?>

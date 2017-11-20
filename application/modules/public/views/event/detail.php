@@ -10,21 +10,21 @@
             <div class="col-md-8 col-xs-12 col-sm-8 no-padding">
 
                 <?php if ($required_login) { ?>
-                <div style="padding: 50px">
-                    <form action="#" id="event-access-form" method="POST"  >
-                        <p>Please provide a event password to view the information about the event. If you don't have please ask to admin of this event.</p>
-                        Password
-                        <div class="panel panel-default mar-b-40">
-                            <div class="panel-body-discuss panel-body">
-                                <input type="password" name="pwd" class="title-discuss-input" placeholder="Event password" />
+                    <div style="padding: 50px">
+                        <form action="#" id="event-access-form" method="POST"  >
+                            <p>Please provide a event password to view the information about the event. If you don't have please ask to admin of this event.</p>
+                            Password
+                            <div class="panel panel-default mar-b-40">
+                                <div class="panel-body-discuss panel-body">
+                                    <input type="password" name="pwd" class="title-discuss-input" placeholder="Event password" />
+                                </div>
+                            </div><div class="col-md-12 wrap-btn-step no-padding">
+                                <input type="hidden" name="ei" value="<?= $event_info->id ?>" />
+                                <input type="submit" class="btn btn-red pull-left" id="btn-create-event" value="Authenticate" />
                             </div>
-                        </div><div class="col-md-12 wrap-btn-step no-padding">
-                            <input type="hidden" name="ei" value="<?= $event_info->id ?>" />
-                            <input type="submit" class="btn btn-red pull-left" id="btn-create-event" value="Authenticate" />
-                        </div>
-                    </form>
+                        </form>
                     </div>
-                <?php
+                    <?php
                 } else {
                     ?>
                     <div class="col-md-12 wraper-discuss-click">
@@ -52,56 +52,73 @@
 
                                 <div class="winner-box" id="winner-box"> </div>
                             </div>
-    <?php } ?>
+                        <?php } ?>
                         <div class="outer-member-event">
                             <!-- Column 1 -->
                             <div class="col-md-13 col-xs-12 no-padding">
-    <?php
-    $winner = false;
-    $adminId = false;
-    $entryNumber = false;
-    foreach ($event_users as $key => $eu) {
+                                <?php
+                                $winner = false;
+                                $adminId = false;
+                                $entryNumber = false;
+                                foreach ($event_users as $key => $eu) {
 
-        if ($eu->user_id == $userdetail['user_id'])
-            $entryNumber = "ENT" . $eu->id;
+                                    if ($eu->user_id == $userdetail['user_id'])
+                                        $entryNumber = "ENT" . $eu->id;
 
 
-        if ($eu->is_winner)
-            $winner = $eu;
-        if ($eu->is_admin == 1) {
-            $adminId = $eu->user_id;
-        }  
-        if($entryNumber)
-            echo "<script>document.getElementById('entry_number').innerHTML = 'ENT" . $eu->id . "'; </script>";
-        ?>
+                                    if ($eu->is_winner)
+                                        $winner = $eu;
+                                    if ($eu->is_admin == 1) {
+                                        $adminId = $eu->user_id;
+                                    }
+                                    if ($entryNumber)
+                                        echo "<script>document.getElementById('entry_number').innerHTML = 'ENT" . $eu->id . "'; </script>";
+                                    ?>
 
                                     <div class="media info-avatar">
                                         <div class="media-left media-comment">
-                                            <a href="<?= base_url("animemoment_profile/" . $eu->user_name) ?>">
-                                                <img alt="<?= $eu->name ?>" src="<?= base_url("uploads/users/" . $eu->user_image) ?>" class="media-object avatar">
+                                            <a href="<?= base_url("leaguememe_profile/" . $eu->user_name) ?>">
+                                                <?php if (!empty($eu->user_image)) {
+                                                    ?>
+                                                <img alt="<?= $eu->user_name ?>" src="<?= base_url("uploads/users/" . $eu->user_image) ?>" class="media-object avatar img-circle">
+                                                <?php 
+                                                } else{
+                                                    ?>
+                                                <img alt="<?= $eu->user_name ?>" src="<?= base_url("assets/public/img/default_profile.jpeg") ?>" class="media-object avatar img-circle">
+                                                <?php
+                                                } ?>
                                             </a>
                                         </div>
 
                                         <div class="media-body w-100">
-                                            <a href="<?= base_url("animemoment_profile/" . $eu->user_name) ?>"><h5 class="user"><?= empty($eu->name) ? $eu->user_name : $eu->name ?></h5></a>
+                                            <a href="<?= base_url("leaguememe_profile/" . $eu->user_name) ?>"><h5 class="user"><?= empty($eu->name) ? $eu->user_name : $eu->name ?></h5></a>
                                             <div class="date">Entry :  ENT<?= $eu->id ?></div>
                                             <span class="minute" style="display: inline;" data-livestamp="<?= $eu->created ?>"></span>   
 
                                         </div>
                                     </div>
-    <?php
-    }
-    $winnerHtml = "";
-    if ($winner !== false) {
-        $winnerHtml = "<div class='title-recent-discuss'> Winner </div> <div class='box-recent-discuss'> <div class='media info-avatar info-avatar-discuss'> <div class='media-left media-left-discuss'> <a href='" . base_url("animemoment_profile/" . $winner->user_name) . "'> <img alt='' src='" . base_url("uploads/users/" . $winner->user_image) . "' class='media-object avatar avatar-discuss'> </a> </div> <div class='media-body w-2000'> <a href='" . base_url("animemoment_profile/" . $winner->user_name) . "'><h5>" ;  if (empty($winner->name)) { $winnerHtml .= $winner->user_name ; } else { $winnerHtml .= $winner->name ; } $winnerHtml.= "</h5></a> <span class='minute by-username'>Entry : ENT" . $winner->id . "</span> <span class='profile-username'>click to claim 24hrs</span> </div> </div> </div> ";
-        echo '<script>document.getElementById("winner-box").innerHTML = "' . $winnerHtml . '";</script>';
-    }
-    ?>
+                                    <?php
+                                }
+                                $winnerHtml = "";
+                                if ($winner !== false) {
+                                    $winnerHtml = "<div class='title-recent-discuss'> Winner </div> <div class='box-recent-discuss'> <div class='media info-avatar info-avatar-discuss'> <div class='media-left media-left-discuss'> <a href='" . base_url("leaguememe_profile/" . $winner->user_name) . "'> <img alt='' src='" . base_url("uploads/users/" . $winner->user_image) . "' class='media-object avatar avatar-discuss'> </a> </div> <div class='media-body w-2000'> <a href='" . base_url("leaguememe_profile/" . $winner->user_name) . "'><h5>";
+                                    if (empty($winner->name)) {
+                                        $winnerHtml .= $winner->user_name;
+                                    } else {
+                                        $winnerHtml .= $winner->name;
+                                    } $winnerHtml.= "</h5></a> <span class='minute by-username'>Entry : ENT" . $winner->id . "</span> <span class='profile-username'>click to claim 24hrs</span> </div> </div> </div> ";
+                                    echo '<script>document.getElementById("winner-box").innerHTML = "' . $winnerHtml . '";</script>';
+                                }
+                                ?>
                                 <!-- AVATAR 1 -->
 
                             </div>
                         </div>
                     </div>
+	<div class="col-md-12"><ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9746555787553362"
+     data-ad-slot="1317445683"></ins></div>
                     <!-- wraper-view -->
                     <div class="tab-comment">
                         <ul id="pop" class="nav pop-tabs pop-view" role="tablist">
@@ -118,7 +135,7 @@
                                 <div class="comment-status" id="toggler-<?= $event_info->id ?>y">
 
                                     <span class="count">
-    <?= $num_comments ?>
+                                        <?= $num_comments ?>
                                     </span> Comments
                                 </div>
                             </li>
@@ -132,22 +149,22 @@
                     <div class="tab-content">
                         <div class="text-comment" id="cmtclick">
                             <div class="wrap-avatar-comment">
-    <?php
-    if (isset($userdetail['user_image'])) {
-        ?>
+                                <?php
+                                if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
+                                    ?>
                                     <a href="#">
                                         <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="">
                                     </a>
-        <?php
-    } else {
-        ?>
-                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/luffy.png" alt="profile pic">
+                                    <?php
+                                } else {
+                                    ?>
+                                    <img class="media-object avatar img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
                                     <?php
                                 }
                                 ?>
 
                             </div>
-                                <?php if ($this->session->userdata('user_id')) { ?>
+                            <?php if ($this->session->userdata('user_id')) { ?>
 
                                 <!--<form class="" method="post" id="upload_form" enctype="multipart/form-data">-->
                                 <div class="input-text-comment" id="enterfield<?= $event_info->id ?>">
@@ -186,8 +203,8 @@
                                 <!--</form>-->
                                 <!--end-->
 
-    <?php } else {
-        ?>
+                            <?php } else {
+                                ?>
                                 <div class="input-text-comment" id="enterfield<?= $event_info->id ?>">
                                     <form action="">
                                         <textarea class="form-control form-comment textarea-box" readonly="" rows="3"name="commentss" required="" id="cmtbox" placeholder="What's on your mind"></textarea>
@@ -210,7 +227,7 @@
                                     </form>
                                 </div>
 
-    <?php } ?>
+                            <?php } ?>
 
                         </div>
                         <!-- popular-->
@@ -232,7 +249,7 @@
                             <div id="comment_input"></div>
                         </div>
                     </div>
-<?php } ?>
+                <?php } ?>
             </div>
             <div class="col-md-4 col-xs-12 col-sm-4 ads-view">
                 <?php
@@ -240,10 +257,11 @@
                     if ($userdetail !== false) {
                         ?>
                         <div class="banner hidden-xs">
-                            <?php if($entryNumber) {?>
-                            <div class="btn btn-select-winner"> Entry Number :  <?= $entryNumber ?></div>
-                            <?php } 
-                            $uid = $this->session->userdata('user_id'); 
+                            <?php if ($entryNumber) { ?>
+                                <div class="btn btn-select-winner"> Entry Number :  <?= $entryNumber ?></div>
+                                <?php
+                            }
+                            $uid = $this->session->userdata('user_id');
                             if ($winner == false AND $adminId == $uid) {
                                 echo '<script>document.getElementById("btn-win").style.display = "block";</script>';
                                 ?>
@@ -252,16 +270,16 @@
                                 </div>
                             <?php } ?>
                             <div class="winner-box">
-                            <?= $winnerHtml ?>
+                                <?= $winnerHtml ?>
                             </div>
 
 
                         </div>
-    <?php
-    }
-}
-echo $this->load->view('template/right_sidebar');
-?>
+                        <?php
+                    }
+                }
+                echo $this->load->view('template/right_sidebar');
+                ?>
             </div>
         </div>
     </div>
@@ -270,71 +288,71 @@ echo $this->load->view('template/right_sidebar');
 
 <script src="<?= base_url() ?>assets/public/js/comments.js" type="text/javascript"></script>
 <script>
-    $("#event-access-form").submit(function(e){
-        e.preventDefault();
-        $.ajax({
-            url: "<?= base_url("public/event/auth") ?>",
-            type: 'POST',
-            dataType: 'JSON',
-            data: $("#event-access-form").serialize(),
-            success: function(data, textStatus, jqXHR) {
-                if(data.status){
-                     window.location.reload();
-                }
-                else{
-                    $("input[type=submit]").before("<small style='color:red'>"+data.msg+"</small> <br/>");
-                }
-            }
-        })
-    })
-    $(".btn-claim-winner").click(function() {
-        $.ajax({
-            url: "<?= base_url("public/event/claimwinner") ?>",
-            data: {
-                id: <?= $event_info->id ?>
-            },
-            type: 'POST',
-            dataType: 'JSON',
-            beforeSend: function(xhr) {
-                $(".btn-claim-winner").text("Loading...");
-            },
-            success: function(data, textStatus, jqXHR) {
-                if (data.status) {
-                    if(data.user.name != "") { 
-                        var name = data.user.name ;  
-                    } else { 
-                       var name =  data.user.user_name ;
-                    }
-                    $(".btn-claim-winner").remove();
-                    $html = '<div class="title-recent-discuss"> Winner </div><div class="box-recent-discuss">' +
-                            '<div class="media info-avatar info-avatar-discuss">' +
-                            '<div class="media-left media-left-discuss">' +
-                            '<a href="<?= base_url("animemoment_profile/") ?>"' + data.user.user_name + '>' +
-                            '<img alt="' + data.user.name + '" src="<?= base_url("uploads/users/") ?>/' + data.user.user_image + '" class="media-object avatar avatar-discuss">' +
-                            '</a>' +
-                            '</div>' +
-                            '<div class="media-body w-2000">' +
-                            '<a href="<?= base_url("animemoment_profile/") ?>"' + data.user.user_name + '><h5>' + name + '</h5></a>' +
-                            '<span class="minute by-username">Entry : ENT' + data.user.id + '</span>' +
-                            '<span class="profile-username">click to claim 24hrs</span>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>';
-                    $('.winner-box').html($html);
-                }
-                else {
-                    $(".btn-claim-winner").text("Select Winner");
-                    console.log(data.msg);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $(".btn-claim-winner").text("Select Winner");
-            }
-        })
-    })
-    <?php
-    if(isset($entryNumber) AND $entryNumber == false){
-        echo '$("#entry_number").parent().hide()';
-    }
-    ?>
+                                    $("#event-access-form").submit(function(e) {
+                                        e.preventDefault();
+                                        $.ajax({
+                                            url: "<?= base_url("public/event/auth") ?>",
+                                            type: 'POST',
+                                            dataType: 'JSON',
+                                            data: $("#event-access-form").serialize(),
+                                            success: function(data, textStatus, jqXHR) {
+                                                if (data.status) {
+                                                    window.location.reload();
+                                                }
+                                                else {
+                                                    $("input[type=submit]").before("<small style='color:red'>" + data.msg + "</small> <br/>");
+                                                }
+                                            }
+                                        })
+                                    })
+                                    $(".btn-claim-winner").click(function() {
+                                        $.ajax({
+                                            url: "<?= base_url("public/event/claimwinner") ?>",
+                                            data: {
+                                                id: <?= $event_info->id ?>
+                                            },
+                                            type: 'POST',
+                                            dataType: 'JSON',
+                                            beforeSend: function(xhr) {
+                                                $(".btn-claim-winner").text("Loading...");
+                                            },
+                                            success: function(data, textStatus, jqXHR) {
+                                                if (data.status) {
+                                                    if (data.user.name != "") {
+                                                        var name = data.user.name;
+                                                    } else {
+                                                        var name = data.user.user_name;
+                                                    }
+                                                    $(".btn-claim-winner").remove();
+                                                    $html = '<div class="title-recent-discuss"> Winner </div><div class="box-recent-discuss">' +
+                                                            '<div class="media info-avatar info-avatar-discuss">' +
+                                                            '<div class="media-left media-left-discuss">' +
+                                                            '<a href="<?= base_url("leaguememe_profile/") ?>"' + data.user.user_name + '>' +
+                                                            '<img alt="' + data.user.name + '" src="<?= base_url("uploads/users/") ?>/' + data.user.user_image + '" class="media-object avatar avatar-discuss">' +
+                                                            '</a>' +
+                                                            '</div>' +
+                                                            '<div class="media-body w-2000">' +
+                                                            '<a href="<?= base_url("leaguememe_profile/") ?>"' + data.user.user_name + '><h5>' + name + '</h5></a>' +
+                                                            '<span class="minute by-username">Entry : ENT' + data.user.id + '</span>' +
+                                                            '<span class="profile-username">click to claim 24hrs</span>' +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '</div>';
+                                                    $('.winner-box').html($html);
+                                                }
+                                                else {
+                                                    $(".btn-claim-winner").text("Select Winner");
+                                                    console.log(data.msg);
+                                                }
+                                            },
+                                            error: function(jqXHR, textStatus, errorThrown) {
+                                                $(".btn-claim-winner").text("Select Winner");
+                                            }
+                                        })
+                                    })
+<?php
+if (isset($entryNumber) AND $entryNumber == false) {
+    echo '$("#entry_number").parent().hide()';
+}
+?>
 </script>

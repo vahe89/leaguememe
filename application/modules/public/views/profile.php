@@ -3,31 +3,38 @@ $sidebar = $this->router->fetch_method();
 $base_url = site_url() . $sidebar;
 $user = $this->uri->segment(2);
 $base_user_url = $base_url . '/' . $user;
- if ($user != $username) {
-     ?>
-<script> 
-    $(document).ready(function (){ 
-     $( "div" ).remove( ".comment-status" );   
-     $( "div" ).remove( ".comment-status-note" );   
-    });
-</script>
-<?php
- }
-?> 
+if ($user != $username) {
+    ?>
+    <script>
+        $(document).ready(function() {
+            $("div").remove(".comment-status");
+            $("div").remove(".comment-status-note");
+        });
+    </script>
+    <?php
+}
+?>  
 
 <!--- Modal notes --->
 <div class="modal fade" id="modal-note" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <i class="fa fa-times"></i>
     </button>
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="width: 50%">
         <div class="modal-content">
             <div class="rounded"></div>
 
             <div class="editor-place">
                 <div class="wrap-texteditor">
                     <div class="tinymce"> 
-                        <h2 class="placeholder-descript">Description</h2>
+                        <?php
+                        if (isset($userdetail['bio']) && !empty($userdetail['bio'])) {
+                            echo $userdetail['bio'];
+                             
+                        } else { 
+                            echo "";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -53,7 +60,19 @@ $base_user_url = $base_url . '/' . $user;
         <div class="row">
             <div class="wrap-profile">
                 <div class="img-profile"> 
-                    <img src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="logo-big" />
+                    <?php
+                    if (isset($userdetail['user_image']) && !empty($userdetail['user_image'])) {
+                        ?> 
+                        <img   src="<?php echo base_url(); ?>uploads/users/<?php echo $userdetail['user_image']; ?>" alt="">
+
+                        <?php
+                    } else {
+                        ?>
+                        <img  src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic">
+                        <?php
+                    }
+                    ?>
+
                 </div>
                 <div class="overlay-edit hide-cover">
                     <a href="#" class="wrap-edit-avatar">	
@@ -105,9 +124,9 @@ $base_user_url = $base_url . '/' . $user;
                                         <td>Join Date</td>
                                         <td>:</td>
                                         <td><?php
-                                            $date = explode(" ", $userdetail['user_timestamp']);
-                                            echo $date[0];
-                                            ?></td>
+                                        $date = explode(" ", $userdetail['user_timestamp']);
+                                        echo $date[0];
+                                        ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -274,9 +293,11 @@ $base_user_url = $base_url . '/' . $user;
 
                                                                     <ul class="info">
                                                                         <li class="list-info">
+                                                                            <label for="summoner">
                                                                             <span>Summoner</span>
                                                                             <span>:</span>
-                                                                            <span><input type="type" name="name" value="<?= isset($summoner->name) ? $summoner->name : "" ?>" placeholder="summonner"></span>
+                                                                            </label>
+                                                                            <span><input type="type" name="name" value="<?= isset($summoner->name) ? $summoner->name : "" ?>" placeholder="summonner" autocomplete="off"></span>
                                                                         </li>
                                                                         <li class="list-info">
                                                                             <label for="sel1">
@@ -374,37 +395,34 @@ $base_user_url = $base_url . '/' . $user;
                                                                             </select>
                                                                         </li>
                                                                         <li class="list-info">
+                                                                            <label for="Champs">
                                                                             <span>Fav Champs (s)</span>
                                                                             <span>:</span>
-                                                                            <?php
-                                                                            $server = isset($summoner->fav_champ) ? $summoner->fav_champ : "";
-                                                                            $fav_champ = explode(",", $server);
-                                                                            ?>
-                                                                            <div class="dropdown">
-                                                                                <a data-toggle="dropdown" class="btn dropdown-toggle dropdown-nav dropdown-genre" id="dropdown-menu1">Champs <span class="caret"></span></a>
-                                                                                <ul class="dropdown-menu dropdown-menu-list noclose" aria-labelledby="dropdown-menu1">
-                                                                                    <li>
-                                                                                        <input <?= (in_array("Miracle", $fav_champ)) ? "checked" : "" ?> type="checkbox" id="ex2_1" name="fav_champ[]" value="Miracle">
-                                                                                        <label for="ex2_1">Miracle</label>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <input <?= (in_array("Loda", $fav_champ)) ? "checked" : "" ?> type="checkbox" id="ex2_2" name="fav_champ[]" value="Loda">
-                                                                                        <label for="ex2_2">Loda</label>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <input <?= (in_array("Fear", $fav_champ)) ? "checked" : "" ?> type="checkbox" id="ex2_3" name="fav_champ[]" value="Fear">
-                                                                                        <label for="ex2_3">Fear</label>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <input <?= (in_array("Sumail", $fav_champ)) ? "checked" : "" ?> type="checkbox" id="ex2_4" name="fav_champ[]" value="Sumail">
-                                                                                        <label for="ex2_4">Sumail</label>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <input <?= (in_array("iceiceice", $fav_champ)) ? "checked" : "" ?> type="checkbox" id="ex2_5" name="fav_champ[]" value="iceiceice">
-                                                                                        <label for="ex2_5">iceiceice</label>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
+                                                                            </label>
+                                                                            <span style="width: 135px;">
+                                                                                <!--<input type="type" name="fav_champ" value="<?php echo isset($summoner->fav_champ) ? $summoner->fav_champ : ""; ?>" placeholder="fav champs" autocomplete="on" >-->
+                                                                                <select id="champ_select"  multiple="multiple" name='fav_champ[]'>
+                                                                                    <?php 
+                                                                                    $valArray = explode(",", $summoner->fav_champ);
+                                                                                     $vall = array();
+                                                                                    foreach ($valArray as $val){
+                                                                                        $vall[] = trim($val);
+                                                                                    }
+                                                                                    foreach ($champs as $cmp){
+                                                                                        if(in_array(trim($cmp['champ_name']),$vall)){
+                                                                                            ?>
+                                                                                    <option value="<?= $cmp ['champ_name']?>" selected=""> <?= $cmp ['champ_name']?></option>
+                                                                                    <?php
+                                                                                        }else{
+                                                                                         ?>
+                                                                                    <option value="<?= $cmp ['champ_name']?>"> <?= $cmp ['champ_name']?></option>
+                                                                                    <?php
+                                                                                        }
+                                                                                    } ?>
+                                                                                    <option></option>  
+                                                                                </select>
+                                                                            </span>
+                                                                            
                                                                         </li>
                                                                         <li class="list-info">
                                                                             <span>Fav Role (s)</span>
@@ -414,27 +432,27 @@ $base_user_url = $base_url . '/' . $user;
                                                                             $role = explode(",", $server);
                                                                             ?>
                                                                             <div class="dropdown">
-                                                                                <a data-toggle="dropdown" class="btn dropdown-toggle dropdown-nav dropdown-genre" id="dropdown-menu2">Role<span class="caret"></span></a>
+                                                                                <a data-toggle="dropdown" class="btn dropdown-toggle dropdown-nav dropdown-genre" id="dropdown-menu2"> <?= !empty($server) ? $server : "Role" ?></a>
                                                                                 <ul class="dropdown-menu dropdown-menu-list noclose" aria-labelledby="dropdown-menu2">
                                                                                     <li>
-                                                                                        <input <?= (in_array("Middle", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_2" name="fav_role[]" value="Middle">
-                                                                                        <label for="ex1_2">Middle</label>
+                                                                                        <input <?= (in_array("Top", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_4" name="fav_role[]" value="Top">
+                                                                                        <label for="ex1_4">Top</label>
                                                                                     </li>
                                                                                     <li>
                                                                                         <input <?= (in_array("Junggle", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_3" name="fav_role[]" value="Junggle">
                                                                                         <label for="ex1_3">Junggle</label>
                                                                                     </li>
                                                                                     <li>
-                                                                                        <input <?= (in_array("Top", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_4" name="fav_role[]" value="Top">
-                                                                                        <label for="ex1_4">Top</label>
+                                                                                        <input <?= (in_array("Middle", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_2" name="fav_role[]" value="Middle">
+                                                                                        <label for="ex1_2">Middle</label>
                                                                                     </li>
                                                                                     <li>
-                                                                                        <input <?= (in_array("Bottom", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_5" name="fav_role[]" value="Bottom">
-                                                                                        <label for="ex1_5">Bottom</label>
+                                                                                        <input <?= (in_array("ADC", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_5" name="fav_role[]" value="ADC">
+                                                                                        <label for="ex1_5">ADC</label>
                                                                                     </li>
                                                                                     <li>
-                                                                                        <input <?= (in_array("Offlaner", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_5" name="fav_role[]" value="Offlaner">
-                                                                                        <label for="ex2_5">Offlaner</label>
+                                                                                        <input <?= (in_array("Support", $role)) ? "checked" : "" ?> type="checkbox" id="ex1_6" name="fav_role[]" value="Support">
+                                                                                        <label for="ex1_6">Support</label>
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -650,69 +668,78 @@ $base_user_url = $base_url . '/' . $user;
                                         </div>
 
                                         <div class="content-list">
-                                            <?php foreach ($comment_detail as $value) {
-                                                ?>
-                                                <div class="wrapper-avatar w-100 bor-none">
-                                                    <div class="media info-avatar">
-                                                        <div class="media-left media-profile">
-                                                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" title="<?php echo $value['user_name']; ?>">
-                                                                <?php
-                                                                if (!empty($value['user_image'])) {
-                                                                    ?>
-                                                                    <img class="media-object avatar-profile img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $value['user_image']; ?>" alt="<?php echo $value['user_name']; ?>">
+                                            <?php
+                                            if (count($comment_detail) > 0) {
+                                                foreach ($comment_detail as $value) {
+                                                    ?>
+                                                    <div class="wrapper-avatar w-100 bor-none">
+                                                        <div class="media info-avatar">
+                                                            <div class="media-left media-profile">
+                                                                <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" title="<?php echo $value['user_name']; ?>">
                                                                     <?php
-                                                                } else {
-                                                                    ?>
-                                                                    <img class="media-object avatar-profile img-circle" src="<?php echo base_url(); ?>assets/public/img/admin.png" alt="No available">
-                                                                <?php } ?>
+                                                                    if (!empty($value['user_image'])) {
+                                                                        ?>
+                                                                        <img class="media-object avatar-profile img-circle" src="<?php echo base_url(); ?>uploads/users/<?php echo $value['user_image']; ?>" alt="<?php echo $value['user_name']; ?>">
+                                                                        <?php
+                                                                    } else {
+                                                                        ?>
+                                                                        <img class="media-object avatar-profile img-circle" src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="No available">
+                                                                    <?php } ?>
 
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-body w-100">
-                                                            <a href="<?php echo base_url(); ?>animemoment_profile/<?php echo $value['user_name'] ?>" title="<?php echo $value['user_name']; ?>">
-                                                                <h5 class="navy-col"><?php
-                                                                if (empty($value['name'])) {
-                                                                    echo $value['user_name'];
-                                                                } else {
-                                                                    echo $value['name'];
-                                                                }
-                                                                ?>
-                                                                </h5>
-                                                            </a>
-                                                            <a href="javascript:void(0);">
-                                                                <div class="date"><?php
+                                                                </a>
+                                                            </div>
+                                                            <div class="media-body w-100">
+                                                                <a href="<?php echo base_url(); ?>leaguememe_profile/<?php echo $value['user_name'] ?>" title="<?php echo $value['user_name']; ?>">
+                                                                    <h5 class="navy-col"><?php
+                                                                    if (empty($value['name'])) {
+                                                                        echo $value['user_name'];
+                                                                    } else {
+                                                                        echo $value['name'];
+                                                                    }
+                                                                    ?>
+                                                                    </h5>
+                                                                </a>
+                                                                <a href="javascript:void(0);">
+                                                                    <div class="date"><?php
                                                                 $data = $value['comment_timestamp'];
                                                                 echo date(" F d, Y h:i A", strtotime($data));
-                                                                ?>
-                                                                </div>
-                                                            </a>
-                                                            <p class="mar-lm-10 dis-cap">
-                                                                <?php echo $value['comment'] ?>
-                                                            </p>
-
-
-                                                            <div class="media-left media-profile">
-                                                                <?php
-                                                                if (!empty($value['comment_image'])) {
                                                                     ?>
-                                                                    <img class="media-object comment-picture img-responsive" src="<?php echo base_url(); ?>uploads/comment_picture/<?php echo $value['comment_image']; ?>" width="120px;" height="120px;"   alt="<?php echo $userdetail['user_name']; ?>">
+                                                                    </div>
+                                                                </a>
+                                                                <p class="mar-lm-10 dis-cap">
+                                                                    <?php echo $value['comment'] ?>
+                                                                </p>
+
+
+                                                                <div class="media-left media-profile">
                                                                     <?php
-                                                                } else {
-                                                                    ?>
-                                                                <?php } ?>
+                                                                    if (!empty($value['comment_image'])) {
+                                                                        ?>
+                                                                        <img class="media-object comment-picture img-responsive" src="<?php echo base_url(); ?>uploads/comment_picture/<?php echo $value['comment_image']; ?>" width="120px;" height="120px;"   alt="<?php echo $userdetail['user_name']; ?>">
+                                                                        <?php
+                                                                    } else {
+                                                                        ?>
+                                                                    <?php } ?>
+                                                                </div>
+
+
                                                             </div>
-
-
                                                         </div>
                                                     </div>
-                                                </div>
 
+                                                    <?php
+                                                }
+                                            } else {
+                                                ?>
+                                                <div class="wrapper-avatar w-100 bor-none">
+                                                    <h4 class="alert-danger">Oops! no timeline comment found here.</h4>
+                                                </div>
                                                 <?php
                                             }
                                             ?>
                                         </div>
                                         <!-- content list -->
-                                        <div class="background-textarea">
+                                        <div class="col-md-12 col-md-offset-2">
                                             <form class="" method="post" action="<?php echo base_url(); ?>public/user/timeline_comment" id="upload_form" enctype="multipart/form-data">
                                                 <input type="hidden" name="id" value="<?php echo $userdetail['user_id']; ?>">
                                                 <input type="hidden" name="name" value="<?php echo $userdetail['user_name']; ?>">
@@ -795,6 +822,8 @@ $base_user_url = $base_url . '/' . $user;
             $('#make_click').click();
 
         });
+        $("#champ_select").select2();
+        
     });
 
 </script>

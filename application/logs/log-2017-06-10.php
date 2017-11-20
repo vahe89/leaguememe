@@ -1,8 +1,29 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-06-10 06:46:00 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-06-10 06:46:00 --> 404 Page Not Found --> .well-known/apple-app-site-association
-ERROR - 2017-06-10 07:30:26 --> 404 Page Not Found --> .well-known/assetlinks.json
-ERROR - 2017-06-10 07:58:08 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-06-10 13:46:46 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-06-10 13:46:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
+ERROR - 2017-06-10 07:23:15 --> 404 Page Not Found --> uploads/league_resize/https:/www.youtube.com/watch
+ERROR - 2017-06-10 08:34:14 --> Severity: Warning  --> ini_set() has been disabled for security reasons /home/league/public_html/beta/application/modules/public/controllers/home.php 2293
+ERROR - 2017-06-10 08:38:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:38:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:38:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:38:29 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:39:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:39:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:39:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:40:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:40:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:40:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:41:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:41:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:41:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:42:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:42:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:42:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:43:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:43:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:43:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 08:44:28 --> Severity: Warning  --> session_start(): Cannot send session cookie - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:44:28 --> Severity: Warning  --> session_start(): Cannot send session cache limiter - headers already sent (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/application/config/routes.php 207
+ERROR - 2017-06-10 08:44:28 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/league/public_html/beta/index.php:2) /home/league/public_html/beta/system/libraries/Session.php 675
+ERROR - 2017-06-10 09:11:36 --> 404 Page Not Found --> assets/public/js/jquery.min.map
+ERROR - 2017-06-10 09:11:36 --> 404 Page Not Found --> uploads/league_resize/https:/www.youtube.com/watch
+ERROR - 2017-06-10 09:11:37 --> 404 Page Not Found --> assets/public/css/bootstrap.css.map

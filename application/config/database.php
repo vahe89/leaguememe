@@ -47,11 +47,10 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '123';
-$db['default']['database'] = 'league_memedbtest';
+$db['default']['password'] = '';
+$db['default']['database'] = 'league';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

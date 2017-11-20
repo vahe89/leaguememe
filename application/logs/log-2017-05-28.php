@@ -1,5 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-05-28 12:34:14 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-28 12:34:27 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-28 18:20:40 --> 404 Page Not Found --> uploads/league/9153370903.png
+ERROR - 2017-05-28 00:43:19 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-05-28 00:43:19 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-05-28 00:43:19 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-05-28 00:43:19 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 181
+ERROR - 2017-05-28 00:43:28 --> 404 Page Not Found --> assets/public/img/favicon.ico

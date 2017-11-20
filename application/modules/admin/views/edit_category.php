@@ -30,6 +30,10 @@
                                 <input type="hidden" name="category_status" id="category_status" value="<?= $brand_details->category_status; ?>">
                                 <a  href='#changeImage'  data-toggle='modal'>Only change category photo</a>
                             </div>
+                             <div class="form-group">
+                                <label>Category text:</label>
+                                <input type="text" name="category_exmp" id="category_exmp"class="form-control" value="<?= $brand_details->text; ?>" placeholder="e.g lol, joke, prank, fail"/>
+                            </div>
                         </div><!-- /.box-body -->
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>

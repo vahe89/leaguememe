@@ -1,8 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-04-26 02:34:04 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-26 02:34:04 --> 404 Page Not Found --> uploads/league/8676291611.jpg
-ERROR - 2017-04-26 02:43:50 --> 404 Page Not Found --> uploads/league/753358909.png
-ERROR - 2017-04-26 11:06:04 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-04-26 17:49:00 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-04-26 17:49:00 --> 404 Page Not Found --> uploads/league/3541290885.jpg
+ERROR - 2017-04-26 04:33:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 57
+ERROR - 2017-04-26 04:33:42 --> Severity: Notice  --> Undefined index: userdetail /home/league/public_html/beta/application/modules/public/controllers/template_public.php 71
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-04-26 04:34:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230

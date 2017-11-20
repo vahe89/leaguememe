@@ -30,11 +30,17 @@
                     <div class="box-header">
                         <h3 class="box-title">List All League</h3>
                     </div><!-- /.box-header -->
+                     <div>
+                        <button class="setPop btn btn-warning">Set popular</button>
+                        <button class="delLeague btn btn-danger">Delete league</button>
+                    </div>
                     <div class="box-body">
                         <table style="width: 100%" class="table table-bordered table-hover" id="list_league_records">
                             <thead>
                                 <tr>
-                                    <th style="width: 10%">League Id</th>
+                                    <th style="width: 3%" ><input type="checkbox" class="chkAllleague" value=""/>
+                                    </th>
+                                    <th style="width: 7%">League Id</th>
                                     <th style="width: 15%">League Name </th>
                                     <th style="width: 20%">Category Name</th>
                                     <th style="width: 15%">Credit</th>
@@ -63,10 +69,69 @@
             "bFilter": true,
             "sAjaxSource": base_url + "admin/leaguelist/league_list_ajax",
             "aoColumnDefs": [
-                {"bSortable": false, "aTargets": [4]},
-                {"bSortable": false, "aTargets": [5]}
+                {"bSortable": false, "aTargets": [0]},
+                {"bSortable": false, "aTargets": [5]},
+                {"bSortable": false, "aTargets": [6]}
             ]
         });
+    });
+    
+    $(document).on("click", ".chkAllleague", function () {
+        if ($(".chkAllleague").is(':checked')) {
+            $('.chkLeague').prop('checked', true);
+        } else {
+            $('.chkLeague').prop('checked', false);
+        }
+    });
+
+    $(document).on("click", ".setPop", function () {
+        var alldata = [];
+        $('.chkLeague').each(function () {
+            if ($(this).is(':checked')) {
+                var get_id = $(this).attr('id').split("_");
+                alldata.push(get_id[1]);
+            }
+        });
+        if (alldata != '') {
+            if(confirm("Are you sure you want to set this leagues to popular?") == true){
+            $.ajax({
+                method: "POST",
+                url: base_url + "admin/leaguelist/set_multiple_popular_status",
+                data: {
+                    alldata: alldata,
+                },
+                success: function () {
+                    location.reload();
+                }
+            });
+        }
+      }
+
+    });
+
+    $(document).on("click", ".delLeague", function () {
+        var alldata = [];
+        $('.chkLeague').each(function () {
+            if ($(this).is(':checked')) {
+                var get_id = $(this).attr('id').split("_");
+                alldata.push(get_id[1]);
+            }
+        });
+        if (alldata != '') {
+            if(confirm("Are you sure you want to delete?") == true){
+            $.ajax({
+                method: "POST",
+                url: base_url + "admin/leaguelist/delete_multiple_leagueImg",
+                data: {
+                    alldata: alldata,
+                },
+                success: function () {
+                    location.reload();
+                }
+            });
+        }
+      }
+
     });
 </script>
 <script src="<?php echo base_url(); ?>assets/admin/js/league_list.js" type="text/javascript"></script>

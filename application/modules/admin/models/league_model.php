@@ -107,11 +107,13 @@ class League_model extends CI_Model {
             "iTotalDisplayRecords" => $iFilteredTotal,
             "aaData" => array()
         );
-        $aColumns = array('leagueimage_id', 'leagueimage_name', 'category_name', 'credit', 'league', 'action');
+        $aColumns = array('checkId', 'leagueimage_id', 'leagueimage_name', 'category_name', 'credit', 'league', 'action');
         foreach ($rResult as $aRow) {
             $row = array();
             for ($i = 0; $i < count($aColumns); $i++) {
-                if ($aColumns[$i] == 'league') {
+                 if ($aColumns[$i] == 'checkId') {
+                    $row[] = "<input type='checkbox' class='chkLeague' id='chkLeague_" . $aRow['leagueimage_id'] . "'/>";
+                } elseif ($aColumns[$i] == 'league') {
                     $row[] = "<img title='" . $aRow['leagueimage_name'] . "' alt='" . $aRow['leagueimage_filename'] . "' width='100px' height='80px' src='" . base_url() . "uploads/league/" . $aRow['leagueimage_filename'] . "'>";
                 } elseif ($aColumns[$i] == 'credit') {
                     $creditStatus = $aRow["credit"] . "<br/>" . "<a onclick=\"credit_status(" . $aRow['credit_id'] . ",'" . $aRow['credit_status'] . "');\" id='active' style='cursor: pointer;'>";
@@ -759,7 +761,7 @@ class League_model extends CI_Model {
                     }
                     $html .= '</a> ';
                     // button for Edit
-                   $html .= " <a href='" . base_url() . "edit_league/" . $aRow["leagueimage_id"] ."'><img title='Edit' alt='Edit' src='" . base_url() . "assets/images/edit1.png'></a>";
+                    $html .= " <a href='" . base_url() . "edit_league/" . $aRow["leagueimage_id"] . "'><img title='Edit' alt='Edit' src='" . base_url() . "assets/images/edit1.png'></a>";
                     // button for delete
                     $html .= "<a onclick=\"delete_league_img(" . $aRow['leagueimage_id'] . ");\" style='cursor: pointer;'><img title='Delete' alt='Delete' src='" . base_url() . "assets/images/btn-close.png'></a>";
 
@@ -774,12 +776,12 @@ class League_model extends CI_Model {
         echo json_encode($output);
         exit;
     }
-function updateReportStatus($dataArr, $id, $league_report_status, $league_report_user_id) {
+
+    function updateReportStatus($dataArr, $id, $league_report_status, $league_report_user_id) {
         $this->db->where('id', $id)->where('league_report_id', $league_report_user_id)->update('le_report', $dataArr);
 
         return;
     }
-    
 
     function select_report_data($league_report_user_id, $id) {
         $this->db->select('*');
@@ -905,9 +907,9 @@ function updateReportStatus($dataArr, $id, $league_report_status, $league_report
                     $row[] = $j;
                 } else if ($aColumns[$i] == 'status') {
                     if ($aRow["status"] == "1") {
-                       $html .="<span class='label label-info' style='min-width:90%;'>Active</span>";
+                        $html .="<span class='label label-info' style='min-width:90%;'>Active</span>";
                     } else {
-                         $html .="<span class='label label-danger' style='min-width:90%;'>Inactive</span>";
+                        $html .="<span class='label label-danger' style='min-width:90%;'>Inactive</span>";
                     }
                     $html .= '</a> ';
                     $row[] = $html;
@@ -924,7 +926,7 @@ function updateReportStatus($dataArr, $id, $league_report_status, $league_report
                     }
                     $html .= '</a> ';
 
-                    
+
                     $row[] = $html;
                 } else {
                     $row[] = $aRow[$aColumns[$i]];
@@ -936,351 +938,123 @@ function updateReportStatus($dataArr, $id, $league_report_status, $league_report
         echo json_encode($output);
         exit;
     }
-    function report_comment_request() {
 
-        $aColumns = array('serial_no', 'user_comment', 'comment');
-
-        $sLimit = "";
-        if (isset($_GET['iDisplayStart']) && $_GET['iDisplayLength'] != '-1') {
-            $sLimit = "LIMIT " . intval($_GET['iDisplayStart']) . ", " . intval($_GET['iDisplayLength']);
-        }
-
-
-        $sOrder = "";
-        if (isset($_GET['iSortCol_1'])) {
-            $sOrder = "ORDER BY  ";
-            for ($i = 0; $i < intval($_GET['iSortingCols']); $i++) {
-                if ($_GET['bSortable_' . intval($_GET['iSortCol_' . $i])] == "true") {
-                    $sOrder .= $aColumns[intval($_GET['iSortCol_' . $i])] . "
-                       " . ($_GET['sSortDir_' . $i] === 'asc' ? 'desc' : 'asc') . ", ";
-                }
-            }
-
-            $sOrder = substr_replace($sOrder, "", -2);
-            if ($sOrder == "ORDER BY") {
-                $sOrder = "";
-            }
-        }
-
-        $sWhere = "";
-
-        if (isset($_GET['sSearch']) && $_GET['sSearch'] != "") {
-            $sWhere = "AND (";
-            for ($i = 0; $i < count($aColumns); $i++) {
-                if ($aColumns[$i] == "serial_no") {
-                    $sWhere .= "arc.id LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "user_comment") {
-                    $sWhere .= "arc.user_comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "comment") {
-                    $sWhere .= "l.comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if (isset($_GET['bSearchable_' . $i]) && $_GET['bSearchable_' . $i] == "true") {
-                    $sWhere .= "" . $aColumns[$i] . " LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                }
-            }
-            $sWhere = substr_replace($sWhere, "", -3);
-            $sWhere .= ')';
-        }
-
-        $dWhere = "";
-        if (isset($_GET['sSearch']) && $_GET['sSearch'] != "") {
-            $dWhere = "AND (";
-            for ($i = 0; $i < count($aColumns); $i++) {
-                if ($aColumns[$i] == "serial_no") {
-                    $dWhere .= "arc.id LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "user_comment") {
-                    $dWhere .= "arc.user_comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "comment") {
-                    $dWhere .= "dc.comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if (isset($_GET['bSearchable_' . $i]) && $_GET['bSearchable_' . $i] == "true") {
-                    $dWhere .= "" . $aColumns[$i] . " LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                }
-            }
-            $dWhere = substr_replace($dWhere, "", -3);
-            $dWhere .= ')';
-        }
-
-        if (empty($sWhere)) {
-            $sWhere = ' AND arc.status= "' . $_GET['status_check'] . '"';
-        } else {
-            $sWhere .= ' AND arc.status= "' . $_GET['status_check'] . '"';
-        }
-
-        if (empty($dWhere)) {
-            $dWhere = ' AND arc.status= "' . $_GET['status_check'] . '"';
-        } else {
-            $dWhere .= ' AND arc.status= "' . $_GET['status_check'] . '"';
-        }
-
-        $sQuery = "SELECT * FROM anime_report_comment WHERE status= '" . $_GET['status_check'] . "'";
-
-        $data = $this->db->query($sQuery);
-        $rResult = $data->result_array();
-
-      // print_r($rResult);
-
-        $Array = array();
-        for ($j = 0; $j < count($rResult); $j++) {
-            $header = $rResult[$j]['comment_header'];
-            $cid = $rResult[$j]['id'];
-            if ($header == '1') {
-                $query1 = "SELECT *, lu.user_name, lu.user_email
-                    FROM anime_report_comment AS arc
-                    LEFT JOIN le_users AS lu ON lu.user_id = arc.user_id
-                 LEFT JOIN le_comments AS l ON arc.all_comment_id = l.comment_id WHERE arc.comment_header = 1 AND id= $cid
-               
-
-                    $sWhere  
-                    $sOrder
-                    $sLimit
-                   ";
-            } else {
-                $query1 = "SELECT *, lu.user_name, lu.user_email
-                    FROM anime_report_comment AS arc
-                    LEFT JOIN le_users AS lu ON lu.user_id = arc.user_id
-                    LEFT JOIN discussion_comment AS dc ON arc.all_comment_id = dc.comment_id WHERE arc.comment_header = 2 
-                    
-                    $dWhere  
-                    $sOrder
-                    $sLimit
-                   ";
-            }
-            $data = $this->db->query($query1);
-            $Result = $data->row();
-            array_push($Array, $Result);
-        }
-
-        $finalData = json_decode(json_encode($Array), True);
-
-        
-        
-     //  echo "FINALLL <pre>";
-      // print_r($finalData);
-     //  exit;
-
-
-        $iFilteredTotal = count($finalData);
-        $iTotal = count($finalData);
-
-        $output = array(
-            "sEcho" => intval($_GET['sEcho']),
-            "iTotalRecords" => $iTotal,
-            "iTotalDisplayRecords" => $iFilteredTotal,
-            "aaData" => array()
-        );
-
-
-        $aColumns = array('id', 'user_name', 'comment', 'user_comment', 'image_link', 'status');
-        foreach ($finalData as $aRow) {
-            $row = array();
-            for ($i = 0; $i < count($aColumns); $i++) {
-                $html = '';
-
-                if ($aColumns[$i] == 'image_link') {
-                    if ($aRow['comment_header'] == "1") {
-                        $row[] = "<a href='" . base_url() . "" . $aRow["leagueimage_id"] . "'>" . base_url() . "" . $aRow["leagueimage_id"] . "</a>";
-                    } else if ($aRow['comment_header'] == "2") {
-                        $row[] = "<a href='" . base_url() . "discussion-single/" . $aRow["anime_discussionid"] . "'>" . base_url() . "discussion-single/" . $aRow["anime_discussionid"] . "</a>";
-                    }
-                } else if ($aColumns[$i] == 'status') {
-                    if ($aRow["status"] == "0") {
-                        $html .="<span class='label label-info' style='min-width:90%;'>Active</span>";
-                    } else {
-                        $html .="<span class='label label-danger' style='min-width:90%;'>Inactive</span>";
-                    }
-                    $html .= '</a> ';
-                    $row[] = $html;
-                } 
-//                else if ($aColumns[$i] == 'action') {
-////                    $row[] = 'action';
-//                    $html = "<a onclick=\"active_comment(" . $aRow['id'] . ", '" . $aRow['comment_header'] . "','" . $aRow['all_comment_id'] . "', '" . $aRow["status"] . "');\" id='comment' style='cursor: pointer;'>";
-//                    if ($aRow["status"] == "0") {
-//                        $html .= "<img title='Inactive' alt='Active' src='" . base_url() . "assets/images/active.png'>";
-//                    } else {
-//                        $html .= "<img alt='InActive' src='" . base_url() . "assets/images/inactive.png'  title='Active'>";
-//                    }
-//                    $html .= '</a> ';
-//
-//
-//                    $row[] = $html;
-//                } 
-                else {
-                    $row[] = $aRow[$aColumns[$i]];
-                }
-            }
-            $output['aaData'][] = $row;
-        }
-
-        echo json_encode($output);
-        exit;
+    function getTabs() {
+        $this->db->select('*');
+        $this->db->from('front_page_manage');
+        $this->db->order_by('position', 'asc');
+        $query = $this->db->get();
+        return $query->result();
     }
 
-    function updateCmtStatus($id, $dataArr) {
-        $this->db->where('id', $id)->update('anime_report_comment', $dataArr);
-        return;
+    function changePostion($id, $position) {
+        $this->db->where('id', $id);
+        $this->db->update('front_page_manage', array('position' => $position));
+        return TRUE;
     }
-    function lCommentreport($total) {
-        
-        
-        
-         $aColumns = array('serial_no', 'user_comment', 'comment');
 
-        $sLimit = "";
-        if (isset($_GET['iDisplayStart']) && $_GET['iDisplayLength'] != '-1') {
-            $sLimit = "LIMIT " . intval($_GET['iDisplayStart']) . ", " . intval($_GET['iDisplayLength']);
-        }
+    function edit_display_tab($id, $display) {
+        $this->db->where('id', $id);
+        $this->db->update('front_page_manage', array('display' => $display));
+        return TRUE;
+    }
 
+    function get_credit_author() {
+        $this->db->select('*');
+        $this->db->from('credit_authors');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
-        $sOrder = "";
-        if (isset($_GET['iSortCol_1'])) {
-            $sOrder = "ORDER BY  ";
-            for ($i = 0; $i < intval($_GET['iSortingCols']); $i++) {
-                if ($_GET['bSortable_' . intval($_GET['iSortCol_' . $i])] == "true") {
-                    $sOrder .= $aColumns[intval($_GET['iSortCol_' . $i])] . "
-                       " . ($_GET['sSortDir_' . $i] === 'asc' ? 'desc' : 'asc') . ", ";
-                }
-            }
+    function saveauthor($dataArr) {
+        $this->db->insert('credit_authors', $dataArr);
+        return TRUE;
+    }
 
-            $sOrder = substr_replace($sOrder, "", -2);
-            if ($sOrder == "ORDER BY") {
-                $sOrder = "";
-            }
-        }
+    function getAuthorDetail($author_id) {
+        $this->db->select('*');
+        $this->db->from('credit_authors');
+        $this->db->where('id', $author_id);
+        $query = $this->db->get();
+        return $query->row();
+    }
 
-        $sWhere = "";
+    function updateauthor($dataArr, $author_id) {
+        $this->db->where('id', $author_id);
+        $this->db->update('credit_authors', $dataArr);
+        return TRUE;
+    }
 
-        if (isset($_GET['sSearch']) && $_GET['sSearch'] != "") {
-            $sWhere = "AND (";
-            for ($i = 0; $i < count($aColumns); $i++) {
-                if ($aColumns[$i] == "serial_no") {
-                    $sWhere .= "arc.id LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "user_comment") {
-                    $sWhere .= "arc.user_comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "comment") {
-                    $sWhere .= "l.comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if (isset($_GET['bSearchable_' . $i]) && $_GET['bSearchable_' . $i] == "true") {
-                    $sWhere .= "" . $aColumns[$i] . " LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                }
-            }
-            $sWhere = substr_replace($sWhere, "", -3);
-            $sWhere .= ')';
-        }
+    function update_photo_author($author_id, $dataArr) {
+        $this->db->where('id', $author_id);
+        $this->db->update('credit_authors', $dataArr);
+        return TRUE;
+    }
 
-        $dWhere = "";
-        if (isset($_GET['sSearch']) && $_GET['sSearch'] != "") {
-            $dWhere = "AND (";
-            for ($i = 0; $i < count($aColumns); $i++) {
-                if ($aColumns[$i] == "serial_no") {
-                    $dWhere .= "arc.id LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "user_comment") {
-                    $dWhere .= "arc.user_comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if ($aColumns[$i] == "comment") {
-                    $dWhere .= "dc.comment LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                } else if (isset($_GET['bSearchable_' . $i]) && $_GET['bSearchable_' . $i] == "true") {
-                    $dWhere .= "" . $aColumns[$i] . " LIKE '%" . mysql_real_escape_string($_GET['sSearch']) . "%' OR ";
-                }
-            }
-            $dWhere = substr_replace($dWhere, "", -3);
-            $dWhere .= ')';
-        }
+    function deleteAuthor($author_id) {
+        return $this->db->where('id', $author_id)
+                        ->delete('credit_authors');
+    }
 
-//        if (empty($sWhere)) {
-//            $sWhere = ' AND arc.status= "' . $_GET['status_check'] . '"';
-//        } else {
-//            $sWhere .= ' AND arc.status= "' . $_GET['status_check'] . '"';
-//        }
-//
-//        if (empty($dWhere)) {
-//            $dWhere = ' AND arc.status= "' . $_GET['status_check'] . '"';
-//        } else {
-//            $dWhere .= ' AND arc.status= "' . $_GET['status_check'] . '"';
-//        }
+    function add_section_data($dataArr) {
+        $this->db->insert('sidebar_section', $dataArr);
+        return $this->db->insert_id();
+    }
 
-//        $sQuery = "SELECT * FROM anime_report_comment WHERE status= '" . $_GET['status_check'] . "'";
-        $sQuery = "SELECT count(arc.id) as total,arc.*, lu.user_name, lu.user_email,l.*
-                    FROM anime_report_comment AS arc
-                    LEFT JOIN le_users AS lu ON lu.user_id = arc.user_id
-                    LEFT JOIN le_comments AS l ON arc.all_comment_id = l.comment_id WHERE arc.comment_header = 1                    
-                     GROUP BY `all_comment_id`";
-        
-        
+    function getSection() {
+        $this->db->select('*');
+        $this->db->from('left_section');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
-        $data = $this->db->query($sQuery);
-        $rResult = $data->result_array();
-      
-         $query1 = "SELECT count(arc.id) as total,arc.*, lu.user_name, lu.user_email, dc.*
-                    FROM anime_report_comment AS arc
-                    LEFT JOIN le_users AS lu ON lu.user_id = arc.user_id
-                    LEFT JOIN discussion_comment AS dc ON arc.all_comment_id = dc.comment_id WHERE arc.comment_header = 2  GROUP BY `all_comment_id` ";
-           
-        $data = $this->db->query($query1);
-        $rResult1 = $data->result_array();
-   
-        $result = array_merge($rResult, $rResult1);
-      //  print_r($result);
-        $iFilteredTotal = count($result);
-        $iTotal = count($result);
+    function addnewSection($dataArr) {
+        $this->db->insert('left_section', $dataArr);
+        return $this->db->insert_id();
+    }
 
-        $output = array(
-            "sEcho" => intval($_GET['sEcho']),
-            "iTotalRecords" => $iTotal,
-            "iTotalDisplayRecords" => $iFilteredTotal,
-            "aaData" => array()
-        );
+    function updateStatus($dataArr, $id) {
+        return $this->db->where('id', $id)
+                        ->update('left_section', $dataArr);
+    }
 
+    function updateStatuslink($dataArr, $id) {
+        return $this->db->where('id', $id)
+                        ->update('sidebar_section', $dataArr);
+    }
 
-        $aColumns = array('id', 'user_name', 'comment', 'image_link', 'total','action');
-        foreach ($result as $aRow) {
-         //   print_r($aRow);
-          //  echo "test" . $aRow['comment_header'] ."---";
-            
-            
-            $row = array();
-            for ($i = 0; $i < count($aColumns); $i++) {
-                $html = '';
+    function getSectionlinklist($id) {
+        $query = 'SELECT *,ss.id as idd
+                  FROM sidebar_section AS ss
+                  LEFT JOIN left_section AS ls ON ss.section_id  = ls.id where ss.section_id =' . $id . ' ORDER BY ss.position ASC';
+        $result = $this->db->query($query);
+        return $result->result_array();
+    }
+    function getSectionname($id) {
+        $query = 'SELECT section_name FROM left_section where id =' . $id;
+        $result = $this->db->query($query);
+        return $result->row_array();
+    }
 
-                if ($aColumns[$i] == 'image_link') {
-                    if ($aRow['comment_header'] == "1") {
-                        $row[] = "<a href='" . base_url() . "" . $aRow["leagueimage_id"] . "'>" . base_url() . "" . $aRow["leagueimage_id"] . "</a>";
-                    } else if ($aRow['comment_header'] == "2") {
-                        $row[] = "<a href='" . base_url() . "discussion-single/" . $aRow["anime_discussionid"] . "'>" . base_url() . "discussion-single/" . $aRow["anime_discussionid"] . "</a>";
-                    }
-                } else if ($aColumns[$i] == 'status') {
-                    if ($aRow["status"] == "0") {
-                        $html .="<span class='label label-info' style='min-width:90%;'>Active</span>";
-                    } else {
-                        $html .="<span class='label label-danger' style='min-width:90%;'>Inactive</span>";
-                    }
-                    $html .= '</a> ';
-                    $row[] = $html;
-                } 
-                else if ($aColumns[$i] == 'action') {
-//                    $row[] = 'action';
-                    $html = "<a onclick=\"active_comment(" . $aRow['id'] . ", '" . $aRow['comment_header'] . "','" . $aRow['all_comment_id'] . "', '" . $aRow["status"] . "');\" id='comment' style='cursor: pointer;'>";
-                    if ($aRow["status"] == "0") {
-                        $html .= "<img title='Inactive' alt='Active' src='" . base_url() . "assets/images/active.png'>";
-                    } else {
-                        $html .= "<img alt='InActive' src='" . base_url() . "assets/images/inactive.png'  title='Active'>";
-                    }
-                    $html .= '</a> ';
-
-
-                    $row[] = $html;
-                } 
-                else {
-                    $row[] = $aRow[$aColumns[$i]];
-                }
-            }
-            $output['aaData'][] = $row;
-        }
-
-        echo json_encode($output);
-        exit;
-        
-  
-        
+    function deleteSectionlink($id) {
+        return $this->db->where('id', $id)
+                        ->delete('sidebar_section');
+    }
+    function deleteSection($id) {
+          $this->db->where('id', $id)->delete('left_section');
+          $this->db->where('section_id', $id)->delete('sidebar_section');
     }
     
+    //    for multiple action
 
+    function set_multiple_popular($league_data) {
+        $dataArr = array('leagueimage_setpopular' => 'Y');
+        for ($i = 0; $i < count($league_data); $i++) {
+            $league_img_id = $league_data[$i];
+            $this->db->where('leagueimage_id', $league_img_id)->update('le_leagueimages', $dataArr);
+            $this->db->where('parent_id', $league_img_id)->update('le_leagueimages', $dataArr);
+        }
+    }
 }
 
 ?>

@@ -1,239 +1,147 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-ERROR - 2017-05-04 10:43:01 --> 404 Page Not Found --> uploads/league/1547909989.jpg
-ERROR - 2017-05-04 10:43:01 --> 404 Page Not Found --> uploads/league/6651092981.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/5746016572.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/8959760642.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/6426060036.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/1242476045.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/3092190190.gif
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/7325267079.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/6289882324.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/5803090557.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/1998370513.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/4969890550.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/443227346.gif
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/5005209315.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/7086728620.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/7219669260.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/9188593751.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/5452024391.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/4913113536.png
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/4735507974.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/8550080507.gif
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:02 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/league/249061314.png
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/league/350955156.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/league/3688337681.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/league/4004536038.gif
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:03 --> 404 Page Not Found --> uploads/league/7774877673.jpg
-ERROR - 2017-05-04 10:43:04 --> 404 Page Not Found --> uploads/league/4711355473.jpg
-ERROR - 2017-05-04 10:43:04 --> 404 Page Not Found --> uploads/league/6370843937.gif
-ERROR - 2017-05-04 10:43:04 --> 404 Page Not Found --> uploads/league/5556011516.jpg
-ERROR - 2017-05-04 10:43:04 --> 404 Page Not Found --> uploads/league/1347195975.gif
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/7012151959.jpg
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/2226486392.jpg
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/5141509370.jpg
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/2122211069.jpg
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/2545085223.png
-ERROR - 2017-05-04 10:43:06 --> 404 Page Not Found --> uploads/league/V12OUjeaJwfvzKXICLB9uNHxMi4S7mWn5TEs6tp3.png
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/league/6635346724.jpg
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/league/5933188875.jpg
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/league/3000597935.gif
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/league/4479799983.gif
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/league/4299175646.jpg
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:07 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:08 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:08 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:08 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:10 --> 404 Page Not Found --> uploads/league/7565555125.gif
-ERROR - 2017-05-04 10:43:10 --> 404 Page Not Found --> uploads/league/378916068.jpg
-ERROR - 2017-05-04 10:43:10 --> 404 Page Not Found --> uploads/league/5330244847.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/3541290885.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/244082389.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/5512762442.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/672275861.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/8778336560.png
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/5280110547.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/8943029013.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/3777946135.png
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/478986757.gif
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/league/3267668727.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:11 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:12 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:12 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:12 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/4057463752.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/3240345777.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/5206650826.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/6941299401.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/3531422326.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/2540057548.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/5575095913.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/3275855588.gif
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/6641633943.png
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/8393284003.png
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/2115883273.jpg
-ERROR - 2017-05-04 10:43:15 --> 404 Page Not Found --> uploads/league/7396360756.jpg
-ERROR - 2017-05-04 10:43:16 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:16 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:17 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:19 --> 404 Page Not Found --> uploads/league/8672309219.gif
-ERROR - 2017-05-04 10:43:19 --> 404 Page Not Found --> uploads/league/1410681796.jpg
-ERROR - 2017-05-04 10:43:19 --> 404 Page Not Found --> uploads/league/119506604.gif
-ERROR - 2017-05-04 10:43:19 --> 404 Page Not Found --> uploads/league/2229187167.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/6010361183.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/5463419402.gif
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/7544319466.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/5892332755.gif
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/5333859566.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/5245280717.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/2191840568.png
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/8031487497.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/league/6720613581.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:20 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:21 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:21 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:21 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/6010035015.gif
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/3273339010.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/2115883273.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/4753336110.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/5512762442.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/9955413974.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/3019083542.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/3587483582.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/1470623081.jpg
-ERROR - 2017-05-04 10:43:24 --> 404 Page Not Found --> uploads/league/848262235.jpg
-ERROR - 2017-05-04 10:43:25 --> 404 Page Not Found --> uploads/league/7582987495.jpg
-ERROR - 2017-05-04 10:43:25 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:25 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:26 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:26 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:26 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/3349884422.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/5749926920.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/2683008676.png
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/7499130303.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/6695398450.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/5892332755.gif
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/8918117424.png
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/2936469945.png
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/5653815362.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/533870542.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/8464199416.png
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/5484796660.gif
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/8306622360.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/league/5339878499.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:29 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:30 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:30 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:30 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:32 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-05-04 10:43:33 --> 404 Page Not Found --> uploads/league/2711897096.jpg
-ERROR - 2017-05-04 10:43:33 --> 404 Page Not Found --> uploads/league/2391060222.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/4785197856.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/5747522646.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/9039161116.gif
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/6890199785.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/5753025086.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/597677794.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/league/7716873013.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:34 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:35 --> 404 Page Not Found --> uploads/league/2251477008.jpg
-ERROR - 2017-05-04 10:43:35 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:35 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:35 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/2115883273.jpg
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/4081076332.png
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/3079487578.jpg
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/8452271213.jpg
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/4329138291.jpg
-ERROR - 2017-05-04 10:43:38 --> 404 Page Not Found --> uploads/league/9808345171.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/1051835212.gif
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/8247901177.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/8031487497.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/2391060222.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/4941290463.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/7062245155.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/league/3689474929.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:39 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:40 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:40 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:40 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> uploads/league/3689474929.jpg
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> uploads/league/2133413562.jpg
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> uploads/league/6244135373.gif
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> uploads/league/2981508332.jpg
-ERROR - 2017-05-04 10:43:44 --> 404 Page Not Found --> uploads/league/362296691.gif
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/4773981035.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/647952416.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/5865550735.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/9212818164.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/9955413974.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/5952708013.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/league/8405167064.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:45 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:46 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:48 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-05-04 10:43:48 --> 404 Page Not Found --> uploads/league/8247901177.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/5141509370.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/3690516240.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/1264091869.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/7229958670.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/4582022628.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/4329666886.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/5351899834.jpg
-ERROR - 2017-05-04 10:43:49 --> 404 Page Not Found --> uploads/league/378916068.jpg
-ERROR - 2017-05-04 10:43:50 --> 404 Page Not Found --> uploads/league/8645406831.gif
-ERROR - 2017-05-04 10:43:50 --> 404 Page Not Found --> uploads/league/5280110547.jpg
-ERROR - 2017-05-04 10:43:50 --> 404 Page Not Found --> uploads/league/6936450558.jpg
-ERROR - 2017-05-04 10:43:50 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:50 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:51 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/4712441931.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/7225047759.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/533870542.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/8951087952.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/153862708.png
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/1557942526.jpg
-ERROR - 2017-05-04 10:43:54 --> 404 Page Not Found --> uploads/league/9184178966.jpg
-ERROR - 2017-05-04 10:43:55 --> 404 Page Not Found --> uploads/league/1426694765.gif
-ERROR - 2017-05-04 10:43:55 --> 404 Page Not Found --> uploads/league/5292308479.jpg
-ERROR - 2017-05-04 10:43:55 --> 404 Page Not Found --> uploads/league/848262235.jpg
-ERROR - 2017-05-04 10:43:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:55 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:56 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
-ERROR - 2017-05-04 10:43:58 --> 404 Page Not Found --> assets/public/img/pro-pic.png
-ERROR - 2017-05-04 10:43:58 --> 404 Page Not Found --> uploads/league/1051835212.gif
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/7482080459.jpg
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/8443929194.png
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/8150653080.jpg
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/8778336560.png
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/1128256926.jpg
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/1161532993.jpg
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/7754562268.jpg
-ERROR - 2017-05-04 10:43:59 --> 404 Page Not Found --> uploads/league/2341711721.gif
-ERROR - 2017-05-04 18:24:30 --> 404 Page Not Found --> robots.txt
-ERROR - 2017-05-04 19:18:30 --> 404 Page Not Found --> uploads/users/cover/cover.jpg
+ERROR - 2017-05-04 01:31:44 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-05-04 01:31:44 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-05-04 01:31:44 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-05-04 01:31:44 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 181
+ERROR - 2017-05-04 01:31:50 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-05-04 01:31:50 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-05-04 01:31:50 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-05-04 01:31:50 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 181
+ERROR - 2017-05-04 01:31:57 --> Severity: Notice  --> Undefined variable: count_meme /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 26
+ERROR - 2017-05-04 01:31:57 --> Severity: Notice  --> Undefined variable: count_pending_credit_status /home/league/public_html/beta/application/modules/admin/views/template/top_nav.php 39
+ERROR - 2017-05-04 01:31:57 --> Severity: Notice  --> Undefined variable: league /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 53
+ERROR - 2017-05-04 01:31:57 --> Severity: Notice  --> Undefined variable: users /home/league/public_html/beta/application/modules/admin/views/template/sidebar_list.php 181
+ERROR - 2017-05-04 01:35:08 --> 404 Page Not Found --> assets/public/img/favicon.ico
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:38:11 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 01:39:30 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:31:10 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 02:53:52 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag_name /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:27 --> Severity: Notice  --> Undefined variable: tag /home/league/public_html/beta/application/modules/public/views/news/list.php 230
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:33 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:46 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
+ERROR - 2017-05-04 06:21:54 --> Severity: Notice  --> Undefined index: leagueimage_name /home/league/public_html/beta/application/modules/public/views/season_old_list.php 31
