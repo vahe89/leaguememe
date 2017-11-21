@@ -168,14 +168,14 @@
                             echo "<h5 style='color:red'>$msg</h5>";
                         }
                         ?>
-                        <p class="text-right link-log" data-toggle="modal" data-target="#forgetmodel" id="forgetmodal"
+                        <p class="text-right link-log" onclick="$('#forgetmodel').modal()" data-target="#forgetmodel" id="forgetmodal"
                            style="cursor: pointer;">Forgot the password?</p>
                     </div>
                     <button type="submit" class="btn btn-login-green pull-left">Login</button>
                     <div class="clearfix"></div>
                     <!--<p class="link-log text-left">Didn’t have an account? <a href="<?php echo base_url(); ?>public/user/signup">Sign up</a>-->
                     <p class="link-log text-left">Didn’t have an account? <a href="javascript:void(0);"
-                                                                             data-toggle="modal" data-target="#signup"
+                                                                             onclick="$('#signup').modal()" data-target="#signup"
                                                                              id="regi_click">Sign up</a>
                     </p>
                 </form>
@@ -454,7 +454,7 @@ if ($this->session->userdata('modal_show')) {
                     <button type="submit" class="btn btn-login-green btn-res pull-left" id="signup_ajax">Sign up
                     </button>
                     <div class="clearfix"></div>
-                    <p class="link-log text-left">Have an account? <a href="javascript:void(0);" data-toggle="modal"
+                    <p class="link-log text-left">Have an account? <a href="javascript:void(0);" onclick="$('#login').modal()"
                                                                       data-target="#login" id="login_click">Login</a>
                     </p>
                 </form>
@@ -1279,7 +1279,7 @@ if ($this->session->userdata('modal_show')) {
 
         // Show
         $('#coverresult').html('<img src="' + coverCanvas.toDataURL() + '"><input name="coverimg" type="hidden" value="' + coverCanvas.toDataURL() + '">');
-//                                    $('#up_cover').show(); 
+//                                    $('#up_cover').show();
         $('#up_cover').trigger('click');
     });
 
@@ -1526,11 +1526,11 @@ if ($this->session->userdata('modal_show')) {
                 <?php } else {
                     ?>
                     <li class="active">
-                        <a data-toggle="modal" data-target="#login" class="padding-login">Login</a>
+                        <a onclick="$('#login').modal()" data-target="#login" class="padding-login">Login</a>
                     </li>
 
                     <li class="upload-triger">
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#signup" type="button"
+                        <a href="javascript:void(0);" onclick="$('#signup').modal()" data-target="#signup" type="button"
                            class="btn btn-red">Sign up</a>
                     </li>
                 <?php } ?>
@@ -1579,7 +1579,7 @@ if ($this->session->userdata('modal_show')) {
                             <ul class="text-center list-unstyled list-place row">
                                 <li class="list-followers">
                                     <a href="javascript:void(0)"
-                                       data-toggle="modal" <?= $following->total_following == 0 ? '' : 'data-target="#followingmodal"' ?> >
+                                       onclick="$('#login').modal()" <?= $following->total_following == 0 ? '' : 'data-target="#followingmodal"' ?> >
                                         <h5>FOLLLOWING</h5>
                                         <h2 id="following_<?php echo $userdetail['user_id'] ?>"><?php echo $following->total_following; ?></h2>
                                     </a>
@@ -1587,7 +1587,7 @@ if ($this->session->userdata('modal_show')) {
 
                                 <li class="list-followers">
                                     <a href="javascript:void(0)"
-                                       data-toggle="modal" <?= $follower->total_follower == 0 ? '' : 'data-target="#followermodal"' ?> >
+                                       onclick="$('#login').modal()" <?= $follower->total_follower == 0 ? '' : 'data-target="#followermodal"' ?> >
                                         <h5>FOLLOWERS</h5>
                                         <h2 id="followers_<?php echo $userdetail['user_id'] ?>"><?php echo $follower->total_follower; ?></h2>
                                     </a>
@@ -1645,9 +1645,9 @@ if ($this->session->userdata('modal_show')) {
                                 }
                                 ?>
                                 <ul class="dropdown-menu edit-cover-nores" role="menu" aria-labelledby="edit-cover">
-                                    <li><a href="#" data-toggle="modal" data-target="#crop-cover"><i
+                                    <li><a href="#" onclick="$('#crop-cover').modal()" data-target="#crop-cover"><i
                                                     class="fa fa-picture-o"></i>&nbsp;&nbsp;Change cover photo</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#edit-profile-picture"><i
+                                    <li><a href="#" onclick="$('#edit-profile-picture').modal()" data-target="#edit-profile-picture"><i
                                                     class="fa fa-picture-o"></i>&nbsp;&nbsp;Change profile picture</a>
                                     </li>
                                 </ul>
@@ -1664,10 +1664,10 @@ if ($this->session->userdata('modal_show')) {
                                         </button>
                                         <ul class="dropdown-menu menu-others-btn" role="menu"
                                             aria-labelledby="others-profile">
-                                            <li><a href="#" data-toggle="modal" data-target="#crop-cover"><i
+                                            <li><a href="#" onclick="$('#crop-cover').modal()" data-target="#crop-cover"><i
                                                             class="fa fa-picture-o"></i>&nbsp;&nbsp;Change cover
                                                     photo</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#edit-profile-picture"><i
+                                            <li><a href="#" onclick="$('#edit-profile-picture').modal()" data-target="#edit-profile-picture"><i
                                                             class="fa fa-picture-o"></i>Change profile picture</a></li>
                                             <?php
                                             if ($base_url == site_url() . 'leaguememe_profile') {

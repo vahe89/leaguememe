@@ -202,7 +202,7 @@ if (empty($username)) {
                                 } else if ($active_menu == "gamechat") {
                                     ?>
                                     <div class="inline-gamechat-btn "  >
-                                        <a   <?= (isset($username) && !empty($username)) ? 'data-toggle="tab" role="tab"  href="#uploadGamechat"' : 'data-target="#login" data-toggle="modal"  href="javascript:void(0)"' ?>class="btn btn-new-thread gamechatThread">
+                                        <a   <?= (isset($username) && !empty($username)) ? 'data-toggle="tab" role="tab"  href="#uploadGamechat"' : 'data-target="#login" onclick="$(\'#login\').modal()"  href="javascript:void(0)"' ?>class="btn btn-new-thread gamechatThread">
                                             <i class="fa fa-plus-circle"> </i> Gamechat
                                         </a>
                                         <a href="javascript:void(0)" class="btn btn-back-thread gamechatBack" style="display: none;">
@@ -213,7 +213,7 @@ if (empty($username)) {
                                 } else if ($active_menu == "poll") {
                                     ?>
                                     <div class="inline-poll-btn">
-                                        <a <?= (isset($username) && !empty($username)) ? 'data-toggle="tab" role="tab"  href="#upload-poll-tab"' : 'data-target="#login" data-toggle="modal"  href="javascript:void(0)"' ?> class="btn btn-new-thread pollThread" >
+                                        <a <?= (isset($username) && !empty($username)) ? 'data-toggle="tab" role="tab"  href="#upload-poll-tab"' : 'data-target="#login" onclick="$(\'#login\').modal()"  href="javascript:void(0)"' ?> class="btn btn-new-thread pollThread" >
                                             <i class="fa fa-plus-circle"></i>
                                             Create Poll
                                         </a>
