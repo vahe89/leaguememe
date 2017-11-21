@@ -176,7 +176,7 @@ if (empty($username)) {
                                             // do nothing
                                         } else {
                                             ?>
-                                            <a href="javascript:void(0)" <?= (isset($username) && !empty($username)) ? "" : 'data-target="#login" data-toggle="modal"' ?>  class="btn btn-new-thread <?= (isset($username) && !empty($username)) ? "onePieceThread" : "" ?> " >
+                                            <a href="javascript:void(0)" <?= (isset($username) && !empty($username)) ? "" : 'data-target="#login" onclick="$(\'#login\').modal()"' ?>  class="btn btn-new-thread <?= (isset($username) && !empty($username)) ? "onePieceThread" : "" ?> " >
                                                 <i class="fa fa-plus-circle"> </i> Upload <?= $type ?>
                                             </a>
                                             <?php
