@@ -85,6 +85,7 @@ i.fa.fa-circle{font-size:10px;vertical-align:middle;color:#c9c6c6;}
 .form-comment-home .link-upload{display:block;margin-left:40px;margin-top:10px;}
 .form-comment-home .link-upload > a{background:#ebeaea;color:#afafaf;font-size:7px;padding:10px 15px;margin-left:3px;}
 .form-comment-home .link-upload a:hover{background:#dddddd;}
+.summary{background: #fff;}
 .ads{padding-left:35px;padding-right:0px;display:inline-block;}
 .ads-view{padding-left:45px;padding-right:0px;border-top:none !important;}
 .banner{margin-top:0px;margin-bottom:20px;display:block;}

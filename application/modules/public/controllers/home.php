@@ -2379,7 +2379,7 @@ class Home extends MX_Controller {
     function getRightContent($maintabval,$add) {
 
         $side_link = $this->hm->get_all_sidelinksside($maintabval);
-        $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval);
+        $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval, 16);
         $data["side_links"] = array_merge($side_link, $side_linkss);
         $data["sideadd"] = $add;
         return $this->load->view('ajax_right_sidebar', $data, TRUE);

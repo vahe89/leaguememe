@@ -12,35 +12,36 @@ if (count($side_links) > 0) {
         $divider = "6";
     } else {
 
-        if (count($side_links) <= 6) {
+        if (count($side_links) <= 28) {
             $tot_count = count($side_links);
         } else {
-            $tot_count = 6;
+            $tot_count = 28;
         }
 
-        $divider = "7";
-    }
-    
-    for ($i = 0; $i < $tot_count; $i++) {
+        $divider = "4";
+    } ?>
+    <div class="summary">
+    <?php for ($i = 0; $i < $tot_count; $i++) {
         ?>
         <?php
         if ($i % $divider == 0) {
             ?>
+            <?php if($i > 0) { ?></div><div class="summary"><?php } ?>
             <div class="banner">
-                <!--                    <a href="#" target="_self">
-                                        <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style=""class="img-responsive" />
-                                    </a>-->
+                <!--<a href="#" target="_self">
+                    <img src="<?php /*echo base_url(); */?>assets/public/img/asasa.png" alt="ads" style=""class="img-responsive" />
+                </a>-->
 
-                <!-- Leaguememe Right Side -->
+               <!--  Leaguememe Right Side -->
 
-                <ins class="adsbygoogle"
+               <ins class="adsbygoogle"
                      style="display:inline-block;width:300px;height:280px"
                      data-ad-client="ca-pub-9746555787553362"
                      data-ad-slot="1902005285"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                
+
             </div>
         <?php } ?>
         <div class="banner_cont">
@@ -60,6 +61,6 @@ if (count($side_links) > 0) {
         </div>
 
         <?php
-    }
-}
-?>
+    } ?>
+</div>
+<?php } ?>

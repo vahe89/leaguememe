@@ -100,15 +100,15 @@
         <?php
     }
     ?>
-    <div class="right_banner_side text-center" data-spy="affix" data-offset-top="155">
+    <div class="right_banner_side text-center" data-offset-top="155">
 
         <?php echo $right_bar['content'];?>
-        <div class="social_banner">
+        <div class="summary">
 
             <div class="social_banner">
-                <!--            <a href="#" target="_self">
-                            <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style="" class="img-responsive" />
-                        </a> 3ec62145353f52d42571cafac9807e9c-->
+                <!--<a href="#" target="_self">
+                    <img src="<?php /*echo base_url(); */?>assets/public/img/asasa.png" alt="ads" style="" class="img-responsive" />
+                </a>-->
 
                 <!-- Leaguememe Right Side -->
 
@@ -238,6 +238,7 @@
                 <p class = "text-center copyright">Copyright © All Rights Reserved</p>
             </div>
         </div>
+        <div class="summary"></div>
     </div>
 </div>
 

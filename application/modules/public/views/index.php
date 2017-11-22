@@ -995,10 +995,10 @@ if ($message != '') { ?>
             });
         }
 
-        hideBanners();
+        /*hideBanners();
         $(window).resize(function () {
             hideBanners();
-        });
+        });*/
 
     });
     if ('<?= $class ?>' == "home") {

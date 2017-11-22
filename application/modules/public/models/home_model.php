@@ -40,7 +40,7 @@ class Home_model extends CI_Model {
         return $query->result_array();
     }
 
-    function get_all_sidelinksnoside($start = 0, $maintabval = "popular") {
+    function get_all_sidelinksnoside($start = 0, $maintabval = "popular", $limit = 10) {
 
         if (empty($maintabval)) {
             $maintabval = 'Y';
@@ -52,7 +52,7 @@ class Home_model extends CI_Model {
         $sql = "SELECT *, SUBSTRING_INDEX( leagueimage_filename, '.', -1 ) AS `extleft` 
                FROM le_leagueimages
                WHERE `leagueimage_setpopular` = '" . $maintabval . "' AND is_sidebar = 0 AND  category_id != '6' AND SUBSTRING_INDEX( leagueimage_filename, '.', -1 ) != '" . "gif" . "'
-               ORDER BY is_sidebar ASC, RAND() ASC LIMIT " . $start . ",10";
+               ORDER BY is_sidebar ASC, RAND() ASC LIMIT " . $start . ",$limit";
 
         $query = $this->db->query($sql);
         return $query->result_array();
