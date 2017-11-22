@@ -103,11 +103,11 @@
     <div class="right_banner_side text-center" data-offset-top="155">
 
         <?php echo $right_bar['content'];?>
-        <div class="summary">
+        <div class="summary summary_social" data-spy="affix" data-offset-top="3200">
 
             <div class="social_banner">
                 <!--<a href="#" target="_self">
-                    <img src="<?php /*echo base_url(); */?>assets/public/img/asasa.png" alt="ads" style="" class="img-responsive" />
+                    <img src="https://www.customermagnetism.com/wp-content/uploads/2012/11/300x600ad.jpg" alt="ads" style="" class="img-responsive" />
                 </a>-->
 
                 <!-- Leaguememe Right Side -->
@@ -238,7 +238,7 @@
                 <p class = "text-center copyright">Copyright © All Rights Reserved</p>
             </div>
         </div>
-        <div class="summary"></div>
+<!--        <div class="summary"></div>-->
     </div>
 </div>
 

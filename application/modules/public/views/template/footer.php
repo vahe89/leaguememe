@@ -72,9 +72,9 @@ $('body').on('click','.close_ad_btn',function(){
 }?>
 <style>
     /*    .fixed {
-            position: fixed; 
-            top: 0; 
-            height: 70px; 
+            position: fixed;
+            top: 0;
+            height: 70px;
             z-index: 1;
         }*/
 </style>
@@ -106,6 +106,7 @@ $('body').on('click','.close_ad_btn',function(){
     $(document).ready(function () {
 
         var summaries = $('.summary');
+        var zIndex = 999;
         summaries.each(function(i) {
             var summary = $(summaries[i]);
             var next = summaries[i + 1];
@@ -121,8 +122,9 @@ $('body').on('click','.close_ad_btn',function(){
                     }
                     return limit;
                 },
-                zIndex: 999
+                zIndex: zIndex
             });
+            zIndex++;
         });
 
 
