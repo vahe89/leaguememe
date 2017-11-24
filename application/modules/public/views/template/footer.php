@@ -103,8 +103,17 @@ $('body').on('click','.close_ad_btn',function(){
         }
 
     }
-    $(document).ready(function () {
 
+    function TestPage() {
+        $('.adsbygoogle').each(function () {
+            if($(this).innerHeight() == 0){
+                $(this).next().show();
+            }
+        })
+    }
+
+    $(document).ready(function () {
+        window.setTimeout('TestPage()', 3000);
         var summaries = $('.summary');
         var zIndex = 999;
         summaries.each(function(i) {

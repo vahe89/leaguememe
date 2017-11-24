@@ -38,6 +38,9 @@ if (count($side_links) > 0) {
                      style="display:inline-block;width:300px;height:280px"
                      data-ad-client="ca-pub-9746555787553362"
                      data-ad-slot="1902005285"></ins>
+                <div class="adblocked">
+                    <img src="<?php echo base_url(); ?>assets/public/img/asasa.png" alt="ads" style=""class="img-responsive" />
+                </div>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>

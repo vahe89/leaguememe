@@ -1,7 +1,7 @@
  
 <style >
     .affix{
-        top:70px;
+        top:55px;
     }
 </style>
 <!--<div class="col-md-5 col-sm-12 ads">--> 
@@ -116,6 +116,9 @@
                      style="display:inline-block;width:300px;height:600px"
                      data-ad-client="ca-pub-9746555787553362"
                      data-ad-slot="8840712489"></ins>
+                <div class="adblocked">
+                    <img src="<?php echo base_url(); ?>assets/public/img/halfpage.jpg" alt="ads" style=""class="img-responsive" />
+                </div>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
