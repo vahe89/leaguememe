@@ -310,6 +310,59 @@ class League_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function list_league_new($main, $sub, $anime = 0, $start,$limit, $upload_type = 0, $user_id = 0){
+        if ($sub == 0) {
+            $sub = '';
+        } else {
+            $sub = "";
+        }
+        $sql = "SELECT le_leimg.*, ctg.category_name,    
+                 u.user_name,
+                u.user_email,
+                u.user_region,
+                u.user_image,
+                u.NFSW,
+                u.spoiler,
+                u.online_status
+                FROM le_leagueimages as le_leimg 
+                LEFT JOIN  le_users AS u ON le_leimg.leagueimage_userid = u.user_id AND u.user_status = 'A' 
+                RIGHT JOIN le_category AS ctg ON ctg.category_status = 'A' ".$sub." AND  le_leimg.category_id = ctg.category_id
+                WHERE  le_leimg.`leagueimage_status` = 'A' ".$sub." ORDER BY le_leimg.`leagueimage_id` desc LIMIT ".$start.",1 ";
+
+        $query = $this->db->query($sql);
+        $arrResult = $query->result();
+        foreach ($arrResult as $key=>$result){
+
+            $arrResult[$key]->total_victory = $this->getvictory('V',$result->leagueimage_id);
+            $arrResult[$key]->total_defeat = $this->getvictory('D',$result->leagueimage_id);
+            $arrResult[$key]->total_comment= $this->getCommentsCount($result->leagueimage_id);
+            $arrResult[$key]->total_images_parent= $this->getAlbumimageCount($result->leagueimage_id);
+           // $arrResult[$key]->
+        }
+       //  echo '<pre>';var_dump($arrResult);die;
+
+        return $arrResult;
+    }
+    public function getAlbumImageCount($img_id){
+        $sqlParent = "
+                SELECT COUNT(li.leagueimage_id)  AS total_album
+                FROM le_leagueimages AS li
+                WHERE li.`leagueimage_status` = 'A' AND li.parent_id =".$img_id;
+        return $this->db->query($sqlParent)->row('total_album');
+    }
+    public function getvictory($yesVictory,$img_id){
+        $sqlVictories = "
+                SELECT COUNT( vic.victory_id)  AS total_victory
+                FROM le_victory AS vic
+                WHERE vic.victory_defeat =  '".$yesVictory."' AND vic.leagueimages_id =".$img_id;
+        return $this->db->query($sqlVictories)->row('total_victory');
+    }
+
+    public function getCommentsCount($img_id){
+        $sql="SELECT COUNT(cmt.comment_id) as `count` FROM  le_comments AS cmt WHERE cmt.`parent_id` = 0 AND cmt.leagueimage_id =".$img_id;
+        return $this->db->query($sql)->row('count');
+
+    }
     function list_scroll_league($main, $sub, $anime, $start, $limit, $upload_type = 0, $user_id = 0, $offset = 0) {
         if ($main == "new") {
             $popular = "AND le_leimg.leagueimage_setpopular = 'N'";

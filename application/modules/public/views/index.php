@@ -760,7 +760,7 @@ if ($message != '') { ?>
             var loading = false; //to prevents multipal ajax loads
             var total_groups; //total record group(s)
             total_groups = $('.total_groups').val();
-         //   list_league(mainTab, subTabValue);
+            list_league(mainTab, subTabValue);
         } else if ('<?= $method ?>' == "season_index") {
             season_old();
             var loading = false;
@@ -908,7 +908,8 @@ if ($message != '') { ?>
                         }
                     });
                     offset += 1;
-                    scroll_top += 620;
+                    scroll_top += $(".inner_post").last().height();
+
                 }
                 if (season_track_load <= $('.season_total_groups').val() && loading == false && '<?= $method ?>' == "season_index") //there's more data to load
                 {

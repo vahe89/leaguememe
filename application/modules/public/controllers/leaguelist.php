@@ -299,7 +299,8 @@ $limit  =  $this->input->post('perpage');
 
         $position = ($group_number * $items_per_group);
 
-        $data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id, $offset);
+        $data['league_details'] = $this->leaguemod->list_league_new($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id, $offset);
+        //$data['league_details'] = $this->leaguemod->list_scroll_league($main, $sub, $anime, $position, $items_per_group, $up_type, $user_id, $offset);
 //        echo "<pre>";
 //        print_r($data['league_details']);
 //        exit;

@@ -19,7 +19,7 @@
                  
                 
                 <!--wrapper avatar-->
-                <div class="wrapper-avatar ">
+                <div class="wrapper-avatar inner_post ">
                     <input type="hidden" name="total_groups" class="total_groups" value="<?php echo isset($total_groups) ? $total_groups : 0; ?>"/>
                     <input type="hidden" name="pageload" id="pageload" />
                     <div class="media info-avatar">
@@ -123,12 +123,12 @@
                         if ($anim_img->total_images_parent > 0) {
                             if ($category != 'Video') {
 
-                                $al = explode(",", $anim_img->le_parentid);
-                                $al_img = explode(",", $anim_img->le_parentimg);
+                                //$al = explode(",", $anim_img->le_parentid);
+                               // $al_img = explode(",", $anim_img->le_parentimg);
                                 ?>
                                 <div href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" class="wrap-avatar-img">
                                     <img src="<?php echo base_url(); ?>uploads/<?= $img_path ?>/<?php echo $anim_img->leagueimage_filename; ?>" alt="ace" class="img-responsive meme-big" />
-                                    <a class="album-more" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" target="_blank">View Album (<?php echo count($al); ?>)<span class="shadow"></span></a>
+                                    <a class="album-more" href="<?php echo base_url(); ?><?php echo $anim_img->leagueimage_id; ?>" target="_blank">View Album (<?php echo $anim_img->total_images_parent; ?>)<span class="shadow"></span></a>
                                 </div>
 
 
@@ -452,17 +452,17 @@
 
 </div> 
 <script>
-    $(".gif").each(function () {
-        var id = $(this).data('id');
-
-        if ($("#video_" + id).find('div.gifplayer-wrapper').find('img.gp-gif-element').length !== 0) {
-//            alert("yes");
-        } else {
-            $("#gif_" + id).gifplayer();
-        }
-
-
-    });
+//    $(".gif").each(function () {
+//        var id = $(this).data('id');
+//
+//        if ($("#video_" + id).find('div.gifplayer-wrapper').find('img.gp-gif-element').length !== 0) {
+////            alert("yes");
+//        } else {
+//            $("#gif_" + id).gifplayer();
+//        }
+//
+//
+//    });
     
     //$('.gif').gifplayer();
     $('.popup').click(function(event) {
