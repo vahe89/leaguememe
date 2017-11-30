@@ -667,12 +667,12 @@ if ($message != '') { ?>
 <script>
    var perpage = 10 ;
      var season_page = 10;
-            <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+            <?php //if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                 ?>
-               var perpage = 4;
-               var season_page = 4;
+              // var perpage = 4;
+              // var season_page = 4;
             <?php
-            } ?>
+            //} ?>
     var offset = 1;
     var scroll_top = 1000;
     $(document).ready(function() {
@@ -863,10 +863,10 @@ if ($message != '') { ?>
             {
                 if (track_load < total_groups && loading == false && '<?= $method ?>' == "index" && '<?= $class ?>' == "home") //there's more data to load
                 {
-                     <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+                     <?php // if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                 ?> 
-                          perpage = "8";
-                      <?php } ?>
+                         // perpage = "8";
+                      <?php // } ?>
                     $('.animation_image').show(); //show loading image
                     $.ajax({type: "POST",
                         url: base_url + 'public/leaguelist/list_scroll_data',
@@ -884,10 +884,10 @@ if ($message != '') { ?>
                             track_load++; //loaded group increment
                             page_track++;
 
-                           <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+                           <?php //if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                                  ?>
-                                      loading = false;
-                             <?php } else {
+                                    //  loading = false;
+                             <?php // } else {
                                  ?>
                                     if (page_track == total_groups) {
                                         loading = true;
@@ -903,7 +903,7 @@ if ($message != '') { ?>
                                     else {
                                         loading = false;
                                     }
-                             <?php }
+                             <?php //}
                              ?>
                         }
                     });
@@ -913,11 +913,11 @@ if ($message != '') { ?>
                 }
                 if (season_track_load <= $('.season_total_groups').val() && loading == false && '<?= $method ?>' == "season_index") //there's more data to load
                 {
- <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+ <?php //if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                 ?>
                  
-                          season_page = "8";             
-                      <?php } ?>
+                        //  season_page = "8";
+                      <?php // } ?>
                     loading = true; //prevent further ajax loading
                     $('.animation_image').show(); //show loading image
                     $.ajax({type: "POST",
@@ -931,17 +931,17 @@ if ($message != '') { ?>
                             $('.animation_image').hide(); //hide loading image once data is received
                             season_track_load++; //loaded group increment   
 
-                           <?php if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+                           <?php // if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
                                  ?> 
-                                      loading = false;                       
-                             <?php } else {
+                                      //loading = false;
+                             <?php //} else {
                                  ?>
                             if (season_track_load == $('.season_total_groups').val()) {
                                 loading = true;
                             } else {
                                 loading = false;
                             }
-                             <?php }
+                             <?php // }
                              ?>
                         }
                     });

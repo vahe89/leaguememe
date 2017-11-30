@@ -88,6 +88,7 @@ $('body').on('click','.close_ad_btn',function(){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
 <script src="<?php echo $new_url; ?>assets_new/public/js/components.js" async></script>
 <script src="assets_new/public/js/bootstrap-affix.js"></script>
+<script src="assets_new/public/js/bootstrap-modal.js"></script>
 <script src="assets_new/public/js/jquery-scrolltofixed-min.js"></script>
 <script>
     var new_url = "<?php echo $new_url; ?>";

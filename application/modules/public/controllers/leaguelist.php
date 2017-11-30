@@ -581,7 +581,7 @@ $limit  =  $this->input->post('perpage');
         load_public_template($data);
     }
 
-    public function season_index() { 
+    public function season_index() {
         $Session = $this->session->userdata('user_id');
         $data['userdetail'] = $this->userdetail();
         $data['username'] = $this->session->userdata('uname');
@@ -598,6 +598,9 @@ $limit  =  $this->input->post('perpage');
             );
         $data["right_bar"] = $rightbar;
           $data['getTabposition'] = $this->leaguemod->getTabs();
+
+        $data['sub_items'] = $this->get_sub_items(false, false);
+        $data['content_content'] = $this->getSubContent('season-old', '', 0);
         $data['content'] = $this->load->view('index', $data, TRUE);
         load_public_template($data);
     }
@@ -675,6 +678,165 @@ $limit  =  $this->input->post('perpage');
         echo $creditHtml;
         exit;
     }
+
+    private function getSubContent($main, $sub_name, $orderid){
+
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
+
+        if (empty($upload_type)) {
+            $up_type = 1;
+        } else {
+            $up_type = $upload_type;
+        }
+        if (isset($anime)) {
+            $start = $anime;
+        } else {
+            $start = 0;
+        }
+
+        $limit  = 10 ;
+
+        if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
+
+            $limit = 4;
+        }
+        if ($sub_name != "random") {
+            if ($sub_name == "Art") {
+                $data['sub_tab_data'] = $this->leaguemod->get_subTab_id("Art/Cosplay");
+            } else {
+                $data['sub_tab_data'] = $this->leaguemod->get_subTab_id($sub_name);
+
+            }
+            if (empty($data['sub_tab_data'])) {
+                $sub = 0;
+            } else {
+                $sub = $data['sub_tab_data'][0]['category_id'];
+            }
+        } else {
+            $sub = 0;
+        }
+        $anime_name =' ';
+
+        if ($anime_name == " ") {
+            $anime = 0;
+        } else {
+            $anime = $anime_name;
+        }
+        $get_total_rows = 0;
+        $items_per_group = $limit;
+
+        $data['row_result'] = $this->leaguemod->get_total_row($main, $sub,$up_type);
+        $data['total_row'] = $data['row_result'][0]['totalRecord'];
+        $data['total_groups'] = ceil($data['total_row'] / $items_per_group);
+        $data['main_category'] = $main;
+        $data['sub_category_name'] = $sub_name;
+        $data['sub_category'] = $sub;
+
+        $data['league_details'] = $this->leaguemod->list_league($main, $sub, $anime, $start,$limit, $up_type, $user_id);
+
+        if ($this->session->userdata('user_id')) {
+            $data['userid'] = $this->session->userdata('user_id');
+        }
+        $victory = array();
+        $defact = array();
+        foreach ($data['league_details'] as $league) {
+            if (isset($league->vic_users) && !empty($league->vic_users)) {
+                $victory[$league->leagueimage_id] = explode(",", $league->vic_users);
+            }
+            if (isset($league->def_users) && !empty($league->def_users)) {
+                $defact[$league->leagueimage_id] = explode(",", $league->def_users);
+            }
+        }
+        $fav_userid = array();
+        foreach ($data['league_details'] as $league) {
+            if (isset($league->fvtuserid) && !empty($league->fvtuserid)) {
+                $fav_userid[$league->leagueimage_id] = explode(",", $league->fvtuserid);
+            }
+        }
+        $data['favuserid'] = $fav_userid;
+//        echo "<pre>";
+//        print_r($data['favuserid']);
+//        exit;
+        $data['scroll'] = "0";
+        $data['victory'] = $victory;
+        $data['defact'] = $defact;
+        $data['up_type'] = $up_type;
+        $data['total'] = count($data['league_details']);
+        $result = $this->load->view('list_league_home', $data, true);
+        return $result;
+    }
+
+
+    function get_sub_items($types='new',$subtype = 'all') {
+
+        if (!empty($types)) {
+            if ($types == "popular") {
+                $maintabval = "popular";
+            } else if ($types == "new") {
+                $maintabval = "new";
+            } else if ($types == "bookmark") {
+                $maintabval = "bookmark";
+            } else {
+                $maintabval = "popular";
+            }
+        } else {
+            $maintabval = "popular";
+        }
+
+        if (!empty($subtype)) {
+
+            $subtabval = $subtype;
+        } else {
+            $subtabval = "";
+        }
+        $data['subTabData'] = $this->hm->get_sub_tabs();
+        $total = count($data['subTabData']);
+        $html = '';
+        $type = $this->input->post('type');
+
+
+        for ($i = 0; $i < $total; $i++) {
+            $active = "";
+
+
+            if ($data['subTabData'][$i]['category_name'] == "All") {
+                if ($subtabval == "All") {
+                    $active = "active";
+                }
+                $html .= '<li class="' . $type . $active . ' subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $data["subTabData"][$i]["category_id"] . '" href="' . base_url()  . "new/" . 'all" class="active">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab active' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' class='active' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            } else {
+                $cate_name =  $data['subTabData'][$i]['category_name'];
+
+                if ($data['subTabData'][$i]['category_name'] == "Art/Cosplay") {
+                    $category = "art";
+                } else {
+                    $category = $data['subTabData'][$i]['category_name'];
+                }
+                $html .= '<li class="' . $type ;
+                if($subtabval == "Art"){
+                    $cate_new_name = "Art/Cosplay";
+                }else{
+                    $cate_new_name = ucfirst($subtabval) ;
+                }
+                if($cate_new_name == $cate_name) { $html .= 'active' ; }
+                $html .='  subTab" id="' . $type . '' . $data["subTabData"][$i]["category_name"] . '"><a id="' . $type . 'sub' . $cate_name . '" href="' . base_url() . "new/" . strtolower($category) . '">' . ucwords($data["subTabData"][$i]["category_name"]) . '</a></li>';
+//$html .= "<li class='subTab' id='" . $data['subTabData'][$i]['category_id'] . "'><a id='" . $data['subTabData'][$i]['category_id'] . "' href='#'>" . ucwords($data['subTabData'][$i]['category_name']) . "</a></li>";
+            }
+        }
+        $actives = "";
+        if ($subtabval == "random") {
+            $actives = "active";
+        }
+
+        $html .= "<li class='" . $type . $actives . " subTab' id='" . $type . "random'><a id='" . $type . "sub0' href='" . base_url() . 'new/' . "random'>Random</a></li>";
+        return $html;
+    }
+
 }
 
 ?>
