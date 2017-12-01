@@ -26,7 +26,7 @@ class Poll extends MX_Controller {
         return $profile = $this->usermod->userProfile_detail($session);
     }
 
-    public function index() {
+    public function index($maintabval = "new") {
         $data['userdetail'] = $this->userdetail();
         $data['active_menu'] = "poll";
         $data['username'] = $this->session->userdata('uname');
@@ -37,16 +37,20 @@ class Poll extends MX_Controller {
         $data["new_post"] = $this->hm->get_new_post();
         $data["new_discussion"] = $this->hm->get_let_discussion();
         $data["new_like"] = $this->hm->get_newlike();
-         $data['getTabposition'] = $this->leaguemod->getTabs(); 
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        $data['sub_items'] = $this->get_sub_items('new',"");
         $get_rules = $this->leaguemod->get_rules("poll");
+        $right_content = $this->getRightContent($maintabval,'');
 
         if (count($get_rules) > 0) {
             $rightbar = array(
-                'rules' => $get_rules[0]->template
+                'rules' => $get_rules[0]->template,
+                'content'=>''
             );
         }else{
             $rightbar = array(
-                'rules' => ''
+                'rules' => '',
+                'content'=>$right_content
             );
         }
 

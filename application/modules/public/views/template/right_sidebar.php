@@ -105,6 +105,7 @@
         <?php echo $right_bar['content'];?>
         <div class="summary summary_social" data-spy="affix" data-offset-top="3200">
 
+            <?php if($social_banner): ?>
             <div class="social_banner">
                 <!--<a href="#" target="_self">
                     <img src="https://www.customermagnetism.com/wp-content/uploads/2012/11/300x600ad.jpg" alt="ads" style="" class="img-responsive" />
@@ -123,6 +124,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+            <?php endif; ?>
             <div class="social-network">
                 <ul class="list-unstyled">
                     <?php

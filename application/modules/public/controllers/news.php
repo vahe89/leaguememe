@@ -54,6 +54,7 @@ class News extends MX_Controller {
 
         $data['maintabval'] = $maintabval;
 
+        $data['sub_items'] = $this->get_sub_items('new',"");
         $data['userdetail'] = $this->userdetail();
         $data['username'] = $this->session->userdata('uname');
         $data['userid'] = $this->session->userdata('user_id');
@@ -64,7 +65,31 @@ class News extends MX_Controller {
         $data["new_discussion"] = $this->hm->get_let_discussion();
         $data["new_like"] = $this->hm->get_newlike();
         $data['active_menu'] = "news-tab";
-         $data['getTabposition'] = $this->leaguemod->getTabs(); 
+         $data['getTabposition'] = $this->leaguemod->getTabs();
+
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent($maintabval,'');
+
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
+            );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
+        //get data for content
+
+        $data["right_bar"] = $rightbar;
+
+
+
+
+
         $data['content'] = $this->load->view('news/index', $data, TRUE);
         load_public_template($data);
     }

@@ -514,7 +514,7 @@ $limit  =  $this->input->post('perpage');
     }
 
     function single_image_list($league_id = '') {
-
+        $type = $this->uri->segment(1);
         //$data['league_details'] = $this->leaguemod->list_league($main, $sub);
         $data['userdetail'] = $this->userdetail();
         $data['league_details'] = $this->leaguemod->single_image_list($league_id);
@@ -577,7 +577,28 @@ $limit  =  $this->input->post('perpage');
         $data["side_linkss"] = $this->hm->get_all_sidelinksnoside();
         $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
         $data['username'] = $this->session->userdata('uname');
+
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent("new",'', 3);
+
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
+            );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
+        //get data for content
+        $data["right_bar"] = $rightbar;
+        $data['social_banner'] = false;
+
         $data['content'] = $this->load->view('single_image_list', $data, TRUE);
+
         load_public_template($data);
     }
 

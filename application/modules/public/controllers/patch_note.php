@@ -39,6 +39,7 @@ class Patch_note extends MX_Controller {
 
         $data['maintabval'] = $maintabval;
 
+        $data['sub_items'] = $this->get_sub_items('new',"");
         $data['userdetail'] = $this->userdetail();
         $data['username'] = $this->session->userdata('uname');
         $data['userid'] = $this->session->userdata('user_id');
@@ -50,6 +51,25 @@ class Patch_note extends MX_Controller {
         $data["new_like"] = $this->hm->get_newlike();
         $data['active_menu'] = "patch_note";
         $data['getTabposition'] = $this->leaguemod->getTabs();
+
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent($maintabval,'');
+
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
+            );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
+        //get data for content
+
+        $data["right_bar"] = $rightbar;
 
         $data['content'] = $this->load->view('patch_note/index', $data, TRUE);
         load_public_template($data);
@@ -259,7 +279,8 @@ class Patch_note extends MX_Controller {
     }
 
     function detail($patch_id) {
-
+        $type = $this->uri->segment(2);
+        $maintabval = "new";
         $patch_detail['patch_alldetail'] = $this->pm->single_patch_note($patch_id);
 
         $data['patchDetail'] = $patch_detail['patch_alldetail']['patch'][0];
@@ -283,6 +304,26 @@ class Patch_note extends MX_Controller {
         $data["side_link"] = $this->hm->get_all_sidelinksside();
         $data["side_linkss"] = $this->hm->get_all_sidelinksnoside();
         $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
+
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent($maintabval,'', 3);
+
+        $data['getTabposition'] = $this->leaguemod->getTabs();
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
+            );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
+        //get data for content
+
+        $data["right_bar"] = $rightbar;
+        $data['social_banner'] = false;
 
         $data['content'] = $this->load->view('patch_note/detail', $data, TRUE);
         load_public_template($data);
