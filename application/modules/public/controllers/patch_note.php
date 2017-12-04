@@ -69,50 +69,56 @@ class Patch_note extends MX_Controller {
         }
         //get data for content
 
+        /*********************/
+
+        if ($this->session->userdata('user_id')) {
+            $user_id = $this->session->userdata('user_id');
+        } else {
+            $user_id = 0;
+        }
+        $row = "0";
+        $rowperpage = "5";
+        $main = $maintabval;
+        $allcount_fetch = $this->pm->get_total_row($main, $user_id);
+        $data['allcount'] = $allcount_fetch->count;
+        $data['page_row'] = $row;
+        $data['list_patch_notes'] = $this->pm->list_patch_notes($main, $row, $rowperpage, $user_id);
+
+        $victory = array();
+        $defact = array();
+        $fav_userid = array();
+        foreach ($data['list_patch_notes'] as $patch) {
+            $pid = $patch['patch']['main_id'];
+            if (isset($patch['patch']['vic_users']) && !empty($patch['patch']['vic_users'])) {
+                $vu = $patch['patch']['vic_users'];
+                $victory[$pid] = explode(",", $vu);
+            }
+            if (isset($patch['patch']['def_users']) && !empty($patch['patch']['def_users'])) {
+                $du = $patch['patch']['vic_users'];
+                $defact[$pid] = explode(",", $du);
+            }
+
+            if (isset($patch['patch']['fvtuserid']) && !empty($patch['patch']['fvtuserid'])) {
+                $fu = $patch['patch']['fvtuserid'];
+                $fav_userid[$pid] = explode(",", $fu);
+            }
+        }
+
+        $data['favuserid'] = $fav_userid;
+
+        $data['userid'] = $this->session->userdata('user_id');
+        $data['scroll'] = "0";
+        $data['victory'] = $victory;
+        $data['defact'] = $defact;
+        $data['total'] = count($data['list_patch_notes']);
+
+        /*********************/
+
         $data["right_bar"] = $rightbar;
 
         $data['content'] = $this->load->view('patch_note/index', $data, TRUE);
         load_public_template($data);
     }
-
-//    function list_patch() {
-//        if ($this->session->userdata('user_id')) {
-//            $user_id = $this->session->userdata('user_id');
-//        } else {
-//            $user_id = 0;
-//        }
-//        $row = $this->input->post('row');
-//        $rowperpage = $this->input->post('rowperpage');
-//        $main = $_POST['main'];
-//        $allcount_fetch = $this->pm->get_total_row($main, $user_id);
-//        $data['allcount'] = $allcount_fetch->count;
-//        $data['page_row'] = $row;
-//        $data['list_patch_notes'] = $this->pm->list_patch_notes($main, $row, $rowperpage, $user_id);
-//        $victory = array();
-//        $defact = array();
-//        foreach ($data['list_patch_notes'] as $patch) {
-//            if (isset($patch->vic_users) && !empty($patch->vic_users)) {
-//                $victory[$patch->patchId] = explode(",", $patch->vic_users);
-//            }
-//            if (isset($patch->def_users) && !empty($patch->def_users)) {
-//                $defact[$patch->patchId] = explode(",", $patch->def_users);
-//            }
-//        }
-//        $fav_userid = array();
-//        foreach ($data['list_patch_notes'] as $patch) {
-//            if (isset($patch->fvtuserid) && !empty($patch->fvtuserid)) {
-//                $fav_userid[$patch->patchId] = explode(",", $patch->fvtuserid);
-//            }
-//        }
-//        $data['favuserid'] = $fav_userid;
-//
-//        $data['userid'] = $this->session->userdata('user_id');
-//        $data['scroll'] = "0";
-//        $data['victory'] = $victory;
-//        $data['defact'] = $defact;
-//        $data['total'] = count($data['list_patch_notes']);
-//        echo $this->load->view('patch_note/list', $data, TRUE);
-//    }
 
     function list_patch() {
         if ($this->session->userdata('user_id')) {
