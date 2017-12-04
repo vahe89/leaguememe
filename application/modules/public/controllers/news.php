@@ -84,6 +84,54 @@ class News extends MX_Controller {
         }
         //get data for content
 
+        /*********************/
+
+        $row = 0;
+        $rowperpage = 5;
+        if (isset($_POST['action'])) {
+            $data['action'] = $_POST['action'];
+        }
+        $main = $maintabval;
+//        $allcount_fetch = $this->newsmod->count_articles();
+        if ($this->session->userdata('user_id')) {
+            $data['userid'] = $this->session->userdata('user_id');
+            $user_id = $data['userid'];
+        } else {
+            $user_id = 0;
+        }
+        $allcount_fetch = $this->newsmod->get_total_row($main, $user_id);
+
+        $data['allcount'] = $allcount_fetch->count;
+
+        $data['article_data'] = $this->newsmod->getArticlesList($main, $row, $rowperpage, $user_id);
+
+        $victory = array();
+        $defact = array();
+        foreach ($data['article_data'] as $league) {
+            if (isset($league->vic_users) && !empty($league->vic_users)) {
+                $victory[$league->article_id] = explode(",", $league->vic_users);
+            }
+            if (isset($league->def_users) && !empty($league->def_users)) {
+                $defact[$league->article_id] = explode(",", $league->def_users);
+            }
+        }
+        $fav_userid = array();
+        foreach ($data['article_data'] as $league) {
+            if (isset($league->fvtuserid) && !empty($league->fvtuserid)) {
+                $fav_userid[$league->article_id] = explode(",", $league->fvtuserid);
+            }
+        }
+        $data['page_row'] = $row;
+        $data['favuserid'] = $fav_userid;
+//        echo "<pre>";
+//        print_r($data['favuserid']);
+//        exit;
+        $data['scroll'] = "0";
+        $data['victory'] = $victory;
+        $data['defact'] = $defact;
+
+        /****************************/
+
         $data["right_bar"] = $rightbar;
 
 

@@ -268,9 +268,6 @@ echo $this->load->view('template/sidebar_list');
 </div>
 
 <script>
-    $(document).ready(function() {
-        var lastActiveTab = '<?= $maintabval ?>';
-    })
     var slickOpts  = {
         loop: true,
             slidesToShow: 1,

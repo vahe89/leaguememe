@@ -76,8 +76,8 @@ class Patch_note extends MX_Controller {
         } else {
             $user_id = 0;
         }
-        $row = "0";
-        $rowperpage = "5";
+        $row = 0;
+        $rowperpage = 5;
         $main = $maintabval;
         $allcount_fetch = $this->pm->get_total_row($main, $user_id);
         $data['allcount'] = $allcount_fetch->count;
