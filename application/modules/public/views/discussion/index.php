@@ -18,10 +18,7 @@ echo $this->load->view('template/sidebar_list');
             </ul>
 
             <div  id="popular-discussion" >
-                <?php echo $content_content;?>
-                <div style="text-align: center; padding-top: 50px; display:none;">
-                    <img src="<?php echo base_url(); ?>assets/public/img/ajax-loader.gif" />
-                </div>
+                <?php echo $content_content; ?>
             </div>
             <div class="text-center">
                 <?php if($existing_count > 10){?>
@@ -125,6 +122,16 @@ echo $this->load->view('template/sidebar_list');
 </div>
 <!-- end row -->
 <script>
+
+    var allcount = Number($('#discussion_total_groups').val());
+    if (5 >= allcount) {
+        // Change the text and background
+        $('.load-more-discussion').hide();
+    } else {
+        $('.load-more-discussion').show();
+        $(".load-more-discussion").text("Load More Poll");
+    }
+
     $(function() {
         var lastActivedisctab = "<?= $method ?>";
 
@@ -133,39 +140,7 @@ echo $this->load->view('template/sidebar_list');
         } else {
             lastActivedisctab = lastActivedisctab;
         }
-//   loadDisc(lastActivedisctab);
     })
-    function loadDisc($tab) {
-
-        $.ajax({
-            url: base_url + "public/discussion/discussion_list",
-            data: {
-                row: 0, rowperpage: 10,
-                main: $tab
-            },
-            type: 'POST',
-            dataType: 'HTML',
-            beforeSend: function(xhr) {
-                $("#popular-discussion").html('<div style="text-align: center; padding-top: 80px"><img src="' + base_url + 'assets/public/img/ajax-loader.gif" /></div>');
-            },
-            success: function(data, textStatus, jqXHR) {
-                $("#popular-discussion").html(data);
-                var allcount = Number($('#discussion_total_groups').val());
-                if (10 >= allcount) {
-                    // Change the text and background
-                    $('.load-more-discussion').hide();
-                    $('.load-more-discussion').removeAttr("id");
-                } else {
-                    $('.load-more-discussion').show();
-                    $(".load-more-discussion").text("Load More Discussion");
-                    $('.load-more-discussion').attr("id", "load-more-discussion");
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#popular-discussion").html('<div style="text-align: center; padding-top: 80px">Error while loading discussion.</div>');
-            }
-        })
-    }
     $('#load-more-discussion').click(function() {
 
         var lastActivedisctab = "<?= $method ?>";
