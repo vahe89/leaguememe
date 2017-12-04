@@ -603,6 +603,7 @@ $limit  =  $this->input->post('perpage');
     }
 
     public function season_index() {
+        $type = $this->uri->segment(1);
         $Session = $this->session->userdata('user_id');
         $data['userdetail'] = $this->userdetail();
         $data['username'] = $this->session->userdata('uname');
@@ -614,9 +615,19 @@ $limit  =  $this->input->post('perpage');
         $data["new_discussion"] = $this->hm->get_let_discussion();
         $data["new_like"] = $this->hm->get_newlike();
         $data['active_menu'] = "leaguememe";
-        $rightbar = array(
-                'rules' => ''
+        $get_rules = $this->leaguemod->get_rules($type);
+        $right_content = $this->getRightContent("new",'');
+        if (count($get_rules) > 0) {
+            $rightbar = array(
+                'rules' => $get_rules[0]->template,
+                'content'=>''
             );
+        } else {
+            $rightbar = array(
+                'rules' => '',
+                'content'=>$right_content
+            );
+        }
         $data["right_bar"] = $rightbar;
           $data['getTabposition'] = $this->leaguemod->getTabs();
 

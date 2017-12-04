@@ -198,7 +198,7 @@ if ($message != '') { ?>
                         </div>
                         <br>
                         <div id="league_list_home">
-                            <?php echo $content_content;?>
+                            <?php if(isset($content_content)) echo $content_content;?>
                         </div>
                         <?php if ($method == "index") {
                             ?>
