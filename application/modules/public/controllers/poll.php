@@ -54,6 +54,29 @@ class Poll extends MX_Controller {
             );
         }
 
+        /********************/
+
+        $Session = $this->session->userdata('user_id');
+        $row = 0;
+        $rowperpage = 5;
+        $allcount_fetch = $this->poll->get_total_row();
+
+        $data['allcount'] = $allcount_fetch->count;
+        $data['result'] = $this->poll->all_poll_question($row, $rowperpage);
+
+        $data['userdetail'] = $this->userdetail();
+        $data['username'] = $this->session->userdata('uname');
+        $data['userid'] = $this->session->userdata('user_id');
+        $data['row'] = $row;
+        $data["side_link"] = $this->hm->get_all_sidelinksside();
+        $data["side_linkss"] = $this->hm->get_all_sidelinksnoside();
+        $data["side_links"] = array_merge($data["side_link"], $data["side_linkss"]);
+        $data["new_post"] = $this->hm->get_new_post();
+        $data["new_discussion"] = $this->hm->get_let_discussion();
+        $data["new_like"] = $this->hm->get_newlike();
+
+        /********************/
+
         $data["right_bar"] = $rightbar;
         $data['content'] = $this->load->view('poll/index', $data, TRUE);
         load_public_template($data);

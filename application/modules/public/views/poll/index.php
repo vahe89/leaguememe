@@ -17,9 +17,133 @@ echo $this->load->view('template/sidebar_list');
             </ul>
 
             <div  id="all-poll" >
-                <div style="text-align: center; padding-top: 50px">
-                    <img src="<?php echo base_url(); ?>assets/public/img/ajax-loader.gif" />
-                </div>
+
+
+                <input type="hidden" name="total_groups" id="total_groups" value="<?php echo isset($allcount) ? $allcount : 0; ?>"/>
+                <?php
+                if (count($result) > 0 && !empty($result)) {
+                    foreach ($result as $all_poll_data) {
+                        $total_point = ((int) $all_poll_data['total_victory']) - ((int) $all_poll_data['total_defeat']);
+                        $array = explode(",", $all_poll_data['answers']);
+                        $poll_id = $all_poll_data['id'];
+
+                        ?>
+                        <div class="media info-avatar all-poll">
+
+                            <div class="media-body media-body-vote">
+                                <?php
+                                if (isset($all_poll_data['user_image']) && !empty($all_poll_data['user_image'])) {
+                                    ?>
+                                    <a href="#" style="float: left;">
+                                        <img src="<?php echo base_url(); ?>uploads/users/<?php echo $all_poll_data['user_image']; ?>" alt="" class="media-object avatar img-circle">
+                                    </a>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a href="#" style="float: left;">
+                                        <img src="<?php echo base_url(); ?>assets/public/img/default_profile.jpeg" alt="profile pic" class="media-object avatar img-circle">
+                                    </a>
+                                <?php } ?>
+
+                                <a href="<?php echo base_url(); ?>leaguememe-profile/<?php echo $all_poll_data['user_name']; ?>">
+                                    <h5 class="pad-l-65"><?php echo empty($all_poll_data['name']) ? $all_poll_data['user_name'] : $all_poll_data['name']; ?></h5>
+                                </a>
+
+                                <span class="minute pad-l-65" style="display: block" data-livestamp="<?php echo strtotime($all_poll_data['created_date']); ?>"></span>
+                                <div class="wrap-tag-comment">
+                                    <div class="avatar-comment">
+                                        <a id="<?php echo $all_poll_data['id']; ?>"><?php echo $total_point; ?></a><a> Likes </a> &nbsp; - &nbsp;
+                                        <a href="#" id="<?php echo $all_poll_data['id'] . "yy"; ?>"><?php
+                                            $total_comment = $all_poll_data['total_comment'];
+                                            if (!empty($total_comment)) {
+                                                echo $total_comment;
+                                            } else {
+                                                echo '0';
+                                            }
+                                            ?> </a><a> Comments</a>
+                                    </div>
+
+                                </div>
+                                <div class="wrap-tag-comment mar-t-10">
+                                    <div class="tag   tag-index tag-vote">
+                                        <span id="credit2" class="normal-tag tag-poll">Poll</span>
+                                        <?php if ($all_poll_data['spoiler'] == 1) { ?>
+                                            <span class="red-tag normal-tag">Spoiler</span>
+                                            <?php
+                                        }
+                                        if (!empty($all_poll_data['author']) AND ! empty($all_poll_data['credit'])) {
+                                            ?>
+                                            <span  class="normal-tag disc-credit-show" data-credit="<?= $all_poll_data['author'] ?>">Credit</span>
+                                            <?php
+                                            $img = "fb-credit.png";
+                                            $lnk = "https://www.facebook.com";
+                                            if (strpos($all_poll_data['credit'], "facebook")) {
+                                                $img = "fb-credit.png";
+                                                $lnk = "https://www.facebook.com/";
+                                            } elseif (strpos($all_poll_data['credit'], "twitter")) {
+                                                $img = "tt-credit.png";
+                                                $lnk = "https://twitter.com";
+                                            } elseif (strpos($all_poll_data['credit'], "insta")) {
+                                                $img = "ig-credit.png";
+                                                $lnk = "https://www.instagram.com";
+                                            }
+                                            ?>
+                                            <a href="<?= isset($all_poll_data['author']) ? $lnk . '/' . $all_poll_data['author'] : $lnk ?>" target="_BLANK" class="fb-1" style="display: none">
+                                                <img src="<?=  base_url()?>assets/public/img/<?= $img ?>">
+                                            </a>
+                                        <?php } ?>
+                                        <!--                                    </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a href="<?php echo base_url(); ?>poll-vote/<?php echo $all_poll_data['id']; ?>">
+                                <div class="title-voting-click">
+                                    <?php echo $all_poll_data['questions']; ?>
+                                </div>
+
+                                <?php
+                                for ($i = 0; $i < count($array); $i++) {
+                                    ?>
+                                    <ul class="list-answer" id="list-answer">
+                                        <li>
+                                            <div class="answer1">
+                                                <?php echo $i + '1' . ". "; ?><?php echo $array[$i]; ?>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                <?php } ?>
+                            </a>
+                            <div class="button-vote-wrapper">
+
+                                <a href="<?php echo base_url(); ?>poll-vote/<?php echo $all_poll_data['id']; ?>" class="btn btn-voting">
+                                    Give Vote
+                                </a>
+                                <a href="<?php echo base_url(); ?>result-voting/<?php echo $all_poll_data['id']; ?>" class="btn btn-review">
+                                    Result
+                                </a>
+
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    if (!isset($row) && empty($row) && $row = 0) {
+                        ?>
+                        <div>
+                            <div class="alert alert-danger">
+                                <strong>Oops!</strong> No Poll result found
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+                <?php }
+                ?>
             </div> 
              <br>
         <div class="text-center col-md-12 mar-t-15">
@@ -153,42 +277,24 @@ echo $this->load->view('template/sidebar_list');
 <!-- end row -->
 
 <script>
+
+    var allcount = Number($('#total_groups').val());
+    if (5 >= allcount) {
+        // Change the text and background
+        $('.load-more-poll').hide();
+    } else {
+        $('.load-more-poll').show();
+        $(".load-more-poll").text("Load More Poll");
+    }
+
     $(document).ready(function() {
-        loadpoll();
         var count = 1;
         $("#inline_add_more").click(function() {
             count++;
             $("#inline_more_option").append('<a class="remove_img fa fa-remove pull-right" href="javascript:void(0);" id="' + count + '" style="margin-top: -8px; margin-right: -5px; color: red;"><a><div class="panel panel-default mar-b-10" id="rem_' + count + '"><div class="panel-body-discuss panel-body"><div class="panel-content col-md-12 no-padding"><input type="text" placeholder="Enter poll option..." class="inline_option title-discuss-input" name="option" id="option"><span class="inline_option_count pull-right char-length" id="inline_option_count">150</span></div></div></div>');
         });
     });
-    function loadpoll() {
-        $.ajax({
-            url: base_url + "public/poll/poll-listing",
-            data: {
-                row: 0, rowperpage: 5,
-            },
-            type: 'POST',
-            dataType: 'HTML',
-            beforeSend: function(xhr) {
-                $("#all-poll").html('<div style="text-align: center; padding-top: 80px"><img src="' + base_url + 'assets/public/img/ajax-loader.gif" /></div>');
-            },
-            success: function(data, textStatus, jqXHR) {
-                $("#all-poll").html(data);
-                var allcount = Number($('#total_groups').val());
-                if (5 >= allcount) {
-                    // Change the text and background
-                    $('.load-more-poll').hide();
-                } else {
-                    $('.load-more-poll').show();
-                    $(".load-more-poll").text("Load More Poll");
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#all-poll").html('<div style="text-align: center; padding-top: 80px">Error while loading Poll list.</div>');
-            }
-        })
-    }
-    $('.load-more-poll').click(function() { 
+    $('.load-more-poll').click(function() {
         var row = Number($('#row').val());
         var allcount = Number($('#total_groups').val());
         var rowperpage = 5;

@@ -343,8 +343,14 @@ echo $this->load->view('template/sidebar_list');
 <!-- end row -->  
 <script>
 
-    $('.load-more-articleslist').show();
-    $(".load-more-articleslist").text("Load More");
+    var allcount = Number($('#article_total_groups').val());
+    if (5 >= allcount) {
+        // Change the text and background
+        $('.load-more-articleslist').hide();
+    } else {
+        $('.load-more-articleslist').show();
+        $(".load-more-articleslist").text("Load More");
+    }
 
     $('.load-more-articleslist').click(function() {
         var row = Number($('#article_row').val());

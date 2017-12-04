@@ -292,8 +292,14 @@ echo $this->load->view('template/sidebar_list');
             ]
     };
 
-    $('.load-more-patch_notelist').show();
-    $(".load-more-patch_notelist").text("Load More");
+    var allcount = Number($('#patch_total_groups').val());
+    if (5 >= allcount) {
+        // Change the text and background
+        $('.load-more-patch_notelist').hide();
+    } else {
+        $('.load-more-patch_notelist').show();
+        $(".load-more-patch_notelist").text("Load More");
+    }
 
     $('.load-more-patch_notelist').click(function() {
         var row = Number($('#patch_note_row').val());
