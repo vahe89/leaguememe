@@ -310,7 +310,7 @@ class League_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function list_league_new($main, $sub, $anime = 0, $start,$limit, $upload_type = 0, $user_id = 0){
+    public function list_league_new($main, $sub, $anime = 0, $start, $limit = 1, $upload_type = 0, $user_id = 0){
         if ($sub == 0) {
             $sub = '';
         } else {
@@ -327,7 +327,7 @@ class League_model extends CI_Model {
                 FROM le_leagueimages as le_leimg 
                 LEFT JOIN  le_users AS u ON le_leimg.leagueimage_userid = u.user_id AND u.user_status = 'A' 
                 RIGHT JOIN le_category AS ctg ON ctg.category_status = 'A' ".$sub." AND  le_leimg.category_id = ctg.category_id
-                WHERE  le_leimg.`leagueimage_status` = 'A' ".$sub." ORDER BY le_leimg.`leagueimage_id` desc LIMIT ".$start.",1 ";
+                WHERE  le_leimg.`leagueimage_status` = 'A' ".$sub." ORDER BY le_leimg.`leagueimage_id` desc LIMIT ".$start.",$limit ";
 
         $query = $this->db->query($sql);
         $arrResult = $query->result();

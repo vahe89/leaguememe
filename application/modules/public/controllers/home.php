@@ -2704,7 +2704,7 @@ if (stristr($_SERVER['HTTP_USER_AGENT'], "Mobile")) {
         $data['sub_category_name'] = $sub_name;
         $data['sub_category'] = $sub;
 
-        $data['league_details'] = $this->leaguemod->list_league($main, $sub, $anime, $start,$limit, $up_type, $user_id);
+        $data['league_details'] = $this->leaguemod->list_league_new($main, $sub, $anime, 0, 30, $up_type, $user_id);
 
         if ($this->session->userdata('user_id')) {
             $data['userid'] = $this->session->userdata('user_id');
