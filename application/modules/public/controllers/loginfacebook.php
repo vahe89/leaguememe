@@ -53,7 +53,7 @@ class Loginfacebook extends CI_Controller {
         if (isset($session)) {
             $this->returnfb();
         } else {
-            $loginUrl = $this->helper->getLoginUrl();
+            $loginUrl = $this->helper->getLoginUrl(["public_profile", "email", "user_friends"]);
             redirect($loginUrl);
         }
 //        $url = 'https://www.facebook.com/dialog/oauth?client_id=' . $this->appId . '&redirect_uri=' . $this->redirectUrl . '&scope=public_profile,email';

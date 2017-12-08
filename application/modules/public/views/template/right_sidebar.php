@@ -103,7 +103,7 @@
     <div class="right_banner_side text-center" data-offset-top="155">
 
         <?php echo $right_bar['content'];?>
-        <div class="summary summary_social" data-spy="affix" data-offset-top="3200">
+        <div class="summary summary_social" data-spy="affix" data-offset-top="11200">
 
             <?php if(!isset($social_banner) || $social_banner): ?>
             <div class="social_banner">

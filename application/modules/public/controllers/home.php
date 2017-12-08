@@ -2376,7 +2376,7 @@ class Home extends MX_Controller {
         exit;
     }
 
-    function getRightContent($maintabval,$add) {
+   /* function getRightContent($maintabval,$add) {
 
         $side_link = $this->hm->get_all_sidelinksside($maintabval);
         $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval, 16);
@@ -2384,7 +2384,7 @@ class Home extends MX_Controller {
         $data["sideadd"] = $add;
         return $this->load->view('ajax_right_sidebar', $data, TRUE);
 
-    }
+    }*/
 
     function sidebar_image_resize() {
         $dir = getcwd() . '/uploads/league';

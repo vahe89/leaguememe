@@ -58,7 +58,7 @@ class MX_Controller
 		return CI::$APP->$class;
 	}
 
-    function getRightContent($maintabval,$add, $count = 16) {
+    function getRightContent($maintabval,$add, $count = 55) {
 
         $side_link = $this->hm->get_all_sidelinksside($maintabval);
         $side_linkss = $this->hm->get_all_sidelinksnoside(0, $maintabval, $count);

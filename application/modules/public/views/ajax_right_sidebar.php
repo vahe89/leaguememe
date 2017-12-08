@@ -12,13 +12,13 @@ if (count($side_links) > 0) {
         $divider = "6";
     } else {
 
-        if (count($side_links) <= 28) {
+        if (count($side_links) <= 56) {
             $tot_count = count($side_links);
         } else {
-            $tot_count = 28;
+            $tot_count = 56;
         }
 
-        $divider = "4";
+        $divider = "8";
     } ?>
     <div class="summary">
     <?php for ($i = 0; $i < $tot_count; $i++) {

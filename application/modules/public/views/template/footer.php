@@ -109,11 +109,14 @@ $('body').on('click','.close_ad_btn',function(){
         $('.adsbygoogle').each(function () {
             if($(this).innerHeight() == 0){
                 $(this).next().show();
+            } else {
+                $(this).next().hide();
             }
         })
     }
 
     $(document).ready(function () {
+        TestPage();
         window.setTimeout('TestPage()', 3000);
         var summaries = $('.summary');
         var zIndex = 999;
@@ -126,7 +129,7 @@ $('body').on('click','.close_ad_btn',function(){
                 limit: function() {
                     var limit = 0;
                     if (next) {
-                        limit = $(next).offset().top - $(this).outerHeight(true) + 765;
+                        limit = $(next).offset().top - $(this).outerHeight(true) + 1530;
                     } else {
                         limit = window.innerHeight - $(this).outerHeight(true) - 10;
                     }
